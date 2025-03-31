@@ -1,0 +1,2722 @@
+[
+    {
+        "id": "Intelligence Room",
+        "company": "행사진행",
+        "service": "컨퍼런스가 진행됩니다.",
+        "x": 28,
+        "y": 17,
+        "width": 358,
+        "height": 191,
+        "color": "#a131c9"
+    },
+    {
+        "id": "cafe",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 221,
+        "width": 358,
+        "height": 46,
+        "color": "#ffaa00"
+    },
+    {
+        "id": "Business Lounge",
+        "company": "행사진행",
+        "service": "서비스",
+        "x": 27,
+        "y": 671,
+        "width": 107,
+        "height": 167,
+        "color": "#a131c9"
+    },
+    {
+        "id": "Artificial Room",
+        "company": "행사진행",
+        "service": "컨퍼런스가 진행됩니다.",
+        "x": 1472,
+        "y": 17,
+        "width": 239,
+        "height": 179,
+        "color": "#a131c9"
+    },
+    {
+        "id": "Q11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 428,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q12",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 464,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q13",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 500,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 536,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 572,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 608,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 728,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 764,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 800,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 836,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q23",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 872,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q24",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 908,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q25",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 944,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 980,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1078,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1114,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1150,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q34",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1197,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q35",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q41",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1400,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "Q42",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1436,
+        "y": 16,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 457,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 457,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 457,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 493,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 493,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 493,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 688,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 688,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 688,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 724,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 724,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 724,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 794,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 794,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 794,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "i36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 946,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 946,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "H36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 946,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1016,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1016,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1016,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1052,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1052,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "G36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1052,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1125,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1125,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1125,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D33",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1352,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D32",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1352,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D31",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1352,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D38",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1388,
+        "y": 88,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D37",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1388,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "D36",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1388,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L23",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 459,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 459,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 459,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L28",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 495,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 495,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "L26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 495,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "J22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 722,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 722,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "H22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "H21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "H27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 945,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "H26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 945,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "G22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1018,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "G21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1018,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "G27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1053,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "G26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1053,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "F22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "F21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "F27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "F26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "E22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1234,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "E21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1234,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "E27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "E26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "D22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1354,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "D21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1354,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "D27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1389,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "D26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1389,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "C22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1462,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "C21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1462,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "C27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1497,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "C26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1497,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 215,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 215,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 250,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 250,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 335,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 335,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 370,
+        "y": 314,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 370,
+        "y": 351,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 435,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 472,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 435,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 472,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O12",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 543,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 101,
+        "y": 580,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O17",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 543,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "O16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 136,
+        "y": 580,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 215,
+        "y": 435,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 215,
+        "y": 472,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 250,
+        "y": 435,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "N19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 250,
+        "y": 472,
+        "width": 35,
+        "height": 37,
+        "color": "#ff0000"
+    },
+    {
+        "id": "K23",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K28",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "K26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B23",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B22",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B21",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B28",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 244,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B27",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 279,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B26",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 314,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 394,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 429,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B13",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 464,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 394,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 429,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "B18",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1604,
+        "y": 464,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "P7",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 586,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P8",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 550,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P9",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 514,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P10",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 478,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 442,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P12",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 406,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P13",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 370,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 334,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "P15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 28,
+        "y": 298,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 245,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 281,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 317,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A13",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 353,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A12",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 389,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 425,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A10",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 461,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A09",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 497,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A08",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 533,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A07",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 569,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A06",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 605,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A05",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 641,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 677,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A03",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 713,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A02",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 749,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "A01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1677,
+        "y": 785,
+        "width": 34,
+        "height": 36,
+        "color": ""
+    },
+    {
+        "id": "N11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 214,
+        "y": 543,
+        "width": 72,
+        "height": 68,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 335,
+        "y": 542,
+        "width": 71,
+        "height": 70,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 335,
+        "y": 423,
+        "width": 35,
+        "height": 34,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 335,
+        "y": 458,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 370,
+        "y": 423,
+        "width": 35,
+        "height": 34,
+        "color": "#ff0000"
+    },
+    {
+        "id": "M19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 370,
+        "y": 458,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "L15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 392,
+        "width": 36,
+        "height": 36,
+        "color": "#ff0000"
+    },
+    {
+        "id": "L14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "L20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 494,
+        "y": 392,
+        "width": 36,
+        "height": 36,
+        "color": "#ff0000"
+    },
+    {
+        "id": "L19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 494,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "K15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 392,
+        "width": 36,
+        "height": 36,
+        "color": "#ff0000"
+    },
+    {
+        "id": "K14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "K20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 392,
+        "width": 36,
+        "height": 36,
+        "color": "#ff0000"
+    },
+    {
+        "id": "K19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 381,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 723,
+        "y": 381,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "J19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 723,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 381,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 428,
+        "width": 36,
+        "height": 47,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 831,
+        "y": 439,
+        "width": 36,
+        "height": 36,
+        "color": "#ff0000"
+    },
+    {
+        "id": "i20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 832,
+        "y": 381,
+        "width": 36,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 381,
+        "width": 33,
+        "height": 48,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 429,
+        "width": 33,
+        "height": 48,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 943,
+        "y": 381,
+        "width": 33,
+        "height": 48,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 943,
+        "y": 429,
+        "width": 33,
+        "height": 48,
+        "color": "#ff0000"
+      },
+      {
+        "id": "G15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1018,
+        "y": 381,
+        "width": 35,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "G20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1053,
+        "y": 381,
+        "width": 35,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "G14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1017,
+        "y": 440,
+        "width": 36,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "G19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1053,
+        "y": 440,
+        "width": 36,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "F15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 381,
+        "width": 35,
+        "height": 46,
+        "color": "#ff0000"
+      },
+      {
+        "id": "F14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 427,
+        "width": 35,
+        "height": 46,
+        "color": "#ff0000"
+      },
+      {
+        "id": "F20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 381,
+        "width": 35,
+        "height": 46,
+        "color": "#ff0000"
+      },
+      {
+        "id": "F19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1161,
+        "y": 427,
+        "width": 35,
+        "height": 46,
+        "color": "#ff0000"
+      },
+      {
+        "id": "E14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 381,
+        "width": 35,
+        "height": 94,
+        "color": "#ff0000"
+      },
+      {
+        "id": "E20",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 381,
+        "width": 34,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "E19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1269,
+        "y": 440,
+        "width": 34,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "D14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1354,
+        "y": 381,
+        "width": 35,
+        "height": 97,
+        "color": "#ff0000"
+      },
+      {
+        "id": "D19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1389,
+        "y": 381,
+        "width": 35,
+        "height": 97,
+        "color": "#ff0000"
+      },
+      {
+        "id": "C15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1462,
+        "y": 382,
+        "width": 34,
+        "height": 34,
+        "color": "#ff0000"
+      },
+      {
+        "id": "C15",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1496,
+        "y": 382,
+        "width": 34,
+        "height": 34,
+        "color": "#ff0000"
+      },
+      {
+        "id": "C14",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1461,
+        "y": 440,
+        "width": 35,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "C19",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1496,
+        "y": 440,
+        "width": 35,
+        "height": 35,
+        "color": "#ff0000"
+      },
+      {
+        "id": "L12",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 518,
+        "width": 34,
+        "height": 47,
+        "color": "#ff0000"
+      },
+      {
+        "id": "L17",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 492,
+        "y": 518,
+        "width": 34,
+        "height": 47,
+        "color": "#ff0000"
+      },
+      {
+        "id": "L11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 566,
+        "width": 68,
+        "height": 47,
+        "color": "#ff0000"
+      },
+      {
+        "id": "K11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "K16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 602,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "J11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "J16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 722,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "i11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "i16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 830,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 519,
+        "width": 35,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 945,
+        "y": 567,
+        "width": 35,
+        "height": 47,
+        "color": "#ff0000"
+      },
+      {
+        "id": "H17",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 945,
+        "y": 519,
+        "width": 35,
+        "height": 48,
+        "color": "#ff0000"
+      },
+      {
+        "id": "G11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1017,
+        "y": 518,
+        "width": 70,
+        "height": 96,
+        "color": "#ff0000"
+      },
+      {
+        "id": "F11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 519,
+        "width": 71,
+        "height": 94,
+        "color": "#ff0000"
+      },
+      {
+        "id": "E11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 519,
+        "width": 34,
+        "height": 94,
+        "color": "#ff0000"
+      },
+      {
+        "id": "E16",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1267,
+        "y": 519,
+        "width": 34,
+        "height": 94,
+        "color": "#ff0000"
+      },
+      {
+        "id": "D11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1354,
+        "y": 519,
+        "width": 71,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "C11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1461,
+        "y": 518,
+        "width": 71,
+        "height": 95,
+        "color": "#ff0000"
+      },
+      {
+        "id": "B11",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 543,
+        "width": 71,
+        "height": 71,
+        "color": "#ff0000"
+      },
+      {
+        "id": "N01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 179,
+        "y": 671,
+        "width": 70,
+        "height": 143,
+        "color": "#ffae00"
+      },
+      {
+        "id": "M04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 298,
+        "y": 671,
+        "width": 107,
+        "height": 35,
+        "color": "#ffae00"
+      },
+      {
+        "id": "M01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 298,
+        "y": 706,
+        "width": 106,
+        "height": 107,
+        "color": "#ffae00"
+      },
+      {
+        "id": "L04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 671,
+        "width": 69,
+        "height": 34,
+        "color": "#ffae00"
+      },
+      {
+        "id": "L01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 458,
+        "y": 706,
+        "width": 69,
+        "height": 107,
+        "color": "#ffae00"
+      },
+      {
+        "id": "K03",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 671,
+        "width": 71,
+        "height": 70,
+        "color": "#ffae00"
+      },
+      {
+        "id": "K01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 567,
+        "y": 741,
+        "width": 35,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "K06",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 603,
+        "y": 741,
+        "width": 35,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "J04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 671,
+        "width": 71,
+        "height": 36,
+        "color": "#ffae00"
+      },
+      {
+        "id": "J01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 687,
+        "y": 707,
+        "width": 71,
+        "height": 107,
+        "color": "#ffae00"
+      },
+      {
+        "id": "i04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 671,
+        "width": 71,
+        "height": 36,
+        "color": "#ffae00"
+      },
+      {
+        "id": "i01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 795,
+        "y": 707,
+        "width": 71,
+        "height": 107,
+        "color": "#ffae00"
+      },
+      {
+        "id": "H03",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 671,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "H01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 910,
+        "y": 742,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "G03",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1017,
+        "y": 671,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "G01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1017,
+        "y": 742,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "F04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 671,
+        "width": 71,
+        "height": 36,
+        "color": "#ffae00"
+      },
+      {
+        "id": "F01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1126,
+        "y": 707,
+        "width": 71,
+        "height": 107,
+        "color": "#ffae00"
+      },
+      {
+        "id": "E01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1233,
+        "y": 671,
+        "width": 70,
+        "height": 143,
+        "color": "#ffae00"
+      },
+      {
+        "id": "D01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1354,
+        "y": 671,
+        "width": 70,
+        "height": 143,
+        "color": "#ffae00"
+      },
+      {
+        "id": "C03",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1461,
+        "y": 671,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "C01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1461,
+        "y": 742,
+        "width": 71,
+        "height": 71,
+        "color": "#ffae00"
+      },
+      {
+        "id": "B04",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 671,
+        "width": 36,
+        "height": 35,
+        "color": "#ffae00"
+      },
+      {
+        "id": "B09",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1605,
+        "y": 671,
+        "width": 36,
+        "height": 35,
+        "color": "#ffae00"
+      },
+      {
+        "id": "B01",
+        "company": "기업명",
+        "service": "서비스",
+        "x": 1569,
+        "y": 706,
+        "width": 72,
+        "height": 108,
+        "color": "#ffae00"
+      }
+]

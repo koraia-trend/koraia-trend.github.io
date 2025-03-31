@@ -1,0 +1,180 @@
+{
+    "images": [
+      {
+        "id": "sponsor-logo-1",
+        "href": "images/logo.png",
+        "x": 490,
+        "y": -600,
+        "width": 800,
+        "height": 600,
+        "description": "AI EXPO KOREA 2025"
+      },
+      {
+        "id": "sponsor-logo-1",
+        "href": "images/logo1.png",
+        "x": 500,
+        "y": -150,
+        "width": 300,
+        "height": 100,
+        "description": "(사)한국인공지능협회"
+      },
+      {
+        "id": "sponsor-logo-3",
+        "href": "images/logo2.png",
+        "x": 850,
+        "y": -150,
+        "width": 300,
+        "height": 100,
+        "description": "서울메쎄"
+      },
+      {
+        "id": "sponsor-logo-3",
+        "href": "images/logo3.png",
+        "x": 1220,
+        "y": -150,
+        "width": 200,
+        "height": 100,
+        "description": "인공지능신문"
+      },
+
+      {
+        "id": "toliet1",
+        "href": "images/restroom.svg",
+        "x": 686,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "화장실"
+      },
+      {
+        "id": "toliet2",
+        "href": "images/restroom.svg",
+        "x": 1018,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "화장실"
+      },
+      {
+        "id": "enter1",
+        "href": "images/up.svg",
+        "x": 390,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "입구"
+      },
+      {
+        "id": "exit1",
+        "href": "images/down.svg",
+        "x": 450,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "출구"
+      },
+      {
+        "id": "enter2",
+        "href": "images/up.svg",
+        "x": 1310,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "입구"
+      },
+      {
+        "id": "exit2",
+        "href": "images/down.svg",
+        "x": 1250,
+        "y": 860,
+        "width": 40,
+        "height": 40,
+        "description": "출구"
+      }
+
+    ],
+    "texts": [
+      {
+        "id": "entrance-label1",
+        "text": "5월 15일 입장",
+        "x": 400,
+        "y": 946,
+        "fontSize": 14,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      },
+      {
+        "id": "entrance-label2",
+        "text": "5월 14, 16일 입장",
+        "x": 1250,
+        "y": 946,
+        "fontSize": 14,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      },
+      {
+        "id": "entrance-label3",
+        "text": "5월 14, 16일 퇴장",
+        "x": 400,
+        "y": 966,
+        "fontSize": 14,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      },
+      {
+        "id": "entrance-label4",
+        "text": "5월 15일 퇴장",
+        "x": 1250,
+        "y": 966,
+        "fontSize": 14,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      }
+    ],
+    "shapes": [
+
+      {
+        "id": "wall1",
+        "type": "rect",
+        "x": 0,
+        "y": 870,
+        "width": 340,
+        "height": 3,
+        "fill": "#f0f0f0",
+        "stroke": "#cccccc",
+        "rx": 5, 
+        "description": "벽"
+      },
+      {
+        "id": "wall2",
+        "type": "rect",
+        "x": 532,
+        "y": 850,
+        "width": 681,
+        "height": 3,
+        "fill": "#f0f0f0",
+        "stroke": "#cccccc",
+        "rx": 5, 
+        "description": "벽"
+      },
+      {
+        "id": "wall3",
+        "type": "rect",
+        "x": 1398,
+        "y": 870,
+        "width": 331,
+        "height": 3,
+        "fill": "#f0f0f0",
+        "stroke": "#cccccc",
+        "rx": 5, 
+        "description": "벽"
+      }
+    ]
+  }
+
+
+  

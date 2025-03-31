@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI EXPO KOREA 2025 부스 지도</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Meta 태그 추가 -->
+    <meta name="description" content="AI EXPO KOREA 2025 국제인공지능대전 공식 부스 지도 - 부스 위치, 기업정보, 참가사 검색을 한 곳에서 편리하게 확인하세요.">
+
+    <!-- Open Graph 태그 -->
+    <meta property="og:title" content="AI EXPO KOREA 2025 부스 지도">
+    <meta property="og:description" content="AI EXPO KOREA 2025 국제인공지능대전 코엑스 A홀 부스 배치도 및 참가사 정보">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content="https://"> -->
+    <meta property="og:image" content="/images/ogimage.png">
+    <meta property="og:site_name" content="AI EXPO KOREA 2025">
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Optional Header -->
+        <header class="app-header">
+            <div class="logo">
+                AI EXPO KOREA 2025 국제인공지능대전
+            </div>
+            <div class="event-info">
+                5월 14일 (수) ~ 16일 (금)
+            </div>
+        </header>
+
+        <!-- Control Bar -->
+        <div class="control-bar">
+            <div class="search-controls">
+                <input type="text" id="searchInput" placeholder="부스 번호 또는 기업명 검색">
+                <button id="searchButton"><i class="fas fa-search"></i> 검색</button>
+            </div>
+            <div class="map-controls">
+                <button id="zoomInButton" title="확대"><i class="fas fa-plus"></i> 확대</button>
+                <button id="zoomOutButton" title="축소"><i class="fas fa-minus"></i> 축소</button>
+                <button id="resetViewButton" title="기본 보기"><i class="fas fa-expand"></i> 기본</button>
+                <!-- <button id="legendButton" title="범례"><i class="fas fa-info-circle"></i></button> -->
+                <!-- <button id="printButton" title="인쇄"><i class="fas fa-print"></i></button> -->
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Map Area (Left) -->
+            <div class="map-area">
+                <div class="location-selector">
+                    <select id="floorLevelSelector">
+                        <option value="level3">코엑스 A홀 1층 (1F)</option>
+                        <!-- Add other floor levels here -->
+                    </select>
+                </div>
+                <div id="mapViewport" class="map-viewport">
+                    <svg id="boothMap" width="100%" height="100%">
+                        <defs></defs>
+                        <g id="boothGroup"></g>
+                    </svg>
+                    <div id="tooltip" class="tooltip"></div>
+                </div>
+            </div>
+
+            <!-- Sidebar (Right) -->
+            <aside class="sidebar">
+                <section class="sidebar-section search-results-section">
+                    <h3><i class="fas fa-search-location"></i> 검색 결과</h3>
+                    <div id="searchMessageContainer" class="search-message-container">
+                        <span id="searchInfo">검색어를 입력하거나 지도를 탐색하세요.</span>
+                        <ul id="searchResultsList"></ul>
+                    </div>
+                </section>
+
+                <section class="sidebar-section">
+                    <h3><i class="fas fa-map-signs"></i> 지도 이용 안내</h3>
+                    <p>지도를 탐색하고 원하는 정보를 찾아보세요.</p>
+                    <ul>
+                        <li><strong>검색:</strong> 부스 번호 또는 기업명</li>
+                        <li><strong>확대/축소:</strong> 마우스 휠 또는 +/- 버튼</li>
+                        <li><strong>이동:</strong> 지도 드래그</li>
+                        <li><strong>정보:</strong> 부스 위에 마우스 오버</li>
+                    </ul>
+                </section>
+
+                <!-- Optional Section Example
+                <section class="sidebar-section">
+                    <h3><i class="fas fa-star"></i> MY PLAN</h3>
+                    <p>Save exhibitors and products (Requires login)</p>
+                    <button>View My Plan</button>
+                </section>
+                -->
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
