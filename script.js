@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State Variables ---
     let boothsData = [];
     let mapElementsData = {};
-    const initialScale = 0.7;
+    const initialScale = 1;
     const initialTranslate = { x: 200, y: 200 };
     let scale = initialScale;
     let currentTranslate = { ...initialTranslate };
@@ -28,6 +28,97 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_SCALE = 8;
     const ZOOM_SENSITIVITY = 0.1; // Mouse wheel zoom sensitivity
     const BUTTON_ZOOM_FACTOR = 1.4; // Zoom factor for +/- buttons
+
+    // --- Touch Events for Mobile ---
+    mapViewport.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            if (e.target === mapViewport || e.target === svg || e.target === boothGroup ||
+                e.target.classList.contains('map-shape') || e.target.classList.contains('booth')) {
+                // 링크와 같은 요소만 제외
+                if (e.target.closest('a') && !e.target.classList.contains('booth')) return;
+                panning = true;
+                start = {
+                    x: touch.clientX - currentTranslate.x,
+                    y: touch.clientY - currentTranslate.y
+                };
+            }
+        }
+    });
+
+    mapViewport.addEventListener('touchmove', (e) => {
+        if (!panning || e.touches.length !== 1) return;
+        e.preventDefault(); // 스크롤 방지
+        const touch = e.touches[0];
+        currentTranslate.x = touch.clientX - start.x;
+        currentTranslate.y = touch.clientY - start.y;
+        setTransform(false);
+    }, { passive: false });
+
+    mapViewport.addEventListener('touchend', () => {
+        panning = false;
+    });
+
+    // 모바일 핀치 줌 기능 추가
+    let initialDistance = 0;
+
+    mapViewport.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            initialDistance = getDistance(e.touches[0], e.touches[1]);
+            initialScale = scale;
+        }
+    });
+
+    mapViewport.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault(); // 핀치 줌 시 페이지 확대 방지
+            const distance = getDistance(e.touches[0], e.touches[1]);
+            const newScale = initialScale * (distance / initialDistance);
+
+            // 두 터치 지점 사이의 중앙을 기준으로 확대/축소
+            const touch1 = e.touches[0];
+            const touch2 = e.touches[1];
+            const centerX = (touch1.clientX + touch2.clientX) / 2;
+            const centerY = (touch1.clientY + touch2.clientY) / 2;
+
+            const oldScale = scale;
+            scale = Math.max(MIN_SCALE, Math.min(newScale, MAX_SCALE));
+
+            const viewportRect = mapViewport.getBoundingClientRect();
+            const relativeX = centerX - viewportRect.left;
+            const relativeY = centerY - viewportRect.top;
+
+            const pointTo = {
+                x: (relativeX - currentTranslate.x) / oldScale,
+                y: (relativeY - currentTranslate.y) / oldScale,
+            };
+
+            currentTranslate.x = relativeX - pointTo.x * scale;
+            currentTranslate.y = relativeY - pointTo.y * scale;
+
+            setTransform(false);
+        }
+    }, { passive: false });
+
+    // 터치 디바이스에서 툴팁 표시를 위한 이벤트
+    document.querySelectorAll('.booth').forEach(booth => {
+        booth.addEventListener('touchstart', (e) => {
+            const boothData = boothsData.find(b => b.id === booth.dataset.id);
+            if (boothData) {
+                e.preventDefault(); // 기본 터치 액션 방지
+                showTooltip(e.touches[0], boothData);
+                setTimeout(hideTooltip, 3000); // 3초 후 자동으로 툴팁 숨김
+            }
+        });
+    });
+
+    // 거리 계산 유틸리티 함수
+    function getDistance(touch1, touch2) {
+        const dx = touch1.clientX - touch2.clientX;
+        const dy = touch1.clientY - touch2.clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
 
     // --- Helper function to adjust color brightness ---
     function adjustColor(color, percent) {
@@ -70,62 +161,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Render Booths on SVG ---
-        // --- Render Booths on SVG ---
-        function renderBooths(data) {
-            data.forEach(booth => {
-                const baseColor = booth.color || '#aaaaaa'; // JSON에서 색상 읽기
-    
-                // --- 1. 그라데이션 생성 로직 제거 또는 주석 처리 ---
-                /*
-                const gradientId = `grad-${booth.id}`;
-                const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
-                gradient.setAttribute('id', gradientId);
-                gradient.setAttribute('x1', "0%"); gradient.setAttribute('y1', "0%");
-                gradient.setAttribute('x2', "0%"); gradient.setAttribute('y2', "100%");
-                const stops = [
-                    { offset: '0%', color: adjustColor(baseColor, 35), opacity: '1' },
-                    { offset: '50%', color: baseColor, opacity: '0.9' },
-                    { offset: '100%', color: adjustColor(baseColor, -25), opacity: '1' }
-                ];
-                stops.forEach(s => {
-                    const stop = document.createElementNS("http://www.w3.org/2000/svg", "stop");
-                    Object.entries(s).forEach(([key, value]) => stop.setAttribute(key, value));
-                    gradient.appendChild(stop);
-                });
-                svgDefs.appendChild(gradient);
-                */
-                // --- 그라데이션 로직 끝 ---
-    
-                // 2. Create Booth Rect
-                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-                rect.setAttribute('id', `booth-${booth.id}`);
-                rect.setAttribute('x', booth.x); rect.setAttribute('y', booth.y);
-                rect.setAttribute('width', booth.width); rect.setAttribute('height', booth.height);
-    
-                // --- *** FILL 속성 변경 *** ---
-                // rect.setAttribute('fill', `url(#${gradientId})`); // 기존 그라데이션 적용 코드 주석 처리
-                rect.setAttribute('fill', baseColor); // JSON에서 읽어온 색상(baseColor)을 직접 적용
-                // --- *** 변경 끝 *** ---
-    
-                rect.setAttribute('rx', '4'); rect.setAttribute('ry', '4');
-                rect.classList.add('booth');
-                Object.assign(rect.dataset, { company: booth.company, service: booth.service, id: booth.id });
-                boothGroup.appendChild(rect);
-    
-                // 3. Create Booth Text (변경 없음)
-                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-                text.setAttribute('x', booth.x + booth.width / 2);
-                text.setAttribute('y', booth.y + booth.height / 2);
-                text.classList.add('booth-text');
-                text.textContent = booth.id;
-                boothGroup.appendChild(text);
-    
-                // 4. Tooltip Listeners (변경 없음)
-                rect.addEventListener('mouseenter', (e) => showTooltip(e, booth));
-                rect.addEventListener('mousemove', moveTooltip);
-                rect.addEventListener('mouseleave', hideTooltip);
+    // --- Render Booths on SVG ---
+    function renderBooths(data) {
+        data.forEach(booth => {
+            const baseColor = booth.color || '#aaaaaa'; // JSON에서 색상 읽기
+
+            // --- 1. 그라데이션 생성 로직 제거 또는 주석 처리 ---
+            /*
+            const gradientId = `grad-${booth.id}`;
+            const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+            gradient.setAttribute('id', gradientId);
+            gradient.setAttribute('x1', "0%"); gradient.setAttribute('y1', "0%");
+            gradient.setAttribute('x2', "0%"); gradient.setAttribute('y2', "100%");
+            const stops = [
+                { offset: '0%', color: adjustColor(baseColor, 35), opacity: '1' },
+                { offset: '50%', color: baseColor, opacity: '0.9' },
+                { offset: '100%', color: adjustColor(baseColor, -25), opacity: '1' }
+            ];
+            stops.forEach(s => {
+                const stop = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+                Object.entries(s).forEach(([key, value]) => stop.setAttribute(key, value));
+                gradient.appendChild(stop);
             });
-        }
+            svgDefs.appendChild(gradient);
+            */
+            // --- 그라데이션 로직 끝 ---
+
+            // 2. Create Booth Rect
+            const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            rect.setAttribute('id', `booth-${booth.id}`);
+            rect.setAttribute('x', booth.x); rect.setAttribute('y', booth.y);
+            rect.setAttribute('width', booth.width); rect.setAttribute('height', booth.height);
+
+            // --- *** FILL 속성 변경 *** ---
+            // rect.setAttribute('fill', `url(#${gradientId})`); // 기존 그라데이션 적용 코드 주석 처리
+            rect.setAttribute('fill', baseColor); // JSON에서 읽어온 색상(baseColor)을 직접 적용
+            // --- *** 변경 끝 *** ---
+
+            rect.setAttribute('rx', '4'); rect.setAttribute('ry', '4');
+            rect.classList.add('booth');
+            Object.assign(rect.dataset, { company: booth.company, service: booth.service, id: booth.id });
+            boothGroup.appendChild(rect);
+
+            // 3. Create Booth Text (변경 없음)
+            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            text.setAttribute('x', booth.x + booth.width / 2);
+            text.setAttribute('y', booth.y + booth.height / 2);
+            text.classList.add('booth-text');
+            text.textContent = booth.id;
+            boothGroup.appendChild(text);
+
+            // 4. Tooltip Listeners (변경 없음)
+            rect.addEventListener('mouseenter', (e) => showTooltip(e, booth));
+            rect.addEventListener('mousemove', moveTooltip);
+            rect.addEventListener('mouseleave', hideTooltip);
+        });
+    }
 
     function renderMapElements(elements) { /* ... (previous version, ensures elements added to boothGroup) ... */
         (elements.images || []).forEach(img => { const imageEl = document.createElementNS("http://www.w3.org/2000/svg", "image"); imageEl.setAttribute('id', img.id); imageEl.setAttribute('href', img.href); imageEl.setAttribute('x', img.x); imageEl.setAttribute('y', img.y); imageEl.setAttribute('width', img.width); imageEl.setAttribute('height', img.height); imageEl.classList.add('map-element', 'map-image'); const titleEl = document.createElementNS("http://www.w3.org/2000/svg", "title"); titleEl.textContent = img.description || img.id; imageEl.appendChild(titleEl); const container = img.link ? document.createElementNS("http://www.w3.org/2000/svg", "a") : null; if (container) { container.setAttribute('href', img.link); container.setAttribute('target', '_blank'); container.appendChild(imageEl); boothGroup.appendChild(container); } else { boothGroup.appendChild(imageEl); } if (img.description) { const targetEl = container || imageEl; targetEl.addEventListener('mouseenter', (e) => showSimpleTooltip(e, img.description)); targetEl.addEventListener('mousemove', moveTooltip); targetEl.addEventListener('mouseleave', hideTooltip); } }); (elements.texts || []).forEach(txt => { const textEl = document.createElementNS("http://www.w3.org/2000/svg", "text"); textEl.setAttribute('id', txt.id); textEl.setAttribute('x', txt.x); textEl.setAttribute('y', txt.y); textEl.setAttribute('font-size', txt.fontSize || 12); textEl.setAttribute('fill', txt.fill || '#000000'); textEl.setAttribute('font-weight', txt.fontWeight || 'normal'); textEl.setAttribute('text-anchor', txt.textAnchor || 'start'); textEl.textContent = txt.text; textEl.classList.add('map-element', 'map-text'); textEl.style.pointerEvents = 'none'; boothGroup.appendChild(textEl); }); (elements.shapes || []).forEach(shp => { const shapeEl = document.createElementNS("http://www.w3.org/2000/svg", shp.type); shapeEl.setAttribute('id', shp.id); const commonAttrs = ['fill', 'stroke', 'stroke-width']; commonAttrs.forEach(attr => { if (shp[attr]) shapeEl.setAttribute(attr.replace('Width', '-width'), shp[attr]); }); switch (shp.type) { case 'rect': ['x', 'y', 'width', 'height', 'rx', 'ry'].forEach(attr => { if (shp[attr]) shapeEl.setAttribute(attr, shp[attr]); }); break; case 'circle': ['cx', 'cy', 'r'].forEach(attr => { if (shp[attr]) shapeEl.setAttribute(attr, shp[attr]); }); break; } shapeEl.classList.add('map-element', 'map-shape', `map-shape-${shp.type}`); const titleEl = document.createElementNS("http://www.w3.org/2000/svg", "title"); titleEl.textContent = shp.description || shp.id; shapeEl.appendChild(titleEl); boothGroup.appendChild(shapeEl); if (shp.description) { shapeEl.addEventListener('mouseenter', (e) => showSimpleTooltip(e, shp.description)); shapeEl.addEventListener('mousemove', moveTooltip); shapeEl.addEventListener('mouseleave', hideTooltip); } });
@@ -215,6 +306,28 @@ document.addEventListener('DOMContentLoaded', () => {
     zoomOutButton.addEventListener('click', () => zoom(1 / BUTTON_ZOOM_FACTOR));
     searchResultsList.addEventListener('click', (e) => { if (e.target.tagName === 'A' && e.target.dataset.boothId) { e.preventDefault(); focusOnBooth(e.target.dataset.boothId); e.target.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } });
 
+
+    // 브라우저 크기 변경 시 뷰 재조정
+    window.addEventListener('resize', () => {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            const bbox = boothGroup.getBBox();
+            if (bbox && bbox.width > 0 && bbox.height > 0) {
+                // 모바일에서는 중앙 위치로 재조정
+                const viewportWidth = mapViewport.clientWidth;
+                const viewportHeight = mapViewport.clientHeight;
+                const contentCenterX = bbox.x + bbox.width / 2;
+                const contentCenterY = bbox.y + bbox.height / 2;
+
+                // 스케일은 유지하고 위치만 조정
+                currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
+                currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
+
+                setTransform(true); // 부드럽게 전환
+            }
+        }
+    });
+
     // --- Initial Load Logic ---
     async function initializeMap() {
         boothGroup.innerHTML = '';
@@ -238,14 +351,33 @@ document.addEventListener('DOMContentLoaded', () => {
             renderMapElements(mapElementsResult);
             renderBooths(boothDataResult);
 
-            // Calculate initial view after rendering
-            // Uncomment below to fit content initially
-            // scale = calculateInitialScale();
-            // currentTranslate = calculateCenterTranslation(scale);
+            // 모바일 디바이스 감지
+            const isMobile = window.innerWidth <= 768;
 
-            // Use fixed initial view (current default)
-            scale = initialScale;
-            currentTranslate = { ...initialTranslate };
+            if (isMobile) {
+                // 모바일에서는 중앙 위치 계산
+                const bbox = boothGroup.getBBox();
+                if (bbox && bbox.width > 0 && bbox.height > 0) {
+                    const viewportWidth = mapViewport.clientWidth;
+                    const viewportHeight = mapViewport.clientHeight;
+                    const contentCenterX = bbox.x + bbox.width / 2;
+                    const contentCenterY = bbox.y + bbox.height / 2;
+
+                    scale = calculateInitialScale(); // 화면에 맞는 초기 스케일 계산
+
+                    // 정중앙 위치 계산
+                    currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
+                    currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
+                } else {
+                    // bbox를 구할 수 없는 경우 기본값
+                    scale = initialScale;
+                    currentTranslate = { x: viewportWidth / 2, y: viewportHeight / 2 };
+                }
+            } else {
+                // 데스크톱에서는 기존 설정 사용
+                scale = initialScale;
+                currentTranslate = { ...initialTranslate };
+            }
 
             setTransform();
             searchInfo.textContent = '검색어를 입력하거나 지도를 탐색하세요.'; // Reset message after load
