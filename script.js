@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State Variables ---
     let boothsData = [];
     let mapElementsData = {};
-    const initialScale = 1;
+    const initialScale = 0.7;
     const initialTranslate = { x: 200, y: 200 };
     let scale = initialScale;
     let currentTranslate = { ...initialTranslate };
@@ -335,53 +335,48 @@ document.addEventListener('DOMContentLoaded', () => {
         clearSearch();
         searchInfo.textContent = '지도 데이터를 로딩 중입니다...';
         searchInfo.style.color = '#555';
-
+    
         try {
             const [boothDataResult, mapElementsResult] = await Promise.all([
                 loadBooths(),
                 loadMapElements()
             ]);
-
+    
             if (boothDataResult.length === 0) {
                 searchInfo.textContent = '부스 데이터가 없습니다.';
                 searchInfo.style.color = '#dc3545';
                 return; // Stop if no booths
             }
-
+    
             renderMapElements(mapElementsResult);
             renderBooths(boothDataResult);
-
-            // 모바일 디바이스 감지
-            const isMobile = window.innerWidth <= 768;
-
-            if (isMobile) {
-                // 모바일에서는 중앙 위치 계산
-                const bbox = boothGroup.getBBox();
-                if (bbox && bbox.width > 0 && bbox.height > 0) {
-                    const viewportWidth = mapViewport.clientWidth;
-                    const viewportHeight = mapViewport.clientHeight;
-                    const contentCenterX = bbox.x + bbox.width / 2;
-                    const contentCenterY = bbox.y + bbox.height / 2;
-
-                    scale = calculateInitialScale(); // 화면에 맞는 초기 스케일 계산
-
-                    // 정중앙 위치 계산
-                    currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
-                    currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
-                } else {
-                    // bbox를 구할 수 없는 경우 기본값
-                    scale = initialScale;
-                    currentTranslate = { x: viewportWidth / 2, y: viewportHeight / 2 };
-                }
+    
+            // 모든 디바이스에서 중앙 위치 계산 (모바일/PC 구분 없이)
+            const bbox = boothGroup.getBBox();
+            if (bbox && bbox.width > 0 && bbox.height > 0) {
+                const viewportWidth = mapViewport.clientWidth;
+                const viewportHeight = mapViewport.clientHeight;
+                const contentCenterX = bbox.x + bbox.width / 2;
+                const contentCenterY = bbox.y + bbox.height / 2;
+    
+                // 모바일에서는 초기 스케일을 계산, PC에서는 설정된 초기값 사용
+                const isMobile = window.innerWidth <= 768;
+                scale = isMobile ? calculateInitialScale() : initialScale;
+    
+                // 정중앙 위치 계산 (모바일/PC 동일하게)
+                currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
+                currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
             } else {
-                // 데스크톱에서는 기존 설정 사용
+                // bbox를 구할 수 없는 경우 기본값
                 scale = initialScale;
-                currentTranslate = { ...initialTranslate };
+                const viewportWidth = mapViewport.clientWidth;
+                const viewportHeight = mapViewport.clientHeight;
+                currentTranslate = { x: viewportWidth / 2, y: viewportHeight / 2 };
             }
-
+    
             setTransform();
             searchInfo.textContent = '검색어를 입력하거나 지도를 탐색하세요.'; // Reset message after load
-
+    
         } catch (error) {
             console.error("Map Initialization failed:", error);
             searchInfo.textContent = "맵 초기화 중 오류 발생.";
