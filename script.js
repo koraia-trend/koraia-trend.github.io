@@ -29,6 +29,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const ZOOM_SENSITIVITY = 0.1; // Mouse wheel zoom sensitivity
     const BUTTON_ZOOM_FACTOR = 1.4; // Zoom factor for +/- buttons
 
+    // --- Floor Level Selector Change Handler ---
+    const floorLevelSelector = document.getElementById('floorLevelSelector');
+
+    floorLevelSelector.addEventListener('change', async () => {
+        const selectedFloor = floorLevelSelector.value;
+        await loadFloorMap(selectedFloor);
+    });
+
+    // --- Load Floor Map Function ---
+    async function loadFloorMap(floorLevel) {
+        // 로딩 메시지 표시
+        searchInfo.textContent = `${getFloorName(floorLevel)} 지도 데이터를 로딩 중입니다...`;
+        searchInfo.style.color = '#555';
+
+        // 기존 부스 및 요소 초기화
+        boothGroup.innerHTML = '';
+        svgDefs.innerHTML = '';
+        clearSearch();
+
+        try {
+            // 선택된 층에 맞는 데이터 URL 설정
+            const boothDataUrl = `data/${floorLevel}/booths.json`;
+            const mapElementsUrl = `data/${floorLevel}/map_elements.json`;
+
+            const [boothDataResult, mapElementsResult] = await Promise.all([
+                fetch(boothDataUrl).then(response => response.json()),
+                fetch(mapElementsUrl).then(response => response.json())
+            ]);
+
+            // 전역 변수에 데이터 저장
+            boothsData = boothDataResult;
+
+            if (boothDataResult.length === 0) {
+                searchInfo.textContent = '부스 데이터가 없습니다.';
+                searchInfo.style.color = '#dc3545';
+                return;
+            }
+
+            // 맵 요소 및 부스 렌더링
+            renderMapElements(mapElementsResult);
+            renderBooths(boothDataResult);
+
+            // 정중앙 위치 계산 및 적용
+            const bbox = boothGroup.getBBox();
+            if (bbox && bbox.width > 0 && bbox.height > 0) {
+                const viewportWidth = mapViewport.clientWidth;
+                const viewportHeight = mapViewport.clientHeight;
+                const contentCenterX = bbox.x + bbox.width / 2;
+                const contentCenterY = bbox.y + bbox.height / 2;
+
+                // 모바일에서는 초기 스케일을 계산, PC에서는 설정된 초기값 사용
+                const isMobile = window.innerWidth <= 768;
+                scale = isMobile ? calculateInitialScale() : initialScale;
+
+                // 정중앙 위치 계산 (모바일/PC 동일하게)
+                currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
+                currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
+            }
+
+            setTransform(true); // 부드럽게 전환
+            searchInfo.textContent = `${getFloorName(floorLevel)} 지도가 로드되었습니다.`;
+
+        } catch (error) {
+            console.error(`Failed to load floor ${floorLevel} map:`, error);
+            searchInfo.textContent = `${getFloorName(floorLevel)} 지도 로딩 중 오류가 발생했습니다.`;
+            searchInfo.style.color = '#dc3545';
+        }
+    }
+
+    // --- 층 이름 반환 함수 ---
+    function getFloorName(floorLevel) {
+        const floorNames = {
+            'level1': '코엑스 A홀 1층 (1F)',
+            'level3': '코엑스 A홀 3층 (3F)'
+        };
+        return floorNames[floorLevel] || floorLevel;
+    }
+
+
     // --- Touch Events for Mobile ---
     mapViewport.addEventListener('touchstart', (e) => {
         if (e.touches.length === 1) {
@@ -282,6 +361,91 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('mouseup', () => { if (!panning) return; panning = false; mapViewport.style.cursor = 'grab'; });
     mapViewport.addEventListener('mouseleave', hideTooltip);
 
+
+
+    // --- 마우스 이벤트 개선 (모든 요소에서 드래그 가능) ---
+let lastPanPoint = { x: 0, y: 0 }; // 마지막 드래그 위치 저장 변수 추가
+
+mapViewport.addEventListener('mousedown', (e) => {
+    // 링크를 클릭할 때(a 태그)만 드래그를 막고 나머지 요소에서는 드래그 허용
+    if (e.target.closest('a:not(.booth)')) return;
+    
+    // 오른쪽 클릭은 컨텍스트 메뉴를 위해 허용
+    if (e.button === 2) return;
+    
+    e.preventDefault();
+    panning = true;
+    start = { 
+        x: e.clientX - currentTranslate.x, 
+        y: e.clientY - currentTranslate.y 
+    };
+    lastPanPoint = { x: e.clientX, y: e.clientY };
+    mapViewport.style.cursor = 'grabbing';
+});
+
+mapViewport.addEventListener('mousemove', (e) => {
+    if (!panning) return;
+    e.preventDefault();
+    
+    // 드래그 거리가 작으면 이동 안함 (클릭과 구분)
+    const dx = Math.abs(e.clientX - lastPanPoint.x);
+    const dy = Math.abs(e.clientY - lastPanPoint.y);
+    
+    if (dx > 3 || dy > 3) {
+        currentTranslate.x = e.clientX - start.x;
+        currentTranslate.y = e.clientY - start.y;
+        setTransform(false);
+    }
+    
+    lastPanPoint = { x: e.clientX, y: e.clientY };
+});
+
+window.addEventListener('mouseup', () => {
+    if (!panning) return;
+    panning = false;
+    mapViewport.style.cursor = 'grab';
+});
+
+// --- 터치 이벤트 개선 (모든 요소에서 드래그 가능) ---
+let touchLastPanPoint = { x: 0, y: 0 }; // 터치용 마지막 위치 저장
+
+mapViewport.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+        const touch = e.touches[0];
+        // 링크(a 태그)만 제외하고 모든 요소에서 드래그 시작 가능
+        if (e.target.closest('a:not(.booth)')) return;
+        
+        panning = true;
+        start = { 
+            x: touch.clientX - currentTranslate.x, 
+            y: touch.clientY - currentTranslate.y 
+        };
+        touchLastPanPoint = { x: touch.clientX, y: touch.clientY };
+    }
+}, { passive: true }); // passive: true 설정하여 스크롤 성능 개선
+
+mapViewport.addEventListener('touchmove', (e) => {
+    if (!panning || e.touches.length !== 1) return;
+    
+    const touch = e.touches[0];
+    
+    // 드래그 거리가 임계값 이상이면 스크롤 방지
+    const dx = Math.abs(touch.clientX - touchLastPanPoint.x);
+    const dy = Math.abs(touch.clientY - touchLastPanPoint.y);
+    
+    if (dx > 5 || dy > 5) {
+        e.preventDefault(); // 스크롤 방지
+        currentTranslate.x = touch.clientX - start.x;
+        currentTranslate.y = touch.clientY - start.y;
+        setTransform(false);
+    }
+    
+    touchLastPanPoint = { x: touch.clientX, y: touch.clientY };
+}, { passive: false }); // 스크롤 방지를 위해 passive: false
+
+
+
+
     // --- Other Map Functions ---
     function resetView() {
         // Reset to fixed initial state
@@ -329,59 +493,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Initial Load Logic ---
+    // --- Initial Load Logic ---
     async function initializeMap() {
-        boothGroup.innerHTML = '';
-        svgDefs.innerHTML = '';
-        clearSearch();
-        searchInfo.textContent = '지도 데이터를 로딩 중입니다...';
-        searchInfo.style.color = '#555';
-    
-        try {
-            const [boothDataResult, mapElementsResult] = await Promise.all([
-                loadBooths(),
-                loadMapElements()
-            ]);
-    
-            if (boothDataResult.length === 0) {
-                searchInfo.textContent = '부스 데이터가 없습니다.';
-                searchInfo.style.color = '#dc3545';
-                return; // Stop if no booths
-            }
-    
-            renderMapElements(mapElementsResult);
-            renderBooths(boothDataResult);
-    
-            // 모든 디바이스에서 중앙 위치 계산 (모바일/PC 구분 없이)
-            const bbox = boothGroup.getBBox();
-            if (bbox && bbox.width > 0 && bbox.height > 0) {
-                const viewportWidth = mapViewport.clientWidth;
-                const viewportHeight = mapViewport.clientHeight;
-                const contentCenterX = bbox.x + bbox.width / 2;
-                const contentCenterY = bbox.y + bbox.height / 2;
-    
-                // 모바일에서는 초기 스케일을 계산, PC에서는 설정된 초기값 사용
-                const isMobile = window.innerWidth <= 768;
-                scale = isMobile ? calculateInitialScale() : initialScale;
-    
-                // 정중앙 위치 계산 (모바일/PC 동일하게)
-                currentTranslate.x = -(contentCenterX * scale) + viewportWidth / 2;
-                currentTranslate.y = -(contentCenterY * scale) + viewportHeight / 2;
-            } else {
-                // bbox를 구할 수 없는 경우 기본값
-                scale = initialScale;
-                const viewportWidth = mapViewport.clientWidth;
-                const viewportHeight = mapViewport.clientHeight;
-                currentTranslate = { x: viewportWidth / 2, y: viewportHeight / 2 };
-            }
-    
-            setTransform();
-            searchInfo.textContent = '검색어를 입력하거나 지도를 탐색하세요.'; // Reset message after load
-    
-        } catch (error) {
-            console.error("Map Initialization failed:", error);
-            searchInfo.textContent = "맵 초기화 중 오류 발생.";
-            searchInfo.style.color = '#dc3545';
-        }
+        const selectedFloor = floorLevelSelector.value; // 현재 선택된 층
+        await loadFloorMap(selectedFloor);
     }
 
     // Start the initialization process

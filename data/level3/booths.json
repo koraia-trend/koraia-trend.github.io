@@ -1,0 +1,22 @@
+[
+    {
+        "id": "AI Synergy Global Link ",
+        "company": "300호",
+        "service": "5월 14일 (수), 15일 (목)",
+        "x": 93,
+        "y": 540,
+        "width": 175,
+        "height": 135,
+        "color": "#ff0000"
+    },
+    {
+        "id": "제 4회 육군 인공지능 아이디어 공모전(feat. 해병대)",
+        "company": "328호",
+        "service": "5월 16일 (금)",
+        "x": 1902,
+        "y": 540,
+        "width": 83,
+        "height": 135,
+        "color": "#ff0000"
+    }
+]

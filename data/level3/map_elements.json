@@ -1,0 +1,72 @@
+{
+    "images": [
+      {
+        "id": "sponsor-logo-1",
+        "href": "images/logo.png",
+        "x": 490,
+        "y": -600,
+        "width": 800,
+        "height": 600,
+        "description": "AI EXPO KOREA 2025"
+      },
+      {
+        "id": "sponsor-logo-1",
+        "href": "images/logo1.png",
+        "x": 430,
+        "y": -150,
+        "width": 360,
+        "height": 100,
+        "description": "(사)한국인공지능협회"
+      },
+      {
+        "id": "sponsor-logo-3",
+        "href": "images/logo2.png",
+        "x": 850,
+        "y": -150,
+        "width": 300,
+        "height": 100,
+        "description": "서울메쎄"
+      },
+      {
+        "id": "sponsor-logo-3",
+        "href": "images/logo3.png",
+        "x": 1220,
+        "y": -150,
+        "width": 200,
+        "height": 100,
+        "description": "인공지능신문"
+      },
+      {
+        "id": "enter1",
+        "href": "images/3f.png",
+        "x": 0,
+        "y": 0,
+        "width": 2000,
+        "height": -2000,
+        "description": ""
+      }
+
+    ],
+    "texts": [
+      {
+        "id": "entrance-label5",
+        "text": "5월 14일 (수) / 15일 (목) 3층 300호",
+        "x": 193,
+        "y": 840,
+        "fontSize": 25,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      },
+      {
+        "id": "entrance-label5",
+        "text": "5월 16일 (금) 3층 328호",
+        "x": 1902,
+        "y": 840,
+        "fontSize": 25,
+        "fill": "#333333",
+        "fontWeight": "bold",
+        "textAnchor": "start"
+      }
+    ]
+  }
