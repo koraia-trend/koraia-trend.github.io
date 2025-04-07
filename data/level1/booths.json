@@ -2,7 +2,7 @@
     {
         "id": "Intelligence Room",
         "company": "행사진행",
-        "service": "컨퍼런스가 진행됩니다.",
+        "service": "All In 메인컨퍼런스",
         "x": 28,
         "y": 17,
         "width": 358,
@@ -2485,7 +2485,7 @@
         "service": "서비스명",
         "x": 298,
         "y": 671,
-        "width": 107,
+        "width": 106,
         "height": 35,
         "color": ""
       },

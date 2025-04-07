@@ -50,16 +50,6 @@
     "texts": [
       {
         "id": "entrance-label5",
-        "text": "5월 14일 (수) / 15일 (목) 3층 300호",
-        "x": 193,
-        "y": 840,
-        "fontSize": 25,
-        "fill": "#333333",
-        "fontWeight": "bold",
-        "textAnchor": "start"
-      },
-      {
-        "id": "entrance-label5",
         "text": "5월 16일 (금) 3층 328호",
         "x": 1902,
         "y": 840,
