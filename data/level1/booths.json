@@ -2,7 +2,7 @@
     {
         "id": "Intelligence Room",
         "company": "행사진행",
-        "service": "All In 메인컨퍼런스",
+        "service": "인텔리전스 룸",
         "x": 28,
         "y": 17,
         "width": 358,
@@ -10,9 +10,19 @@
         "color": "#a131c9"
     },
     {
+        "id": "IR Room",
+        "company": "행사진행",
+        "service": "IR 룸",
+        "x": 795,
+        "y": 17,
+        "width": 235,
+        "height": 191,
+        "color": "#a131c9"
+    },
+    {
         "id": "cafe",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "카페",
+        "service": "coffee 타임",
         "x": 28,
         "y": 221,
         "width": 358,
@@ -21,8 +31,8 @@
     },
     {
         "id": "Business Lounge",
-        "company": "행사진행",
-        "service": "서비스명",
+        "company": "",
+        "service": "비즈니스 라운지",
         "x": 27,
         "y": 671,
         "width": 107,
@@ -32,7 +42,7 @@
     {
         "id": "Artificial Room",
         "company": "행사진행",
-        "service": "컨퍼런스가 진행됩니다.",
+        "service": "아티피셜 룸",
         "x": 1472,
         "y": 17,
         "width": 239,
@@ -40,235 +50,220 @@
         "color": "#a131c9"
     },
     {
-        "id": "Q11",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 428,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q12",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 464,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q13",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 500,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q14",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 536,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q15",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 572,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q16",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 608,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q19",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 728,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q20",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 764,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q21",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 800,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 836,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q23",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 872,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q24",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 908,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q25",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 944,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q26",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 980,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1078,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1114,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1150,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q34",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1197,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q35",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1233,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1269,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q41",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1400,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "Q42",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1436,
-        "y": 16,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "L33",
+        "id": "R11",
         "company": "공개예정",
         "service": "서비스명",
         "x": 457,
-        "y": 88,
+        "y": 30,
         "width": 36,
         "height": 35,
         "color": ""
     },
+    {
+        "id": "R12",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 493,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R13",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 529,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R14",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 565,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R15",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 601,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R16",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 637,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R17",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 688,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R18",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 724,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F32",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1070,
+        "y": 123,
+        "width": 90,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "F31",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1070,
+        "y": 158,
+        "width": 90,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "E31",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1196,
+        "y": 123,
+        "width": 110,
+        "height": 70,
+        "color": ""
+    },
+    {
+        "id": "D31",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1354,
+        "y": 123,
+        "width": 72,
+        "height": 70,
+        "color": ""
+    },
+
+    {
+        "id": "R31",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1070,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R32",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1106,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R33",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1142,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R34",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1178,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R35",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1214,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R36",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1250,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R37",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1250,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+
+
+
+    {
+        "id": "R41",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1400,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+    {
+        "id": "R42",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 1436,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": ""
+    },
+
     {
         "id": "L32",
         "company": "공개예정",
@@ -289,16 +284,7 @@
         "height": 35,
         "color": ""
     },
-    {
-        "id": "L38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 493,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "L37",
         "company": "공개예정",
@@ -319,16 +305,7 @@
         "height": 35,
         "color": ""
     },
-    {
-        "id": "K33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 567,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "K32",
         "company": "공개예정",
@@ -349,16 +326,7 @@
         "height": 35,
         "color": ""
     },
-    {
-        "id": "K38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "K37",
         "company": "공개예정",
@@ -379,16 +347,7 @@
         "height": 35,
         "color": ""
     },
-    {
-        "id": "J33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 688,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "J32",
         "company": "공개예정",
@@ -409,16 +368,7 @@
         "height": 35,
         "color": ""
     },
-    {
-        "id": "J38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 724,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "J37",
         "company": "공개예정",
@@ -440,425 +390,56 @@
         "color": ""
     },
     {
-        "id": "i33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 794,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "i32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 794,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "i31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 794,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "i38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 830,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "i37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 830,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "i36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 830,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 910,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 910,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 910,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 946,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 946,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "H36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 946,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1016,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1016,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1016,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1052,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1052,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "G36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1052,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1125,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1125,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1125,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1161,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1161,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "F36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1161,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1233,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1233,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1233,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1269,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1269,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "E36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1269,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1352,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1352,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1352,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D38",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1388,
-        "y": 88,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1388,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "D36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1388,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "L23",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 459,
-        "y": 244,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "L22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 459,
-        "y": 279,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
         "id": "L21",
         "company": "공개예정",
         "service": "서비스명",
         "x": 459,
-        "y": 314,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "L28",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 495,
         "y": 244,
-        "width": 36,
-        "height": 35,
+        "width": 72,
+        "height": 94,
         "color": ""
     },
     {
-        "id": "L27",
+        "id": "K22",
         "company": "공개예정",
         "service": "서비스명",
-        "x": 495,
-        "y": 279,
-        "width": 36,
-        "height": 35,
+        "x": 567,
+        "y": 244,
+        "width": 35,
+        "height": 47,
         "color": ""
     },
     {
-        "id": "L26",
+        "id": "K21",
         "company": "공개예정",
         "service": "서비스명",
-        "x": 495,
-        "y": 314,
-        "width": 36,
-        "height": 35,
+        "x": 567,
+        "y": 291,
+        "width": 35,
+        "height": 47,
         "color": ""
     },
+    {
+        "id": "K27",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 602,
+        "y": 244,
+        "width": 35,
+        "height": 47,
+        "color": ""
+    },
+    {
+        "id": "K26",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 602,
+        "y": 291,
+        "width": 35,
+        "height": 47,
+        "color": ""
+    },
+
     {
         "id": "J22",
         "company": "공개예정",
@@ -1040,23 +621,13 @@
         "color": ""
     },
     {
-        "id": "F27",
+        "id": "F26",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1161,
         "y": 244,
         "width": 35,
-        "height": 47,
-        "color": ""
-    },
-    {
-        "id": "F26",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1161,
-        "y": 291,
-        "width": 35,
-        "height": 47,
+        "height": 94,
         "color": ""
     },
     {
@@ -1080,33 +651,13 @@
         "color": ""
     },
     {
-        "id": "E27",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1269,
-        "y": 244,
-        "width": 35,
-        "height": 47,
-        "color": ""
-    },
-    {
         "id": "E26",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1269,
-        "y": 291,
-        "width": 35,
-        "height": 47,
-        "color": ""
-    },
-    {
-        "id": "D22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1354,
         "y": 244,
         "width": 35,
-        "height": 47,
+        "height": 94,
         "color": ""
     },
     {
@@ -1114,9 +665,9 @@
         "company": "공개예정",
         "service": "서비스명",
         "x": 1354,
-        "y": 291,
+        "y": 244,
         "width": 35,
-        "height": 47,
+        "height": 94,
         "color": ""
     },
     {
@@ -1145,7 +696,7 @@
         "service": "서비스명",
         "x": 1462,
         "y": 244,
-        "width": 35,
+        "width": 70,
         "height": 47,
         "color": ""
     },
@@ -1155,16 +706,6 @@
         "service": "서비스명",
         "x": 1462,
         "y": 291,
-        "width": 35,
-        "height": 47,
-        "color": ""
-    },
-    {
-        "id": "C27",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1497,
-        "y": 244,
         "width": 35,
         "height": 47,
         "color": ""
@@ -1180,45 +721,50 @@
         "color": ""
     },
     {
-        "id": "O22",
+        "id": "P21",
         "company": "공개예정",
         "service": "서비스명",
         "x": 101,
-        "y": 314,
+        "y": 298,
         "width": 35,
-        "height": 37,
+        "height": 108,
         "color": ""
     },
+
     {
-        "id": "O21",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 101,
-        "y": 351,
-        "width": 35,
-        "height": 37,
-        "color": ""
-    },
-    {
-        "id": "O27",
+        "id": "P28",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
-        "y": 314,
+        "y": 298,
         "width": 35,
-        "height": 37,
+        "height": 36,
         "color": ""
     },
+
     {
-        "id": "O26",
+        "id": "P27",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
-        "y": 351,
+        "y": 334,
         "width": 35,
-        "height": 37,
+        "height": 36,
         "color": ""
     },
+
+    {
+        "id": "P26",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 136,
+        "y": 370,
+        "width": 35,
+        "height": 36,
+        "color": ""
+    },
+
+
     {
         "id": "N22",
         "company": "공개예정",
@@ -1275,7 +821,7 @@
         "service": "서비스명",
         "x": 335,
         "y": 351,
-        "width": 35,
+        "width": 70,
         "height": 37,
         "color": ""
     },
@@ -1290,37 +836,18 @@
         "color": ""
     },
     {
-        "id": "M26",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 370,
-        "y": 351,
-        "width": 35,
-        "height": 37,
-        "color": ""
-    },
-    {
-        "id": "O15",
+        "id": "P14",
         "company": "공개예정",
         "service": "서비스명",
         "x": 101,
         "y": 435,
         "width": 35,
-        "height": 37,
+        "height": 74,
         "color": ""
     },
+
     {
-        "id": "O14",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 101,
-        "y": 472,
-        "width": 35,
-        "height": 37,
-        "color": ""
-    },
-    {
-        "id": "O20",
+        "id": "P20",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
@@ -1330,7 +857,7 @@
         "color": ""
     },
     {
-        "id": "O19",
+        "id": "P19",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
@@ -1340,27 +867,17 @@
         "color": ""
     },
     {
-        "id": "O12",
+        "id": "P11",
         "company": "공개예정",
         "service": "서비스명",
         "x": 101,
         "y": 543,
         "width": 35,
-        "height": 37,
+        "height": 74,
         "color": ""
     },
     {
-        "id": "O11",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 101,
-        "y": 580,
-        "width": 35,
-        "height": 37,
-        "color": ""
-    },
-    {
-        "id": "O17",
+        "id": "P17",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
@@ -1370,7 +887,7 @@
         "color": ""
     },
     {
-        "id": "O16",
+        "id": "P11",
         "company": "공개예정",
         "service": "서비스명",
         "x": 136,
@@ -1419,116 +936,29 @@
         "height": 37,
         "color": ""
     },
-    {
-        "id": "K23",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 567,
-        "y": 244,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "K22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 567,
-        "y": 279,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "K21",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 567,
-        "y": 314,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "K28",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 244,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "K27",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 279,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "K26",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 314,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "B23",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1569,
-        "y": 244,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "B22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1569,
-        "y": 279,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+    
     {
         "id": "B21",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1569,
-        "y": 314,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "B28",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1604,
         "y": 244,
         "width": 36,
-        "height": 35,
+        "height": 105,
         "color": ""
     },
+
     {
         "id": "B27",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1604,
-        "y": 279,
+        "y": 244,
         "width": 36,
-        "height": 35,
+        "height": 70,
         "color": ""
     },
+
     {
         "id": "B26",
         "company": "공개예정",
@@ -1540,35 +970,16 @@
         "color": ""
     },
     {
-        "id": "B15",
+        "id": "B13",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1569,
         "y": 394,
         "width": 36,
-        "height": 35,
+        "height": 105,
         "color": ""
     },
-    {
-        "id": "B14",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1569,
-        "y": 429,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "B13",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1569,
-        "y": 464,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
+
     {
         "id": "B20",
         "company": "공개예정",
@@ -1580,113 +991,43 @@
         "color": ""
     },
     {
-        "id": "B19",
+        "id": "B18",
         "company": "공개예정",
         "service": "서비스명",
         "x": 1604,
         "y": 429,
         "width": 36,
-        "height": 35,
+        "height": 70,
         "color": ""
     },
     {
-        "id": "B18",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1604,
-        "y": 464,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "P7",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 586,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P8",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 550,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P9",
+        "id": "Q07",
         "company": "공개예정",
         "service": "서비스명",
         "x": 28,
         "y": 514,
         "width": 34,
-        "height": 36,
+        "height": 108,
         "color": ""
     },
     {
-        "id": "P10",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 478,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P11",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 442,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P12",
+        "id": "Q10",
         "company": "공개예정",
         "service": "서비스명",
         "x": 28,
         "y": 406,
         "width": 34,
-        "height": 36,
+        "height": 108,
         "color": ""
     },
     {
-        "id": "P13",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 370,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P14",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 28,
-        "y": 334,
-        "width": 34,
-        "height": 36,
-        "color": ""
-    },
-    {
-        "id": "P15",
+        "id": "Q13",
         "company": "공개예정",
         "service": "서비스명",
         "x": 28,
         "y": 298,
         "width": 34,
-        "height": 36,
+        "height": 108,
         "color": ""
     },
     {
@@ -1850,13 +1191,23 @@
         "color": ""
     },
     {
-        "id": "N11",
+        "id": "N12",
         "company": "공개예정",
         "service": "서비스명",
         "x": 214,
         "y": 543,
         "width": 72,
-        "height": 68,
+        "height": 34,
+        "color": ""
+    },
+    {
+        "id": "N11",
+        "company": "공개예정",
+        "service": "서비스명",
+        "x": 214,
+        "y": 577,
+        "width": 72,
+        "height": 34,
         "color": ""
     },
     {
@@ -1875,7 +1226,7 @@
         "service": "서비스명",
         "x": 335,
         "y": 423,
-        "width": 35,
+        "width": 70,
         "height": 34,
         "color": ""
     },
@@ -1890,16 +1241,6 @@
         "color": ""
     },
     {
-        "id": "M20",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 370,
-        "y": 423,
-        "width": 35,
-        "height": 34,
-        "color": ""
-    },
-    {
         "id": "M19",
         "company": "공개예정",
         "service": "서비스명",
@@ -1910,53 +1251,35 @@
         "color": ""
     },
     {
-        "id": "L15",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 458,
-        "y": 392,
-        "width": 36,
-        "height": 36,
-        "color": ""
-    },
-    {
         "id": "L14",
         "company": "공개예정",
         "service": "서비스명",
         "x": 458,
-        "y": 428,
+        "y": 381,
         "width": 36,
-        "height": 47,
+        "height": 94,
         "color": ""
     },
-    {
-        "id": "L20",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 494,
-        "y": 392,
-        "width": 36,
-        "height": 36,
-        "color": ""
-    },
+
     {
         "id": "L19",
         "company": "공개예정",
         "service": "서비스명",
         "x": 494,
-        "y": 428,
+        "y": 381,
         "width": 36,
-        "height": 47,
+        "height": 94,
         "color": ""
     },
+
     {
         "id": "K15",
         "company": "공개예정",
         "service": "서비스명",
         "x": 567,
-        "y": 392,
+        "y": 381,
         "width": 36,
-        "height": 36,
+        "height": 47,
         "color": ""
     },
     {
@@ -1974,9 +1297,9 @@
         "company": "공개예정",
         "service": "서비스명",
         "x": 603,
-        "y": 392,
+        "y": 381,
         "width": 36,
-        "height": 36,
+        "height": 47,
         "color": ""
     },
     {
@@ -2115,40 +1438,22 @@
         "service": "서비스명",
         "x": 1018,
         "y": 381,
-        "width": 35,
+        "width": 70,
         "height": 35,
         "color": ""
       },
-      {
-        "id": "G20",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1053,
-        "y": 381,
-        "width": 35,
-        "height": 35,
-        "color": ""
-      },
+
       {
         "id": "G14",
         "company": "공개예정",
         "service": "서비스명",
-        "x": 1017,
+        "x": 1018,
         "y": 440,
-        "width": 36,
+        "width": 70,
         "height": 35,
         "color": ""
       },
-      {
-        "id": "G19",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1053,
-        "y": 440,
-        "width": 36,
-        "height": 35,
-        "color": ""
-      },
+
       {
         "id": "F15",
         "company": "공개예정",
@@ -2245,40 +1550,22 @@
         "service": "서비스명",
         "x": 1462,
         "y": 382,
-        "width": 34,
+        "width": 70,
         "height": 34,
         "color": ""
       },
-      {
-        "id": "C15",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1496,
-        "y": 382,
-        "width": 34,
-        "height": 34,
-        "color": ""
-      },
+
       {
         "id": "C14",
         "company": "공개예정",
         "service": "서비스명",
-        "x": 1461,
+        "x": 1462,
         "y": 440,
-        "width": 35,
+        "width": 70,
         "height": 35,
         "color": ""
       },
-      {
-        "id": "C19",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1496,
-        "y": 440,
-        "width": 35,
-        "height": 35,
-        "color": ""
-      },
+
       {
         "id": "L12",
         "company": "공개예정",
