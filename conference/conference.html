@@ -21,19 +21,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Basic Reset & Root Variables */
+/* Basic Reset & Root Variables */
 :root {
-    /* --primary-color: #007bff; */ /* 기존 파란색 */
-    --primary-color: #0a4a8f; /* 더 깊고 전문적인 파란색 톤 */
-    --secondary-color: #555;   /* 약간 더 진한 회색으로 변경 */
-    --light-gray: #f8f9fa;
-    --dark-gray: #1a1a1a;    /* 더 진한 검정 계열로 변경 */
-    --text-color: #333;     /* 본문 텍스트 색상 조정 */
-    --link-color: #007bff;    /* 호버 시 밝은 파란색 유지 */
-    --card-bg: #ffffff;
-    /* --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */ /* 기존 그림자 */
-    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* 부드럽고 넓은 그림자 */
-    --border-radius: 8px;
-    --subtle-border: 1px solid #e0e0e0; /* 카드 등에 사용할 미세한 테두리 */
+    --primary-accent: #4a90e2; /* 차분한 파란색 포인트 */
+    --light-text: #f0f0f0;
+    --medium-text: #a0a0a0;
+    --dark-bg-transparent: rgba(15, 18, 23, 0.85); /* 콘텐츠 영역 배경 (어둡고 반투명) */
+    --border-color: rgba(255, 255, 255, 0.15);
+    --border-radius: 6px;
 }
 
 * {
@@ -48,208 +43,200 @@ html {
 
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.7; /* 줄 간격 살짝 늘려 가독성 향상 */
-    color: var(--text-color);
-    /* background-color: var(--light-gray); */ /* 단색 배경 제거 */
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%); /* 은은한 대각선 그라데이션 배경 */
+    line-height: 1.6;
+    color: var(--light-text); /* 기본 텍스트 색상 밝게 */
+    background-color: #111; /* 이미지 로딩 전 배경색 */
+
+    /* 배경 이미지 설정 */
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), /* 어두운 오버레이 */
+        url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 배경 고정 */
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-.landing-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto; /* 상단 여백 추가 */
-    padding: 0 20px;   /* 좌우 여백 살짝 증가 */
-    flex-grow: 1;
-}
-
-/* Hero Section (Optional Refinements - 구조는 HTML에 없으므로 주석 처리) */
-/*
-.hero-section {
+/* Header */
+.site-header {
+    background-color: rgba(0, 0, 0, 0.5); /* 헤더 배경 약간 투명 */
+    padding: 20px 0;
     text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.hero-image {
+    border-bottom: 1px solid var(--border-color);
     width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    margin-bottom: 30px;
-    display: block;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--dark-gray);
-    margin-bottom: 15px;
+.header-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.hero-content .subtitle {
-    font-size: 1.3rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 16px 35px;
-    font-size: 1.1rem;
+.site-header h1 {
+    font-size: 2rem;
     font-weight: 500;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
-.cta-button i {
-    margin-right: 10px;
+.header-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--medium-text);
 }
 
-.cta-button:hover {
-    background-color: var(--link-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(10, 74, 143, 0.4);
-}
-*/
 
-/* Schedule Section */
-.schedule-section {
-    margin-bottom: 60px; /* 섹션 하단 여백 증가 */
-}
-
-.schedule-section h2 {
-    text-align: center;
-    font-size: 2.2rem; /* 제목 크기 살짝 키움 */
-    color: var(--dark-gray);
-    margin-bottom: 40px; /* 제목 하단 여백 증가 */
-    font-weight: 600; /* 제목 굵기 조정 */
-}
-
-.schedule-section h2 i {
-    margin-right: 12px;
-    color: var(--primary-color);
-}
-
-.schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 35px; /* 그리드 간격 조정 */
-}
-
-.schedule-day {
-    /* Day container has no background/border itself */
-}
-
-.schedule-day h3 {
-    font-size: 1.7rem; /* 날짜 제목 크기 조정 */
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--primary-color); /* 구분선 유지 */
-    font-weight: 500; /* 날짜 굵기 조정 */
-    text-align: left;
-}
-
-.schedule-day h3 i {
-    margin-right: 10px;
-}
-
-/* --- Updated Event Card Styling --- */
-.event-card {
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    margin-bottom: 30px; /* 카드 간 세로 간격 증가 */
-    overflow: hidden;
-    border: var(--subtle-border); /* 미세한 테두리 추가 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* Hover effect only if not 'no-link' */
-.event-card:not(.no-link):hover {
-    transform: translateY(-6px); /* 호버 시 더 많이 올라가도록 */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /* 호버 시 그림자 강화 */
-    border-color: var(--primary-color); /* 호버 시 테두리 색상 변경 */
-}
-
-.event-card .event-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.event-poster {
-    display: block;
+/* Main Schedule Container */
+.schedule-container {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: var(--subtle-border); /* 이미지와 내용 구분선 */
+    max-width: 960px; /* 중앙 콘텐츠 영역 최대 너비 */
+    margin: 40px auto; /* 위아래 여백 및 중앙 정렬 */
+    padding: 30px;
+    background-color: var(--dark-bg-transparent); /* 반투명 어두운 배경 */
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    flex-grow: 1; /* 푸터가 아래에 붙도록 */
 }
 
-.event-details {
-    padding: 20px; /* 내부 여백 증가 */
+/* Day Section */
+.schedule-day {
+    margin-bottom: 40px;
 }
 
-.event-details p {
-    margin-bottom: 12px; /* 항목 간 간격 살짝 증가 */
-    font-size: 0.98rem; /* 폰트 크기 미세 조정 */
-    display: flex;
-    align-items: center;
-    line-height: 1.5; /* 각 라인 높이 조정 */
-}
-
-.event-details p:last-child {
+.schedule-day:last-child {
     margin-bottom: 0;
 }
 
-.event-details p i {
-    margin-right: 12px; /* 아이콘과 텍스트 간격 증가 */
-    color: var(--secondary-color);
-    width: 18px; /* 아이콘 영역 너비 살짝 증가 */
+.schedule-day h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--light-text);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-day h2 i {
+    margin-right: 10px;
+    color: var(--primary-accent);
+}
+
+/* Event List */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 이벤트 아이템 사이 간격 */
+}
+
+.event-item {
+    display: flex;
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 허용 */
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    gap: 15px; /* 내부 요소 간 간격 */
+}
+
+.event-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.event-time {
+    flex: 0 0 130px; /* 시간 영역 고정 너비 */
+    font-size: 0.9rem;
+    color: var(--medium-text);
+}
+
+.event-time i,
+.event-info i {
+    margin-right: 8px;
+    width: 16px; /* 아이콘 정렬 위한 너비 */
     text-align: center;
+    color: var(--medium-text);
 }
 
-.event-details .event-title {
-    font-weight: 600; /* 제목 굵기 조정 */
-    font-size: 1.15rem; /* 제목 크기 살짝 키움 */
-    color: var(--dark-gray);
-    margin-bottom: 15px; /* 제목과 아래 내용 간 간격 증가 */
+.event-info {
+    flex: 1 1 auto; /* 정보 영역이 남은 공간 차지 */
+    min-width: 250px; /* 최소 너비 확보 */
 }
 
-.event-details .event-title i {
-    color: var(--primary-color);
+.event-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.event-title i {
+   color: var(--primary-accent); /* 제목 아이콘 색상 */
+}
+
+.event-location {
+    font-size: 0.9rem;
+    color: var(--medium-text);
+}
+
+.event-action {
+    flex: 0 0 auto; /* 액션 버튼 영역 크기 자동 */
+    margin-left: auto; /* 오른쪽 끝으로 밀기 (데스크탑) */
+    padding-left: 15px; /* 왼쪽 요소와 간격 */
+}
+
+.btn-details {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-details i {
+    margin-right: 6px;
+}
+
+.btn-details:hover {
+    background-color: var(--primary-accent);
+    color: #ffffff;
+}
+
+/* 링크 없는 항목 처리 */
+.event-item.no-link .no-reg-info {
+    font-size: 0.9rem;
+    color: var(--medium-text);
+    font-style: italic;
 }
 
 /* Footer */
 .site-footer {
-    background-color: var(--dark-gray); /* 더 어두운 배경색 적용 */
-    color: #ccc; /* 밝은 회색 텍스트 */
+    background-color: rgba(0, 0, 0, 0.7); /* 푸터 배경 */
+    color: var(--medium-text);
     text-align: center;
-    padding: 30px 15px; /* 푸터 내부 여백 증가 */
-    margin-top: auto;
-    border-top: 3px solid var(--primary-color); /* 상단에 강조 테두리 추가 */
+    padding: 25px 15px;
+    margin-top: auto; /* 내용이 짧아도 항상 아래에 위치 */
+    border-top: 1px solid var(--border-color);
+    width: 100%;
 }
 
 .site-footer a {
-    color: #adcfff; /* 링크 색상 조정 */
+    color: var(--medium-text);
     text-decoration: none;
-    font-weight: 400; /* 폰트 굵기 조정 */
-    margin: 0 10px; /* 링크 좌우 여백 추가 */
+    font-weight: 400;
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .site-footer a:hover {
-    color: #ffffff; /* 호버 시 흰색 */
-    text-decoration: none;
+    color: var(--primary-accent);
 }
 
 .site-footer i {
@@ -257,49 +244,32 @@ body {
 }
 
 .site-footer .copyright {
-    font-size: 0.9rem;
-    color: #888; /* 저작권 텍스트 색상 조정 */
-    margin-top: 20px; /* 위 요소와의 간격 증가 */
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 15px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    /* .hero-content h1 { font-size: 2.5rem; } */
-    /* .hero-content .subtitle { font-size: 1.1rem; } */
-    .schedule-grid {
-        grid-template-columns: 1fr;
-        gap: 25px; /* 모바일에서 간격 살짝 줄임 */
+    .site-header h1 { font-size: 1.8rem; }
+    .schedule-container {
+        margin: 20px 15px; /* 모바일 여백 조정 */
+        padding: 20px;
     }
-    .schedule-day h3 {
-        font-size: 1.5rem;
-    }
-    .schedule-section h2 {
-        font-size: 1.9rem;
-    }
+    .schedule-day h2 { font-size: 1.4rem; }
+    .event-item { flex-direction: column; align-items: flex-start; } /* 세로 정렬 */
+    .event-time { flex-basis: auto; margin-bottom: 5px; }
+    .event-action { margin-left: 0; margin-top: 10px; } /* 버튼 왼쪽 정렬 */
 }
 
 @media (max-width: 480px) {
-    body {
-        line-height: 1.6; /* 모바일 가독성 위해 기본 줄간격 복귀 */
-    }
-    /* .hero-content h1 { font-size: 2rem; } */
-    /* .cta-button { padding: 14px 28px; font-size: 1rem; } */
-    .schedule-section h2 {
-        font-size: 1.7rem;
-    }
-    .event-poster {
-        height: 180px; /* 작은 화면에서 이미지 높이 조정 */
-    }
-    .event-details {
-        padding: 15px; /* 작은 화면에서 카드 내부 여백 조정 */
-    }
-    .event-details .event-title {
-        font-size: 1.1rem;
-    }
-    .landing-container {
-        padding: 0 15px; /* 작은 화면 패딩 조정 */
-        margin: 20px auto; /* 작은 화면 상단 여백 조정 */
-    }
+    .site-header h1 { font-size: 1.5rem; }
+    .header-subtitle { font-size: 0.9rem; }
+    .schedule-container { margin: 15px 10px; padding: 15px; }
+    .schedule-day h2 { font-size: 1.3rem; }
+    .event-title { font-size: 1rem; }
+    .event-time, .event-location, .no-reg-info { font-size: 0.85rem; }
+    .btn-details { padding: 6px 12px; font-size: 0.8rem; }
 }
     </style>
 </head>
@@ -317,72 +287,89 @@ body {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header class="site-header">
+            <div class="header-container">
+                <h1>AI EXPO KOREA 2025</h1>
+                <p class="header-subtitle">Conference Schedule</p>
+            </div>
+        </header>
     
-        <main class="landing-container">
+        <main class="schedule-container">
     
-    
-            <section class="schedule-section">
-                <h2><i class="fas fa-calendar-alt"></i> 컨퍼런스 세션별 안내</h2> <div class="schedule-grid">
-    
-                    <div class="schedule-day">
-                        <h3><i class="fas fa-calendar-day"></i> 5월 14일 (수)</h3>
-                        <div class="event-card">
-                            <a href="https://onoffmix.com/event/322182" target="_blank" class="event-link">
-                                <img src="11.png" alt="All In 메인컨퍼런스 포스터" class="event-poster">
-                                <div class="event-details">
-                                    <p class="event-title"><i class="fas fa-microphone-alt"></i> All In 메인컨퍼런스</p>
-                                    <p class="event-time"><i class="far fa-clock"></i> 오전 10:30 ~ 오후 4:30</p>
-                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
-                                </div>
+            <section class="schedule-day">
+                <h2><i class="fas fa-calendar-day"></i> 5월 14일 (수)</h2>
+                <div class="events-list">
+                    <article class="event-item">
+                        <div class="event-time"><i class="far fa-clock"></i> 10:30 - 16:30</div>
+                        <div class="event-info">
+                            <h3 class="event-title"><i class="fas fa-microphone-alt"></i> All In 메인컨퍼런스</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
+                        </div>
+                        <div class="event-action">
+                            <a href="https://onoffmix.com/event/322182" target="_blank" class="btn-details">
+                                <i class="fas fa-link"></i> 참가 신청
                             </a>
                         </div>
-                    </div>
+                    </article>
+                </div>
+            </section>
     
-                    <div class="schedule-day">
-                        <h3><i class="fas fa-calendar-day"></i> 5월 15일 (목)</h3>
-                        <div class="event-card">
-                            <a href="https://onoffmix.com/event/322182" target="_blank" class="event-link">
-                                <img src="11.png" alt="All In 메인컨퍼런스 포스터" class="event-poster">
-                                <div class="event-details">
-                                    <p class="event-title"><i class="fas fa-microphone-alt"></i> All In 메인컨퍼런스</p>
-                                    <p class="event-time"><i class="far fa-clock"></i> 오전 10:30 ~ 오후 4:30</p>
-                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
-                                </div>
+            <section class="schedule-day">
+                <h2><i class="fas fa-calendar-day"></i> 5월 15일 (목)</h2>
+                <div class="events-list">
+                    <article class="event-item">
+                        <div class="event-time"><i class="far fa-clock"></i> 10:30 - 16:30</div>
+                        <div class="event-info">
+                            <h3 class="event-title"><i class="fas fa-microphone-alt"></i> All In 메인컨퍼런스</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
+                        </div>
+                        <div class="event-action">
+                            <a href="https://onoffmix.com/event/322182" target="_blank" class="btn-details">
+                                <i class="fas fa-link"></i> 참가 신청
                             </a>
                         </div>
-                        <div class="event-card">
-                            <a href="https://forms.gle/nPcWwErGhEfVtosy6" target="_blank" class="event-link">
-                                <img src="22.png" alt="AI와 양자기술의 경계를 넘다 포스터" class="event-poster">
-                                <div class="event-details">
-                                    <p class="event-title"><i class="fas fa-microphone-alt"></i> AI와 양자기술의 경계를 넘다</p>
-                                    <p class="event-time"><i class="far fa-clock"></i> 오전 10:00 ~ 오후 1:00</p>
-                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> 코엑스 3층 300호</p>
-                                </div>
+                    </article>
+                    <article class="event-item">
+                        <div class="event-time"><i class="far fa-clock"></i> 10:00 - 13:00</div>
+                        <div class="event-info">
+                            <h3 class="event-title"><i class="fas fa-atom"></i> AI와 양자기술의 경계를 넘다</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> 코엑스 3층 300호</p>
+                        </div>
+                        <div class="event-action">
+                            <a href="https://forms.gle/nPcWwErGhEfVtosy6" target="_blank" class="btn-details">
+                                <i class="fas fa-link"></i> 참가 신청
                             </a>
                         </div>
-                        <div class="event-card no-link"> <img src="44.png" alt="AI Synergy Global Link 포스터" class="event-poster">
-                             <div class="event-details">
-                                <p class="event-title"><i class="fas fa-microphone-alt"></i> AI Synergy Global Link</p>
-                                <p class="event-time"><i class="far fa-clock"></i> 오전 10:30 ~ 오후 3:50</p>
-                                <p class="event-location"><i class="fas fa-map-marker-alt"></i> IR 룸</p>
-                            </div>
+                    </article>
+                    <article class="event-item no-link"> <div class="event-time"><i class="far fa-clock"></i> 10:30 - 15:50</div>
+                        <div class="event-info">
+                            <h3 class="event-title"><i class="fas fa-handshake"></i> AI Synergy Global Link</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> IR 룸</p>
                         </div>
-                    </div>
-    
-                    <div class="schedule-day">
-                        <h3><i class="fas fa-calendar-day"></i> 5월 16일 (금)</h3>
-                        <div class="event-card">
-                             <a href="https://onoffmix.com/event/321569" target="_blank" class="event-link">
-                                <img src="33.png" alt="육군 인공지능 아이디어 공모전 포스터" class="event-poster">
-                                <div class="event-details">
-                                    <p class="event-title"><i class="fas fa-microphone-alt"></i> 제 4회 육군 인공지능 아이디어 공모전</p>
-                                    <p class="event-time"><i class="far fa-clock"></i> 오전 10:30 ~ 오후 3:50</p>
-                                    <p class="event-location"><i class="fas fa-map-marker-alt"></i> IR 룸</p>
-                                </div>
+                        <div class="event-action">
+                            <a href="#" target="_blank" class="btn-details">
+                                <i class="fas fa-link"></i> 준비중
                             </a>
                         </div>
-                    </div>
+                    </article>
+                </div>
+            </section>
     
+            <section class="schedule-day">
+                <h2><i class="fas fa-calendar-day"></i> 5월 16일 (금)</h2>
+                <div class="events-list">
+                    <article class="event-item">
+                        <div class="event-time"><i class="far fa-clock"></i> 10:30 - 15:50</div>
+                        <div class="event-info">
+                            <h3 class="event-title"><i class="fas fa-award"></i> 제 4회 육군 인공지능 아이디어 공모전</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> IR 룸</p>
+                        </div>
+                        <div class="event-action">
+                            <a href="https://onoffmix.com/event/321569" target="_blank" class="btn-details">
+                                <i class="fas fa-link"></i> 참가 신청
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </section>
     
@@ -390,8 +377,8 @@ body {
     
         <footer class="site-footer">
             <p>
-                <a href="https://koraia.org" target="_blank"><i class="fas fa-link"></i> 한국인공지능협회</a>
-                <a href="https://expo.koraia.org" target="_blank"><i class="fas fa-link"></i> 부스 배치도</a>
+                <a href="https://koraia.org" target="_blank"><i class="fas fa-building"></i> 한국인공지능협회</a> |
+                <a href="https://expo.koraia.org" target="_blank"><i class="fas fa-map"></i> 부스 배치도</a>
             </p>
             <p class="copyright">&copy; 2025 AI EXPO KOREA. All Rights Reserved.</p>
         </footer>
