@@ -1,7 +1,7 @@
 [
     {
         "id": "Intelligence Room",
-        "company": "행사진행",
+        "company": "All In AI",
         "service": "인텔리전스 룸",
         "x": 28,
         "y": 17,
@@ -11,7 +11,7 @@
     },
     {
         "id": "IR Room",
-        "company": "행사진행",
+        "company": "AI Synergy Global Link",
         "service": "IR 룸",
         "x": 795,
         "y": 17,
