@@ -7,7 +7,17 @@
         "y": 17,
         "width": 358,
         "height": 191,
-        "color": "#a131c9"
+        "color": "#7F7FB9"
+    },
+    {
+        "id": "Work Lounge",
+        "company": "Work Lounge",
+        "service": "Work Lounge",
+        "x": 1070,
+        "y": 30,
+        "width": 150,
+        "height": 35,
+        "color": "#00B9C3"
     },
     {
         "id": "IR Room",
@@ -17,7 +27,7 @@
         "y": 17,
         "width": 235,
         "height": 191,
-        "color": "#a131c9"
+        "color": "#90A784"
     },
     {
         "id": "cafe",
@@ -27,17 +37,17 @@
         "y": 221,
         "width": 358,
         "height": 46,
-        "color": "#ffaa00"
+        "color": "#DD8CAA"
     },
     {
         "id": "Business Lounge",
-        "company": "",
-        "service": "비즈니스 라운지",
+        "company": "비즈니스 라운지",
+        "service": "B2B를 위한 공간",
         "x": 27,
         "y": 671,
         "width": 107,
         "height": 167,
-        "color": "#a131c9"
+        "color": "#6CACDE"
     },
     {
         "id": "Artificial Room",
@@ -47,12 +57,12 @@
         "y": 17,
         "width": 239,
         "height": 179,
-        "color": "#a131c9"
+        "color": "#6A8DC0"
     },
     {
         "id": "R11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "심천시 레인보우 전자 유한회사",
+        "service": "",
         "x": 457,
         "y": 30,
         "width": 36,
@@ -61,8 +71,8 @@
     },
     {
         "id": "R12",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "네트로피",
+        "service": "",
         "x": 493,
         "y": 30,
         "width": 36,
@@ -70,29 +80,19 @@
         "color": ""
     },
     {
-        "id": "R13",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 529,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "R14",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 565,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
+        "id": "F11",
+        "company": "어드밴텍",
+        "service": "Bronze",
+        "x": 1126,
+        "y": 519,
+        "width": 71,
+        "height": 94,
+        "color": "#CD7F32"
     },
     {
         "id": "R15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 센싱코리아",
+        "service": "",
         "x": 601,
         "y": 30,
         "width": 36,
@@ -100,19 +100,9 @@
         "color": ""
     },
     {
-        "id": "R16",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 637,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
         "id": "R17",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "라이카지오시스템즈코리아",
+        "service": "",
         "x": 688,
         "y": 30,
         "width": 36,
@@ -121,8 +111,8 @@
     },
     {
         "id": "R18",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "AI 인공지능 엑스포 도쿄 2025",
+        "service": "",
         "x": 724,
         "y": 30,
         "width": 36,
@@ -130,9 +120,19 @@
         "color": ""
     },
     {
+        "id": "R19",
+        "company": "한국인공지능협회",
+        "service": "",
+        "x": 760,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": "blue"
+    },
+    {
         "id": "F32",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "한국자동차연구원",
+        "service": "",
         "x": 1070,
         "y": 123,
         "width": 90,
@@ -141,8 +141,8 @@
     },
     {
         "id": "F31",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "코오롱베니트(주)",
+        "service": "",
         "x": 1070,
         "y": 158,
         "width": 90,
@@ -150,31 +150,30 @@
         "color": ""
     },
     {
-        "id": "E31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1196,
-        "y": 123,
-        "width": 110,
-        "height": 70,
-        "color": ""
+        "id": "E16",
+        "company": "씨이랩",
+        "service": "Bronze",
+        "x": 1267,
+        "y": 519,
+        "width": 34,
+        "height": 94,
+        "color": "#CD7F32"
     },
     {
         "id": "D31",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "에이치피코리아",
+        "service": "",
         "x": 1354,
         "y": 123,
         "width": 72,
         "height": 70,
         "color": ""
     },
-
     {
         "id": "R31",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1070,
+        "company": "에이빙뉴스",
+        "service": "",
+        "x": 1250,
         "y": 30,
         "width": 36,
         "height": 35,
@@ -182,92 +181,28 @@
     },
     {
         "id": "R32",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1106,
+        "company": "위워크",
+        "service": "",
+        "x": 1286,
         "y": 30,
         "width": 36,
         "height": 35,
         "color": ""
     },
-    {
-        "id": "R33",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1142,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "R34",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1178,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "R35",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1214,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "R36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1250,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-    {
-        "id": "R37",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1250,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-
-
-
     {
         "id": "R41",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "엔디에스솔루션(주)",
+        "service": "",
         "x": 1400,
         "y": 30,
-        "width": 36,
+        "width": 71,
         "height": 35,
         "color": ""
     },
-    {
-        "id": "R42",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1436,
-        "y": 30,
-        "width": 36,
-        "height": 35,
-        "color": ""
-    },
-
     {
         "id": "L32",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)벨루가",
+        "service": "",
         "x": 457,
         "y": 123,
         "width": 36,
@@ -276,19 +211,18 @@
     },
     {
         "id": "L31",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 에너자이",
+        "service": "",
         "x": 457,
         "y": 158,
         "width": 36,
         "height": 35,
         "color": ""
     },
-
     {
         "id": "L37",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "달파",
+        "service": "",
         "x": 493,
         "y": 123,
         "width": 36,
@@ -296,20 +230,19 @@
         "color": ""
     },
     {
-        "id": "L36",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 493,
-        "y": 158,
-        "width": 36,
-        "height": 35,
-        "color": ""
+        "id": "K01",
+        "company": "비엔아이엔씨",
+        "service": "Bronze",
+        "x": 567,
+        "y": 741,
+        "width": 35,
+        "height": 71,
+        "color": "#CD7F32"
     },
-
     {
         "id": "K32",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)리모",
+        "service": "",
         "x": 567,
         "y": 123,
         "width": 36,
@@ -318,40 +251,38 @@
     },
     {
         "id": "K31",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "한국딥러닝",
+        "service": "",
         "x": 567,
         "y": 158,
         "width": 36,
         "height": 35,
         "color": ""
     },
-
     {
-        "id": "K37",
-        "company": "공개예정",
-        "service": "서비스명",
+        "id": "K06",
+        "company": "퓨어스토리지",
+        "service": "Bronze",
         "x": 603,
-        "y": 123,
-        "width": 36,
-        "height": 35,
-        "color": ""
+        "y": 741,
+        "width": 35,
+        "height": 71,
+        "color": "#CD7F32"
     },
     {
         "id": "K36",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "라이앤캐처스",
+        "service": "",
         "x": 603,
         "y": 158,
         "width": 36,
         "height": 35,
         "color": ""
     },
-
     {
         "id": "J32",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아이씨뱅큐(주) x Seeed Studio",
+        "service": "",
         "x": 688,
         "y": 123,
         "width": 36,
@@ -360,19 +291,18 @@
     },
     {
         "id": "J31",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)모빌린트",
+        "service": "",
         "x": 688,
         "y": 158,
         "width": 36,
         "height": 35,
         "color": ""
     },
-
     {
         "id": "J37",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "디써클",
+        "service": "",
         "x": 724,
         "y": 123,
         "width": 36,
@@ -381,8 +311,8 @@
     },
     {
         "id": "J36",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)도로시",
+        "service": "",
         "x": 724,
         "y": 158,
         "width": 36,
@@ -391,8 +321,8 @@
     },
     {
         "id": "L21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "바로에이아이",
+        "service": "",
         "x": 459,
         "y": 244,
         "width": 72,
@@ -401,8 +331,8 @@
     },
     {
         "id": "K22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "유알피",
+        "service": "",
         "x": 567,
         "y": 244,
         "width": 35,
@@ -411,8 +341,8 @@
     },
     {
         "id": "K21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "MinIO",
+        "service": "",
         "x": 567,
         "y": 291,
         "width": 35,
@@ -421,8 +351,8 @@
     },
     {
         "id": "K27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "그레이드테크놀로지",
+        "service": "",
         "x": 602,
         "y": 244,
         "width": 35,
@@ -431,29 +361,28 @@
     },
     {
         "id": "K26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "텐스토렌트 × 이슬림코리아",
+        "service": "",
         "x": 602,
         "y": 291,
         "width": 35,
         "height": 47,
         "color": ""
     },
-
     {
-        "id": "J22",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 687,
-        "y": 244,
-        "width": 35,
-        "height": 47,
-        "color": ""
+        "id": "H03",
+        "company": "한국전자통신연구원 ETRI",
+        "service": "Bronze",
+        "x": 910,
+        "y": 671,
+        "width": 71,
+        "height": 71,
+        "color": "#CD7F32"
     },
     {
         "id": "J21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "도스트일레븐",
+        "service": "",
         "x": 687,
         "y": 291,
         "width": 35,
@@ -462,8 +391,8 @@
     },
     {
         "id": "J27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "액션파워",
+        "service": "",
         "x": 722,
         "y": 244,
         "width": 35,
@@ -472,8 +401,8 @@
     },
     {
         "id": "J26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "하이퍼엑셀",
+        "service": "",
         "x": 722,
         "y": 291,
         "width": 35,
@@ -482,8 +411,8 @@
     },
     {
         "id": "i22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "동국시스템즈-HPE",
+        "service": "",
         "x": 795,
         "y": 244,
         "width": 35,
@@ -492,8 +421,8 @@
     },
     {
         "id": "i21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 폴라리스오피스",
+        "service": "",
         "x": 795,
         "y": 291,
         "width": 35,
@@ -502,8 +431,8 @@
     },
     {
         "id": "i27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 젠다이브",
+        "service": "",
         "x": 830,
         "y": 244,
         "width": 35,
@@ -512,8 +441,8 @@
     },
     {
         "id": "i26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)원모어시큐리티",
+        "service": "",
         "x": 830,
         "y": 291,
         "width": 35,
@@ -522,8 +451,8 @@
     },
     {
         "id": "H22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)딜랏",
+        "service": "",
         "x": 910,
         "y": 244,
         "width": 35,
@@ -532,8 +461,8 @@
     },
     {
         "id": "H21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "위앤유텍",
+        "service": "",
         "x": 910,
         "y": 291,
         "width": 35,
@@ -542,8 +471,8 @@
     },
     {
         "id": "H27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)엘리스그룹",
+        "service": "",
         "x": 945,
         "y": 244,
         "width": 35,
@@ -552,8 +481,8 @@
     },
     {
         "id": "H26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)미루웨어",
+        "service": "",
         "x": 945,
         "y": 291,
         "width": 35,
@@ -562,8 +491,8 @@
     },
     {
         "id": "G22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "클루닉스",
+        "service": "",
         "x": 1018,
         "y": 244,
         "width": 35,
@@ -572,8 +501,8 @@
     },
     {
         "id": "G21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "인천광역시",
+        "service": "",
         "x": 1018,
         "y": 291,
         "width": 35,
@@ -582,8 +511,8 @@
     },
     {
         "id": "G27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "교보디티에스",
+        "service": "",
         "x": 1053,
         "y": 244,
         "width": 35,
@@ -592,8 +521,8 @@
     },
     {
         "id": "G26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)코난테크놀로지",
+        "service": "",
         "x": 1053,
         "y": 291,
         "width": 35,
@@ -602,8 +531,8 @@
     },
     {
         "id": "F22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "데이톤",
+        "service": "",
         "x": 1126,
         "y": 244,
         "width": 35,
@@ -612,8 +541,8 @@
     },
     {
         "id": "F21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "가온플랫폼(주)",
+        "service": "",
         "x": 1126,
         "y": 291,
         "width": 35,
@@ -622,8 +551,8 @@
     },
     {
         "id": "F26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "마키나락스",
+        "service": "",
         "x": 1161,
         "y": 244,
         "width": 35,
@@ -632,8 +561,8 @@
     },
     {
         "id": "E22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "글루시스",
+        "service": "",
         "x": 1234,
         "y": 244,
         "width": 35,
@@ -642,8 +571,8 @@
     },
     {
         "id": "E21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "에스투더블유",
+        "service": "",
         "x": 1234,
         "y": 291,
         "width": 35,
@@ -652,8 +581,8 @@
     },
     {
         "id": "E26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)링크제니시스",
+        "service": "",
         "x": 1269,
         "y": 244,
         "width": 35,
@@ -662,8 +591,8 @@
     },
     {
         "id": "D21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)누리콘",
+        "service": "",
         "x": 1354,
         "y": 244,
         "width": 35,
@@ -672,8 +601,8 @@
     },
     {
         "id": "D27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "서버를 퐁당! (주)데이터빈",
+        "service": "",
         "x": 1389,
         "y": 244,
         "width": 35,
@@ -682,8 +611,8 @@
     },
     {
         "id": "D26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 세인티",
+        "service": "",
         "x": 1389,
         "y": 291,
         "width": 35,
@@ -692,18 +621,28 @@
     },
     {
         "id": "C22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)스퀴즈비츠",
+        "service": "",
         "x": 1462,
         "y": 244,
-        "width": 70,
+        "width": 35,
+        "height": 47,
+        "color": ""
+    },
+    {
+        "id": "C27",
+        "company": "(주)디엠티랩스",
+        "service": "",
+        "x": 1497,
+        "y": 244,
+        "width": 35,
         "height": 47,
         "color": ""
     },
     {
         "id": "C21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 유펜디",
+        "service": "",
         "x": 1462,
         "y": 291,
         "width": 35,
@@ -712,8 +651,8 @@
     },
     {
         "id": "C26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "한국기계전기전자시험연구원",
+        "service": "",
         "x": 1497,
         "y": 291,
         "width": 35,
@@ -722,53 +661,48 @@
     },
     {
         "id": "P21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "경북소프트웨어마이스터고등학교",
+        "service": "",
         "x": 101,
         "y": 298,
         "width": 35,
         "height": 108,
         "color": ""
     },
-
     {
         "id": "P28",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "고려사이버대학교",
+        "service": "",
         "x": 136,
         "y": 298,
         "width": 35,
         "height": 36,
         "color": ""
     },
-
     {
-        "id": "P27",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 136,
-        "y": 334,
-        "width": 35,
-        "height": 36,
-        "color": ""
+        "id": "G03",
+        "company": "주식회사 이안",
+        "service": "Bronze",
+        "x": 1017,
+        "y": 671,
+        "width": 71,
+        "height": 71,
+        "color": "#CD7F32"
     },
-
     {
         "id": "P26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "이니그마(주)",
+        "service": "",
         "x": 136,
         "y": 370,
         "width": 35,
         "height": 36,
         "color": ""
     },
-
-
     {
         "id": "N22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "중소벤처기업진흥공단",
+        "service": "",
         "x": 215,
         "y": 314,
         "width": 35,
@@ -777,8 +711,8 @@
     },
     {
         "id": "N21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)코드크래프트",
+        "service": "",
         "x": 215,
         "y": 351,
         "width": 35,
@@ -787,8 +721,8 @@
     },
     {
         "id": "N27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "에이앤지테크놀로지",
+        "service": "",
         "x": 250,
         "y": 314,
         "width": 35,
@@ -797,8 +731,8 @@
     },
     {
         "id": "N26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)에이데이타",
+        "service": "",
         "x": 250,
         "y": 351,
         "width": 35,
@@ -807,8 +741,8 @@
     },
     {
         "id": "M22",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)데이터에듀",
+        "service": "",
         "x": 335,
         "y": 314,
         "width": 35,
@@ -817,8 +751,8 @@
     },
     {
         "id": "M21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)에이아이네이션",
+        "service": "",
         "x": 335,
         "y": 351,
         "width": 70,
@@ -827,8 +761,8 @@
     },
     {
         "id": "M27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)에이치쓰리솔루션",
+        "service": "",
         "x": 370,
         "y": 314,
         "width": 35,
@@ -837,19 +771,18 @@
     },
     {
         "id": "P14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "부산기계공업고등학교",
+        "service": "",
         "x": 101,
         "y": 435,
         "width": 35,
         "height": 74,
         "color": ""
     },
-
     {
         "id": "P20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "빛과수학/코드온코드",
+        "service": "",
         "x": 136,
         "y": 435,
         "width": 35,
@@ -858,8 +791,8 @@
     },
     {
         "id": "P19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "한국과학기술연구원 ㆍ (주)엠83",
+        "service": "",
         "x": 136,
         "y": 472,
         "width": 35,
@@ -868,8 +801,8 @@
     },
     {
         "id": "P11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "대덕소프트웨어마이스터고등학교",
+        "service": "",
         "x": 101,
         "y": 543,
         "width": 35,
@@ -877,19 +810,19 @@
         "color": ""
     },
     {
-        "id": "P17",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 136,
-        "y": 543,
-        "width": 35,
-        "height": 37,
-        "color": ""
+        "id": "E31",
+        "company": "레노버",
+        "service": "Gold",
+        "x": 1196,
+        "y": 123,
+        "width": 110,
+        "height": 70,
+        "color": "#FFD700"
     },
     {
         "id": "P11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "대덕소프트웨어마이스터고등학교",
+        "service": "",
         "x": 136,
         "y": 580,
         "width": 35,
@@ -898,8 +831,8 @@
     },
     {
         "id": "N15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "어니컴 주식회사",
+        "service": "",
         "x": 215,
         "y": 435,
         "width": 35,
@@ -908,8 +841,8 @@
     },
     {
         "id": "N14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "나라원시스템",
+        "service": "",
         "x": 215,
         "y": 472,
         "width": 35,
@@ -918,8 +851,8 @@
     },
     {
         "id": "N20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "슬렉슨",
+        "service": "",
         "x": 250,
         "y": 435,
         "width": 35,
@@ -928,41 +861,38 @@
     },
     {
         "id": "N19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "유라클",
+        "service": "",
         "x": 250,
         "y": 472,
         "width": 35,
         "height": 37,
         "color": ""
     },
-    
     {
         "id": "B21",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "디딤365(주)",
+        "service": "",
         "x": 1569,
         "y": 244,
         "width": 36,
         "height": 105,
         "color": ""
     },
-
     {
         "id": "B27",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "다비스",
+        "service": "",
         "x": 1604,
         "y": 244,
         "width": 36,
         "height": 70,
         "color": ""
     },
-
     {
         "id": "B26",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "프렌들리에이아이",
+        "service": "",
         "x": 1604,
         "y": 314,
         "width": 36,
@@ -971,19 +901,18 @@
     },
     {
         "id": "B13",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)에이아이웍스",
+        "service": "",
         "x": 1569,
         "y": 394,
         "width": 36,
         "height": 105,
         "color": ""
     },
-
     {
         "id": "B20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)단비아이엔씨",
+        "service": "",
         "x": 1604,
         "y": 394,
         "width": 36,
@@ -992,8 +921,8 @@
     },
     {
         "id": "B18",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)파워젠",
+        "service": "",
         "x": 1604,
         "y": 429,
         "width": 36,
@@ -1002,8 +931,8 @@
     },
     {
         "id": "Q07",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "대구소프트웨어마이스터고등학교",
+        "service": "",
         "x": 28,
         "y": 514,
         "width": 34,
@@ -1012,8 +941,8 @@
     },
     {
         "id": "Q10",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "부산소프트웨어마이스터고등학교",
+        "service": "",
         "x": 28,
         "y": 406,
         "width": 34,
@@ -1022,8 +951,8 @@
     },
     {
         "id": "Q13",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "광주소프트웨어 마이스터고등학교",
+        "service": "",
         "x": 28,
         "y": 298,
         "width": 34,
@@ -1032,8 +961,8 @@
     },
     {
         "id": "A16",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아르고스 아이덴티티 코리아",
+        "service": "",
         "x": 1677,
         "y": 245,
         "width": 34,
@@ -1042,8 +971,8 @@
     },
     {
         "id": "A15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)코코링크",
+        "service": "",
         "x": 1677,
         "y": 281,
         "width": 34,
@@ -1052,8 +981,8 @@
     },
     {
         "id": "A14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "투비소프트",
+        "service": "",
         "x": 1677,
         "y": 317,
         "width": 34,
@@ -1062,8 +991,8 @@
     },
     {
         "id": "A13",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)네오와인 - NeoAI+",
+        "service": "",
         "x": 1677,
         "y": 353,
         "width": 34,
@@ -1072,8 +1001,8 @@
     },
     {
         "id": "A12",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "ICT 규제샌드박스",
+        "service": "",
         "x": 1677,
         "y": 389,
         "width": 34,
@@ -1082,8 +1011,8 @@
     },
     {
         "id": "A11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "윌콘에이아이",
+        "service": "",
         "x": 1677,
         "y": 425,
         "width": 34,
@@ -1092,8 +1021,8 @@
     },
     {
         "id": "A10",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아이디비",
+        "service": "",
         "x": 1677,
         "y": 461,
         "width": 34,
@@ -1102,8 +1031,8 @@
     },
     {
         "id": "A09",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)연무기술",
+        "service": "",
         "x": 1677,
         "y": 497,
         "width": 34,
@@ -1112,8 +1041,8 @@
     },
     {
         "id": "A08",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)유니버스에이아이",
+        "service": "",
         "x": 1677,
         "y": 533,
         "width": 34,
@@ -1122,8 +1051,8 @@
     },
     {
         "id": "A07",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "인공지능팩토리",
+        "service": "",
         "x": 1677,
         "y": 569,
         "width": 34,
@@ -1132,8 +1061,8 @@
     },
     {
         "id": "A06",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)제이지비퍼블릭",
+        "service": "",
         "x": 1677,
         "y": 605,
         "width": 34,
@@ -1142,8 +1071,8 @@
     },
     {
         "id": "A05",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "디윅스",
+        "service": "",
         "x": 1677,
         "y": 641,
         "width": 34,
@@ -1152,8 +1081,8 @@
     },
     {
         "id": "A04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "앱테스트에이아이",
+        "service": "",
         "x": 1677,
         "y": 677,
         "width": 34,
@@ -1162,8 +1091,8 @@
     },
     {
         "id": "A03",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "뷰즈온더고 서베이 & 데이터",
+        "service": "",
         "x": 1677,
         "y": 713,
         "width": 34,
@@ -1172,8 +1101,8 @@
     },
     {
         "id": "A02",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)메이팜소프트",
+        "service": "",
         "x": 1677,
         "y": 749,
         "width": 34,
@@ -1182,8 +1111,8 @@
     },
     {
         "id": "A01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "4S Mapper",
+        "service": "",
         "x": 1677,
         "y": 785,
         "width": 34,
@@ -1192,8 +1121,8 @@
     },
     {
         "id": "N12",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "협업툴 플로우",
+        "service": "",
         "x": 214,
         "y": 543,
         "width": 72,
@@ -1202,8 +1131,8 @@
     },
     {
         "id": "N11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "구독형 AI 분석 서비스 Quetta(퀘타)",
+        "service": "",
         "x": 214,
         "y": 577,
         "width": 72,
@@ -1212,8 +1141,8 @@
     },
     {
         "id": "M11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)비아이매트릭스",
+        "service": "",
         "x": 335,
         "y": 542,
         "width": 71,
@@ -1222,8 +1151,8 @@
     },
     {
         "id": "M15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "슈어소프트테크(주)",
+        "service": "",
         "x": 335,
         "y": 423,
         "width": 70,
@@ -1232,8 +1161,8 @@
     },
     {
         "id": "M14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "인스웨이브",
+        "service": "",
         "x": 335,
         "y": 458,
         "width": 35,
@@ -1242,8 +1171,8 @@
     },
     {
         "id": "M19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "관악아날로그(주)",
+        "service": "",
         "x": 370,
         "y": 458,
         "width": 35,
@@ -1252,30 +1181,28 @@
     },
     {
         "id": "L14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아이크래프트",
+        "service": "",
         "x": 458,
         "y": 381,
         "width": 36,
         "height": 94,
         "color": ""
     },
-
     {
-        "id": "L19",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 494,
-        "y": 381,
-        "width": 36,
-        "height": 94,
-        "color": ""
+        "id": "L01",
+        "company": "케이투스 코리아",
+        "service": "Gold",
+        "x": 458,
+        "y": 706,
+        "width": 69,
+        "height": 107,
+        "color": "#FFD700"
     },
-
     {
         "id": "K15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)퀀텀씨엔에스",
+        "service": "",
         "x": 567,
         "y": 381,
         "width": 36,
@@ -1284,8 +1211,8 @@
     },
     {
         "id": "K14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "YH데이타베이스",
+        "service": "",
         "x": 567,
         "y": 428,
         "width": 36,
@@ -1293,19 +1220,19 @@
         "color": ""
     },
     {
-        "id": "K20",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 381,
-        "width": 36,
-        "height": 47,
-        "color": ""
+        "id": "i01",
+        "company": "셀바스AI",
+        "service": "Gold",
+        "x": 795,
+        "y": 707,
+        "width": 71,
+        "height": 107,
+        "color": "#FFD700"
     },
     {
         "id": "K19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "제논",
+        "service": "",
         "x": 603,
         "y": 428,
         "width": 36,
@@ -1314,8 +1241,8 @@
     },
     {
         "id": "J15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "앨리비",
+        "service": "",
         "x": 687,
         "y": 381,
         "width": 36,
@@ -1324,8 +1251,8 @@
     },
     {
         "id": "J20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)오픈네트웍시스템",
+        "service": "",
         "x": 723,
         "y": 381,
         "width": 36,
@@ -1334,8 +1261,8 @@
     },
     {
         "id": "J14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 케이엘큐브",
+        "service": "",
         "x": 687,
         "y": 428,
         "width": 36,
@@ -1344,8 +1271,8 @@
     },
     {
         "id": "J19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "블루닷(주)",
+        "service": "",
         "x": 723,
         "y": 428,
         "width": 36,
@@ -1353,19 +1280,19 @@
         "color": ""
     },
     {
-        "id": "i15",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 795,
-        "y": 381,
-        "width": 36,
-        "height": 47,
-        "color": ""
+        "id": "F01",
+        "company": "페르소나에이아이",
+        "service": "Gold",
+        "x": 1126,
+        "y": 707,
+        "width": 71,
+        "height": 107,
+        "color": "#FFD700"
     },
     {
         "id": "i14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "피아스페이스(주)",
+        "service": "",
         "x": 795,
         "y": 428,
         "width": 36,
@@ -1374,8 +1301,8 @@
     },
     {
         "id": "i19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "Sophoton Technology",
+        "service": "",
         "x": 831,
         "y": 439,
         "width": 36,
@@ -1384,626 +1311,642 @@
     },
     {
         "id": "i20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "엑스퍼트아이엔씨",
+        "service": "",
         "x": 832,
         "y": 381,
         "width": 36,
         "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "크레버스",
+        "service": "",
         "x": 910,
         "y": 381,
         "width": 33,
         "height": 48,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "과학플랫폼 SOAK",
+        "service": "",
         "x": 910,
         "y": 429,
         "width": 33,
         "height": 48,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "STA테스팅컨설팅",
+        "service": "",
         "x": 943,
         "y": 381,
         "width": 33,
         "height": 48,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)이든티앤에스",
+        "service": "",
         "x": 943,
         "y": 429,
         "width": 33,
         "height": 48,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "G15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "툰스퀘어",
+        "service": "",
         "x": 1018,
         "y": 381,
         "width": 70,
         "height": 35,
         "color": ""
-      },
-
-      {
+    },
+    {
         "id": "G14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)휴인스",
+        "service": "",
         "x": 1018,
         "y": 440,
         "width": 70,
         "height": 35,
         "color": ""
-      },
-
-      {
+    },
+    {
         "id": "F15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "YUAN HIGH-TECH DEVELOPMENT\nCo., Ltd.",
+        "service": "",
         "x": 1126,
         "y": 381,
         "width": 35,
         "height": 46,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "F14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "엠클라우독",
+        "service": "",
         "x": 1126,
         "y": 427,
         "width": 35,
         "height": 46,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "F20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "디노티시아 주식회사",
+        "service": "",
         "x": 1161,
         "y": 381,
         "width": 35,
         "height": 46,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "F19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)틱택코리아",
+        "service": "",
         "x": 1161,
         "y": 427,
         "width": 35,
         "height": 46,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "E14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "Avnet Asia Pte Ltd",
+        "service": "",
         "x": 1233,
         "y": 381,
         "width": 35,
         "height": 94,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "E20",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "한국인공지능검증원",
+        "service": "",
         "x": 1269,
         "y": 381,
         "width": 34,
         "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "E19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아고라",
+        "service": "",
         "x": 1269,
         "y": 440,
         "width": 34,
         "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "D14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "알서포트(주)",
+        "service": "",
         "x": 1354,
         "y": 381,
         "width": 35,
         "height": 97,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "D19",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "인이지",
+        "service": "",
         "x": 1389,
         "y": 381,
         "width": 35,
         "height": 97,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "C15",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)명인이노",
+        "service": "",
         "x": 1462,
         "y": 382,
         "width": 70,
         "height": 34,
         "color": ""
-      },
-
-      {
+    },
+    {
         "id": "C14",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)씨에스리",
+        "service": "",
         "x": 1462,
         "y": 440,
         "width": 70,
         "height": 35,
         "color": ""
-      },
-
-      {
+    },
+    {
         "id": "L12",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "엔유엘",
+        "service": "",
         "x": 458,
         "y": 518,
         "width": 34,
         "height": 47,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "L17",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "오토딥러닝 비전검사 (주)뉴로클",
+        "service": "",
         "x": 492,
         "y": 518,
         "width": 34,
         "height": 47,
         "color": ""
-      },
-      {
-        "id": "L11",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 458,
-        "y": 566,
-        "width": 68,
-        "height": 47,
-        "color": ""
-      },
-      {
+    },
+    {
+        "id": "D01",
+        "company": "(주)마음에이아이",
+        "service": "Gold / 이사사",
+        "x": 1354,
+        "y": 671,
+        "width": 70,
+        "height": 143,
+        "color": "#FFD700"
+    },
+    {
         "id": "K11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "올거나이즈",
+        "service": "",
         "x": 567,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "K16",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)사미텍",
+        "service": "",
         "x": 602,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "J11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "딥엑스",
+        "service": "",
         "x": 687,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "J16",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 구르머스",
+        "service": "",
         "x": 722,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "i11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "몬드리안에이아이(주)",
+        "service": "",
         "x": 795,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "i16",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)씨에이에스",
+        "service": "",
         "x": 830,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "헤일로",
+        "service": "",
         "x": 910,
         "y": 519,
         "width": 35,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "헤일로",
+        "service": "",
         "x": 945,
         "y": 567,
         "width": 35,
         "height": 47,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "H17",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "리드스피커코리아",
+        "service": "",
         "x": 945,
         "y": 519,
         "width": 35,
         "height": 48,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "G11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 아이브",
+        "service": "",
         "x": 1017,
         "y": 518,
         "width": 70,
         "height": 96,
         "color": ""
-      },
-      {
-        "id": "F11",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1126,
-        "y": 519,
-        "width": 71,
-        "height": 94,
-        "color": ""
-      },
-      {
-        "id": "E11",
-        "company": "공개예정",
-        "service": "서비스명",
+    },
+    {
+        "id": "E01",
+        "company": "슈퍼마이크로",
+        "service": "Platinum",
         "x": 1233,
-        "y": 519,
-        "width": 34,
-        "height": 94,
-        "color": ""
-      },
-      {
-        "id": "E16",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1267,
-        "y": 519,
-        "width": 34,
-        "height": 94,
-        "color": ""
-      },
-      {
+        "y": 671,
+        "width": 70,
+        "height": 143,
+        "color": "green"
+    },
+    {
+        "id": "K37",
+        "company": "주식회사 에이아이비즈",
+        "service": "부회장사",
+        "x": 603,
+        "y": 123,
+        "width": 36,
+        "height": 35,
+        "color": "purple"
+    },
+    {
+        "id": "P17",
+        "company": "주식회사 시스트란",
+        "service": "부회장사",
+        "x": 136,
+        "y": 543,
+        "width": 35,
+        "height": 37,
+        "color": "purple"
+    },
+    {
         "id": "D11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "에이프리카",
+        "service": "",
         "x": 1354,
         "y": 519,
         "width": 71,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "C11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "이스트소프트",
+        "service": "",
         "x": 1461,
         "y": 518,
         "width": 71,
         "height": 95,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "B11",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "아이비테크 주식회사",
+        "service": "",
         "x": 1569,
         "y": 543,
         "width": 71,
         "height": 71,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "N01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "리더스시스템즈",
+        "service": "",
         "x": 179,
         "y": 671,
         "width": 70,
         "height": 143,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "M04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "씨이제이엔코리아(주)",
+        "service": "",
         "x": 298,
         "y": 671,
         "width": 106,
         "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "M01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "펀진",
+        "service": "",
         "x": 298,
         "y": 706,
         "width": 106,
         "height": 107,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "L04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "래블업 주식회사",
+        "service": "",
         "x": 458,
         "y": 671,
         "width": 69,
         "height": 34,
         "color": ""
-      },
-      {
-        "id": "L01",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 458,
-        "y": 706,
-        "width": 69,
-        "height": 107,
-        "color": ""
-      },
-      {
+    },
+    {
+        "id": "R14",
+        "company": "큐빅",
+        "service": "프리미엄",
+        "x": 565,
+        "y": 30,
+        "width": 36,
+        "height": 35,
+        "color": "#2F4F4F"
+    },
+    {
         "id": "K03",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "버넥트",
+        "service": "",
         "x": 567,
         "y": 671,
         "width": 71,
         "height": 70,
         "color": ""
-      },
-      {
-        "id": "K01",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 567,
-        "y": 741,
+    },
+    {
+        "id": "L36",
+        "company": "주식회사 하이퍼놀로지",
+        "service": "프리미엄",
+        "x": 493,
+        "y": 158,
+        "width": 36,
+        "height": 35,
+        "color": "#2F4F4F"
+    },
+    {
+        "id": "J22",
+        "company": "대구경북경제자유구역청(DGFEZ)",
+        "service": "프리미엄",
+        "x": 687,
+        "y": 244,
         "width": 35,
-        "height": 71,
-        "color": ""
-      },
-      {
-        "id": "K06",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 603,
-        "y": 741,
-        "width": 35,
-        "height": 71,
-        "color": ""
-      },
-      {
+        "height": 47,
+        "color": "#2F4F4F"
+    },
+    {
         "id": "J04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "콕스웨이브",
+        "service": "",
         "x": 687,
         "y": 671,
         "width": 71,
         "height": 36,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "J01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "슈퍼브에이아이",
+        "service": "",
         "x": 687,
         "y": 707,
         "width": 71,
         "height": 107,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "i04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)무하유",
+        "service": "",
         "x": 795,
         "y": 671,
         "width": 71,
         "height": 36,
         "color": ""
-      },
-      {
-        "id": "i01",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 795,
-        "y": 707,
-        "width": 71,
-        "height": 107,
-        "color": ""
-      },
-      {
-        "id": "H03",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 910,
-        "y": 671,
-        "width": 71,
-        "height": 71,
-        "color": ""
-      },
-      {
+    },
+    {
+        "id": "P27",
+        "company": "삼일회계법인",
+        "service": "프리미엄",
+        "x": 136,
+        "y": 334,
+        "width": 35,
+        "height": 36,
+        "color": "#2F4F4F"
+    },
+    {
+        "id": "L19",
+        "company": "임팩티브AI",
+        "service": "프리미엄",
+        "x": 494,
+        "y": 381,
+        "width": 36,
+        "height": 94,
+        "color": "#2F4F4F"
+    },
+    {
         "id": "H01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "와이즈스톤",
+        "service": "",
         "x": 910,
         "y": 742,
         "width": 71,
         "height": 71,
         "color": ""
-      },
-      {
-        "id": "G03",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1017,
-        "y": 671,
-        "width": 71,
-        "height": 71,
-        "color": ""
-      },
-      {
+    },
+    {
+        "id": "K20",
+        "company": "주식회사 아이핌",
+        "service": "프리미엄",
+        "x": 603,
+        "y": 381,
+        "width": 36,
+        "height": 47,
+        "color": "#2F4F4F"
+    },
+    {
         "id": "G01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "(주)사이냅소프트",
+        "service": "",
         "x": 1017,
         "y": 742,
         "width": 71,
         "height": 71,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "F04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 넥스브이",
+        "service": "",
         "x": 1126,
         "y": 671,
         "width": 71,
         "height": 36,
         "color": ""
-      },
-      {
-        "id": "F01",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1126,
-        "y": 707,
-        "width": 71,
-        "height": 107,
-        "color": ""
-      },
-      {
-        "id": "E01",
-        "company": "공개예정",
-        "service": "서비스명",
+    },
+    {
+        "id": "i15",
+        "company": "(주)버즈니",
+        "service": "프리미엄",
+        "x": 795,
+        "y": 381,
+        "width": 36,
+        "height": 47,
+        "color": "#2F4F4F"
+    },
+    {
+        "id": "L11",
+        "company": "주식회사 비솔",
+        "service": "프리미엄",
+        "x": 458,
+        "y": 566,
+        "width": 68,
+        "height": 47,
+        "color": "#2F4F4F"
+    },
+    {
+        "id": "E11",
+        "company": "레인보우브레인",
+        "service": "프리미엄",
         "x": 1233,
+        "y": 519,
+        "width": 34,
+        "height": 94,
+        "color": "#2F4F4F"
+    },
+    {
+        "id": "C08",
+        "company": "티쓰리큐 주식회사",
+        "service": "프리미엄",
+        "x": 1496,
         "y": 671,
-        "width": 70,
-        "height": 143,
-        "color": ""
-      },
-      {
-        "id": "D01",
-        "company": "공개예정",
-        "service": "서비스명",
-        "x": 1354,
-        "y": 671,
-        "width": 70,
-        "height": 143,
-        "color": ""
-      },
-      {
+        "width": 35,
+        "height": 70,
+        "color": "#2F4F4F"
+    },
+    {
         "id": "C03",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "YIZHANG XINCHENGUANG ELECTRONICS Co., Ltd.",
+        "service": "",
         "x": 1461,
         "y": 671,
-        "width": 71,
-        "height": 71,
+        "width": 35,
+        "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
+        "id": "C04",
+        "company": "주식회사 비씨엠테크",
+        "service": "",
+        "x": 1461,
+        "y": 706,
+        "width": 35,
+        "height": 35,
+        "color": ""
+    },
+    {
         "id": "C01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "베슬에이아이",
+        "service": "",
         "x": 1461,
         "y": 742,
         "width": 71,
         "height": 71,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "B04",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "주식회사 올빅뎃",
+        "service": "프리미엄",
         "x": 1569,
         "y": 671,
         "width": 36,
         "height": 35,
-        "color": ""
-      },
-      {
+        "color": "#2F4F4F"
+    },
+    {
         "id": "B09",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "퍼즐데이터",
+        "service": "",
         "x": 1605,
         "y": 671,
         "width": 36,
         "height": 35,
         "color": ""
-      },
-      {
+    },
+    {
         "id": "B01",
-        "company": "공개예정",
-        "service": "서비스명",
+        "company": "라온피플(주)",
+        "service": "",
         "x": 1569,
         "y": 706,
         "width": 72,
         "height": 108,
         "color": ""
-      }
+    }
 ]
