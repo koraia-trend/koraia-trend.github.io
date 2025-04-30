@@ -1574,9 +1574,19 @@
         "company": "(주)씨에이에스",
         "service": "",
         "x": 830,
+        "y": 566,
+        "width": 35,
+        "height": 47,
+        "color": ""
+    },
+    {
+        "id": "i17",
+        "company": "(주)페블러스",
+        "service": "",
+        "x": 830,
         "y": 519,
         "width": 35,
-        "height": 95,
+        "height": 47,
         "color": ""
     },
     {
