@@ -82,7 +82,7 @@
     {
         "id": "F11",
         "company": "어드밴텍",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 1126,
         "y": 519,
         "width": 71,
@@ -122,7 +122,7 @@
     {
         "id": "R19",
         "company": "한국인공지능협회",
-        "service": "",
+        "service": "info@koraia.org 문의",
         "x": 760,
         "y": 30,
         "width": 36,
@@ -152,7 +152,7 @@
     {
         "id": "E16",
         "company": "씨이랩",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 1267,
         "y": 519,
         "width": 34,
@@ -232,7 +232,7 @@
     {
         "id": "K01",
         "company": "비엔아이엔씨",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 567,
         "y": 741,
         "width": 35,
@@ -262,7 +262,7 @@
     {
         "id": "K06",
         "company": "퓨어스토리지",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 603,
         "y": 741,
         "width": 35,
@@ -372,7 +372,7 @@
     {
         "id": "H03",
         "company": "한국전자통신연구원 ETRI",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 910,
         "y": 671,
         "width": 71,
@@ -682,7 +682,7 @@
     {
         "id": "G03",
         "company": "주식회사 이안",
-        "service": "Bronze",
+        "service": "Bronze 스폰서",
         "x": 1017,
         "y": 671,
         "width": 71,
@@ -812,7 +812,7 @@
     {
         "id": "E31",
         "company": "레노버",
-        "service": "Gold",
+        "service": "Gold 스폰서",
         "x": 1196,
         "y": 123,
         "width": 110,
@@ -1192,7 +1192,7 @@
     {
         "id": "L01",
         "company": "케이투스 코리아",
-        "service": "Gold",
+        "service": "Gold 스폰서",
         "x": 458,
         "y": 706,
         "width": 69,
@@ -1222,7 +1222,7 @@
     {
         "id": "i01",
         "company": "셀바스AI",
-        "service": "Gold",
+        "service": "Gold 스폰서",
         "x": 795,
         "y": 707,
         "width": 71,
@@ -1282,7 +1282,7 @@
     {
         "id": "F01",
         "company": "페르소나에이아이",
-        "service": "Gold",
+        "service": "Gold 스폰서",
         "x": 1126,
         "y": 707,
         "width": 71,
@@ -1512,7 +1512,7 @@
     {
         "id": "D01",
         "company": "(주)마음에이아이",
-        "service": "Gold / 이사사",
+        "service": "Gold 스폰서 / 이사사 회원사",
         "x": 1354,
         "y": 671,
         "width": 70,
@@ -1622,7 +1622,7 @@
     {
         "id": "E01",
         "company": "슈퍼마이크로",
-        "service": "Platinum",
+        "service": "Platinum 스폰서",
         "x": 1233,
         "y": 671,
         "width": 70,
@@ -1722,7 +1722,7 @@
     {
         "id": "R14",
         "company": "큐빅",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 565,
         "y": 30,
         "width": 36,
@@ -1742,7 +1742,7 @@
     {
         "id": "L36",
         "company": "주식회사 하이퍼놀로지",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 493,
         "y": 158,
         "width": 36,
@@ -1752,7 +1752,7 @@
     {
         "id": "J22",
         "company": "대구경북경제자유구역청(DGFEZ)",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 687,
         "y": 244,
         "width": 35,
@@ -1792,7 +1792,7 @@
     {
         "id": "P27",
         "company": "삼일회계법인",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 136,
         "y": 334,
         "width": 35,
@@ -1802,7 +1802,7 @@
     {
         "id": "L19",
         "company": "임팩티브AI",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 494,
         "y": 381,
         "width": 36,
@@ -1822,7 +1822,7 @@
     {
         "id": "K20",
         "company": "주식회사 아이핌",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 603,
         "y": 381,
         "width": 36,
@@ -1852,7 +1852,7 @@
     {
         "id": "i15",
         "company": "(주)버즈니",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 795,
         "y": 381,
         "width": 36,
@@ -1862,7 +1862,7 @@
     {
         "id": "L11",
         "company": "주식회사 비솔",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 458,
         "y": 566,
         "width": 68,
@@ -1872,7 +1872,7 @@
     {
         "id": "E11",
         "company": "레인보우브레인",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 1233,
         "y": 519,
         "width": 34,
@@ -1882,7 +1882,7 @@
     {
         "id": "C08",
         "company": "티쓰리큐 주식회사",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 1496,
         "y": 671,
         "width": 35,
@@ -1922,7 +1922,7 @@
     {
         "id": "B04",
         "company": "주식회사 올빅뎃",
-        "service": "프리미엄",
+        "service": "프리미엄 회원사",
         "x": 1569,
         "y": 671,
         "width": 36,
