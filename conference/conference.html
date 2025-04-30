@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI EXPO KOREA 2025 컨퍼런스</title> 
+    <title>AI EXPO KOREA 2025 컨퍼런스</title>
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Meta 태그 추가 -->
     <meta name="description" content="컨퍼런스 정보를 한 곳에서 편리하게 확인하세요.">
@@ -18,264 +19,464 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Basic Reset & Root Variables */
-/* Basic Reset & Root Variables */
-:root {
-    --primary-accent: #4a90e2; /* 차분한 파란색 포인트 */
-    --light-text: #f0f0f0;
-    --medium-text: #a0a0a0;
-    --dark-bg-transparent: rgba(15, 18, 23, 0.85); /* 콘텐츠 영역 배경 (어둡고 반투명) */
-    --border-color: rgba(255, 255, 255, 0.15);
-    --border-radius: 6px;
-}
+        /* Basic Reset & Root Variables */
+        :root {
+            --primary-accent: #4a90e2;
+            /* 차분한 파란색 포인트 */
+            --light-text: #f0f0f0;
+            --medium-text: #a0a0a0;
+            --dark-bg-transparent: rgba(15, 18, 23, 0.95);
+            /* 콘텐츠 영역 배경 (어둡고 반투명) */
+            --border-color: rgba(255, 255, 255, 0.15);
+            --border-radius: 6px;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.6;
-    color: var(--light-text); /* 기본 텍스트 색상 밝게 */
-    background-color: #111; /* 이미지 로딩 전 배경색 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--light-text);
+            /* 기본 텍스트 색상 밝게 */
+            background-color: #111;
+            /* 이미지 로딩 전 배경색 */
 
-    /* 배경 이미지 설정 */
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), /* 어두운 오버레이 */
-        url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* 배경 고정 */
+            /* 배경 이미지 설정 */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.55)),
+                /* 어두운 오버레이 */
+                url(background.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* 배경 고정 */
 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-/* Header */
-.site-header {
-    background-color: rgba(0, 0, 0, 0.5); /* 헤더 배경 약간 투명 */
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    width: 100%;
-}
+        /* Header */
+        .site-header {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 헤더 배경 약간 투명 */
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            width: 100%;
+        }
 
-.header-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        .header-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.site-header h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
+        .site-header h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
 
-.header-subtitle {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--medium-text);
-}
+        .header-subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--medium-text);
+        }
 
 
-/* Main Schedule Container */
-.schedule-container {
-    width: 100%;
-    max-width: 960px; /* 중앙 콘텐츠 영역 최대 너비 */
-    margin: 40px auto; /* 위아래 여백 및 중앙 정렬 */
-    padding: 30px;
-    background-color: var(--dark-bg-transparent); /* 반투명 어두운 배경 */
-    border-radius: var(--border-radius);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    flex-grow: 1; /* 푸터가 아래에 붙도록 */
-}
+        /* Main Schedule Container */
+        .schedule-container {
+            width: 100%;
+            max-width: 960px;
+            /* 중앙 콘텐츠 영역 최대 너비 */
+            margin: 40px auto;
+            /* 위아래 여백 및 중앙 정렬 */
+            padding: 30px;
+            background-color: var(--dark-bg-transparent);
+            /* 반투명 어두운 배경 */
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            flex-grow: 1;
+            /* 푸터가 아래에 붙도록 */
+        }
 
-/* Day Section */
-.schedule-day {
-    margin-bottom: 40px;
-}
+        /* Day Section */
+        .schedule-day {
+            margin-bottom: 40px;
+        }
 
-.schedule-day:last-child {
-    margin-bottom: 0;
-}
+        .schedule-day:last-child {
+            margin-bottom: 0;
+        }
 
-.schedule-day h2 {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--light-text);
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-color);
-}
+        .schedule-day h2 {
+            /* background-color: wheat; /* 이 부분은 제거하거나 주석 처리합니다 */
+            font-size: 1.6rem;
+            font-weight: 500;
+            /* color: var(--light-text); /* 그라디언트 배경 시 텍스트 색상 조절 필요 */
+            color: #ffffff; /* 배경색이 어두워지므로 텍스트 색상은 흰색 계열 유지 */
+            margin-bottom: 25px;
+            /* padding-bottom: 10px; /* 아래 패딩은 background 영역에 포함되도록 조정 */
+            padding: 15px 20px; /* 위, 아래, 좌우 패딩 추가 */
+            /* border-bottom: 1px solid var(--border-color); /* 배경이 생겼으므로 하단 보더는 선택사항 */
+            border-radius: var(--border-radius) var(--border-radius) 0 0; /* 상단 모서리만 둥글게 */
+            background: linear-gradient(to right, rgb(74, 81, 226), rgba(249, 5, 5, 0.05)); /* 차분한 파란색 계열의 미묘한 그라디언트 */
+            /* 또는 더 어두운 계열의 그라디언트 */
+            /* background: linear-gradient(to right, rgba(30, 35, 45, 0.8), rgba(30, 35, 45, 0.6)); */
+        }
 
-.schedule-day h2 i {
-    margin-right: 10px;
-    color: var(--primary-accent);
-}
+        .schedule-day h2 i {
+            margin-right: 10px;
+            color: var(--primary-accent); /* 아이콘 색상 유지 */
+        }
 
-/* Event List */
-.events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* 이벤트 아이템 사이 간격 */
-}
+        /* Event List */
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* 이벤트 아이템 사이 간격 */
+        }
 
-.event-item {
-    display: flex;
-    flex-wrap: wrap; /* 모바일에서 줄바꿈 허용 */
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-    gap: 15px; /* 내부 요소 간 간격 */
-}
+        .event-item {
+            display: flex;
+            flex-wrap: wrap;
+            /* 모바일에서 줄바꿈 허용 */
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            gap: 15px;
+            /* 내부 요소 간 간격 */
+        }
 
-.event-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
+        .event-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
 
-.event-time {
-    flex: 0 0 130px; /* 시간 영역 고정 너비 */
-    font-size: 0.9rem;
-    color: var(--medium-text);
-}
+        .event-time {
+            flex: 0 0 130px;
+            /* 시간 영역 고정 너비 */
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
 
-.event-time i,
-.event-info i {
-    margin-right: 8px;
-    width: 16px; /* 아이콘 정렬 위한 너비 */
-    text-align: center;
-    color: var(--medium-text);
-}
+        .event-time i,
+        .event-info i {
+            margin-right: 8px;
+            width: 16px;
+            /* 아이콘 정렬 위한 너비 */
+            text-align: center;
+            color: var(--medium-text);
+        }
 
-.event-info {
-    flex: 1 1 auto; /* 정보 영역이 남은 공간 차지 */
-    min-width: 250px; /* 최소 너비 확보 */
-}
+        .event-info {
+            flex: 1 1 auto;
+            /* 정보 영역이 남은 공간 차지 */
+            min-width: 250px;
+            /* 최소 너비 확보 */
+        }
 
-.event-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--light-text);
-    margin-bottom: 5px;
-}
+        .event-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--light-text);
+            margin-bottom: 5px;
+        }
 
-.event-title i {
-   color: var(--primary-accent); /* 제목 아이콘 색상 */
-}
+        .event-title i {
+            color: var(--primary-accent);
+            /* 제목 아이콘 색상 */
+        }
 
-.event-location {
-    font-size: 0.9rem;
-    color: var(--medium-text);
-}
+        .event-location {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
 
-.event-action {
-    flex: 0 0 auto; /* 액션 버튼 영역 크기 자동 */
-    margin-left: auto; /* 오른쪽 끝으로 밀기 (데스크탑) */
-    padding-left: 15px; /* 왼쪽 요소와 간격 */
-}
+        .event-action {
+            flex: 0 0 auto;
+            /* 액션 버튼 영역 크기 자동 */
+            margin-left: auto;
+            /* 오른쪽 끝으로 밀기 (데스크탑) */
+            padding-left: 15px;
+            /* 왼쪽 요소와 간격 */
+        }
 
+/* 빨간색 모던 배경 버튼 스타일 */
 .btn-details {
     display: inline-block;
-    background-color: transparent;
-    border: 1px solid var(--primary-accent);
-    color: var(--primary-accent);
+    /* 기본 배경색을 빨간색 계열로 설정 */
+    background-color: #e74c3c; /* 모던한 밝은 빨강 */
+    /* border: 1px solid var(--primary-accent); /* 기존 파란색 보더 제거 */
+    border: 1px solid #e74c3c; /* 배경색과 동일하거나 유사한 색상으로 보더 설정 */
+    color: #ffffff; /* 배경색에 대비되는 흰색 텍스트 */
     padding: 8px 15px;
     font-size: 0.85rem;
     font-weight: 500;
     text-decoration: none;
     border-radius: var(--border-radius);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* 호버/포커스 시 배경색, 그림자, transform 등의 변화에 트랜지션 적용 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    will-change: transform, box-shadow; /* 애니메이션 성능 최적화 */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.btn-details i {
-    margin-right: 6px;
+/* 호버 및 포커스 시 효과 */
+.btn-details:hover,
+.btn-details:focus {
+    /* 호버 시 배경색 살짝 어둡게 변경 */
+    background-color: #c0392b; /* 살짝 어두운 빨강 */
+    color: #ffffff; /* 텍스트 색상 유지 */
+    transform: translateY(-3px); /* 살짝 위로 올라오는 효과 */
+     /* 빨간색 계열의 은은한 그림자 효과 */
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    text-decoration: none; /* 밑줄 생김 방지 */
+    outline: none; /* 포커스 시 기본 외곽선 제거 */
 }
 
-.btn-details:hover {
-    background-color: var(--primary-accent);
-    color: #ffffff;
+/* (선택 사항) 버튼 클릭 시 효과 */
+.btn-details:active {
+    transform: translateY(0); /* 클릭 시 원래 위치로 */
+     /* 그림자 살짝 줄어듦 */
+    box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
 }
 
-/* 링크 없는 항목 처리 */
-.event-item.no-link .no-reg-info {
-    font-size: 0.9rem;
-    color: var(--medium-text);
-    font-style: italic;
-}
-
-/* Footer */
-.site-footer {
-    background-color: rgba(0, 0, 0, 0.7); /* 푸터 배경 */
-    color: var(--medium-text);
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: auto; /* 내용이 짧아도 항상 아래에 위치 */
-    border-top: 1px solid var(--border-color);
-    width: 100%;
-}
-
-.site-footer a {
-    color: var(--medium-text);
-    text-decoration: none;
-    font-weight: 400;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.site-footer a:hover {
-    color: var(--primary-accent);
-}
-
-.site-footer i {
-    margin-right: 5px;
-}
-
-.site-footer .copyright {
-    font-size: 0.85rem;
-    color: #777;
-    margin-top: 15px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .site-header h1 { font-size: 1.8rem; }
-    .schedule-container {
-        margin: 20px 15px; /* 모바일 여백 조정 */
-        padding: 20px;
+/* (선택 사항) 미묘한 펄스 애니메이션 (빨간색 테마에 맞게 수정) */
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.5);
     }
-    .schedule-day h2 { font-size: 1.4rem; }
-    .event-item { flex-direction: column; align-items: flex-start; } /* 세로 정렬 */
-    .event-time { flex-basis: auto; margin-bottom: 5px; }
-    .event-action { margin-left: 0; margin-top: 10px; } /* 버튼 왼쪽 정렬 */
+    70% {
+        box-shadow: 0 0 0 12px rgba(231, 76, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
 }
 
-@media (max-width: 480px) {
-    .site-header h1 { font-size: 1.5rem; }
-    .header-subtitle { font-size: 0.9rem; }
-    .schedule-container { margin: 15px 10px; padding: 15px; }
-    .schedule-day h2 { font-size: 1.3rem; }
-    .event-title { font-size: 1rem; }
-    .event-time, .event-location, .no-reg-info { font-size: 0.85rem; }
-    .btn-details { padding: 6px 12px; font-size: 0.8rem; }
+/* 펄스 애니메이션 적용을 위한 클래스 (클래스 이름 충돌 방지 위해 변경) */
+.btn-details.pulse-red-effect {
+    animation: pulse-red 2s infinite; /* 2초 간격으로 무한 반복 */
 }
+
+/* (선택 사항) 마우스 오버 시 펄스 애니메이션 중지 */
+.btn-details.pulse-red-effect:hover {
+    animation-play-state: paused;
+}
+
+        /* 링크 없는 항목 처리 */
+        .event-item.no-link .no-reg-info {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            font-style: italic;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* 푸터 배경 */
+            color: var(--medium-text);
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: auto;
+            /* 내용이 짧아도 항상 아래에 위치 */
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+
+        .site-footer a {
+            color: var(--medium-text);
+            text-decoration: none;
+            font-weight: 400;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: var(--primary-accent);
+        }
+
+        .site-footer i {
+            margin-right: 5px;
+        }
+
+        .site-footer .copyright {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 15px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .site-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .schedule-container {
+                margin: 20px 15px;
+                /* 모바일 여백 조정 */
+                padding: 20px;
+            }
+
+            .schedule-day h2 {
+                font-size: 1.4rem;
+            }
+
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            /* 세로 정렬 */
+            .event-time {
+                flex-basis: auto;
+                margin-bottom: 5px;
+            }
+
+            .event-action {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            /* 버튼 왼쪽 정렬 */
+        }
+
+        @media (max-width: 480px) {
+            .site-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .schedule-container {
+                margin: 15px 10px;
+                padding: 15px;
+            }
+
+            .schedule-day h2 {
+                font-size: 1.3rem;
+            }
+
+            .event-title {
+                font-size: 1rem;
+            }
+
+            .event-time,
+            .event-location,
+            .no-reg-info {
+                font-size: 0.85rem;
+            }
+
+            .btn-details {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Event Banner Styling */
+        .event-banner-container {
+            width: 90%;
+            /* 부모 요소 너비의 90%만 사용 */
+            max-width: 800px;
+            /* 배너의 최대 너비 지정 (예: 800px, 배너 크기에 맞게 조절) */
+            margin: 30px auto;
+            /* 중앙 정렬 및 위아래 여백 추가 */
+            overflow: hidden;
+            /* 이미지가 컨테이너를 넘지 않도록 */
+            border-radius: var(--border-radius);
+            /* 부모 컨테이너와 동일한 모서리 둥글기 */
+            background-color: #222;
+            /* 이미지 로딩 전 또는 없을 때 배경 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            /* 그림자 추가 */
+            text-align: center;
+            /* 이미지를 컨테이너 중앙에 배치 (block 요소가 아닌 경우) */
+        }
+
+        .event-banner-container img {
+            display: block;
+            /* 이미지를 블록 요소로 만들어 margin auto 적용 가능하게 함 */
+            width: 100%;
+            /* 컨테이너 너비에 맞게 이미지 크기 조절 */
+            height: auto;
+            /* 종횡비 유지를 위해 높이는 자동으로 설정 */
+            max-width: 100%;
+            /* 혹시 모를 상황에 대비해 최대 너비 100% 설정 */
+        }
+
+        /* 이벤트 아이템과 배너 컨테이너 사이의 간격 조절 */
+        .events-list article.event-item+.event-banner-container {
+            margin-top: 20px;
+            /* 이벤트 아이템 아래 배너 컨테이너의 위쪽 여백 */
+        }
+
+        .events-list .event-banner-container+article.event-item {
+            margin-top: 20px;
+            /* 배너 컨테이너 아래 이벤트 아이템의 위쪽 여백 */
+        }
+
+
+        /* 반응형 조정 */
+        @media (max-width: 768px) {
+            .event-banner-container {
+                width: 95%;
+                /* 작은 화면에서는 너비 조금 늘림 */
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .events-list article.event-item+.event-banner-container {
+                margin-top: 15px;
+            }
+
+            .events-list .event-banner-container+article.event-item {
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-banner-container {
+                width: 100%;
+                /* 아주 작은 화면에서는 꽉 채움 */
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .events-list article.event-item+.event-banner-container {
+                margin-top: 10px;
+            }
+
+            .events-list .event-banner-container+article.event-item {
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!DOCTYPE html>
     <html lang="ko">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -284,8 +485,10 @@ body {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+            rel="stylesheet">
     </head>
+
     <body>
         <header class="site-header">
             <div class="header-container">
@@ -293,13 +496,16 @@ body {
                 <p class="header-subtitle">Conference Schedule</p>
             </div>
         </header>
-    
+
         <main class="schedule-container">
-    
+
             <section class="schedule-day">
                 <h2><i class="fas fa-calendar-day"></i> 5월 14일 (수)</h2>
                 <div class="events-list">
                     <article class="event-item">
+                        <div class="event-banner-container">
+                            <img src="11.png" alt="컨퍼런스 포스터 이미지">
+                        </div>
                         <div class="event-time"><i class="far fa-clock"></i> 10:30 - 16:30</div>
                         <div class="event-info">
                             <h3 class="event-title"><i class="fas fa-microphone-alt"></i> All In 메인컨퍼런스</h3>
@@ -313,7 +519,7 @@ body {
                     </article>
                 </div>
             </section>
-    
+
             <section class="schedule-day">
                 <h2><i class="fas fa-calendar-day"></i> 5월 15일 (목)</h2>
                 <div class="events-list">
@@ -329,7 +535,11 @@ body {
                             </a>
                         </div>
                     </article>
+
                     <article class="event-item">
+                        <div class="event-banner-container">
+                            <img src="44.png" alt="컨퍼런스 포스터 이미지">
+                        </div>
                         <div class="event-time"><i class="far fa-clock"></i> 10:00 - 13:00</div>
                         <div class="event-info">
                             <h3 class="event-title"><i class="fas fa-atom"></i> AI와 양자기술의 경계를 넘다</h3>
@@ -341,7 +551,11 @@ body {
                             </a>
                         </div>
                     </article>
-                    <article class="event-item no-link"> <div class="event-time"><i class="far fa-clock"></i> 10:30 - 15:50</div>
+                    <article class="event-item no-link">
+                        <div class="event-banner-container">
+                            <img src="33.png" alt="컨퍼런스 포스터 이미지">
+                        </div>
+                        <div class="event-time"><i class="far fa-clock"></i> 10:30 - 15:50</div>
                         <div class="event-info">
                             <h3 class="event-title"><i class="fas fa-handshake"></i> AI Synergy Global Link</h3>
                             <p class="event-location"><i class="fas fa-map-marker-alt"></i> IR 룸</p>
@@ -354,11 +568,14 @@ body {
                     </article>
                 </div>
             </section>
-    
+
             <section class="schedule-day">
                 <h2><i class="fas fa-calendar-day"></i> 5월 16일 (금)</h2>
                 <div class="events-list">
                     <article class="event-item">
+                        <div class="event-banner-container">
+                            <img src="55.png" alt="컨퍼런스 포스터 이미지">
+                        </div>
                         <div class="event-time"><i class="far fa-clock"></i> 10:30 - 15:50</div>
                         <div class="event-info">
                             <h3 class="event-title"><i class="fas fa-award"></i> 제 4회 육군 인공지능 아이디어 공모전</h3>
@@ -372,9 +589,9 @@ body {
                     </article>
                 </div>
             </section>
-    
+
         </main>
-    
+
         <footer class="site-footer">
             <p>
                 <a href="https://koraia.org" target="_blank"><i class="fas fa-building"></i> 한국인공지능협회</a> |
@@ -382,6 +599,7 @@ body {
             </p>
             <p class="copyright">&copy; 2025 AI EXPO KOREA. All Rights Reserved.</p>
         </footer>
-    
-</body>
-</html>
+
+    </body>
+
+    </html>
