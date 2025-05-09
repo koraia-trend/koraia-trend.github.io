@@ -1131,13 +1131,13 @@
     },
     {
         "id": "N11",
-        "company": "구독형 AI 분석 서비스 Quetta(퀘타)",
+        "company": "주식회사 뉴엔에이아이",
         "service": "",
         "x": 214,
         "y": 577,
         "width": 72,
         "height": 34,
-        "color": ""
+        "color": "purple"
     },
     {
         "id": "M11",
