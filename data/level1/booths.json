@@ -33,9 +33,9 @@
         "id": "cafe",
         "company": "카페",
         "service": "coffee 타임",
-        "x": 28,
+        "x": 136,
         "y": 221,
-        "width": 358,
+        "width": 108,
         "height": 46,
         "color": "#DD8CAA"
     },
@@ -947,6 +947,16 @@
         "y": 406,
         "width": 34,
         "height": 108,
+        "color": ""
+    },
+    {
+        "id": "Q21",
+        "company": "(주)아바엔터테인먼트",
+        "service": "",
+        "x": 28,
+        "y": 221,
+        "width": 36,
+        "height": 35,
         "color": ""
     },
     {
