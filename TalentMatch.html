@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대화형 면접 배정 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Warm Neutral (Slate, Gray, White) with a Teal accent -->
+    <!-- Application Structure Plan: A two-column, task-oriented dashboard is used. The left column contains all user inputs and controls (applicant data, time slot management, run button) and key status outputs (assignment stats, unassigned lists). The right column is dedicated to the primary results (the final schedule grid and a preference analysis chart). This structure creates an intuitive workflow: configure inputs on the left, click 'run', and see the detailed results on the right. This separation of controls and results makes the application easy to understand and operate, now with enhanced data and time slot input flexibility and detailed feedback. -->
+    <!-- Visualization & Content Choices: 
+        - Applicant Preferences -> HTML Table with inline editing, row addition/deletion, and paste-from-text-area functionality -> Goal: Organize & Input -> To provide structured input data clearly with flexible entry methods. Interaction: Editable cells, 'Add Row' button, 'Delete Selected Rows' button, 'Paste Data' button.
+        - Interview Time Slots -> HTML Table with inline editing, row addition/deletion, and paste-from-text-area functionality -> Goal: Configure -> To allow flexible definition and modification of interview time slots. Interaction: Editable cells, 'Add Time Slot' button, 'Delete Selected Time Slots' button, 'Paste Time Slots' button.
+        - Final Schedule -> HTML Grid/Table -> Goal: Organize -> The clearest way to display a time-based schedule against multiple entities (companies), making it easy to see who is scheduled where and when.
+        - Unassigned Applicants (Overall) -> HTML List -> Goal: Inform -> To provide a simple, direct list of participants who received zero assignments.
+        - Unassigned Preferred Companies (Detailed) -> HTML List with conditional highlighting and reason display -> Goal: Inform & Diagnose -> To provide a specific list of preferences that could not be met for any applicant, with visual emphasis (red text) on those who have many unassigned preferences, and a concise reason for non-assignment, aiding in manual adjustment or further analysis.
+        - Company Preference -> Bar Chart (Chart.js) with dynamic tab switching for 1st-5th priorities and a dedicated list view for un-preferred companies -> Goal: Compare & Inform -> To provide quick visual analysis of company popularity based on selected preference rank, and clearly list companies that received no attention, offering deeper insights for event organizers.
+        - Assignment Stats -> Key Metrics (HTML) -> Goal: Inform -> To give an immediate, high-level overview of the assignment results (total, assigned, unassigned).
+        All interactions are handled by vanilla JavaScript, and visualizations are rendered to HTML Canvas via Chart.js.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 40vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+        }
+        .table-cell {
+            padding: 0.75rem;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+            font-size: 0.875rem;
+        }
+        .table-header {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: #374151;
+        }
+        .tab-button {
+            /* 기본 버튼 스타일 */
+            padding: 0.5rem 1rem; /* px-4 py-2 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 600; /* font-semibold */
+            font-size: 0.875rem; /* text-sm */
+
+            /* 그라디언트 배경 및 텍스트 색상 */
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); /* bg-gradient-to-br */
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(243, 244, 246, 0)); /* from-gray-100 to-gray-200 */
+            --tw-gradient-from: #f3f4f6; /* gray-100 */
+            --tw-gradient-to: #e5e7eb; /* gray-200 */
+            color: #4b5563; /* text-gray-700 */
+
+            /* 테두리 및 그림자 */
+            border: 1px solid #d1d5db; /* border border-gray-300 */
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
+            
+            /* 전환 효과 */
+            transition-property: all; /* transition-all */
+            transition-duration: 300ms; /* duration-300 */
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out */
+
+            /* 호버 효과 */
+            --tw-gradient-from-hover: #e5e7eb; /* hover:from-gray-200 */
+            --tw-gradient-to-hover: #d1d5db; /* hover:to-gray-300 */
+            --tw-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* hover:shadow-md */
+        }
+        .tab-button.active {
+            /* 활성 상태 버튼 스타일 */
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); /* bg-gradient-to-br */
+            --tw-gradient-from: #0d9488; /* from-teal-500 */
+            --tw-gradient-to: #0f766e; /* to-teal-700 */
+            color: #ffffff; /* text-white */
+
+            /* 테두리 및 그림자 */
+            border-color: #0d9488; /* border-teal-600 */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+
+            /* 호버 효과 (활성 상태) */
+            --tw-gradient-from-hover: #0f766e; /* hover:from-teal-600 */
+            --tw-gradient-to-hover: #134e4a; /* hover:to-teal-800 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800">대화형 면접 배정 시스템</h1>
+            <p class="mt-2 text-slate-600">참여자들의 희망 기업 우선순위에 따라 면접 시간을 자동으로 배정합니다.</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Controls & Inputs -->
+            <div class="lg:col-span-1 flex flex-col gap-8">
+                
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">1. 참여자 및 희망 기업 입력</h2>
+                    <p class="text-sm text-slate-600 mb-4">아래 표의 내용을 직접 수정하거나, Excel/표 데이터를 붙여넣어 관리할 수 있습니다.</p>
+                    
+                    <div class="mb-4">
+                        <label for="excel-paste-area" class="block text-sm font-medium text-slate-700 mb-2">Excel/표 데이터 붙여넣기 (이름, 1순위, 2순위, ..., 5순위 순으로)</label>
+                        <textarea id="excel-paste-area" rows="5" class="w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"></textarea>
+                        <button id="paste-data-btn" class="mt-2 w-full bg-slate-200 text-slate-800 font-bold py-2 px-4 rounded-lg hover:bg-slate-300 transition-colors duration-300">
+                            붙여넣은 데이터 적용
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto mb-4">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="table-cell table-header w-12">선택</th>
+                                    <th class="table-cell table-header">이름</th>
+                                    <th class="table-cell table-header">1순위</th>
+                                    <th class="table-cell table-header">2순위</th>
+                                    <th class="table-cell table-header">3순위</th>
+                                    <th class="table-cell table-header">4순위</th>
+                                    <th class="table-cell table-header">5순위</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicants-table-body">
+                                <!-- JS로 내용 생성 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="add-row-btn" class="flex-1 bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50">
+                            행 추가
+                        </button>
+                        <button id="delete-selected-rows-btn" class="flex-1 bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                            선택 행 삭제
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">2. 면접 시간 관리</h2>
+                    <p class="text-sm text-slate-600 mb-4">아래 표의 내용을 직접 수정하거나, 시간을 붙여넣어 관리할 수 있습니다.</p>
+                    
+                    <div class="mb-4">
+                        <label for="time-slots-paste-area" class="block text-sm font-medium text-slate-700 mb-2">면접 시간 붙여넣기 (한 줄에 한 시간씩)</label>
+                        <textarea id="time-slots-paste-area" rows="3" class="w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"></textarea>
+                        <button id="paste-time-slots-btn" class="mt-2 w-full bg-slate-200 text-slate-800 font-bold py-2 px-4 rounded-lg hover:bg-slate-300 transition-colors duration-300">
+                            붙여넣은 시간 적용
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto mb-4">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="table-cell table-header w-12">선택</th>
+                                    <th class="table-cell table-header">면접 시간</th>
+                                </tr>
+                            </thead>
+                            <tbody id="time-slots-table-body">
+                                <!-- JS로 내용 생성 -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="add-time-slot-btn" class="flex-1 bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50">
+                            시간 추가
+                        </button>
+                        <button id="delete-selected-time-slots-btn" class="flex-1 bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                            선택 시간 삭제
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-3">3. 배정 실행</h2>
+                     <p class="text-sm text-slate-600 mb-4">우선순위가 높은 기업에 먼저 배정되며, 해당 기업의 슬롯이 없을 경우 다음 우선순위 기업으로 자동 전환하여 배정을 시도합니다. **동일 우선순위 및 기업을 희망하는 참여자들 사이에서는 무작위로 배정됩니다.** 한 참여자가 여러 희망 기업에 대해 면접을 볼 수 있도록 최대 5개까지 슬롯을 채웁니다.</p>
+                    <button id="run-assignment-btn" class="w-full bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50">
+                         면접 배정 실행
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">배정 현황</h2>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-sm text-slate-500">총 참여자</p>
+                            <p id="total-applicants" class="text-2xl font-bold text-teal-600">0</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500">배정 완료</p>
+                            <p id="assigned-applicants" class="text-2xl font-bold text-green-600">0</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500">배정 실패</p>
+                            <p id="unassigned-applicants-count" class="text-2xl font-bold text-red-600">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">미배정 참여자 (전체)</h2>
+                    <p class="text-sm text-slate-600 mb-2">어떤 면접에도 배정되지 못한 참여자 목록입니다.</p>
+                    <ul id="unassigned-list" class="space-y-2 text-slate-700">
+                       <li class="text-gray-400">배정 실행 후 표시됩니다.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">미배정 희망 기업 상세</h2>
+                    <p class="text-sm text-slate-600 mb-2">5개 희망 기업 중 슬롯이 없어 배정되지 못한 면접 목록입니다.</p>
+                    <ul id="unassigned-preferences-list" class="space-y-2 text-slate-700 list-disc list-inside">
+                       <li class="text-gray-400">배정 실행 후 표시됩니다.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Results & Visualization -->
+            <div class="lg:col-span-2 flex flex-col gap-8">
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">최종 면접 시간표</h2>
+                    <div id="schedule-container" class="overflow-x-auto">
+                        <p class="text-gray-400 text-center py-8">'배정 실행' 버튼을 눌러 시간표를 생성하세요.</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <h2 class="text-xl font-bold mb-4">기업별 선호도 분석</h2>
+                     <p class="text-sm text-slate-600 mb-4">각 순위별 희망 기업 선호도와 아무도 지원하지 않은 기업을 확인하세요.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button class="tab-button active" data-view="1">1순위</button>
+                        <button class="tab-button" data-view="2">2순위</button>
+                        <button class="tab-button" data-view="3">3순위</button>
+                        <button class="tab-button" data-view="4">4순위</button>
+                        <button class="tab-button" data-view="5">5순위</button>
+                        <button class="tab-button" data-view="none">아무도 지원 안 한 기업</button>
+                    </div>
+
+                    <div id="preference-chart-container" class="chart-container">
+                        <canvas id="preference-chart"></canvas>
+                    </div>
+
+                    <div id="no-applicant-companies-list-container" class="hidden mt-4">
+                        <h3 class="text-lg font-semibold mb-2">아무도 지원 안 한 기업 목록</h3>
+                        <ul id="no-applicant-companies-list" class="space-y-1 text-slate-700 list-disc list-inside">
+                            <!-- JS로 내용 생성 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- 초기 데이터 설정 ---
+    // '참여자 신청' 시트의 데이터를 기반으로 함
+    let applicantsData = [
+        { name: '홍길동', preferences: ['A', 'B', 'C', 'D', 'E'] },
+    ];
+
+    let allCompanies = []; // 모든 기업 목록은 데이터 로드/변경 시 업데이트
+
+    // 면접 시간은 이제 let으로 선언하여 동적으로 변경 가능하도록 함
+    let timeSlots = [
+        '13:00 ~ 13:20',
+        '13:25 ~ 13:45',
+        '13:50 ~ 14:10',
+        '14:30 ~ 14:50',
+        '14:55 ~ 15:15',
+        '15:20 ~ 15:40',
+        '16:00 ~ 16:20',
+        '16:25 ~ 16:45',
+        '16:50 ~ 17:10'
+    ];
+    
+    let preferenceChart = null;
+    let currentPreferenceView = '1'; // 현재 활성화된 선호도 탭 (1~5 또는 'none')
+    const UNASSIGNED_PREF_HIGHLIGHT_THRESHOLD = 3; // 이 값 이상 미배정 시 빨간색으로 표시
+
+    // --- UI 요소 ---
+    const applicantsTableBody = document.getElementById('applicants-table-body');
+    const runAssignmentBtn = document.getElementById('run-assignment-btn');
+    const scheduleContainer = document.getElementById('schedule-container');
+    const totalApplicantsEl = document.getElementById('total-applicants');
+    const assignedApplicantsEl = document.getElementById('assigned-applicants');
+    const unassignedCountEl = document.getElementById('unassigned-applicants-count');
+    const unassignedListEl = document.getElementById('unassigned-list');
+    const excelPasteArea = document.getElementById('excel-paste-area');
+    const pasteDataBtn = document.getElementById('paste-data-btn');
+    const addRowBtn = document.getElementById('add-row-btn');
+    const deleteSelectedRowsBtn = document.getElementById('delete-selected-rows-btn');
+    const unassignedPreferencesListEl = document.getElementById('unassigned-preferences-list');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const preferenceChartContainer = document.getElementById('preference-chart-container');
+    const noApplicantCompaniesListContainer = document.getElementById('no-applicant-companies-list-container');
+    const noApplicantCompaniesListEl = document.getElementById('no-applicant-companies-list');
+
+    // 새로 추가된 시간 관리 UI 요소
+    const timeSlotsTableBody = document.getElementById('time-slots-table-body');
+    const timeSlotsPasteArea = document.getElementById('time-slots-paste-area');
+    const pasteTimeSlotsBtn = document.getElementById('paste-time-slots-btn');
+    const addTimeSlotBtn = document.getElementById('add-time-slot-btn');
+    const deleteSelectedTimeSlotsBtn = document.getElementById('delete-selected-time-slots-btn');
+
+    // --- 헬퍼 함수 ---
+    // 회사 이름 정규화 (예: '소프트랩스'를 '주식회사 소프트랩스'로 통일)
+    const normalizeCompanyName = (companyName) => {
+        if (!companyName) return '';
+        const trimmedName = companyName.trim();
+        // '소프트랩스'와 '주식회사 소프트랩스'를 동일하게 처리
+        if (trimmedName === '소프트랩스' || trimmedName === '주식회사 소프트랩스') {
+            return '주식회사 소프트랩스';
+        }
+        return trimmedName;
+    };
+
+    const updateAllCompanies = () => {
+        const uniqueCompanies = new Set();
+        applicantsData.forEach(applicant => {
+            applicant.preferences.forEach(pref => {
+                const normalizedPref = normalizeCompanyName(pref);
+                if (normalizedPref !== '') {
+                    uniqueCompanies.add(normalizedPref);
+                }
+            });
+        });
+        allCompanies = Array.from(uniqueCompanies).sort();
+    };
+
+    // --- 렌더링 함수 ---
+    const renderApplicantsTable = () => {
+        applicantsTableBody.innerHTML = '';
+        applicantsData.forEach((applicant, index) => {
+            const row = document.createElement('tr');
+            row.className = "hover:bg-slate-50";
+            row.dataset.index = index; // 행 인덱스를 저장하여 삭제 시 사용
+
+            let cells = `<td class="table-cell"><input type="checkbox" class="row-checkbox" data-index="${index}"></td>`;
+            cells += `<td class="table-cell" contenteditable="true" data-field="name">${applicant.name}</td>`;
+            for (let i = 0; i < 5; i++) {
+                cells += `<td class="table-cell" contenteditable="true" data-field="pref-${i}">${applicant.preferences[i] || ''}</td>`;
+            }
+            row.innerHTML = cells;
+            applicantsTableBody.appendChild(row);
+        });
+        
+        applicantsTableBody.removeEventListener('input', handleApplicantsTableInput);
+        applicantsTableBody.addEventListener('input', handleApplicantsTableInput);
+
+        applicantsTableBody.removeEventListener('change', handleApplicantsCheckboxChange);
+        applicantsTableBody.addEventListener('change', handleApplicantsCheckboxChange);
+    };
+
+    const handleApplicantsTableInput = (e) => {
+        const target = e.target;
+        const rowElement = target.closest('tr');
+        if (!rowElement) return;
+        
+        const index = parseInt(rowElement.dataset.index);
+        const field = target.dataset.field;
+        
+        if (field === 'name') {
+            applicantsData[index].name = target.textContent;
+        } else if (field.startsWith('pref-')) {
+            const prefIndex = parseInt(field.split('-')[1]);
+            applicantsData[index].preferences[prefIndex] = target.textContent;
+        }
+        updateAll();
+    };
+
+    const handleApplicantsCheckboxChange = (e) => {
+        if (e.target.classList.contains('row-checkbox')) {
+            // No direct action needed here beyond the checkbox state itself
+        }
+    };
+
+    // 면접 시간표 렌더링 함수
+    const renderTimeSlotsTable = () => {
+        timeSlotsTableBody.innerHTML = '';
+        timeSlots.forEach((slot, index) => {
+            const row = document.createElement('tr');
+            row.className = "hover:bg-slate-50";
+            row.dataset.index = index;
+
+            let cells = `<td class="table-cell"><input type="checkbox" class="time-slot-checkbox" data-index="${index}"></td>`;
+            cells += `<td class="table-cell" contenteditable="true" data-field="time-slot">${slot}</td>`;
+            row.innerHTML = cells;
+            timeSlotsTableBody.appendChild(row);
+        });
+
+        timeSlotsTableBody.removeEventListener('input', handleTimeSlotsTableInput);
+        timeSlotsTableBody.addEventListener('input', handleTimeSlotsTableInput);
+
+        timeSlotsTableBody.removeEventListener('change', handleTimeSlotsCheckboxChange);
+        timeSlotsTableBody.addEventListener('change', handleTimeSlotsCheckboxChange);
+    };
+
+    const handleTimeSlotsTableInput = (e) => {
+        const target = e.target;
+        const rowElement = target.closest('tr');
+        if (!rowElement) return;
+
+        const index = parseInt(rowElement.dataset.index);
+        timeSlots[index] = target.textContent.trim();
+        // 시간 변경 시 즉시 배정을 재실행하지는 않음 (사용자가 '배정 실행' 버튼 누르도록)
+    };
+
+    const handleTimeSlotsCheckboxChange = (e) => {
+        if (e.target.classList.contains('time-slot-checkbox')) {
+            // No direct action needed here beyond the checkbox state itself
+        }
+    };
+
+    const renderSchedule = (schedule) => {
+        if (timeSlots.length === 0) {
+            scheduleContainer.innerHTML = '<p class="text-gray-400 text-center py-8">면접 시간이 설정되지 않았습니다. \'면접 시간 관리\'에서 시간을 추가해주세요.</p>';
+            return;
+        }
+        if (!schedule || Object.keys(schedule).every(time => Object.values(schedule[time]).every(val => val === null))) {
+            scheduleContainer.innerHTML = '<p class="text-gray-400 text-center py-8">\'배정 실행\' 버튼을 눌러 시간표를 생성하세요.</p>';
+            return;
+        }
+
+        const table = document.createElement('table');
+        table.className = 'w-full border-collapse';
+
+        let headerHtml = '<thead><tr><th class="table-cell table-header">시간</th>';
+        allCompanies.forEach(company => {
+            headerHtml += `<th class="table-cell table-header">${company}</th>`;
+        });
+        headerHtml += '</tr></thead>';
+        
+        let bodyHtml = '<tbody>';
+        timeSlots.forEach(time => {
+            bodyHtml += `<tr class="hover:bg-slate-50"><td class="table-cell table-header">${time}</td>`;
+            allCompanies.forEach(company => {
+                const applicantName = schedule[time]?.[company] || '';
+                const cellClass = applicantName ? 'font-semibold text-teal-700' : 'text-gray-400';
+                bodyHtml += `<td class="table-cell ${cellClass}">${applicantName || '-'}</td>`;
+            });
+            bodyHtml += '</tr>';
+        });
+        bodyHtml += '</tbody>';
+        
+        table.innerHTML = headerHtml + bodyHtml;
+        scheduleContainer.innerHTML = '';
+        scheduleContainer.appendChild(table);
+    };
+
+    const renderStats = (assignedCount, unassignedNames) => {
+        totalApplicantsEl.textContent = applicantsData.length;
+        assignedApplicantsEl.textContent = assignedCount;
+        unassignedCountEl.textContent = unassignedNames.length;
+        
+        unassignedListEl.innerHTML = '';
+        if (unassignedNames.length > 0) {
+            unassignedNames.forEach(name => {
+                const li = document.createElement('li');
+                li.textContent = name;
+                unassignedListEl.appendChild(li);
+            });
+        } else {
+            unassignedListEl.innerHTML = '<li class="text-gray-400">미배정 참여자가 없습니다.</li>';
+        }
+    };
+    
+    // 미배정 희망 기업 상세 정보를 렌더링 (빨간색 강조 로직 포함)
+    const renderUnassignedPreferencesDetails = (details, applicantUnassignedPreferenceCounts) => {
+        unassignedPreferencesListEl.innerHTML = ''; // 기존 내용 초기화
+        if (details.length > 0) {
+            const ul = document.createElement('ul');
+            ul.className = 'space-y-1 text-slate-700 list-disc list-inside';
+            details.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name}: ${item.preferenceRank}순위 - ${item.company} (${item.reason})`;
+                
+                // 해당 참여자의 미배정 희망 기업 수가 임계값을 넘으면 빨간색으로 강조
+                const unassignedCountForApplicant = applicantUnassignedPreferenceCounts.get(item.name) || 0;
+                if (unassignedCountForApplicant >= UNASSIGNED_PREF_HIGHLIGHT_THRESHOLD) {
+                    li.classList.add('text-red-600', 'font-bold');
+                }
+                ul.appendChild(li);
+            });
+            unassignedPreferencesListEl.appendChild(ul);
+        } else {
+            unassignedPreferencesListEl.innerHTML = '<li class="text-gray-400">모든 희망 기업이 배정되었습니다.</li>';
+        }
+    };
+
+    const renderNoApplicantCompaniesList = () => {
+        noApplicantCompaniesListEl.innerHTML = '';
+        const companiesWithAnyPreference = new Set();
+        applicantsData.forEach(applicant => {
+            applicant.preferences.forEach(pref => {
+                const normalizedPref = normalizeCompanyName(pref);
+                if (normalizedPref !== '') {
+                    companiesWithAnyPreference.add(normalizedPref);
+                }
+            });
+        });
+
+        const noPreferenceCompanies = allCompanies.filter(company => !companiesWithAnyPreference.has(company));
+
+        if (noPreferenceCompanies.length > 0) {
+            noPreferenceCompanies.forEach(company => {
+                const li = document.createElement('li');
+                li.textContent = company;
+                noApplicantCompaniesListEl.appendChild(li);
+            });
+        } else {
+            noApplicantCompaniesListEl.innerHTML = '<li class="text-gray-400">모든 기업에 지원자가 있습니다.</li>';
+        }
+    };
+
+
+    const createOrUpdatePreferenceChart = (rank) => {
+        const ctx = document.getElementById('preference-chart').getContext('2d');
+        
+        if (allCompanies.length === 0) {
+            if (preferenceChart) {
+                preferenceChart.destroy();
+                preferenceChart = null;
+            }
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            return;
+        }
+
+        let preferenceCounts;
+        let chartLabel;
+
+        if (rank === 'none') {
+            preferenceChartContainer.classList.add('hidden');
+            noApplicantCompaniesListContainer.classList.remove('hidden');
+            renderNoApplicantCompaniesList();
+            return;
+        } else {
+            preferenceChartContainer.classList.remove('hidden');
+            noApplicantCompaniesListContainer.classList.add('hidden');
+
+            const priorityIndex = parseInt(rank) - 1;
+
+            preferenceCounts = allCompanies.map(company => {
+                return applicantsData.filter(a => 
+                    a.preferences[priorityIndex] && normalizeCompanyName(a.preferences[priorityIndex]) === company
+                ).length;
+            });
+            chartLabel = `${rank}순위 선택 수`;
+        }
+
+        if (preferenceChart) {
+            preferenceChart.data.labels = allCompanies;
+            preferenceChart.data.datasets[0].data = preferenceCounts;
+            preferenceChart.data.datasets[0].label = chartLabel;
+            preferenceChart.update();
+        } else {
+            preferenceChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: allCompanies,
+                    datasets: [{
+                        label: chartLabel,
+                        data: preferenceCounts,
+                        backgroundColor: 'rgba(13, 148, 136, 0.6)',
+                        borderColor: 'rgba(13, 148, 136, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    // --- 핵심 로직 ---
+    const runAssignment = () => {
+        if (timeSlots.length === 0) {
+            alert('면접 시간을 하나 이상 추가해주세요.'); // Use alert for critical user action needed
+            return;
+        }
+
+        let schedule = {};
+        timeSlots.forEach(time => {
+            schedule[time] = {};
+            allCompanies.forEach(company => {
+                schedule[time][company] = null;
+            });
+        });
+
+        // 각 참여자가 어떤 기업들에 배정되었는지 추적하여, 한 기업에 중복 배정되지 않도록 함
+        const applicantAssignedCompanies = new Map();
+        applicantsData.forEach(applicant => {
+            applicantAssignedCompanies.set(applicant.name, new Set());
+        });
+
+        const shuffledApplicants = [...applicantsData].sort(() => Math.random() - 0.5);
+
+        for (let priority = 0; priority < 5; priority++) {
+            for (const applicant of shuffledApplicants) {
+                const preferredCompanyRaw = applicant.preferences[priority];
+                const preferredCompany = normalizeCompanyName(preferredCompanyRaw);
+
+                if (!preferredCompany || preferredCompany === '' || applicantAssignedCompanies.get(applicant.name).has(preferredCompany)) {
+                    continue;
+                }
+
+                for (const time of timeSlots) {
+                    if (allCompanies.includes(preferredCompany) && schedule[time] && schedule[time][preferredCompany] === null) {
+                        schedule[time][preferredCompany] = applicant.name;
+                        applicantAssignedCompanies.get(applicant.name).add(preferredCompany);
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // 총 배정 완료 참여자 수 계산
+        let totalAssignedCount = 0;
+        applicantsData.forEach(applicant => {
+            if (applicantAssignedCompanies.get(applicant.name).size > 0) {
+                totalAssignedCount++;
+            }
+        });
+
+        // '미배정 참여자 (전체)' 목록 생성 (어떤 면접에도 배정되지 못한 사람)
+        const unassignedOverallNames = applicantsData
+            .filter(a => applicantAssignedCompanies.get(a.name).size === 0)
+            .map(a => a.name)
+            .sort((a, b) => a.localeCompare(b));
+
+        // '미배정 희망 기업 상세' 목록 및 각 참여자의 미배정 희망 기업 수 계산
+        const unassignedPreferencesDetails = [];
+        const applicantUnassignedPreferenceCounts = new Map(); // 각 참여자별 미배정 희망 기업 수 저장
+
+        applicantsData.forEach(applicant => {
+            let unassignedCountForCurrentApplicant = 0;
+            for (let priority = 0; priority < 5; priority++) {
+                const preferredCompanyRaw = applicant.preferences[priority];
+                const preferredCompany = normalizeCompanyName(preferredCompanyRaw);
+
+                // 이 선호도가 배정되지 않은 경우
+                if (!applicantAssignedCompanies.get(applicant.name).has(preferredCompany)) {
+                    let reason = '';
+                    if (!preferredCompany || preferredCompany === '') {
+                        reason = '기업을 지원하지 않았습니다';
+                    } else if (!allCompanies.includes(preferredCompany)) {
+                        reason = '유효하지 않은 기업명입니다.';
+                    } else {
+                        // 유효한 기업이고 배정되지 않았다면, 슬롯이 모두 찼다는 의미
+                        reason = '슬롯이 모두 찼습니다.';
+                    }
+
+                    if (reason !== '') { // 사유가 있는 경우만 추가
+                        unassignedPreferencesDetails.push({
+                            name: applicant.name,
+                            company: preferredCompany,
+                            preferenceRank: priority + 1,
+                            reason: reason // 사유 추가
+                        });
+                        unassignedCountForCurrentApplicant++;
+                    }
+                }
+            }
+            applicantUnassignedPreferenceCounts.set(applicant.name, unassignedCountForCurrentApplicant);
+        });
+
+        // 미배정 희망 기업 상세 목록 정렬
+        unassignedPreferencesDetails.sort((a, b) => {
+            if (a.name !== b.name) {
+                return a.name.localeCompare(b.name);
+            }
+            return a.preferenceRank - b.preferenceRank;
+        });
+
+        renderSchedule(schedule);
+        renderStats(totalAssignedCount, unassignedOverallNames);
+        renderUnassignedPreferencesDetails(unassignedPreferencesDetails, applicantUnassignedPreferenceCounts); // 카운트 맵 전달
+        createOrUpdatePreferenceChart(currentPreferenceView);
+    };
+
+    // --- 데이터 관리 함수 ---
+    const parsePastedData = () => {
+        const rawData = excelPasteArea.value.trim();
+        if (!rawData) return;
+
+        const newApplicants = [];
+        const rows = rawData.split('\n');
+        rows.forEach(row => {
+            let cells = row.split('\t').map(cell => cell.trim());
+            if (cells.length === 1 && cells[0].includes(',')) {
+                cells = row.split(',').map(cell => cell.trim());
+            }
+
+            if (cells.length > 0 && cells[0] !== '') {
+                const name = cells[0];
+                const preferences = cells.slice(1, 6).map(pref => normalizeCompanyName(pref));
+                while (preferences.length < 5) {
+                    preferences.push('');
+                }
+                newApplicants.push({ name: name, preferences: preferences });
+            }
+        });
+        
+        if (newApplicants.length > 0) {
+            applicantsData = newApplicants;
+            excelPasteArea.value = '';
+            updateAll();
+            runAssignment();
+        }
+    };
+
+    const addApplicantRow = () => {
+        applicantsData.push({ name: '', preferences: ['', '', '', '', ''] });
+        updateAll();
+        applicantsTableBody.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    const deleteSelectedRows = () => {
+        const checkboxes = applicantsTableBody.querySelectorAll('.row-checkbox:checked');
+        const indicesToDelete = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
+        
+        indicesToDelete.forEach(originalIndex => {
+            applicantsData.splice(originalIndex, 1);
+        });
+        
+        updateAll();
+        runAssignment();
+    };
+
+    // 면접 시간 관리 함수들
+    const parsePastedTimeSlots = () => {
+        const rawData = timeSlotsPasteArea.value.trim();
+        if (!rawData) return;
+
+        const newTimeSlots = rawData.split('\n').map(slot => slot.trim()).filter(slot => slot !== '');
+        
+        if (newTimeSlots.length > 0) {
+            timeSlots = newTimeSlots;
+            timeSlotsPasteArea.value = '';
+            renderTimeSlotsTable();
+            runAssignment();
+        }
+    };
+
+    const addTimeSlotRow = () => {
+        timeSlots.push('');
+        renderTimeSlotsTable();
+        timeSlotsTableBody.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    const deleteSelectedTimeSlots = () => {
+        const checkboxes = timeSlotsTableBody.querySelectorAll('.time-slot-checkbox:checked');
+        const indicesToDelete = Array.from(checkboxes).map(cb => parseInt(cb.dataset.index)).sort((a, b) => b - a);
+        
+        indicesToDelete.forEach(originalIndex => {
+            timeSlots.splice(originalIndex, 1);
+        });
+        
+        renderTimeSlotsTable();
+        runAssignment();
+    };
+
+    // --- 탭 컨트롤 함수 ---
+    const activateTab = (viewType) => {
+        tabButtons.forEach(button => {
+            if (button.dataset.view === viewType) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+        currentPreferenceView = viewType;
+        createOrUpdatePreferenceChart(currentPreferenceView);
+    };
+
+    // --- 초기화 및 이벤트 리스너 ---
+    const updateAll = () => {
+        updateAllCompanies();
+        renderApplicantsTable();
+        renderTimeSlotsTable();
+    }
+    
+    runAssignmentBtn.addEventListener('click', runAssignment);
+    pasteDataBtn.addEventListener('click', parsePastedData);
+    addRowBtn.addEventListener('click', addApplicantRow);
+    deleteSelectedRowsBtn.addEventListener('click', deleteSelectedRows);
+
+    // 면접 시간 관리 버튼 이벤트 리스너
+    pasteTimeSlotsBtn.addEventListener('click', parsePastedTimeSlots);
+    addTimeSlotBtn.addEventListener('click', addTimeSlotRow);
+    deleteSelectedTimeSlotsBtn.addEventListener('click', deleteSelectedTimeSlots);
+
+    // 탭 버튼 이벤트 리스너
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => activateTab(button.dataset.view));
+    });
+
+    // 초기 렌더링 및 배정 (페이지 로드 시 기본 데이터로)
+    updateAll();
+    runAssignment();
+    activateTab('1');
+});
+</script>
+
+</body>
+</html>
