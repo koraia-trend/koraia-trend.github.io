@@ -13,7 +13,7 @@
         - Interview Time Slots -> HTML Table with inline editing, row addition/deletion, and paste-from-text-area functionality -> Goal: Configure -> To allow flexible definition and modification of interview time slots. Interaction: Editable cells, 'Add Time Slot' button, 'Delete Selected Time Slots' button, 'Paste Time Slots' button.
         - Final Schedule -> HTML Grid/Table -> Goal: Organize -> The clearest way to display a time-based schedule against multiple entities (companies), making it easy to see who is scheduled where and when.
         - Unassigned Applicants (Overall) -> HTML List -> Goal: Inform -> To provide a simple, direct list of participants who received zero assignments.
-        - Unassigned Preferred Companies (Detailed) -> HTML List with conditional highlighting and reason display -> Goal: Inform & Diagnose -> To provide a specific list of preferences that could not be met for any applicant, with visual emphasis (red text) on those who have many unassigned preferences, and a concise reason for non-assignment, aiding in manual adjustment or further analysis.
+        - Unassigned Preferred Companies (Detailed) -> HTML List with conditional highlighting and precise reason display (e.g., '슬롯이 모두 찼습니다.' vs. '동일 시간대에 다른 면접이 있어 배정 불가.') -> Goal: Inform & Diagnose -> To provide a specific list of preferences that could not be met for any applicant, with visual emphasis (red text) on those who have many unassigned preferences, and a concise reason for non-assignment, aiding in manual adjustment or further analysis.
         - Company Preference -> Bar Chart (Chart.js) with dynamic tab switching for 1st-5th priorities and a dedicated list view for un-preferred companies -> Goal: Compare & Inform -> To provide quick visual analysis of company popularity based on selected preference rank, and clearly list companies that received no attention, offering deeper insights for event organizers.
         - Assignment Stats -> Key Metrics (HTML) -> Goal: Inform -> To give an immediate, high-level overview of the assignment results (total, assigned, unassigned).
         All interactions are handled by vanilla JavaScript, and visualizations are rendered to HTML Canvas via Chart.js.
@@ -105,7 +105,7 @@
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
         <header class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800">대화형 면접 배정 시스템</h1>
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800">대화형 면접 배정 시스템 v1.0.0</h1>
             <p class="mt-2 text-slate-600">참여자들의 희망 기업 우선순위에 따라 면접 시간을 자동으로 배정합니다.</p>
         </header>
 
@@ -275,7 +275,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 초기 데이터 설정 ---
     // '참여자 신청' 시트의 데이터를 기반으로 함
     let applicantsData = [
-        { name: '홍길동', preferences: ['A', 'B', 'C', 'D', 'E'] },
+        { name: '곽은규', preferences: ['프롬에이아이', '이스트시큐리티', '에듀템', '주식회사 소프트랩스', '스튜디오프리윌루전'] },
+        { name: '권창범', preferences: ['플래티어', '잉그리스', '에듀템', '이지에이아이', '주식회사 소프트랩스'] },
+        { name: '김남영', preferences: ['플래티어', '이스트시큐리티', '에듀템', '잉그리스', '주식회사 엘핀'] },
+        { name: '김동욱', preferences: ['마인드브이알', '스튜디오프리윌루전', '플래티어', '에듀템', '잉그리스'] },
+        { name: '김정민', preferences: ['플래티어', '스튜디오프리윌루전', '소프트랩스', '마인드브이알', '에듀템'] },
+        { name: '김진규', preferences: ['에듀템', '', '', '', ''] },
+        { name: '김현우', preferences: ['스튜디오프리윌루전', '마인드브이알', '플래티어', '이스트시큐리티', ''] },
+        { name: '김희재', preferences: ['이스트시큐리티', '플래티어', '주식회사 소프트랩스', '스튜디오프리윌루전', '잉그리스'] },
+        { name: '문주영', preferences: ['주식회사 소프트랩스', '마케팅레버리지', '에듀템', '스튜디오프리윌루전', '이지에이아이'] },
+        { name: '윤소영', preferences: ['스튜디오프리윌루전', '프롬에이아이', '마케팅레버리지', '', ''] },
+        { name: '이강건', preferences: ['에듀템', '이스트시큐리티', '플래티어', '주식회사 소프트랩스', '스튜디오프리윌루전'] },
+        { name: '이우석', preferences: ['이스트시큐리티', '플래티어', '스튜디오프리윌루전', '에듀템', ''] },
+        { name: '이춘우', preferences: ['플래티어', '이스트시큐리티', '스튜디오프리윌루전', '잉그리스', '마케팅레버리지'] },
+        { name: '정다소', preferences: ['스튜디오프리윌루전', '에듀템', '주식회사 엘핀', '플래티어', '잉그리스'] },
+        { name: '조유진', preferences: ['잉그리스', '에듀템', '마인드브이알', '이지에이아이', '스튜디오프리윌루전'] },
+        { name: '최덕진', preferences: ['이스트시큐리티', '플래티어', '에듀템', '잉그리스', '스튜디오프리윌루전'] },
+        { name: '최재우', preferences: ['에듀템', '플래티어', '스튜디오프리윌루전', '프롬에이아이', '이스트시큐리티'] },
+        { name: '최준혁', preferences: ['잉그리스', '프롬에이아이', '플래티어', '스튜디오프리윌루전', '이스트시큐리티'] },
+        { name: '하승주', preferences: ['플래티어', '이지에이아이', '주식회사 소프트랩스', '프롬에이아이', '에듀템'] },
+        { name: '홍석원', preferences: ['프롬에이아이', '마케팅레버리지', '잉그리스', '마인드브이알', ''] },
+        { name: '황석호', preferences: ['스튜디오프리윌루전', '이스트시큐리티', '마인드브이알', '에듀템', '플래티어'] },
     ];
 
     let allCompanies = []; // 모든 기업 목록은 데이터 로드/변경 시 업데이트
@@ -613,6 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // 최종 배정 결과 스케줄: Map<TimeSlot, Map<Company, ApplicantName>>
         let schedule = {};
         timeSlots.forEach(time => {
             schedule[time] = {};
@@ -621,28 +642,45 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // 각 참여자가 어떤 기업들에 배정되었는지 추적하여, 한 기업에 중복 배정되지 않도록 함
+        // 각 참여자가 이미 어떤 기업에 배정되었는지 추적
+        // Map<ApplicantName, Set<Company>>
         const applicantAssignedCompanies = new Map();
+        // 각 참여자가 이미 어떤 시간대에 배정되었는지 추적 (동시간대 중복 방지)
+        // Map<ApplicantName, Set<TimeSlot>>
+        const applicantTimeSlotOccupancy = new Map();
+
         applicantsData.forEach(applicant => {
             applicantAssignedCompanies.set(applicant.name, new Set());
+            applicantTimeSlotOccupancy.set(applicant.name, new Set());
         });
 
+        // 참여자 목록을 무작위로 섞음 (동일 우선순위 및 기업 희망 시 공정성을 위함)
         const shuffledApplicants = [...applicantsData].sort(() => Math.random() - 0.5);
 
+        // 1순위(0)부터 5순위(4)까지 각 우선순위 레벨을 순회하며 배정 시도
         for (let priority = 0; priority < 5; priority++) {
+            // 무작위로 섞인 참여자 목록을 순회하며 현재 우선순위의 기업 배정을 시도
             for (const applicant of shuffledApplicants) {
                 const preferredCompanyRaw = applicant.preferences[priority];
                 const preferredCompany = normalizeCompanyName(preferredCompanyRaw);
 
-                if (!preferredCompany || preferredCompany === '' || applicantAssignedCompanies.get(applicant.name).has(preferredCompany)) {
+                // 1. 희망 기업이 유효하지 않거나 비어있는 경우
+                // 2. 해당 기업이 전체 기업 목록에 존재하지 않는 경우 (입력 오류)
+                // 3. 이미 해당 기업에 배정된 경우 (한 참여자는 한 기업당 한 번만 배정)
+                if (!preferredCompany || preferredCompany === '' || !allCompanies.includes(preferredCompany) || applicantAssignedCompanies.get(applicant.name).has(preferredCompany)) {
                     continue;
                 }
 
+                // 해당 희망 기업에 대한 가장 빠른 비어있는 시간 슬롯을 찾음
                 for (const time of timeSlots) {
-                    if (allCompanies.includes(preferredCompany) && schedule[time] && schedule[time][preferredCompany] === null) {
+                    // 해당 시간-기업 슬롯이 비어있고,
+                    // 해당 참여자가 이 시간대에 아직 다른 면접이 없는 경우에만 배정 가능
+                    if (schedule[time][preferredCompany] === null && !applicantTimeSlotOccupancy.get(applicant.name).has(time)) {
+                        // 참여자를 해당 슬롯에 배정
                         schedule[time][preferredCompany] = applicant.name;
-                        applicantAssignedCompanies.get(applicant.name).add(preferredCompany);
-                        break;
+                        applicantAssignedCompanies.get(applicant.name).add(preferredCompany); // 해당 기업에 배정 완료 표시
+                        applicantTimeSlotOccupancy.get(applicant.name).add(time); // 해당 시간대에 배정 완료 표시
+                        break; // 해당 참여자의 이 기업 선호도는 처리되었으므로 다음 참여자로 이동
                     }
                 }
             }
@@ -671,20 +709,44 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let priority = 0; priority < 5; priority++) {
                 const preferredCompanyRaw = applicant.preferences[priority];
                 const preferredCompany = normalizeCompanyName(preferredCompanyRaw);
+                let reason = '';
 
-                // 이 선호도가 배정되지 않은 경우
+                // 이 선호도가 배정되지 않은 경우에만 사유를 찾음
                 if (!applicantAssignedCompanies.get(applicant.name).has(preferredCompany)) {
-                    let reason = '';
                     if (!preferredCompany || preferredCompany === '') {
-                        reason = '기업을 지원하지 않았습니다';
+                        reason = '지원한 기업명이 비어있습니다.';
                     } else if (!allCompanies.includes(preferredCompany)) {
                         reason = '유효하지 않은 기업명입니다.';
                     } else {
-                        // 유효한 기업이고 배정되지 않았다면, 슬롯이 모두 찼다는 의미
-                        reason = '슬롯이 모두 찼습니다.';
+                        // 유효한 기업이지만 배정되지 못한 경우:
+                        // 1. 해당 기업의 모든 슬롯이 다른 사람으로 찼거나,
+                        // 2. 해당 참여자가 해당 기업의 사용 가능한 슬롯 시간대에 모두 바쁘거나.
+                        let companyHasAnyFreeSlotForThisApplicant = false;
+                        let allCompanySlotsFull = true;
+
+                        for (const time of timeSlots) {
+                            if (schedule[time][preferredCompany] === null) { // 이 기업의 이 시간 슬롯이 비어있다면
+                                allCompanySlotsFull = false; // 기업 슬롯이 다 찬 건 아님
+                                if (!applicantTimeSlotOccupancy.get(applicant.name).has(time)) { // 참여자가 이 시간대에 다른 면접이 없다면
+                                    companyHasAnyFreeSlotForThisApplicant = true; // 참여자가 들어갈 수 있는 슬롯이 있음
+                                    break; // 찾았으니 더 이상 탐색 불필요
+                                }
+                            }
+                        }
+
+                        if (!companyHasAnyFreeSlotForThisApplicant && !allCompanySlotsFull) {
+                            reason = '동일 시간대에 다른 면접이 있어 배정 불가.';
+                        } else if (!companyHasAnyFreeSlotForThisApplicant && allCompanySlotsFull) {
+                            reason = '해당 기업 슬롯이 모두 찼습니다.';
+                        }
+                        // else if (companyHasAnyFreeSlotForThisApplicant) {
+                        // 이 경우는 원칙적으로 여기에 도달하지 않아야 함. 배정 로직이 최대한 배정하므로.
+                        // 만약 도달한다면, 배정 로직의 한계(예: 랜덤성으로 인한 기회 상실)를 의미할 수 있음.
+                        // 현재는 위 `if`문으로 걸러지므로 이 `else` 블록은 실행되지 않음.
+                        // }
                     }
 
-                    if (reason !== '') { // 사유가 있는 경우만 추가
+                    if (reason !== '') { // 사유가 있는 경우만 추가 (이미 배정된 경우는 추가 안 됨)
                         unassignedPreferencesDetails.push({
                             name: applicant.name,
                             company: preferredCompany,
