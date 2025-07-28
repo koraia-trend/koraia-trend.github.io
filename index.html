@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국제인공지능대전 AI EXPO KOREA</title>
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <!-- Meta 태그 추가 -->
+    <meta name="description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
+
+    <!-- Open Graph 태그 -->
+    <meta property="og:title" content="AI EXPO KOREA 2025 부스 지도">
+    <meta property="og:description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content="https://"> -->
+    <meta property="og:image" content="/images/ogimage2.png">
+    <meta property="og:site_name" content="AI EXPO KOREA 2025">
+
+    <link rel="stylesheet" href="styles_expo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>AI EXPO KOREA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#timeline">타임라인</a></li>
+                <li><a href="#growth">성장기록</a></li>
+                <li><a href="#achievements">주요성과</a></li>
+                <li><a href="#future">2025</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-text">
+                    <div class="hero-badge">2018-2025</div>
+                    <h1 class="hero-title">
+                        <span class="title-main">AI EXPO KOREA</span>
+                        <span class="title-highlight">8년간의 혁신 여정</span>
+                        <span class="title-sub">국내 최대 AI 전시회로 성장한 발전사</span>
+                    </h1>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">개최 연차</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">18</div>
+                            <div class="stat-label">참가 국가</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">322</div>
+                            <div class="stat-label">참가 기업</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">43,788</div>
+                            <div class="stat-label">참관객 수</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#timeline" class="btn btn-primary">
+                            <i class="fas fa-history"></i>
+                            발전사 보기
+                        </a>
+                        <a href="/map" class="btn btn-secondary">
+                            <i class="fas fa-map"></i>
+                            2025 부스배치도
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="timeline-preview">
+                        <div class="year-marker active" data-year="2025" onclick="handleYearClick(2025, this)">2025</div>
+                        <div class="year-marker" data-year="2024" onclick="handleYearClick(2024, this)">2024</div>
+                        <div class="year-marker" data-year="2023" onclick="handleYearClick(2023, this)">2023</div>
+                        <div class="year-marker" data-year="2022" onclick="handleYearClick(2022, this)">2022</div>
+                        <div class="year-marker" data-year="2021" onclick="handleYearClick(2021, this)">2021</div>
+                        <div class="year-marker" data-year="2020" onclick="handleYearClick(2020, this)">2020</div>
+                        <div class="year-marker" data-year="2019" onclick="handleYearClick(2019, this)">2019</div>
+                        <div class="year-marker" data-year="2018" onclick="handleYearClick(2018, this)">2018</div>
+                    </div>
+                    <div class="growth-chart">
+                        <div class="chart-bar" style="height: 25%;" data-year="2018" onclick="handleYearClick(2018, this)"></div>
+                        <div class="chart-bar" style="height: 35%;" data-year="2019" onclick="handleYearClick(2019, this)"></div>
+                        <div class="chart-bar" style="height: 45%;" data-year="2020" onclick="handleYearClick(2020, this)"></div>
+                        <div class="chart-bar" style="height: 55%;" data-year="2021" onclick="handleYearClick(2021, this)"></div>
+                        <div class="chart-bar" style="height: 70%;" data-year="2022" onclick="handleYearClick(2022, this)"></div>
+                        <div class="chart-bar" style="height: 85%;" data-year="2023" onclick="handleYearClick(2023, this)"></div>
+                        <div class="chart-bar" style="height: 90%;" data-year="2024" onclick="handleYearClick(2024, this)"></div>
+                        <div class="chart-bar active" style="height: 100%;" data-year="2025" onclick="handleYearClick(2025, this)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Metrics Section -->
+    <section id="growth" class="growth-metrics">
+        <div class="container">
+            <div class="section-header">
+                <h2>성장의 궤적</h2>
+                <p>숫자로 보는 AI EXPO KOREA의 8년간 놀라운 성장</p>
+            </div>
+            
+            <div class="growth-comparison">
+                <div class="comparison-item">
+                    <div class="year-label">2018년 첫 출발</div>
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <span class="number">3</span>
+                            <span class="label">개국</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">82</span>
+                            <span class="label">개사</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">14,278</span>
+                            <span class="label">명</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="growth-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>성장률</span>
+                </div>
+                
+                <div class="comparison-item">
+                    <div class="year-label">2025년 현재</div>
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <span class="number">18</span>
+                            <span class="label">개국</span>
+                            <span class="growth">+500%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">322</span>
+                            <span class="label">개사</span>
+                            <span class="growth">+293%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">43,788</span>
+                            <span class="label">명</span>
+                            <span class="growth">+207%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="milestone-cards">
+                <div class="milestone-card">
+                    <div class="milestone-year">2020</div>
+                    <div class="milestone-title">팬데믹 극복</div>
+                    <div class="milestone-desc">코로나19 상황에서도 안전한 전시회 개최로 업계 신뢰 구축</div>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-year">2022</div>
+                    <div class="milestone-title">규모 확대</div>
+                    <div class="milestone-desc">11개국 430부스로 확장, 국내 대표 AI 전시회 입지 확립</div>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-year">2025</div>
+                    <div class="milestone-title">글로벌 허브</div>
+                    <div class="milestone-desc">18개국 544부스, 국내 최대 AI 전시회로 완전 정착</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>8년간의 혁신 여정</h2>
+                <p>작은 시작에서 국내 최대 AI 전시회로 성장한 발전사</p>
+            </div>
+            
+            <div class="timeline-navigation">
+                <div class="timeline-nav-btn" data-year="2025">2025</div>
+                <div class="timeline-nav-btn" data-year="2024">2024</div>
+                <div class="timeline-nav-btn" data-year="2023">2023</div>
+                <div class="timeline-nav-btn" data-year="2022">2022</div>
+                <div class="timeline-nav-btn" data-year="2021">2021</div>
+                <div class="timeline-nav-btn" data-year="2020">2020</div>
+                <div class="timeline-nav-btn" data-year="2019">2019</div>
+                <div class="timeline-nav-btn" data-year="2018">2018</div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="2025 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2025</h3>
+                            <p class="date">2025년 05월 14일(수) ~ 16일(금)</p>
+                            <p class="venue">COEX 1층, Hall A</p>
+                            <div class="stats">
+                                <span>18개국 322여 기업</span>
+                                <span>544부스</span>
+                                <span>43,788명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="2024 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2024</h3>
+                            <p class="date">2024년 5월 1일(수) ~ 3일(금)</p>
+                            <p class="venue">서울 COEX 3층 Hall D</p>
+                            <div class="stats">
+                                <span>약 40,000명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="2023 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2023</h3>
+                            <p class="date">2023년 5월 10일(수) ~ 12일(금)</p>
+                            <p class="venue">서울 COEX 3층 Hall D</p>
+                            <div class="stats">
+                                <span>11개국 260개사</span>
+                                <span>32,526명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="2022 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2022</h3>
+                            <p class="date">2022년 4월 13일(수) ~ 15일(금)</p>
+                            <p class="venue">서울 COEX 3층 Hall D</p>
+                            <div class="stats">
+                                <span>11개국 230개사</span>
+                                <span>430부스</span>
+                                <span>28,535명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="2021 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2021</h3>
+                            <p class="date">2021년 03월 24일(수) ~ 26일(금)</p>
+                            <p class="venue">COEX 1층, Hall B</p>
+                            <div class="stats">
+                                <span>8개국 138개사</span>
+                                <span>187부스</span>
+                                <span>23,263명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="2020 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2020</h3>
+                            <p class="date">2020년 10월 27일(화) ~ 29일(목)</p>
+                            <p class="venue">COEX 3층, Hall D</p>
+                            <div class="stats">
+                                <span>4개국 107개사</span>
+                                <span>175부스</span>
+                                <span>21,393명 참관</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="2019 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2019</h3>
+                            <p class="date">2019년 7월 17일(수) ~ 19일(금)</p>
+                            <p class="venue">COEX, Hall C</p>
+                            <div class="stats">
+                                <span>5개국 127개사</span>
+                                <span>200부스</span>
+                                <span>21,321명 참관</span>
+                            </div>
+                            <p class="slogan">"당신이 인공지능시대를 이끌 차세대 주인공입니다!"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <div class="timeline-poster">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="2018 포스터">
+                        </div>
+                        <div class="timeline-info">
+                            <h3>AI EXPO KOREA 2018</h3>
+                            <p class="date">2018년 7월 9일(월) ~ 11일(수)</p>
+                            <p class="venue">COEX, Hall D</p>
+                            <div class="stats">
+                                <span>3개국 82개사</span>
+                                <span>183부스</span>
+                                <span>14,278명 참관</span>
+                            </div>
+                            <p class="slogan">"인공지능으로 열어가는 더 나은 미래"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2>주요 성과와 파트너십</h2>
+                <p>8년간 쌓아온 신뢰와 협력의 결과</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-title">국내 1위</div>
+                    <div class="achievement-desc">AI 전문 전시회 규모</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="achievement-title">정부 지원</div>
+                    <div class="achievement-desc">과기정통부 등 5개 부처 후원</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="achievement-title">국제적 위상</div>
+                    <div class="achievement-desc">18개국 글로벌 기업 참가</div>
+                </div>
+            </div>
+
+            <div class="partner-categories">
+                <div class="partner-category">
+                    <h3>주요 스폰서</h3>
+                    <div class="partner-grid">
+                        <div class="partner-item">슈퍼마이크로</div>
+                        <div class="partner-item">케이투스 코리아</div>
+                        <div class="partner-item">(주)마음AI</div>
+                        <div class="partner-item">페르소나AI</div>
+                        <div class="partner-item">셀바스AI</div>
+                        <div class="partner-item">레노버</div>
+                        <div class="partner-item">씨이랩</div>
+                        <div class="partner-item">어드밴텍케이알</div>
+                        <div class="partner-item">퓨어스토리지</div>
+                        <div class="partner-item">비엔아이엔씨</div>
+                        <div class="partner-item">한국전자통신연구원</div>
+                        <div class="partner-item">이안</div>
+                    </div>
+                </div>
+
+                <div class="partner-category">
+                    <h3>후원 기관</h3>
+                    <div class="partner-grid">
+                        <div class="partner-item">과학기술정보통신부</div>
+                        <div class="partner-item">보건복지부</div>
+                        <div class="partner-item">중소벤처기업부</div>
+                        <div class="partner-item">한국지능정보사회진흥원</div>
+                        <div class="partner-item">한국인터넷진흥원</div>
+                        <div class="partner-item">한국산업기술평가관리원</div>
+                        <div class="partner-item">정보통신기획평가원</div>
+                        <div class="partner-item">성남산업진흥원</div>
+                        <div class="partner-item">한국무역협회</div>
+                        <div class="partner-item">한국정보산업연합회</div>
+                        <div class="partner-item">한국소프트웨어산업협회</div>
+                        <div class="partner-item">임베디드소프트웨어시스템산업협회</div>
+                        <div class="partner-item">한국IT여성기업인협회</div>
+                        <div class="partner-item">KAIST AI</div>
+                        <div class="partner-item">로봇산업협회</div>
+                        <div class="partner-item">로보월드</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Section -->
+    <section id="future" class="future">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white">AI EXPO KOREA 2025</h2>
+            </div>
+            
+            <div class="future-content">
+                <div class="future-info">
+                    <div class="future-date">
+                        <div class="date-label">개최일정</div>
+                        <div class="date-value">2025년 05월 14일(수) ~ 16일(금)</div>
+                    </div>
+                    <div class="future-venue">
+                        <div class="venue-label">개최장소</div>
+                        <div class="venue-value">COEX 1층, Hall A</div>
+                    </div>
+                    <div class="future-highlights">
+                        <h3>2025년 특별 하이라이트</h3>
+                        <ul>
+                            <li>글로벌 AI 리더십 포럼</li>
+                            <li>차세대 AI 기술 체험관</li>
+                            <li>AI 윤리와 미래 컨퍼런스</li>
+                            <li>스타트업 피칭 대회</li>
+                            <li>AI 인재 채용 박람회</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="future-poster">
+                    <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="AI EXPO KOREA 2025 포스터">
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h3>지금 참여하세요</h3>
+                <div class="cta-buttons">
+                    <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        전시 참가 신청
+                    </a>
+                    <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-ticket-alt"></i>
+                        관람 등록
+                    </a>
+                    <a href="/map" class="btn btn-secondary">
+                        <i class="fas fa-map"></i>
+                        부스배치도 보기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI EXPO KOREA 2025</h3>
+                    <p>국내 최대 규모의 인공지능 전문 전시회</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>주최/주관</h4>
+                    <ul>
+                        <li>(사)한국인공지능협회</li>
+                        <li>㈜서울메쎄</li>
+                        <li>인공지능신문</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>행사 정보</h4>
+                    <ul>
+                        <li>2025년 05월 14일(수) ~ 16일(금)</li>
+                        <li>COEX 1층, Hall A</li>
+                        <li>18개국 322여 기업 참가</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI EXPO KOREA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_expo.js"></script>
+</body>
+</html> 
