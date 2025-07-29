@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles_expo.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -29,8 +30,8 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">홈</a></li>
-                <li><a href="#growth">성장기록</a></li>
                 <li><a href="#timeline">타임라인</a></li>
+                <li><a href="#growth">성장기록</a></li>
                 <li><a href="#achievements">주요성과</a></li>
                 <li><a href="#future">2025</a></li>
             </ul>
@@ -44,7 +45,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background"></div>
+        <div id="hero-particles" class="hero-background"></div>
         <div class="hero-content">
             <div class="hero-main">
                 <div class="hero-text">
@@ -77,13 +78,9 @@
                             <i class="fas fa-history"></i>
                             발전사 보기
                         </a>
-                        <a href="/map" class="btn btn-secondary"  target="_blank">
+                        <a href="/map" class="btn btn-secondary">
                             <i class="fas fa-map"></i>
                             2025 부스배치도
-                        </a>
-                        <a href="https://expo.koraia.org/conference/conference" class="btn btn-secondary" target="_blank">
-                            <i class="fas fa-map"></i>
-                            컨퍼런스 살펴보기
                         </a>
                     </div>
                 </div>
@@ -383,7 +380,7 @@
                         <i class="fas fa-handshake"></i>
                     </div>
                     <div class="achievement-title">정부 지원</div>
-                    <div class="achievement-desc">5개 부처 후원</div>
+                    <div class="achievement-desc">과기정통부 등 5개 부처 후원</div>
                 </div>
                 <div class="achievement-item">
                     <div class="achievement-icon">
@@ -478,14 +475,14 @@
                         <i class="fas fa-calendar-check"></i>
                         전시 참가 신청
                     </a>
-                    <a href="/map" class="btn btn-secondary" target="_blank">
+                    <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-ticket-alt"></i>
+                        관람 등록
+                    </a>
+                    <a href="/map" class="btn btn-secondary">
                         <i class="fas fa-map"></i>
                         부스배치도 보기
                     </a>
-                    <a href="https://expo.koraia.org/conference/conference" class="btn btn-secondary" target="_blank">
-                            <i class="fas fa-map"></i>
-                            컨퍼런스 살펴보기
-                        </a>
                 </div>
             </div>
         </div>
