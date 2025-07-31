@@ -792,7 +792,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Gallery functionality
 let currentImageIndex = 0;
-const totalImages = 14;
+const totalImages = 18;
 const imageBasePath = 'images/expo/';
 
 function openModal(imageSrc) {
