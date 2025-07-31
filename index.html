@@ -32,6 +32,7 @@
                 <li><a href="#home">홈</a></li>
                 <li><a href="#growth">성장기록</a></li>
                 <li><a href="#timeline">타임라인</a></li>
+                <li><a href="#gallery">현장갤러리</a></li>
                 <li><a href="#achievements">주요성과</a></li>
                 <li><a href="#future">2025</a></li>
             </ul>
@@ -188,6 +189,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- Timeline Section -->
@@ -363,6 +365,119 @@
             </div>
         </div>
     </section>
+
+    <!-- Exhibition Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>코엑스 현장 갤러리</h2>
+                <p>AI EXPO KOREA의 생생한 현장 모습을 담은 사진들</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/expo/1.png')">
+                    <img src="images/expo/1.png" alt="AI EXPO 현장 1" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/2.png')">
+                    <img src="images/expo/2.png" alt="AI EXPO 현장 2" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/3.png')">
+                    <img src="images/expo/3.png" alt="AI EXPO 현장 3" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/4.png')">
+                    <img src="images/expo/4.png" alt="AI EXPO 현장 4" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/5.png')">
+                    <img src="images/expo/5.png" alt="AI EXPO 현장 5" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/6.png')">
+                    <img src="images/expo/6.png" alt="AI EXPO 현장 6" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/7.png')">
+                    <img src="images/expo/7.png" alt="AI EXPO 현장 7" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/8.png')">
+                    <img src="images/expo/8.png" alt="AI EXPO 현장 8" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/9.png')">
+                    <img src="images/expo/9.png" alt="AI EXPO 현장 9" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/10.png')">
+                    <img src="images/expo/10.png" alt="AI EXPO 현장 10" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/11.png')">
+                    <img src="images/expo/11.png" alt="AI EXPO 현장 11" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/12.png')">
+                    <img src="images/expo/12.png" alt="AI EXPO 현장 12" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/13.png')">
+                    <img src="images/expo/13.png" alt="AI EXPO 현장 13" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/expo/14.png')">
+                    <img src="images/expo/14.png" alt="AI EXPO 현장 14" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="확대 이미지">
+            <div class="modal-navigation">
+                <button class="nav-btn prev-btn" onclick="prevImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">

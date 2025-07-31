@@ -788,4 +788,73 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('particles.js library not loaded');
     }
+});
+
+// Gallery functionality
+let currentImageIndex = 0;
+const totalImages = 14;
+const imageBasePath = 'images/expo/';
+
+function openModal(imageSrc) {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    modal.style.display = 'block';
+    modalImage.src = imageSrc;
+    
+    // Get current image index from src
+    const imageNumber = parseInt(imageSrc.split('/').pop().replace('.png', ''));
+    currentImageIndex = imageNumber - 1; // Convert to 0-based index
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('galleryModal');
+    modal.style.display = 'none';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % totalImages;
+    updateModalImage();
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+    updateModalImage();
+}
+
+function updateModalImage() {
+    const modalImage = document.getElementById('modalImage');
+    const newImageSrc = `${imageBasePath}${currentImageIndex + 1}.png`;
+    modalImage.src = newImageSrc;
+}
+
+// Keyboard navigation for modal
+document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('galleryModal');
+    if (modal.style.display === 'block') {
+        switch(event.key) {
+            case 'Escape':
+                closeModal();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+            case 'ArrowLeft':
+                prevImage();
+                break;
+        }
+    }
+});
+
+// Close modal when clicking outside the image
+document.getElementById('galleryModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeModal();
+    }
 }); 
