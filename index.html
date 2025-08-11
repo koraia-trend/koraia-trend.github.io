@@ -32,7 +32,9 @@
                 <li><a href="#home">홈</a></li>
                 <li><a href="#growth">성장기록</a></li>
                 <li><a href="#timeline">타임라인</a></li>
+                <li><a href="#posters">포스터갤러리</a></li>
                 <li><a href="#gallery">현장갤러리</a></li>
+                <li><a href="#conference">컨퍼런스</a></li>
                 <li><a href="#achievements">주요성과</a></li>
                 <li><a href="#future">2025</a></li>
             </ul>
@@ -191,25 +193,120 @@
     </section>
 
 
+<section id="posters" class="poster-carousel-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>8년간의 혁신 여정</h2>
+                <p>AI EXPO KOREA의 8년간 변화를 포스터로 만나보세요</p>
+            </div>
+            
+            <div class="poster-carousel-container">
+                <div class="poster-carousel">
+                    <div class="poster-slide active" data-year="2025" onclick="openPosterModal('https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png', '2025')">
+                        <div class="poster-card">
+                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="2025 포스터">
+                            <div class="poster-year">2025</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2024" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg', '2024')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="2024 포스터">
+                            <div class="poster-year">2024</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2023" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg', '2023')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="2023 포스터">
+                            <div class="poster-year">2023</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2022" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg', '2022')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="2022 포스터">
+                            <div class="poster-year">2022</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2021" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg', '2021')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="2021 포스터">
+                            <div class="poster-year">2021</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2020" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg', '2020')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="2020 포스터">
+                            <div class="poster-year">2020</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2019" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg', '2019')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="2019 포스터">
+                            <div class="poster-year">2019</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="poster-slide" data-year="2018" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg', '2018')">
+                        <div class="poster-card">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="2018 포스터">
+                            <div class="poster-year">2018</div>
+                            <div class="poster-overlay">
+                                <i class="fas fa-expand"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="poster-controls">
+                    <button class="poster-prev" onclick="prevPoster()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="poster-next" onclick="nextPoster()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="poster-indicators">
+                    <span class="indicator active" data-year="2025" ></span>
+                    <span class="indicator" data-year="2024" ></span>
+                    <span class="indicator" data-year="2023" ></span>
+                    <span class="indicator" data-year="2022" ></span>
+                    <span class="indicator" data-year="2021" ></span>
+                    <span class="indicator" data-year="2020" ></span>
+                    <span class="indicator" data-year="2019" ></span>
+                    <span class="indicator" data-year="2018" ></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Timeline Section -->
     <section id="timeline" class="timeline-section">
         <div class="container">
             <div class="section-header">
-                <h2>8년간의 혁신 여정</h2>
-                <p>작은 시작에서 국내 최대 AI 전시회로 성장한 발전사</p>
+                <h2>작은 시작에서 국내 최대 AI 전시회로 성장한 발전사</h2>
             </div>
             
-            <div class="timeline-navigation">
-                <div class="timeline-nav-btn" data-year="2025">2025</div>
-                <div class="timeline-nav-btn" data-year="2024">2024</div>
-                <div class="timeline-nav-btn" data-year="2023">2023</div>
-                <div class="timeline-nav-btn" data-year="2022">2022</div>
-                <div class="timeline-nav-btn" data-year="2021">2021</div>
-                <div class="timeline-nav-btn" data-year="2020">2020</div>
-                <div class="timeline-nav-btn" data-year="2019">2019</div>
-                <div class="timeline-nav-btn" data-year="2018">2018</div>
-            </div>
+            
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -370,7 +467,7 @@
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
-                <h2>코엑스 현장 갤러리</h2>
+                <h2>현장 갤러리</h2>
                 <p>AI EXPO KOREA의 생생한 현장 모습을 담은 사진들</p>
             </div>
             
@@ -503,6 +600,61 @@
         </div>
     </div>
 
+    <!-- Conference Section -->
+    <section id="conference" class="conference-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI 컨퍼런스</h2>
+                <p>2025 AI EXPO KOREA 컨퍼런스 프로그램</p>
+            </div>
+            
+            <div class="conference-posters">
+                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png')">
+                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png" alt="AI 컨퍼런스 프로그램 1" loading="lazy">
+                    <div class="conf-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="conf-poster-item" onclick="openConferenceModal('https://expo.koraia.org/poster0516.png')">
+                    <img src="https://expo.koraia.org/poster0516.png" alt="AI 컨퍼런스 프로그램 2" loading="lazy">
+                    <div class="conf-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png')">
+                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png" alt="AI 컨퍼런스 프로그램 3" loading="lazy">
+                    <div class="conf-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png')">
+                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png" alt="AI 컨퍼런스 프로그램 4" loading="lazy">
+                    <div class="conf-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Modal -->
+    <div id="conferenceModal" class="modal conference-modal">
+        <div class="conference-modal-content">
+            <span class="close" onclick="closeConferenceModal()">&times;</span>
+            <div class="conference-modal-body">
+                <img id="conferenceModalImage" src="" alt="컨퍼런스 프로그램 확대 이미지">
+            </div>
+            <div class="modal-navigation">
+                <button class="nav-btn prev-btn" onclick="prevConferenceImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextConferenceImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Achievements Section -->
     <section id="achievements" class="achievements">
         <div class="container">
@@ -578,6 +730,30 @@
             </div>
         </div>
     </section>
+
+    <!-- Poster Carousel Section -->
+    
+
+    <!-- Poster Modal -->
+    <div id="posterModal" class="modal poster-modal">
+        <div class="modal-content poster-modal-content">
+            <span class="close" onclick="closePosterModal()">&times;</span>
+            <div class="poster-modal-header">
+                <h3 id="posterModalTitle">AI EXPO KOREA 2025</h3>
+            </div>
+            <div class="poster-modal-body">
+                <img id="posterModalImage" src="" alt="포스터 확대 이미지">
+            </div>
+            <div class="poster-modal-navigation">
+                <button class="nav-btn prev-btn" onclick="prevPosterModal()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextPosterModal()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Future Section -->
     <section id="future" class="future">
