@@ -1,847 +1,1036 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국제인공지능대전 AI EXPO KOREA</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <!-- Meta 태그 추가 -->
+    <title>국제인공지능대전 AI EXPO KOREA 2025</title>
     <meta name="description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
-
-    <!-- Open Graph 태그 -->
-    <meta property="og:title" content="AI EXPO KOREA 2025 부스 지도">
+    <meta property="og:title" content="AI EXPO KOREA 2025">
     <meta property="og:description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:url" content="https://"> -->
     <meta property="og:image" content="/images/ogimage2.png">
     <meta property="og:site_name" content="AI EXPO KOREA 2025">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="styles_expo.css">
+    <!-- Tailwind CSS (Design Framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Custom Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                    },
+                    colors: {
+                        ai: {
+                            dark: '#0a0e17',
+                            light: '#1a2236',
+                            accent: '#3b82f6',
+                            neon: '#00f3ff',
+                            purple: '#7c3aed'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(10, 14, 23, 0.8), rgba(10, 14, 23, 1)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop')",
+                        'tech-grid': "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #0a0e17;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0e17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f3ff;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(26, 34, 54, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Neon Glow */
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .neon-border:hover {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+            border-color: #3b82f6;
+        }
+
+        /* Timeline Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #7c3aed);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Background Tech Grid */
+        .bg-tech-grid {
+            background-size: 40px 40px;
+        }
+
+        /* Modal Styles */
+        .modal-open {
+            overflow: hidden;
+        }
+
+        /* Poster Images */
+        .poster-img {
+            width: 100%;
+            height: 448px;
+            object-fit: cover;
+        }
+
+        /* Poster Auto Scroll */
+        .poster-scroll {
+            overflow-x: auto;
+            scroll-behavior: auto;
+        }
+    </style>
 </head>
-<body>
+
+<body class="antialiased selection:bg-ai-accent selection:text-white">
+
+    <!-- Particles Background (Fixed) -->
+    <div id="particles-js" class="fixed inset-0 w-full h-full pointer-events-none z-0"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>AI EXPO KOREA</h2>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 border-b border-transparent">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-8 h-8 bg-gradient-to-tr from-ai-accent to-ai-neon rounded-full flex items-center justify-center">
+                    <i class="fas fa-home text-ai-dark text-lg"></i>
+                </div>
+                <h1 class="text-2xl font-bold tracking-tighter text-white">AI EXPO <span class="text-ai-neon">KOREA</span></h1>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">홈</a></li>
-                <li><a href="#growth">성장기록</a></li>
-                <li><a href="#timeline">타임라인</a></li>
-                <li><a href="#posters">포스터갤러리</a></li>
-                <li><a href="#gallery">현장갤러리</a></li>
-                <li><a href="#conference">컨퍼런스</a></li>
-                <li><a href="#achievements">주요성과</a></li>
-                <li><a href="#future">2025</a></li>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
+                <li><a href="#home" class="hover:text-ai-neon transition-colors">홈</a></li>
+                <li><a href="#growth" class="hover:text-ai-neon transition-colors">성장기록</a></li>
+                <li><a href="#posters" class="hover:text-ai-neon transition-colors">히스토리</a></li>
+                <li><a href="#timeline" class="hover:text-ai-neon transition-colors">타임라인</a></li>
+                <li><a href="#gallery" class="hover:text-ai-neon transition-colors">갤러리</a></li>
+                <li><a href="#conference" class="hover:text-ai-neon transition-colors">컨퍼런스</a></li>
+                <li><a href="#achievements" class="hover:text-ai-neon transition-colors">주요성과</a></li>
+                <li><a href="#future" class="hover:text-ai-neon transition-colors">2025 비전</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-ai-dark/95 backdrop-blur-md border-b border-gray-800 md:hidden">
+            <ul class="flex flex-col p-4 space-y-4 text-center text-gray-300">
+                <li><a href="#home" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">홈</a></li>
+                <li><a href="#growth" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">성장기록</a></li>
+                <li><a href="#posters" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">히스토리</a></li>
+                <li><a href="#timeline" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">타임라인</a></li>
+                <li><a href="#gallery" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">갤러리</a></li>
+                <li><a href="#conference" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">컨퍼런스</a></li>
+                <li><a href="#achievements" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">주요성과</a></li>
+                <li><a href="#future" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">2025 비전</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div id="hero-particles" class="hero-background"></div>
-        <div class="hero-content">
-            <div class="hero-main">
-                <div class="hero-text">
-                    <div class="hero-badge">2018-2025</div>
-                    <h1 class="hero-title">
-                        <span class="title-main">AI EXPO KOREA</span>
-                        <span class="title-highlight">8년간의 혁신 여정</span>
-                        <span class="title-sub">국내 최대 AI 전시회로 성장한 발전사</span>
-                    </h1>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">8</div>
-                            <div class="stat-label">개최 연차</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">18</div>
-                            <div class="stat-label">참가 국가</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">322</div>
-                            <div class="stat-label">참가 기업</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">43,788</div>
-                            <div class="stat-label">참관객 수</div>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#timeline" class="btn btn-primary">
-                            <i class="fas fa-history"></i>
-                            발전사 보기
-                        </a>
-                        <a href="/map" class="btn btn-secondary" target="_blank">
-                            <i class="fas fa-map"></i>
-                            2025 부스배치도
-                        </a>
-                        <a href="https://expo.koraia.org/conference/conference" class="btn btn-secondary" target="_blank">
-                            <i class="fas fa-map"></i>
-                            컨퍼런스 살펴보기
-                        </a>
-                    </div>
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(10, 14, 23, 0.5), rgba(10, 14, 23, 1)), url('https://expo.koraia.org/expo_bg.png')">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ai-dark/80 to-ai-dark z-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-20 pt-20 text-center">
+            <div class="inline-block px-4 py-1 rounded-full border border-ai-neon/30 bg-ai-neon/10 text-ai-neon text-sm font-semibold mb-6 animate-pulse">
+                2018 - 2025 Innovation Journey
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight reveal active">
+                AI EXPO KOREA<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-ai-accent to-ai-neon">8년간의 혁신 여정</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 reveal active delay-100">
+                국내 최대 AI 전시회로 성장한 국제인공지능대전.<br>
+                과거의 발자취를 넘어 미래의 가능성을 만나는 곳입니다.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 reveal active delay-200">
+                <a href="#timeline" class="px-8 py-3 rounded-lg bg-ai-accent hover:bg-blue-600 text-white font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                    발전사 보기
+                </a>
+                <a href="/map" class="px-8 py-3 rounded-lg glass-card hover:bg-white/10 text-white font-bold transition-all">
+                    <i class="fas fa-map-marked-alt mr-2"></i>2025 부스배치도
+                </a>
+                <a href="https://expo.koraia.org/conference/conference" target="_blank" class="px-8 py-3 rounded-lg border border-gray-600 hover:border-ai-neon text-gray-300 hover:text-white transition-all">
+                    컨퍼런스
+                </a>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto reveal active delay-300">
+                <div class="glass-card p-4 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-white mb-1">8<span class="text-sm text-ai-accent ml-1">th</span></div>
+                    <div class="text-xs text-gray-400">개최 연차</div>
                 </div>
-                <div class="hero-visual">
-                    <div class="timeline-preview">
-                        <div class="year-marker active" data-year="2025" onclick="handleYearClick(2025, this)">2025</div>
-                        <div class="year-marker" data-year="2024" onclick="handleYearClick(2024, this)">2024</div>
-                        <div class="year-marker" data-year="2023" onclick="handleYearClick(2023, this)">2023</div>
-                        <div class="year-marker" data-year="2022" onclick="handleYearClick(2022, this)">2022</div>
-                        <div class="year-marker" data-year="2021" onclick="handleYearClick(2021, this)">2021</div>
-                        <div class="year-marker" data-year="2020" onclick="handleYearClick(2020, this)">2020</div>
-                        <div class="year-marker" data-year="2019" onclick="handleYearClick(2019, this)">2019</div>
-                        <div class="year-marker" data-year="2018" onclick="handleYearClick(2018, this)">2018</div>
-                    </div>
-                    <div class="growth-chart">
-                        <div class="chart-bar" style="height: 25%;" data-year="2018" onclick="handleYearClick(2018, this)"></div>
-                        <div class="chart-bar" style="height: 35%;" data-year="2019" onclick="handleYearClick(2019, this)"></div>
-                        <div class="chart-bar" style="height: 45%;" data-year="2020" onclick="handleYearClick(2020, this)"></div>
-                        <div class="chart-bar" style="height: 55%;" data-year="2021" onclick="handleYearClick(2021, this)"></div>
-                        <div class="chart-bar" style="height: 70%;" data-year="2022" onclick="handleYearClick(2022, this)"></div>
-                        <div class="chart-bar" style="height: 85%;" data-year="2023" onclick="handleYearClick(2023, this)"></div>
-                        <div class="chart-bar" style="height: 90%;" data-year="2024" onclick="handleYearClick(2024, this)"></div>
-                        <div class="chart-bar active" style="height: 100%;" data-year="2025" onclick="handleYearClick(2025, this)"></div>
-                    </div>
+                <div class="glass-card p-4 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-white mb-1">18<span class="text-sm text-ai-accent ml-1">개국</span></div>
+                    <div class="text-xs text-gray-400">참가 국가</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-white mb-1">322<span class="text-sm text-ai-accent ml-1">개사</span></div>
+                    <div class="text-xs text-gray-400">참가 기업</div>
+                </div>
+                <div class="glass-card p-4 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-white mb-1">43K<span class="text-sm text-ai-accent ml-1">+</span></div>
+                    <div class="text-xs text-gray-400">참관객 수</div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="fas fa-chevron-down text-2xl"></i>
         </div>
     </section>
 
     <!-- Growth Metrics Section -->
-    <section id="growth" class="growth-metrics" style="background-image: url('expo_bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1;"></div>
-        <div class="container" style="position: relative; z-index: 2; ">
-            <div class="section-header">
-                <h2  style="color: white;">성장의 궤적</h2>
-                <p  style="color: white;">숫자로 보는 AI EXPO KOREA의 8년간 놀라운 성장</p>
+    <section id="growth" class="py-24 relative bg-ai-dark bg-tech-grid">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-white mb-4">성장의 궤적</h2>
+                <p class="text-gray-400">숫자로 보는 AI EXPO KOREA의 8년간 놀라운 성장</p>
             </div>
-            
-            <div class="growth-comparison">
-                <div class="comparison-item">
-                    <div class="year-label">2018년 첫 출발</div>
-                    <div class="comparison-stats">
-                        <div class="stat">
-                            <span class="number">3</span>
-                            <span class="label">개국</span>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal">
+                <!-- 2018 Card -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-ai-accent transition-colors duration-300">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-flag-checkered text-9xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-300 mb-6">2018년 첫 출발</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-500">참가국가</span>
+                            <span class="text-2xl font-bold text-white">3 <span class="text-sm text-gray-500">개국</span></span>
                         </div>
-                        <div class="stat">
-                            <span class="number">82</span>
-                            <span class="label">개사</span>
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-500">참가기업</span>
+                            <span class="text-2xl font-bold text-white">82 <span class="text-sm text-gray-500">개사</span></span>
                         </div>
-                        <div class="stat">
-                            <span class="number">14,278</span>
-                            <span class="label">명</span>
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-500">참관객</span>
+                            <span class="text-2xl font-bold text-white">14,278 <span class="text-sm text-gray-500">명</span></span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="growth-arrow" style="color: white;">
-                    <i class="fas fa-arrow-right"></i>
-                    <span>성장률</span>
+
+                <!-- Growth Arrow -->
+                <div class="flex flex-col items-center justify-center text-ai-neon space-y-2 py-4 lg:py-0">
+                    <i class="fas fa-angle-double-right text-4xl hidden lg:block animate-pulse"></i>
+                    <i class="fas fa-angle-double-down text-4xl lg:hidden animate-pulse"></i>
+                    <span class="font-bold tracking-widest">EVOLUTION</span>
                 </div>
-                
-                <div class="comparison-item">
-                    <div class="year-label">2025년 현재</div>
-                    <div class="comparison-stats">
-                        <div class="stat">
-                            <span class="number">18</span>
-                            <span class="label">개국</span>
-                            <span class="growth">+500%</span>
+
+                <!-- 2025 Card -->
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group border-ai-neon/50 shadow-[0_0_20px_rgba(0,243,255,0.1)]">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-rocket text-9xl text-ai-neon"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        2025년 현재
+                        <span class="px-2 py-1 rounded bg-ai-neon text-ai-dark text-xs font-bold">NOW</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-400">참가국가</span>
+                            <div class="text-right">
+                                <span class="text-3xl font-bold text-ai-neon">18</span>
+                                <span class="block text-xs text-green-400 font-mono">+500% ▲</span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="number">322</span>
-                            <span class="label">개사</span>
-                            <span class="growth">+293%</span>
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-400">참가기업</span>
+                            <div class="text-right">
+                                <span class="text-3xl font-bold text-ai-neon">322</span>
+                                <span class="block text-xs text-green-400 font-mono">+293% ▲</span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="number">43,788</span>
-                            <span class="label">명</span>
-                            <span class="growth">+207%</span>
+                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
+                            <span class="text-gray-400">참관객</span>
+                            <div class="text-right">
+                                <span class="text-3xl font-bold text-ai-neon">43,788</span>
+                                <span class="block text-xs text-green-400 font-mono">+207% ▲</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="milestone-cards">
-                <div class="milestone-card">
-                    <div class="milestone-year">2020</div>
-                    <div class="milestone-title">팬데믹 극복</div>
-                    <div class="milestone-desc">코로나19 상황에서도 안전한 전시회 개최로 업계 신뢰 구축</div>
+            <!-- Milestone Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 reveal">
+                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-gray-500 hover:bg-gray-800 transition-colors">
+                    <div class="text-2xl font-black text-gray-500 mb-2">2020</div>
+                    <h4 class="text-lg font-bold text-white mb-1">팬데믹 극복</h4>
+                    <p class="text-sm text-gray-400">코로나19 상황에서도 안전한 전시회 개최로 업계 신뢰 구축</p>
                 </div>
-                <div class="milestone-card">
-                    <div class="milestone-year">2022</div>
-                    <div class="milestone-title">규모 확대</div>
-                    <div class="milestone-desc">11개국 430부스로 확장, 국내 대표 AI 전시회 입지 확립</div>
+                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-ai-accent hover:bg-gray-800 transition-colors">
+                    <div class="text-2xl font-black text-ai-accent mb-2">2022</div>
+                    <h4 class="text-lg font-bold text-white mb-1">규모 확대</h4>
+                    <p class="text-sm text-gray-400">11개국 430부스로 확장, 국내 대표 AI 전시회 입지 확립</p>
                 </div>
-                <div class="milestone-card">
-                    <div class="milestone-year">2025</div>
-                    <div class="milestone-title">글로벌 허브</div>
-                    <div class="milestone-desc">18개국 544부스, 국내 최대 AI 전시회로 완전 정착</div>
+                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-ai-neon hover:bg-gray-800 transition-colors">
+                    <div class="text-2xl font-black text-ai-neon mb-2">2025</div>
+                    <h4 class="text-lg font-bold text-white mb-1">글로벌 허브</h4>
+                    <p class="text-sm text-gray-400">18개국 544부스, 아시아 최대 규모 AI 전시회로 도약</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-<section id="posters" class="poster-carousel-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>8년간의 혁신 여정</h2>
-                <p>AI EXPO KOREA의 8년간 변화를 포스터로 만나보세요</p>
+    <!-- Poster History Section (Horizontal Scroll) -->
+    <section id="posters" class="py-24 bg-black overflow-hidden">
+        <div class="container mx-auto px-6 mb-12">
+            <h2 class="text-3xl font-bold text-white mb-2 reveal">포스터 아카이브</h2>
+            <p class="text-gray-500 reveal">AI EXPO KOREA의 8년간 변화를 디자인으로 만나보세요</p>
+        </div>
+        
+        <div class="relative w-full reveal">
+            <div class="poster-scroll flex overflow-x-auto gap-6 pb-8 pl-6 pr-6 md:pl-12 md:pr-12" id="poster-container">
+                <!-- JS will render posters here ideally, but hardcoding for simplicity as per single file structure -->
+                
+                <!-- 2025 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer ml-0" onclick="openModal('https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-neon transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" class="poster-img" alt="2025">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-ai-neon font-bold text-xl">2025</span>
+                    </div>
+                </div>
+                <!-- 2024 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" class="poster-img" alt="2024">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-white font-bold text-xl">2024</span>
+                    </div>
+                </div>
+                <!-- 2023 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" class="poster-img" alt="2023">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-400 font-bold text-xl">2023</span>
+                    </div>
+                </div>
+                <!-- 2022 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" class="poster-img" alt="2022">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-500 font-bold text-xl">2022</span>
+                    </div>
+                </div>
+                 <!-- 2021 -->
+                 <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" class="poster-img" alt="2021">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-600 font-bold text-xl">2021</span>
+                    </div>
+                </div>
+                <!-- 2020 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" class="poster-img" alt="2020">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-700 font-bold text-xl">2020</span>
+                    </div>
+                </div>
+                <!-- 2019 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" class="poster-img" alt="2019">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-700 font-bold text-xl">2019</span>
+                    </div>
+                </div>
+                <!-- 2018 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" class="poster-img" alt="2018">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-gray-700 font-bold text-xl">2018</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="poster-carousel-container">
-                <div class="poster-carousel">
-                    <div class="poster-slide active" data-year="2025" onclick="openPosterModal('https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png', '2025')">
-                        <div class="poster-card">
-                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="2025 포스터">
-                            <div class="poster-year">2025</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2024" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg', '2024')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="2024 포스터">
-                            <div class="poster-year">2024</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2023" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg', '2023')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="2023 포스터">
-                            <div class="poster-year">2023</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2022" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg', '2022')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="2022 포스터">
-                            <div class="poster-year">2022</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2021" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg', '2021')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="2021 포스터">
-                            <div class="poster-year">2021</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2020" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg', '2020')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="2020 포스터">
-                            <div class="poster-year">2020</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2019" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg', '2019')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="2019 포스터">
-                            <div class="poster-year">2019</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poster-slide" data-year="2018" onclick="openPosterModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg', '2018')">
-                        <div class="poster-card">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="2018 포스터">
-                            <div class="poster-year">2018</div>
-                            <div class="poster-overlay">
-                                <i class="fas fa-expand"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="poster-controls">
-                    <button class="poster-prev" onclick="prevPoster()">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="poster-next" onclick="nextPoster()">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <div class="poster-indicators">
-                    <span class="indicator active" data-year="2025" ></span>
-                    <span class="indicator" data-year="2024" ></span>
-                    <span class="indicator" data-year="2023" ></span>
-                    <span class="indicator" data-year="2022" ></span>
-                    <span class="indicator" data-year="2021" ></span>
-                    <span class="indicator" data-year="2020" ></span>
-                    <span class="indicator" data-year="2019" ></span>
-                    <span class="indicator" data-year="2018" ></span>
-                </div>
+            <!-- Indicators -->
+            <div class="flex justify-center gap-2 mt-4">
+                <span class="block w-16 h-1 bg-ai-neon rounded"></span>
+                <!-- <span class="block w-8 h-1 bg-gray-700 rounded"></span> -->
+                <!-- <span class="block w-4 h-1 bg-gray-800 rounded"></span> -->
             </div>
         </div>
     </section>
 
     <!-- Timeline Section -->
-    <section id="timeline" class="timeline-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>작은 시작에서 국내 최대 AI 전시회로 성장한 발전사</h2>
+    <section id="timeline" class="py-24 bg-ai-dark relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <span class="text-ai-accent font-bold tracking-widest uppercase text-sm">History</span>
+                <h2 class="text-4xl font-bold text-white mt-2">작은 시작에서 국내 최대 AI 전시회로</h2>
             </div>
-            
-            
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="2025 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2025</h3>
-                            <p class="date">2025년 05월 14일(수) ~ 16일(금)</p>
-                            <p class="venue">COEX 1층, Hall A</p>
-                            <div class="stats">
-                                <span>18개국 322여 기업</span>
-                                <span>544부스</span>
-                                <span>43,788명 참관</span>
+
+            <div class="relative timeline-line">
+                <!-- 2025 Item (Left) -->
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-ai-neon shadow-xl w-12 h-12 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-lg text-black">25</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 glass-card rounded-xl neon-border mt-8 md:mt-0">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="AI EXPO KOREA 2025 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-700 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2025</h3>
+                                <p class="text-sm leading-snug tracking-wide text-gray-400 text-opacity-100 mb-4">
+                                    <i class="far fa-calendar-alt mr-2 text-ai-neon"></i>2025.05.14 - 16<br>
+                                    <i class="fas fa-map-marker-alt mr-2 text-ai-neon"></i>COEX 1층, Hall A
+                                </p>
+                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">18개국 322기업</span>
+                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">544부스</span>
+                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">43,788명</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="2024 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2024</h3>
-                            <p class="date">2024년 5월 1일(수) ~ 3일(금)</p>
-                            <p class="venue">서울 COEX 3층 Hall D</p>
-                            <div class="stats">
-                                <span>약 40,000명 참관</span>
+                <!-- 2024 Item (Right) -->
+                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">24</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="AI EXPO KOREA 2024 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2024</h3>
+                                <p class="text-sm text-gray-400 mb-2">COEX 3층 Hall D | 약 40,000명 참관</p>
+                                <p class="text-xs text-gray-500">생성형 AI의 폭발적 성장과 함께 역대급 참관객 기록</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="2023 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2023</h3>
-                            <p class="date">2023년 5월 10일(수) ~ 12일(금)</p>
-                            <p class="venue">서울 COEX 3층 Hall D</p>
-                            <div class="stats">
-                                <span>11개국 260개사</span>
-                                <span>32,526명 참관</span>
+                <!-- 2023 Item (Left) -->
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">23</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="AI EXPO KOREA 2023 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2023</h3>
+                                <p class="text-sm text-gray-400 mb-2">11개국 260개사 | 32,526명 참관</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="2022 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2022</h3>
-                            <p class="date">2022년 4월 13일(수) ~ 15일(금)</p>
-                            <p class="venue">서울 COEX 3층 Hall D</p>
-                            <div class="stats">
-                                <span>11개국 230개사</span>
-                                <span>430부스</span>
-                                <span>28,535명 참관</span>
+                 <!-- 2022 Item (Right) -->
+                 <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">22</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="AI EXPO KOREA 2022 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2022</h3>
+                                <p class="text-sm text-gray-400 mb-2">2022년 4월 13일(수) ~ 15일(금)</p>
+                                <p class="text-sm text-gray-400 mb-2">서울 COEX 3층 Hall D</p>
+                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">11개국 230개사</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">430부스</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">28,535명</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="2021 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2021</h3>
-                            <p class="date">2021년 03월 24일(수) ~ 26일(금)</p>
-                            <p class="venue">COEX 1층, Hall B</p>
-                            <div class="stats">
-                                <span>8개국 138개사</span>
-                                <span>187부스</span>
-                                <span>23,263명 참관</span>
+                <!-- 2021 Item (Left) -->
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">21</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="AI EXPO KOREA 2021 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2021</h3>
+                                <p class="text-sm text-gray-400 mb-2">2021년 03월 24일(수) ~ 26일(금)</p>
+                                <p class="text-sm text-gray-400 mb-2">COEX 1층, Hall B</p>
+                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">8개국 138개사</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">187부스</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">23,263명</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="2020 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2020</h3>
-                            <p class="date">2020년 10월 27일(화) ~ 29일(목)</p>
-                            <p class="venue">COEX 3층, Hall D</p>
-                            <div class="stats">
-                                <span>4개국 107개사</span>
-                                <span>175부스</span>
-                                <span>21,393명 참관</span>
+                <!-- 2020 Item (Right) -->
+                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">20</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="AI EXPO KOREA 2020 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2020</h3>
+                                <p class="text-sm text-gray-400 mb-2">2020년 10월 27일(화) ~ 29일(목)</p>
+                                <p class="text-sm text-gray-400 mb-2">COEX 3층, Hall D</p>
+                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">4개국 107개사</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">175부스</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">21,393명</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-year">2019</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="2019 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2019</h3>
-                            <p class="date">2019년 7월 17일(수) ~ 19일(금)</p>
-                            <p class="venue">COEX, Hall C</p>
-                            <div class="stats">
-                                <span>5개국 127개사</span>
-                                <span>200부스</span>
-                                <span>21,321명 참관</span>
+                <!-- 2019 Item (Left) -->
+                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">19</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="AI EXPO KOREA 2019 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2019</h3>
+                                <p class="text-sm text-gray-400 mb-2">2019년 7월 17일(수) ~ 19일(금)</p>
+                        <p class="text-sm text-gray-400 mb-2">COEX, Hall C</p>
+                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">5개국 127개사</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">200부스</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">21,321명</span>
+                                </div>
+                                <p class="text-xs text-ai-neon mt-2 italic">"당신이 인공지능시대를 이끌 차세대 주인공입니다!"</p>
                             </div>
-                            <p class="slogan">"당신이 인공지능시대를 이끌 차세대 주인공입니다!"</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <div class="timeline-poster">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="2018 포스터">
-                        </div>
-                        <div class="timeline-info">
-                            <h3>AI EXPO KOREA 2018</h3>
-                            <p class="date">2018년 7월 9일(월) ~ 11일(수)</p>
-                            <p class="venue">COEX, Hall D</p>
-                            <div class="stats">
-                                <span>3개국 82개사</span>
-                                <span>183부스</span>
-                                <span>14,278명 참관</span>
+                
+                <!-- 2018 Item (Center/End) -->
+                <div class="flex justify-center w-full reveal">
+                   <div class="px-6 py-4 glass-card rounded-xl max-w-xl">
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="AI EXPO KOREA 2018 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-700 shadow-md">
+                            <div class="text-center md:text-left">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2018</h3>
+                                <p class="text-sm text-gray-400 mb-2">2018년 7월 9일(월) ~ 11일(수)</p>
+                                <p class="text-sm text-gray-400 mb-2">COEX, Hall D</p>
+                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">3개국 82개사</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">183부스</span>
+                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">14,278명</span>
+                                </div>
+                                <p class="text-xs text-ai-neon mt-2 italic">"인공지능으로 열어가는 더 나은 미래"</p>
                             </div>
-                            <p class="slogan">"인공지능으로 열어가는 더 나은 미래"</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Exhibition Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>현장 갤러리</h2>
-                <p>AI EXPO KOREA의 생생한 현장 모습을 담은 사진들</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal('images/expo/1.png')">
-                    <img src="images/expo/1.png" alt="AI EXPO 현장 1" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/2.png')">
-                    <img src="images/expo/2.png" alt="AI EXPO 현장 2" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/3.png')">
-                    <img src="images/expo/3.png" alt="AI EXPO 현장 3" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/4.png')">
-                    <img src="images/expo/4.png" alt="AI EXPO 현장 4" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/5.png')">
-                    <img src="images/expo/5.png" alt="AI EXPO 현장 5" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/6.png')">
-                    <img src="images/expo/6.png" alt="AI EXPO 현장 6" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/7.png')">
-                    <img src="images/expo/7.png" alt="AI EXPO 현장 7" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/8.png')">
-                    <img src="images/expo/8.png" alt="AI EXPO 현장 8" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/9.png')">
-                    <img src="images/expo/9.png" alt="AI EXPO 현장 9" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/10.png')">
-                    <img src="images/expo/10.png" alt="AI EXPO 현장 10" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/11.png')">
-                    <img src="images/expo/11.png" alt="AI EXPO 현장 11" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/12.png')">
-                    <img src="images/expo/12.png" alt="AI EXPO 현장 12" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/13.png')">
-                    <img src="images/expo/13.png" alt="AI EXPO 현장 13" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/14.png')">
-                    <img src="images/expo/14.png" alt="AI EXPO 현장 14" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/15.png')">
-                    <img src="images/expo/15.png" alt="AI EXPO 현장 15" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/16.png')">
-                    <img src="images/expo/16.png" alt="AI EXPO 현장 16" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/17.png')">
-                    <img src="images/expo/17.png" alt="AI EXPO 현장 17" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openModal('images/expo/18.png')">
-                    <img src="images/expo/18.png" alt="AI EXPO 현장 18" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
-                    </div>
+                   </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modalImage" src="" alt="확대 이미지">
-            <div class="modal-navigation">
-                <button class="nav-btn prev-btn" onclick="prevImage()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="nav-btn next-btn" onclick="nextImage()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-3xl font-bold text-white">현장 갤러리</h2>
+                    <p class="text-gray-500 mt-2">뜨거웠던 현장의 열기를 확인하세요</p>
+                </div>
+            </div>
+
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[150px] reveal">
+                <!-- Gallery items will be injected here by script -->
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Conference Section -->
-    <section id="conference" class="conference-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>AI 컨퍼런스</h2>
-                <p>2025 AI EXPO KOREA 컨퍼런스 프로그램</p>
+    <section id="conference" class="py-24 bg-ai-light/30 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-white">AI 컨퍼런스 프로그램</h2>
+                <p class="text-gray-400 mt-2">최고의 전문가들과 함께하는 인사이트</p>
             </div>
-            
-            <div class="conference-posters">
-                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png')">
-                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png" alt="AI 컨퍼런스 프로그램 1" loading="lazy">
-                    <div class="conf-overlay">
-                        <i class="fas fa-expand"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                <!-- Conf 1 -->
+                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png')">
+                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
+                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png" class="w-full h-64 object-cover object-top" style="height: 448px;" alt="Conf 1">
                     </div>
+                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">AI Summint 2025</h3>
                 </div>
-                <div class="conf-poster-item" onclick="openConferenceModal('https://expo.koraia.org/poster0516.png')">
-                    <img src="https://expo.koraia.org/poster0516.png" alt="AI 컨퍼런스 프로그램 2" loading="lazy">
-                    <div class="conf-overlay">
-                        <i class="fas fa-expand"></i>
+                <!-- Conf 2 -->
+                <div class="group cursor-pointer" onclick="openModal('https://expo.koraia.org/poster0516.png')">
+                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
+                        <img src="https://expo.koraia.org/poster0516.png" class="w-full h-64 object-cover object-top" style="height: 448px;" alt="Conf 2">
                     </div>
+                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">Quantum AI Vision</h3>
                 </div>
-                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png')">
-                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png" alt="AI 컨퍼런스 프로그램 3" loading="lazy">
-                    <div class="conf-overlay">
-                        <i class="fas fa-expand"></i>
+                <!-- Conf 3 -->
+                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png')">
+                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
+                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png" style="height: 448px;" class="w-full h-64 object-cover object-top" alt="Conf 3">
                     </div>
+                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">Generative AI Trends</h3>
                 </div>
-                <div class="conf-poster-item" onclick="openConferenceModal('https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png')">
-                    <img src="https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png" alt="AI 컨퍼런스 프로그램 4" loading="lazy">
-                    <div class="conf-overlay">
-                        <i class="fas fa-expand"></i>
+                <!-- Conf 4 -->
+                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png')">
+                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
+                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png" style="height: 448px;" class="w-full h-64 object-cover object-top" alt="Conf 4">
                     </div>
+                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">AI Ethics & Future</h3>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Conference Modal -->
-    <div id="conferenceModal" class="modal conference-modal">
-        <div class="conference-modal-content">
-            <span class="close" onclick="closeConferenceModal()">&times;</span>
-            <div class="conference-modal-body">
-                <img id="conferenceModalImage" src="" alt="컨퍼런스 프로그램 확대 이미지">
-            </div>
-            <div class="modal-navigation">
-                <button class="nav-btn prev-btn" onclick="prevConferenceImage()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="nav-btn next-btn" onclick="nextConferenceImage()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
-        <div class="container">
-            <div class="section-header">
-                <h2>주요 성과와 파트너십</h2>
-                <p>8년간 쌓아온 신뢰와 협력의 결과</p>
+    <section id="achievements" class="py-24 bg-ai-dark relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-white mb-4">주요 성과와 파트너십</h2>
+                <p class="text-gray-400">8년간 쌓아온 신뢰와 협력의 결과</p>
             </div>
-            
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <div class="achievement-icon">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal">
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <div class="achievement-title">국내 1위</div>
-                    <div class="achievement-desc">AI 전문 전시회 규모</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">국내 1위</h3>
+                    <p class="text-gray-400">AI 전문 전시회 규모</p>
                 </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <div class="achievement-title">정부 지원</div>
-                    <div class="achievement-desc">5개 이상 부처 후원</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">정부 지원</h3>
+                    <p class="text-gray-400">5개 이상 부처 후원</p>
                 </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">
+                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
                         <i class="fas fa-globe-asia"></i>
                     </div>
-                    <div class="achievement-title">국제적 위상</div>
-                    <div class="achievement-desc">18개국 글로벌 기업 참가</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">국제적 위상</h3>
+                    <p class="text-gray-400">18개국 글로벌 기업 참가</p>
                 </div>
             </div>
 
-            <div class="partner-categories">
-                <div class="partner-category">
-                    <h3>주요 스폰서</h3>
-                    <div class="partner-grid">
-                        <div class="partner-item">슈퍼마이크로</div>
-                        <div class="partner-item">케이투스 코리아</div>
-                        <div class="partner-item">(주)마음AI</div>
-                        <div class="partner-item">페르소나AI</div>
-                        <div class="partner-item">셀바스AI</div>
-                        <div class="partner-item">레노버</div>
-                        <div class="partner-item">씨이랩</div>
-                        <div class="partner-item">어드밴텍케이알</div>
-                        <div class="partner-item">퓨어스토리지</div>
-                        <div class="partner-item">비엔아이엔씨</div>
-                        <div class="partner-item">한국전자통신연구원</div>
-                        <div class="partner-item">이안</div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-star text-ai-neon"></i>주요 스폰서
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">슈퍼마이크로</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">케이투스 코리아</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">(주)마음AI</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">페르소나AI</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">셀바스AI</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">레노버</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">씨이랩</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">어드밴텍케이알</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">퓨어스토리지</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">비엔아이엔씨</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국전자통신연구원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">이안</div>
                     </div>
                 </div>
 
-                <div class="partner-category">
-                    <h3>후원 기관</h3>
-                    <div class="partner-grid">
-                        <div class="partner-item">과학기술정보통신부</div>
-                        <div class="partner-item">보건복지부</div>
-                        <div class="partner-item">중소벤처기업부</div>
-                        <div class="partner-item">한국지능정보사회진흥원</div>
-                        <div class="partner-item">한국인터넷진흥원</div>
-                        <div class="partner-item">한국산업기술평가관리원</div>
-                        <div class="partner-item">정보통신기획평가원</div>
-                        <div class="partner-item">성남산업진흥원</div>
-                        <div class="partner-item">한국무역협회</div>
-                        <div class="partner-item">한국정보산업연합회</div>
-                        <div class="partner-item">한국소프트웨어산업협회</div>
-                        <div class="partner-item">임베디드소프트웨어시스템산업협회</div>
-                        <div class="partner-item">한국IT여성기업인협회</div>
-                        <div class="partner-item">KAIST AI</div>
-                        <div class="partner-item">로봇산업협회</div>
-                        <div class="partner-item">로보월드</div>
+                <div class="glass-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-building text-ai-neon"></i>후원 기관
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">과학기술정보통신부</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">보건복지부</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">중소벤처기업부</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국지능정보사회진흥원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국인터넷진흥원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국산업기술평가관리원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">정보통신기획평가원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">성남산업진흥원</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국무역협회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국정보산업연합회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국소프트웨어산업협회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">임베디드소프트웨어시스템산업협회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국IT여성기업인협회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">KAIST AI</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">로봇산업협회</div>
+                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">로보월드</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Poster Carousel Section -->
-    
-
-    <!-- Poster Modal -->
-    <div id="posterModal" class="modal poster-modal">
-        <div class="modal-content poster-modal-content">
-            <span class="close" onclick="closePosterModal()">&times;</span>
-            <div class="poster-modal-header">
-                <h3 id="posterModalTitle">AI EXPO KOREA 2025</h3>
-            </div>
-            <div class="poster-modal-body">
-                <img id="posterModalImage" src="" alt="포스터 확대 이미지">
-            </div>
-            <div class="poster-modal-navigation">
-                <button class="nav-btn prev-btn" onclick="prevPosterModal()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="nav-btn next-btn" onclick="nextPosterModal()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Future Section -->
-    <section id="future" class="future">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: white">AI EXPO KOREA 2025</h2>
-            </div>
-            
-            <div class="future-content">
-                <div class="future-info">
-                    <div class="future-date">
-                        <div class="date-label">개최일정</div>
-                        <div class="date-value">2025년 05월 14일(수) ~ 16일(금)</div>
+    <!-- Future & CTA Section -->
+    <section id="future" class="py-24 bg-gradient-to-br from-ai-dark to-blue-900/20">
+        <div class="container mx-auto px-6">
+            <div class="glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal neon-border">
+                <div class="w-full md:w-1/2 space-y-8">
+                    <h2 class="text-4xl font-black text-white leading-tight">
+                        AI EXPO KOREA <span class="text-ai-neon">2025</span><br>
+                        미래를 향한 초대
+                    </h2>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent"><i class="far fa-calendar text-xl"></i></div>
+                            <div>
+                                <div class="text-xs text-gray-500">Schedule</div>
+                                <div class="font-bold text-lg">2025. 05. 14(수) ~ 16(금)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent"><i class="fas fa-map-pin text-xl"></i></div>
+                            <div>
+                                <div class="text-xs text-gray-500">Location</div>
+                                <div class="font-bold text-lg">COEX 1층, Hall A</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="future-venue">
-                        <div class="venue-label">개최장소</div>
-                        <div class="venue-value">COEX 1층, Hall A</div>
-                    </div>
-                    <div class="future-highlights">
-                        <h3>2025년 특별 하이라이트</h3>
-                        <ul>
-                            <li>글로벌 AI 리더십 포럼</li>
-                            <li>차세대 AI 기술 체험관</li>
-                            <li>AI 윤리와 미래 컨퍼런스</li>
-                            <li>스타트업 피칭 대회</li>
-                            <li>AI 인재 채용 박람회</li>
+                    <div class="bg-ai-light/50 p-6 rounded-xl mt-6">
+                        <h3 class="text-xl font-bold text-white mb-4">2025년 특별 하이라이트</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>글로벌 AI 리더십 포럼</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>차세대 AI 기술 체험관</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>AI 윤리와 미래 컨퍼런스</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>스타트업 피칭 대회</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>AI 인재 채용 박람회</li>
                         </ul>
                     </div>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="flex-1 bg-ai-neon text-ai-dark text-center py-4 rounded-xl font-bold hover:bg-white transition-colors">
+                            전시 참가 신청
+                        </a>
+                        <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="flex-1 border border-ai-neon text-ai-neon text-center py-4 rounded-xl font-bold hover:bg-ai-neon/10 transition-colors">
+                            사전 등록하기
+                        </a>
+                        <a href="/map" class="flex-1 border border-gray-600 text-gray-300 text-center py-4 rounded-xl font-bold hover:bg-white/10 transition-colors">
+                            부스배치도 보기
+                        </a>
+                    </div>
                 </div>
-                <div class="future-poster">
-                    <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="AI EXPO KOREA 2025 포스터">
-                </div>
-            </div>
-            
-            <div class="cta-section">
-                <h3>지금 참여하세요</h3>
-                <div class="cta-buttons">
-                    <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i>
-                        전시 참가 신청
-                    </a>
-                    <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-ticket-alt"></i>
-                        관람 등록
-                    </a>
-                    <a href="/map" class="btn btn-secondary">
-                        <i class="fas fa-map"></i>
-                        부스배치도 보기
-                    </a>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-ai-neon/20 blur-3xl rounded-full"></div>
+                    <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" class="relative rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 w-3/4 mx-auto border border-gray-700" alt="2025 Poster">
                 </div>
             </div>
         </div>
     </section>
 
+
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>AI EXPO KOREA 2025</h3>
-                    <p>국내 최대 규모의 인공지능 전문 전시회</p>
+    <footer class="bg-ai-dark border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">AI EXPO KOREA 2025</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-4">
+                        국내 최대 규모의 인공지능 전문 전시회.<br>
+                        (사)한국인공지능협회, ㈜서울메쎄, 인공지능신문이 주최/주관하며<br>
+                        대한민국의 AI 산업 발전을 선도합니다.
+                    </p>
+                    <div class="space-y-1 text-gray-500 text-sm">
+                        <p><strong class="text-gray-400">주최/주관:</strong></p>
+                        <p>(사)한국인공지능협회</p>
+                        <p>㈜서울메쎄</p>
+                        <p>인공지능신문</p>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>주최/주관</h4>
-                    <ul>
-                        <li>(사)한국인공지능협회</li>
-                        <li>㈜서울메쎄</li>
-                        <li>인공지능신문</li>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Menu</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="#home" class="hover:text-ai-neon transition-colors">홈</a></li>
+                        <li><a href="#growth" class="hover:text-ai-neon transition-colors">성장기록</a></li>
+                        <li><a href="#timeline" class="hover:text-ai-neon transition-colors">타임라인</a></li>
+                        <li><a href="#conference" class="hover:text-ai-neon transition-colors">컨퍼런스</a></li>
+                        <li><a href="#achievements" class="hover:text-ai-neon transition-colors">주요성과</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>행사 정보</h4>
-                    <ul>
+                <div>
+                    <h4 class="text-white font-bold mb-4">행사 정보</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
                         <li>2025년 05월 14일(수) ~ 16일(금)</li>
                         <li>COEX 1층, Hall A</li>
                         <li>18개국 322여 기업 참가</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 AI EXPO KOREA. All rights reserved.</p>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm">&copy; 2025 AI EXPO KOREA. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script_expo.js"></script>
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm overflow-y-auto">
+        <div id="imageModalContent" class="min-h-full flex items-center justify-center p-4 py-12">
+            <div class="relative max-w-5xl w-full">
+                <button onclick="closeModal()" class="fixed top-4 right-4 z-10 text-white text-4xl hover:text-ai-neon focus:outline-none bg-black/50 rounded-full w-12 h-12 flex items-center justify-center transition-colors">&times;</button>
+                <img id="modalImg" src="" class="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-gray-700" alt="Modal View">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Particles Configuration
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#3b82f6" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": false },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-ai-dark/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-ai-dark/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+        }
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger once on load
+
+        // Gallery Generation Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('gallery-grid');
+            if (grid) {
+                for(let i=1; i<=18; i++) {
+                    const div = document.createElement('div');
+                    const spanClass = (i % 5 === 0) ? 'col-span-2 row-span-2' : (i % 3 === 0 ? 'row-span-2' : '');
+                    div.className = `relative group overflow-hidden rounded-lg cursor-pointer bg-gray-800 ${spanClass}`;
+                    div.setAttribute('onclick', `openModal('images/expo/${i}.png')`);
+                    div.innerHTML = `
+                        <img src="images/expo/${i}.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" alt="Gallery ${i}" onerror="this.src='https://via.placeholder.com/400x300/1a2236/ffffff?text=AI+EXPO+${i}'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                            <i class="fas fa-plus text-ai-neon"></i>
+                        </div>
+                    `;
+                    grid.appendChild(div);
+                }
+            }
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalContent = document.getElementById('imageModalContent');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(src) {
+            modal.classList.remove('hidden');
+            // Add a tiny delay for animation if we added transitions (optional)
+            modalImg.src = src;
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modalImg.src = '';
+            document.body.classList.remove('modal-open');
+        }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+
+        if (modal && modalContent) {
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            modalContent.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        }
+    </script>
 </body>
-</html> 
+</html>
