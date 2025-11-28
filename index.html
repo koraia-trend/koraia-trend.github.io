@@ -1017,18 +1017,20 @@
             }
         });
 
-        if (modal && modalContent) {
+        if (modal) {
             modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
+                // 수정된 로직: 
+                // 1. modal (검은 배경) 클릭 시
+                // 2. modalImg (이미지) 클릭 시
+                // 3. modalContent (이미지 주변 여백) 클릭 시
+                // 위 세 가지 경우 모두 닫기 함수(closeModal) 실행
+                if (event.target === modal || event.target === modalImg || event.target === modalContent) {
                     closeModal();
                 }
-            });
-
-            modalContent.addEventListener('click', function(event) {
-                event.stopPropagation();
             });
         }
     </script>
 </body>
 
 </html>
+
