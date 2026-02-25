@@ -212,9 +212,6 @@
                 <a href="/map" class="px-8 py-3 rounded-lg glass-card hover:bg-white/10 text-white font-bold transition-all">
                     <i class="fas fa-map-marked-alt mr-2"></i>2025 부스배치도
                 </a>
-                <a href="https://expo.koraia.org/conference/conference" target="_blank" class="px-8 py-3 rounded-lg border border-gray-600 hover:border-ai-neon text-gray-300 hover:text-white transition-all">
-                    컨퍼런스
-                </a>
             </div>
 
             <!-- Hero Stats -->
@@ -348,8 +345,19 @@
         <div class="relative w-full reveal">
             <div class="poster-scroll flex overflow-x-auto gap-6 pb-8 pl-6 pr-6 md:pl-12 md:pr-12" id="poster-container">
                 <!-- JS will render posters here ideally, but hardcoding for simplicity as per single file structure -->
-                
                 <!-- 2026 -->
+                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer ml-0" onclick="openModal('https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg')">
+                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-neon transition-all duration-300 transform group-hover:-translate-y-2">
+                        <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg" class="poster-img" alt="2026">
+                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <i class="fas fa-search-plus text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <span class="text-ai-neon font-bold text-xl">2025</span>
+                    </div>
+                </div>
+                <!-- 2025 -->
                 <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer ml-0" onclick="openModal('https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png')">
                     <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-neon transition-all duration-300 transform group-hover:-translate-y-2">
                         <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" class="poster-img" alt="2026">
@@ -464,7 +472,23 @@
             </div>
 
             <div class="relative timeline-line">
-                <!-- 2026 Item (Left) -->
+
+                <!-- 2024 Item (Right) -->
+                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
+                        <h1 class="mx-auto font-bold text-sm text-white">24</h1>
+                    </div>
+                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
+                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="AI EXPO KOREA 2026 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
+                            <div class="text-center md:text-left w-full">
+                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2026</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2025 Item (Left) -->
                 <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
                     <div class="order-1 md:w-5/12"></div>
                     <div class="z-20 flex items-center order-1 bg-ai-neon shadow-xl w-12 h-12 rounded-full justify-center border-4 border-ai-dark">
@@ -786,7 +810,7 @@
             <div class="glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal neon-border">
                 <div class="w-full md:w-1/2 space-y-8">
                     <h2 class="text-4xl font-black text-white leading-tight">
-                        AI EXPO KOREA <span class="text-ai-neon">2025</span><br>
+                        AI EXPO KOREA <span class="text-ai-neon">2026</span><br>
                         미래를 향한 초대
                     </h2>
                     <div class="space-y-4 text-gray-300">
@@ -794,7 +818,7 @@
                             <div class="w-12 h-12 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent"><i class="far fa-calendar text-xl"></i></div>
                             <div>
                                 <div class="text-xs text-gray-500">Schedule</div>
-                                <div class="font-bold text-lg">2025. 05. 14(수) ~ 16(금)</div>
+                                <div class="font-bold text-lg">2026. 05. 06(수) ~ 08(금)</div>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -805,7 +829,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-ai-light/50 p-6 rounded-xl mt-6">
+                    <!-- <div class="bg-ai-light/50 p-6 rounded-xl mt-6">
                         <h3 class="text-xl font-bold text-white mb-4">2025년 특별 하이라이트</h3>
                         <ul class="space-y-2 text-gray-300">
                             <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>글로벌 AI 리더십 포럼</li>
@@ -814,19 +838,16 @@
                             <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>스타트업 피칭 대회</li>
                             <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>AI 인재 채용 박람회</li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="flex-1 bg-ai-neon text-ai-dark text-center py-4 rounded-xl font-bold hover:bg-white transition-colors">
                             전시 참가 신청
-                        </a>
-                        <a href="/map" target="_blank" class="flex-1 border border-ai-neon text-ai-neon text-center py-4 rounded-xl font-bold hover:bg-ai-neon/10 transition-colors">
-                            25년 부스배치도
                         </a>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 relative">
                     <div class="absolute inset-0 bg-ai-neon/20 blur-3xl rounded-full"></div>
-                    <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" class="relative rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 w-3/4 mx-auto border border-gray-700" alt="2025 Poster">
+                    <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_koraia.jpg" class="relative rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 w-3/4 mx-auto border border-gray-700" alt="2026 Poster">
                 </div>
             </div>
         </div>
@@ -1029,6 +1050,7 @@
 </body>
 
 </html>
+
 
 
 
