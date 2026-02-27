@@ -244,12 +244,190 @@
     <!-- Growth Metrics Section -->
     <section id="growth" class="py-24 relative bg-ai-dark bg-tech-grid">
         <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#161b33"></stop>
+      <stop offset="100%" stop-color="#0a0c14"></stop>
+    </radialGradient>
+
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff"></stop>
+      <stop offset="50%" stop-color="#7000ff"></stop>
+      <stop offset="100%" stop-color="#ff00a0"></stop>
+    </linearGradient>
+    
+    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#7000ff"></stop>
+      <stop offset="100%" stop-color="#00e5ff"></stop>
+    </linearGradient>
+
+    <linearGradient id="barGrad2018" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b"></stop>
+      <stop offset="100%" stop-color="#334155"></stop>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+      
+      text { font-family: 'Pretendard', 'Noto Sans KR', sans-serif; }
+      
+      .main-title { font-size: 42px; font-weight: 800; fill: #ffffff; letter-spacing: 2px; }
+      .sub-title { font-size: 18px; font-weight: 400; fill: #94a3b8; letter-spacing: 1px; }
+      
+      .year-text { font-size: 24px; font-weight: 800; fill: #ffffff; }
+      .node-title { font-size: 16px; font-weight: 700; fill: #00e5ff; }
+      .node-desc { font-size: 14px; font-weight: 400; fill: #cbd5e1; }
+      
+      .chart-title { font-size: 20px; font-weight: 700; fill: #ffffff; }
+      .chart-label { font-size: 14px; fill: #64748b; }
+      .chart-val { font-size: 14px; font-weight: 700; fill: #ffffff; }
+      .chart-inc { font-size: 18px; font-weight: 800; fill: #ff00a0; }
+
+      /* CSS 애니메이션 */
+      .fade-in { opacity: 0; animation: fadeIn 0.8s forwards; }
+      .glass-box { fill: rgba(255, 255, 255, 0.03); stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; rx: 12; }
+      
+      @keyframes fadeIn { to { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)"></rect>
+
+  <g class="fade-in" style="animation-delay: 0.2s;">
+    <text x="80" y="80" class="main-title">AI EXPO KOREA <tspan fill="#00e5ff">2026</tspan></text>
+    <text x="80" y="115" class="sub-title">멈추지 않는 혁신, 아시아 최대 AI 전시회로의 진화 궤적</text>
+  </g>
+
+  <path d="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="none" stroke-linecap="round"></path>
+
+  <path id="trackPath" d="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120" stroke="url(#neonGrad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)" stroke-dasharray="1200" stroke-dashoffset="1200">
+    <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="4s" fill="freeze" calcMode="linear"></animate>
+  </path>
+
+
+  <g class="fade-in" style="animation-delay: 0s;" transform="translate(150, 420)">
+    <circle cx="0" cy="0" r="6" fill="#00e5ff" filter="url(#glow)"></circle>
+    <rect x="-70" y="25" width="140" height="85" class="glass-box"></rect>
+    <text x="0" y="50" text-anchor="middle" class="year-text">2018</text>
+    <text x="0" y="75" text-anchor="middle" class="node-title">첫 출발</text>
+    <text x="0" y="95" text-anchor="middle" class="node-desc">3개국 / 82개사</text>
+  </g>
+
+  <g class="fade-in" style="animation-delay: 1.3s;" transform="translate(450, 320)">
+    <circle cx="0" cy="0" r="6" fill="#4d4dff" filter="url(#glow)"></circle>
+    <rect x="-70" y="25" width="140" height="85" class="glass-box"></rect>
+    <text x="0" y="50" text-anchor="middle" class="year-text">2020</text>
+    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#8b5cf6">팬데믹 극복</text>
+    <text x="0" y="95" text-anchor="middle" class="node-desc">안전 개최·신뢰 구축</text>
+  </g>
+
+  <g class="fade-in" style="animation-delay: 2.6s;" transform="translate(750, 220)">
+    <circle cx="0" cy="0" r="6" fill="#a855f7" filter="url(#glow)"></circle>
+    <rect x="-80" y="25" width="160" height="85" class="glass-box"></rect>
+    <text x="0" y="50" text-anchor="middle" class="year-text">2022</text>
+    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#d946ef">규모 확대</text>
+    <text x="0" y="95" text-anchor="middle" class="node-desc">11개국 / 430부스</text>
+  </g>
+
+  <g class="fade-in" style="animation-delay: 4.0s;" transform="translate(1050, 120)">
+    <circle cx="0" cy="0" r="8" fill="#ff00a0" filter="url(#glow)"></circle>
+    <rect x="-80" y="25" width="160" height="85" class="glass-box"></rect>
+    <text x="0" y="50" text-anchor="middle" class="year-text" fill="#ff00a0">2025 NOW</text>
+    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#ffffff">글로벌 허브</text>
+    <text x="0" y="95" text-anchor="middle" class="node-desc">18개국 / 아시아 최대</text>
+  </g>
+
+
+  <g filter="url(#glow)">
+    <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <circle cx="8" cy="-18" r="4" fill="#ffffff"></circle> <path d="M 8,-14 L 10,-2"></path> <path d="M 0,-8 L 8,-12 L 15,-4"></path> <path d="M 10,-2 L 14,8 L 6,14 M 10,-2 L 2,4 L 10,10"></path> <path d="M -15,-5 L -5,-5 M -10,5 L -2,5" stroke="#00e5ff" stroke-width="2" opacity="0.8"></path>
+    </g>
+    <animateMotion dur="4s" fill="freeze" calcMode="linear" rotate="auto" path="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120"></animateMotion>
+    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.95;1" dur="4.2s" fill="freeze"></animate>
+  </g>
+
+
+  <g transform="translate(80, 560)">
+    <text x="0" y="0" class="main-title" style="font-size: 24px;">DATA EVOLUTION <tspan fill="#64748b" font-size="16px" font-weight="400">| 2018 vs 2025</tspan></text>
+    
+    <line x1="0" y1="180" x2="1040" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1"></line>
+    <line x1="0" y1="100" x2="1040" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="5 5"></line>
+    <line x1="0" y1="20" x2="1040" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="5 5"></line>
+
+    <g transform="translate(160, 0)">
+      <text x="0" y="215" class="chart-title" text-anchor="middle">참가국가</text>
+      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
+        <animate attributeName="height" from="0" to="20" begin="4.2s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="160" begin="4.2s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="-20" y="150" class="chart-label" text-anchor="middle" opacity="0">3개국<animate attributeName="opacity" to="1" begin="5.0s" dur="0.5s" fill="freeze"></animate></text>
+      
+      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
+        <animate attributeName="height" from="0" to="140" begin="4.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="40" begin="4.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">18개국<animate attributeName="opacity" to="1" begin="5.8s" dur="0.5s" fill="freeze"></animate></text>
+      
+      <text x="0" y="100" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+500% ▲
+        <animate attributeName="opacity" to="1" begin="6.2s" dur="0.5s" fill="freeze"></animate>
+      </text>
+    </g>
+
+    <g transform="translate(520, 0)">
+      <text x="0" y="215" class="chart-title" text-anchor="middle">참가기업</text>
+      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
+        <animate attributeName="height" from="0" to="30" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="150" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="-20" y="140" class="chart-label" text-anchor="middle" opacity="0">82개사<animate attributeName="opacity" to="1" begin="5.1s" dur="0.5s" fill="freeze"></animate></text>
+      
+      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
+        <animate attributeName="height" from="0" to="140" begin="4.9s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="40" begin="4.9s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">322개사<animate attributeName="opacity" to="1" begin="5.9s" dur="0.5s" fill="freeze"></animate></text>
+
+      <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+293% ▲
+        <animate attributeName="opacity" to="1" begin="6.3s" dur="0.5s" fill="freeze"></animate>
+      </text>
+    </g>
+
+    <g transform="translate(880, 0)">
+      <text x="0" y="215" class="chart-title" text-anchor="middle">참관객</text>
+      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
+        <animate attributeName="height" from="0" to="40" begin="4.4s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="140" begin="4.4s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="-20" y="130" class="chart-label" text-anchor="middle" opacity="0">1.4만 명<animate attributeName="opacity" to="1" begin="5.2s" dur="0.5s" fill="freeze"></animate></text>
+      
+      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
+        <animate attributeName="height" from="0" to="140" begin="5.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+        <animate attributeName="y" from="180" to="40" begin="5.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
+      </rect>
+      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">43,788명<animate attributeName="opacity" to="1" begin="6.0s" dur="0.5s" fill="freeze"></animate></text>
+
+      <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+207% ▲
+        <animate attributeName="opacity" to="1" begin="6.4s" dur="0.5s" fill="freeze"></animate>
+      </text>
+    </g>
+  </g>
+</svg>
+
+<div class="text-center mb-16 reveal active">
                 <h2 class="text-4xl font-bold text-white mb-4">성장의 궤적</h2>
                 <p class="text-gray-400">숫자로 보는 AI EXPO KOREA의 9년간 놀라운 성장</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal active">
                 <!-- 2018 Card -->
                 <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-ai-accent transition-colors duration-300">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -315,7 +493,7 @@
             </div>
 
             <!-- Milestone Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 reveal active">
                 <div class="bg-ai-light p-6 rounded-xl border-l-4 border-gray-500 hover:bg-gray-800 transition-colors">
                     <div class="text-2xl font-black text-gray-500 mb-2">2020</div>
                     <h4 class="text-lg font-bold text-white mb-1">팬데믹 극복</h4>
@@ -1054,6 +1232,7 @@
 </body>
 
 </html>
+
 
 
 
