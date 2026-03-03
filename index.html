@@ -390,7 +390,7 @@
                     d="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120"
                     stroke="url(#neonGrad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"
                     stroke-dasharray="1200" stroke-dashoffset="1200">
-                    <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="4s" fill="freeze"
+                    <animate begin="indefinite" attributeName="stroke-dashoffset" from="1200" to="0" dur="4s" fill="freeze"
                         calcMode="linear"></animate>
                 </path>
 
@@ -440,7 +440,7 @@
                     <animateMotion dur="4s" fill="freeze" calcMode="linear" rotate="auto"
                         path="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120">
                     </animateMotion>
-                    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.95;1" dur="4.2s" fill="freeze">
+                    <animate begin="indefinite" attributeName="opacity" values="1;1;0" keyTimes="0;0.95;1" dur="4.2s" fill="freeze">
                     </animate>
                 </g>
 
@@ -458,9 +458,9 @@
                     <g transform="translate(160, 0)">
                         <text x="0" y="215" class="chart-title" text-anchor="middle">참가국가</text>
                         <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-                            <animate attributeName="height" from="0" to="20" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="20" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="160" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="160" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="-20" y="150" class="chart-label" text-anchor="middle" opacity="0">3개국<animate
@@ -468,9 +468,9 @@
                             </text>
 
                         <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-                            <animate attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">18개국<animate
@@ -479,7 +479,7 @@
 
                         <text x="0" y="100" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+500%
                             ▲
-                            <animate attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
+                            <animate begin="indefinite" attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
                             </animate>
                         </text>
                     </g>
@@ -487,9 +487,9 @@
                     <g transform="translate(520, 0)">
                         <text x="0" y="215" class="chart-title" text-anchor="middle">참가기업</text>
                         <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-                            <animate attributeName="height" from="0" to="30" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="30" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="150" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="150" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="-20" y="140" class="chart-label" text-anchor="middle" opacity="0">82개사<animate
@@ -497,9 +497,9 @@
                             </text>
 
                         <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-                            <animate attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">322개사<animate
@@ -508,7 +508,7 @@
 
                         <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+293%
                             ▲
-                            <animate attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
+                            <animate begin="indefinite" attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
                             </animate>
                         </text>
                     </g>
@@ -516,9 +516,9 @@
                     <g transform="translate(880, 0)">
                         <text x="0" y="215" class="chart-title" text-anchor="middle">참관객</text>
                         <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-                            <animate attributeName="height" from="0" to="40" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="40" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="140" begin="indefinite" dur="0.8s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="140" begin="indefinite" dur="0.8s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="-20" y="130" class="chart-label" text-anchor="middle" opacity="0">1.4만 명<animate
@@ -526,9 +526,9 @@
                             </text>
 
                         <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-                            <animate attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="height" from="0" to="140" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-                            <animate attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
+                            <animate begin="indefinite" attributeName="y" from="180" to="40" begin="indefinite" dur="1s" fill="freeze"
                                 calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
                         </rect>
                         <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">43,788명<animate
@@ -537,7 +537,7 @@
 
                         <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+207%
                             ▲
-                            <animate attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
+                            <animate begin="indefinite" attributeName="opacity" to="1" begin="indefinite" dur="0.5s" fill="freeze">
                             </animate>
                         </text>
                     </g>
@@ -1473,24 +1473,36 @@
             const mainAnimate = document.getElementById("mainAnimate"); // 첫 번째 애니메이션 id
 
             const observerOptions = {
-    root: null,
-    threshold: 0.6 // SVG 요소가 화면에 60% 이상 보일 때 즉시 실행
-};
+                root: null, // 뷰포트 기준
+                threshold: 0, // 요소가 조금이라도 보이기 시작할 때 실행 (또는 아래 로직 사용)
+            };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // 애니메이션 실행
-            const allAnimations = entry.target.querySelectorAll("animate, animateMotion");
-            allAnimations.forEach(anim => anim.beginElement());
-            
-            // 실행 후 관찰 중단
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    // 스크롤 위치가 페이지 전체의 60%를 넘었는지 확인하는 로직
+                    window.addEventListener("scroll", function scrollHandler() {
+                        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
 
-observer.observe(document.getElementById("expo-svg"));
+                        if (scrollPercent >= 0.6) {
+                            // 애니메이션 시작
+                            if (mainAnimate && typeof mainAnimate.beginElement === "function") {
+                                mainAnimate.beginElement();
+
+                                // 차트 애니메이션 등 다른 요소들도 id를 부여해 여기서 beginElement()를 호출하세요.
+                                // 혹은 전체 SVG 내부의 모든 animate 요소를 찾아 실행할 수도 있습니다.
+                                const allAnimations = svgElement.querySelectorAll("animate, animateMotion");
+                                allAnimations.forEach(anim => anim.beginElement());
+                            }
+
+                            // 한 번 실행 후 이벤트 리스너 제거 (중복 실행 방지)
+                            window.removeEventListener("scroll", scrollHandler);
+                            observer.unobserve(svgElement);
+                        }
+                    });
+                });
+            }, observerOptions);
+
+            observer.observe(svgElement);
         });
     </script>
 </body>
