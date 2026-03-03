@@ -1473,39 +1473,28 @@
             const mainAnimate = document.getElementById("mainAnimate"); // 첫 번째 애니메이션 id
 
             const observerOptions = {
-                root: null, // 뷰포트 기준
-                threshold: 0, // 요소가 조금이라도 보이기 시작할 때 실행 (또는 아래 로직 사용)
-            };
+    root: null,
+    threshold: 0.6 // SVG 요소가 화면에 60% 이상 보일 때 즉시 실행
+};
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    // 스크롤 위치가 페이지 전체의 60%를 넘었는지 확인하는 로직
-                    window.addEventListener("scroll", function scrollHandler() {
-                        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // 애니메이션 실행
+            const allAnimations = entry.target.querySelectorAll("animate, animateMotion");
+            allAnimations.forEach(anim => anim.beginElement());
+            
+            // 실행 후 관찰 중단
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
-                        if (scrollPercent >= 0.6) {
-                            // 애니메이션 시작
-                            if (mainAnimate && typeof mainAnimate.beginElement === "function") {
-                                mainAnimate.beginElement();
-
-                                // 차트 애니메이션 등 다른 요소들도 id를 부여해 여기서 beginElement()를 호출하세요.
-                                // 혹은 전체 SVG 내부의 모든 animate 요소를 찾아 실행할 수도 있습니다.
-                                const allAnimations = svgElement.querySelectorAll("animate, animateMotion");
-                                allAnimations.forEach(anim => anim.beginElement());
-                            }
-
-                            // 한 번 실행 후 이벤트 리스너 제거 (중복 실행 방지)
-                            window.removeEventListener("scroll", scrollHandler);
-                            observer.unobserve(svgElement);
-                        }
-                    });
-                });
-            }, observerOptions);
-
-            observer.observe(svgElement);
+observer.observe(document.getElementById("expo-svg"));
         });
     </script>
 </body>
 
 </html>
+
 
