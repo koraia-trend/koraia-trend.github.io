@@ -1467,46 +1467,52 @@
     </script>
 
 
-    <script>
-         document.addEventListener("DOMContentLoaded", () => {
-            const svgElement = document.getElementById("expo-svg");
-            const mainAnimate = document.getElementById("mainAnimate"); // 첫 번째 애니메이션 id
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const svgElement = document.getElementById("expo-svg");
+    
+    // Intersection Observer 설정
+    const observerOptions = {
+        root: null,
+        threshold: 0 // 일단 요소가 보이기 시작하면 스크롤 계산 시작
+    };
 
-            const observerOptions = {
-                root: null, // 뷰포트 기준
-                threshold: 0, // 요소가 조금이라도 보이기 시작할 때 실행 (또는 아래 로직 사용)
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    // 스크롤 위치가 페이지 전체의 60%를 넘었는지 확인하는 로직
-                    window.addEventListener("scroll", function scrollHandler() {
-                        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-
-                        if (scrollPercent >= 0.6) {
-                            // 애니메이션 시작
-                            if (mainAnimate && typeof mainAnimate.beginElement === "function") {
-                                mainAnimate.beginElement();
-
-                                // 차트 애니메이션 등 다른 요소들도 id를 부여해 여기서 beginElement()를 호출하세요.
-                                // 혹은 전체 SVG 내부의 모든 animate 요소를 찾아 실행할 수도 있습니다.
-                                const allAnimations = svgElement.querySelectorAll("animate, animateMotion");
-                                allAnimations.forEach(anim => anim.beginElement());
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // 스크롤 핸들러 함수
+                const scrollHandler = () => {
+                    const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+                    
+                    // 페이지 전체의 60% 지점 도달 시
+                    if (scrollPercent >= 0.6) {
+                        // SVG 내부의 모든 애니메이션 요소를 찾아 실행
+                        const allAnimations = svgElement.querySelectorAll("animate, animateMotion");
+                        allAnimations.forEach(anim => {
+                            if (typeof anim.beginElement === "function") {
+                                anim.beginElement();
                             }
+                        });
 
-                            // 한 번 실행 후 이벤트 리스너 제거 (중복 실행 방지)
-                            window.removeEventListener("scroll", scrollHandler);
-                            observer.unobserve(svgElement);
-                        }
-                    });
-                });
-            }, observerOptions);
+                        // 실행 후 이벤트 리스너와 옵저버 제거 (중복 실행 방지)
+                        window.removeEventListener("scroll", scrollHandler);
+                        observer.unobserve(svgElement);
+                    }
+                };
 
-            observer.observe(svgElement);
+                window.addEventListener("scroll", scrollHandler);
+            }
         });
-    </script>
+    }, observerOptions);
+
+    if (svgElement) {
+        observer.observe(svgElement);
+    }
+});
+</script>
 </body>
 
 </html>
+
 
 
