@@ -1,1234 +1,1544 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
-
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국제인공지능대전 AI EXPO KOREA 2026</title>
-    <meta name="description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
-    <meta property="og:title" content="AI EXPO KOREA 2026">
-    <meta property="og:description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/images/ogimage2.png">
-    <meta property="og:site_name" content="AI EXPO KOREA 2026">
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI EXPO KOREA 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Tailwind CSS (Design Framework) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    :root {
+      --blue: #0066FF;
+      --blue-dark: #0044CC;
+      --cyan: #00C8FF;
+      --white: #FFFFFF;
+      --gray-50: #F8F9FA;
+      --gray-100: #F0F2F5;
+      --gray-200: #E4E7EC;
+      --gray-400: #9DA4B0;
+      --gray-600: #6B7280;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --black: #0A0E1A;
+    }
 
-    <!-- Custom Configuration for Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans KR"', 'sans-serif'],
-                    },
-                    colors: {
-                        ai: {
-                            dark: '#0a0e17',
-                            light: '#1a2236',
-                            accent: '#3b82f6',
-                            neon: '#00f3ff',
-                            purple: '#7c3aed'
-                        }
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "linear-gradient(to bottom, rgba(10, 14, 23, 0.8), rgba(10, 14, 23, 1)), url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop')",
-                        'tech-grid': "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)"
-                    }
-                }
-            }
-        }
-    </script>
+    html { scroll-behavior: smooth; }
 
-    <style>
-        /* Custom Styles */
-        body {
-            background-color: #0a0e17;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: 'Inter', 'Noto Sans KR', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0e17;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00f3ff;
-        }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(10, 14, 26, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--cyan); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 20px;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
 
-        /* Glassmorphism Card */
-        .glass-card {
-            background: rgba(26, 34, 54, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1160px;
+      padding: 0 24px;
+      width: 100%;
+    }
+    .hero-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+    .hero-text-area {
+      flex: 1;
+      text-align: left;
+    }
+    .hero-poster-area {
+      flex-shrink: 0;
+      width: 380px;
+    }
+    .hero-poster-area img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
+      transition: transform 0.5s ease;
+    }
+    .hero-poster-area img:hover {
+      transform: translateY(-8px);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--cyan);
+      border: 1px solid rgba(0, 200, 255, 0.3);
+      background: rgba(0, 200, 255, 0.07);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero-year {
+      font-size: clamp(60px, 10vw, 120px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #FFFFFF 0%, rgba(255,255,255,0.5) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .hero-title {
+      font-size: clamp(18px, 3vw, 28px);
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 48px;
+    }
+    .hero-sub strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-meta-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: rgba(0,102,255,0.2);
+      border: 1px solid rgba(0,102,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .hero-meta-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: 14px 32px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.06);
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollDown 2s infinite;
+    }
+    @keyframes scrollDown {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
 
-        /* Neon Glow */
-        .neon-text {
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-        }
-        .neon-border:hover {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-            border-color: #3b82f6;
-        }
+    /* ── SECTIONS ── */
+    section {
+      padding: 100px 0;
+    }
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--blue);
+      margin: 24px 0;
+    }
 
-        /* Timeline Line */
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: linear-gradient(to bottom, #3b82f6, #7c3aed);
-            transform: translateX(-50%);
-            z-index: 0;
-        }
-        @media (max-width: 768px) {
-            .timeline-line::before {
-                left: 20px;
-            }
-        }
+    /* ── STATS ── */
+    #stats { background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      padding: 40px 32px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-number span { color: var(--cyan); }
+    .stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.06em;
+    }
+    .stat-growth {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #22C55E;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+    }
 
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    /* ── TIMELINE ── */
+    #timeline { background: var(--black); }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .timeline-track {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(0,102,255,0.5) 10%, rgba(0,102,255,0.5) 90%, transparent);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 64px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -36px;
+      top: 4px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--black);
+      border: 2px solid rgba(0,102,255,0.5);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .timeline-item:hover .timeline-dot {
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+    .timeline-item.highlight .timeline-dot {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px rgba(0,200,255,0.5);
+    }
+    .timeline-year {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--blue);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .timeline-item.highlight .timeline-year { color: var(--cyan); }
+    .timeline-content {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .timeline-poster img {
+      width: 120px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+    .timeline-poster img:hover {
+      transform: scale(1.05);
+    }
+    .timeline-text { flex: 1; }
+    .timeline-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .timeline-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.04);
+    }
+    .tag.blue { border-color: rgba(0,102,255,0.4); color: #6BA4FF; background: rgba(0,102,255,0.08); }
+    .tag.cyan { border-color: rgba(0,200,255,0.4); color: var(--cyan); background: rgba(0,200,255,0.08); }
+    .tag.green { border-color: rgba(34,197,94,0.4); color: #4ADE80; background: rgba(34,197,94,0.08); }
 
-        /* Background Tech Grid */
-        .bg-tech-grid {
-            background-size: 40px 40px;
-        }
+    /* ── GROWTH CHART ── */
+    #growth { background: rgba(255,255,255,0.015); border-top: 1px solid rgba(255,255,255,0.06); }
+    .growth-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .chart-area { position: relative; }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      height: 200px;
+      padding: 0 0 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .bar {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      transition: height 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      cursor: pointer;
+    }
+    .bar:hover { filter: brightness(1.2); }
+    .bar-tooltip {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    .bar:hover .bar-tooltip { opacity: 1; }
+    .bar-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 2px;
+    }
+    .comparison-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cmp-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .cmp-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .cmp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .cmp-val {
+      text-align: center;
+    }
+    .cmp-num {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+    .cmp-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      margin-top: 2px;
+    }
+    .cmp-arrow {
+      font-size: 22px;
+      color: rgba(255,255,255,0.15);
+    }
+    .cmp-badge {
+      font-size: 12px;
+      font-weight: 700;
+      color: #4ADE80;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+    .progress-bar-wrap {
+      margin-top: 10px;
+    }
+    .progress-track {
+      height: 4px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      width: 0%;
+      transition: width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
 
-        /* Modal Styles */
-        .modal-open {
-            overflow: hidden;
-        }
+    /* ── CONFERENCE ── */
+    #conference { background: var(--black); }
+    .conf-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .conf-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .conf-card:hover {
+      border-color: rgba(0,102,255,0.4);
+      background: rgba(0,102,255,0.05);
+      transform: translateY(-2px);
+    }
+    .conf-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .conf-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 8px;
+    }
+    .conf-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .conf-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
 
-        /* Poster Images */
-        .poster-img {
-            width: 100%;
-            height: 448px;
-            object-fit: cover;
-        }
+    /* ── GALLERY ── */
+    #gallery { background: rgba(255,255,255,0.015); border-top: 1px solid rgba(255,255,255,0.06); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
 
-        /* Poster Auto Scroll */
-        .poster-scroll {
-            overflow-x: auto;
-            scroll-behavior: auto;
-        }
-    </style>
+    /* ── ACHIEVEMENTS ── */
+    #achievements {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .ach-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .ach-card:hover { border-color: rgba(0,200,255,0.25); }
+    .ach-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .ach-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .ach-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+    .partners-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .partners-scroll {
+      overflow: hidden;
+      position: relative;
+    }
+    .partners-scroll::before,
+    .partners-scroll::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 1;
+    }
+    .partners-scroll::before { left: 0; background: linear-gradient(to right, rgba(10,14,26,0.8), transparent); }
+    .partners-scroll::after { right: 0; background: linear-gradient(to left, rgba(10,14,26,0.8), transparent); }
+    .partners-track {
+      display: flex;
+      gap: 12px;
+      animation: scroll 30s linear infinite;
+      width: max-content;
+    }
+    .partners-track:hover { animation-play-state: paused; }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .partner-chip {
+      flex-shrink: 0;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .partner-chip:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
+    .sponsor-chip {
+      background: rgba(0,102,255,0.06);
+      border-color: rgba(0,102,255,0.2);
+      color: rgba(100,160,255,0.8);
+    }
+
+    /* ── CTA ── */
+    #cta {
+      position: relative;
+      background: var(--black);
+      padding: 120px 0;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,102,255,0.15) 0%, transparent 70%);
+    }
+    .cta-inner {
+      position: relative;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .cta-title {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .cta-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .cta-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 12px 24px;
+      border-radius: 100px;
+      margin-bottom: 40px;
+    }
+    .cta-date-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 48px 0;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--cyan); }
+    .footer-orgs {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.7;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ── FADE IN ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-wrapper { flex-direction: column; text-align: center; }
+      .hero-text-area { text-align: center; }
+      .hero-actions { justify-content: center; }
+      .hero-meta { justify-content: center; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .timeline-content { flex-direction: column; }
+      .growth-inner { grid-template-columns: 1fr; gap: 40px; }
+      .conf-grid { grid-template-columns: 1fr; }
+      .ach-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
+<body>
 
-<body class="antialiased selection:bg-ai-accent selection:text-white">
+<nav id="navbar">
+  <a href="#" class="nav-logo">AI EXPO <span>KOREA</span></a>
+  <ul class="nav-links">
+    <li><a href="#timeline">성장기록</a></li>
+    <li><a href="#growth">히스토리</a></li>
+    <li><a href="#conference">컨퍼런스</a></li>
+    <li><a href="#gallery">갤러리</a></li>
+    <li><a href="#achievements">주요성과</a></li>
+  </ul>
+  <a href="#cta" class="nav-cta">참가 신청</a>
+</nav>
 
-    <!-- Particles Background (Fixed) -->
-    <div id="particles-js" class="fixed inset-0 w-full h-full pointer-events-none z-0"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 border-b border-transparent">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                <h1 class="text-2xl font-bold tracking-tighter text-white">AI EXPO <span class="text-ai-neon">KOREA</span> 2026</h1>
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-wrapper">
+      <div class="hero-text-area">
+        <div class="hero-badge">2026 · Asia's Largest AI Exhibition</div>
+        <div class="hero-year">2026</div>
+        <div class="hero-title">AI EXPO KOREA</div>
+        <p class="hero-sub">
+          <strong>9년간의 혁신 여정</strong>, 멈추지 않는 성장.<br>
+          국내 최대 AI 전시회로 성장한 국제인공지능대전.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="hero-meta-icon">📅</div>
+            <div class="hero-meta-text">
+              <strong>2026.05.06 – 08</strong>
+              <span>개최 일정</span>
             </div>
-
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex space-x-8 font-medium text-sm text-gray-300">
-                <li><a href="#home" class="hover:text-ai-neon transition-colors">홈</a></li>
-                <li><a href="#growth" class="hover:text-ai-neon transition-colors">성장기록</a></li>
-                <li><a href="#posters" class="hover:text-ai-neon transition-colors">히스토리</a></li>
-                <li><a href="#timeline" class="hover:text-ai-neon transition-colors">타임라인</a></li>
-                <li><a href="#gallery" class="hover:text-ai-neon transition-colors">갤러리</a></li>
-                <li><a href="#conference" class="hover:text-ai-neon transition-colors">컨퍼런스</a></li>
-                <li><a href="#achievements" class="hover:text-ai-neon transition-colors">주요성과</a></li>
-                <li><a href="#future" class="hover:text-ai-neon transition-colors">2026</a></li>
-            </ul>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white">
-                <i class="fas fa-bars"></i>
-            </button>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-icon">📍</div>
+            <div class="hero-meta-text">
+              <strong>COEX Hall A</strong>
+              <span>1층, 서울</span>
+            </div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="hero-meta-icon">🌐</div>
+            <div class="hero-meta-text">
+              <strong>18개국 이상</strong>
+              <span>글로벌 참가</span>
+            </div>
+          </div>
         </div>
-
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-ai-dark/95 backdrop-blur-md border-b border-gray-800 md:hidden">
-            <ul class="flex flex-col p-4 space-y-4 text-center text-gray-300">
-                <li><a href="#home" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">홈</a></li>
-                <li><a href="#growth" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">성장기록</a></li>
-                <li><a href="#posters" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">히스토리</a></li>
-                <li><a href="#timeline" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">타임라인</a></li>
-                <li><a href="#gallery" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">갤러리</a></li>
-                <li><a href="#conference" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">컨퍼런스</a></li>
-                <li><a href="#achievements" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">주요성과</a></li>
-                <li><a href="#future" class="block py-2 hover:text-ai-neon" onclick="closeMenu()">2026</a></li>
-            </ul>
+        <div class="hero-actions">
+          <a href="#cta" class="btn-primary">전시 참가 신청</a>
+          <a href="#timeline" class="btn-secondary">성장 여정 보기</a>
         </div>
-    </nav>
+      </div>
+      <div class="hero-poster-area fade-up">
+        <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_koraia.jpg" alt="2026 AI EXPO KOREA Poster">
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(10, 14, 23, 0.5), rgba(10, 14, 23, 1)), url('https://expo.koraia.org/expo_bg.png')">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-ai-dark/80 to-ai-dark z-10"></div>
-        
-        <div class="container mx-auto px-6 relative z-20 pt-20 text-center">
-            <div class="inline-block px-4 py-1 rounded-full border border-ai-neon/30 bg-ai-neon/10 text-ai-neon text-sm font-semibold mb-6 animate-pulse">
-                2018 - 2026 Innovation Journey
-            </div>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight reveal active">
-                AI EXPO KOREA<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-ai-accent to-ai-neon">9년간의 혁신 여정</span>
-            </h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10 reveal active delay-100">
-                국내 최대 AI 전시회로 성장한 국제인공지능대전.<br>
-                과거의 발자취를 넘어 미래의 가능성을 만나는 곳입니다.
-            </p>
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-up">
+        <div class="stat-number">9<span>th</span></div>
+        <div class="stat-label">개최 연차</div>
+        <div class="stat-growth">2018 → 2026</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.1s">
+        <div class="stat-number">18<span>개국</span></div>
+        <div class="stat-label">참가 국가</div>
+        <div class="stat-growth">+500% ▲</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.2s">
+        <div class="stat-number">322<span>개사</span></div>
+        <div class="stat-label">참가 기업</div>
+        <div class="stat-growth">+293% ▲</div>
+      </div>
+      <div class="stat-item fade-up" style="transition-delay:0.3s">
+        <div class="stat-number">43<span>K+</span></div>
+        <div class="stat-label">참관객 수</div>
+        <div class="stat-growth">+207% ▲</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="flex flex-wrap justify-center gap-4 reveal active delay-200">
-                <a href="#timeline" class="px-8 py-3 rounded-lg bg-ai-accent hover:bg-blue-600 text-white font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30">
-                    발전사 보기
-                </a>
-                <a href="/map" class="px-8 py-3 rounded-lg glass-card hover:bg-white/10 text-white font-bold transition-all">
-                    <i class="fas fa-map-marked-alt mr-2"></i>2025 부스배치도
-                </a>
+<section id="timeline">
+  <div class="container">
+    <div class="timeline-header fade-up">
+      <div>
+        <div class="section-label">Innovation Journey</div>
+        <h2 class="section-title">2018 – 2026<br>성장의 궤적</h2>
+        <div class="divider"></div>
+        <p class="section-desc">작은 시작에서 아시아 최대 AI 전시회로. 9년간의 혁신 여정을 만나보세요.</p>
+      </div>
+    </div>
+    <div class="timeline-track">
+      <div class="timeline-item highlight" id="tl-2026">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2026 · UPCOMING</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg" alt="2026 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2026</div>
+            <div class="timeline-desc">2026년 05월 06일(수) ~ 08일(금) · COEX 1층, Hall A<br>미래를 향한 초대. 더 큰 혁신이 시작됩니다.</div>
+            <div class="timeline-tags">
+              <span class="tag cyan">Coming Soon</span>
+              <span class="tag blue">COEX Hall A</span>
             </div>
-
-            <!-- Hero Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto reveal active delay-300">
-                <div class="glass-card p-4 rounded-xl text-center">
-                    <div class="text-3xl font-bold text-white mb-1">9<span class="text-sm text-ai-accent ml-1">th</span></div>
-                    <div class="text-xs text-gray-400">개최 연차</div>
-                </div>
-                <div class="glass-card p-4 rounded-xl text-center">
-                    <div class="text-3xl font-bold text-white mb-1">18<span class="text-sm text-ai-accent ml-1">개국</span></div>
-                    <div class="text-xs text-gray-400">참가 국가</div>
-                </div>
-                <div class="glass-card p-4 rounded-xl text-center">
-                    <div class="text-3xl font-bold text-white mb-1">322<span class="text-sm text-ai-accent ml-1">개사</span></div>
-                    <div class="text-xs text-gray-400">참가 기업</div>
-                </div>
-                <div class="glass-card p-4 rounded-xl text-center">
-                    <div class="text-3xl font-bold text-white mb-1">43K<span class="text-sm text-ai-accent ml-1">+</span></div>
-                    <div class="text-xs text-gray-400">참관객 수</div>
-                </div>
-            </div>
+          </div>
         </div>
-        
-        <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
-            <i class="fas fa-chevron-down text-2xl"></i>
+      </div>
+      <div class="timeline-item" id="tl-2025">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025 · 글로벌 허브</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="2025 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2025</div>
+            <div class="timeline-desc">2025.05.14 – 16 · COEX 1층, Hall A<br>18개국 322개사, 544부스, 43,788명 참관. 아시아 최대 AI 전시회 달성.</div>
+            <div class="timeline-tags">
+              <span class="tag green">43,788명</span>
+              <span class="tag blue">18개국</span>
+              <span class="tag">544부스</span>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Growth Metrics Section -->
-    <section id="growth" class="py-24 relative bg-ai-dark bg-tech-grid">
-        <div class="container mx-auto px-6 relative z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="100%" height="100%">
-  <defs>
-    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
-      <stop offset="0%" stop-color="#161b33"></stop>
-      <stop offset="100%" stop-color="#0a0c14"></stop>
-    </radialGradient>
-
-    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00e5ff"></stop>
-      <stop offset="50%" stop-color="#7000ff"></stop>
-      <stop offset="100%" stop-color="#ff00a0"></stop>
-    </linearGradient>
-    
-    <linearGradient id="barGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#7000ff"></stop>
-      <stop offset="100%" stop-color="#00e5ff"></stop>
-    </linearGradient>
-
-    <linearGradient id="barGrad2018" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#1e293b"></stop>
-      <stop offset="100%" stop-color="#334155"></stop>
-    </linearGradient>
-
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"></feGaussianBlur>
-      <feMerge>
-        <feMergeNode in="blur"></feMergeNode>
-        <feMergeNode in="SourceGraphic"></feMergeNode>
-      </feMerge>
-    </filter>
-
-    <style>
-      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-      
-      text { font-family: 'Pretendard', 'Noto Sans KR', sans-serif; }
-      
-      .main-title { font-size: 42px; font-weight: 800; fill: #ffffff; letter-spacing: 2px; }
-      .sub-title { font-size: 18px; font-weight: 400; fill: #94a3b8; letter-spacing: 1px; }
-      
-      .year-text { font-size: 24px; font-weight: 800; fill: #ffffff; }
-      .node-title { font-size: 16px; font-weight: 700; fill: #00e5ff; }
-      .node-desc { font-size: 14px; font-weight: 400; fill: #cbd5e1; }
-      
-      .chart-title { font-size: 20px; font-weight: 700; fill: #ffffff; }
-      .chart-label { font-size: 14px; fill: #64748b; }
-      .chart-val { font-size: 14px; font-weight: 700; fill: #ffffff; }
-      .chart-inc { font-size: 18px; font-weight: 800; fill: #ff00a0; }
-
-      /* CSS 애니메이션 */
-      .fade-in { opacity: 0; animation: fadeIn 0.8s forwards; }
-      .glass-box { fill: rgba(255, 255, 255, 0.03); stroke: rgba(255, 255, 255, 0.1); stroke-width: 1; rx: 12; }
-      
-      @keyframes fadeIn { to { opacity: 1; } }
-    </style>
-  </defs>
-
-  <rect width="100%" height="100%" fill="url(#bgGrad)"></rect>
-
-  <g class="fade-in" style="animation-delay: 0.2s;">
-    <text x="80" y="80" class="main-title">AI EXPO KOREA <tspan fill="#00e5ff">2026</tspan></text>
-    <text x="80" y="115" class="sub-title">멈추지 않는 혁신, 아시아 최대 AI 전시회로의 진화 궤적</text>
-  </g>
-
-  <path d="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120" stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="none" stroke-linecap="round"></path>
-
-  <path id="trackPath" d="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120" stroke="url(#neonGrad)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)" stroke-dasharray="1200" stroke-dashoffset="1200">
-    <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="4s" fill="freeze" calcMode="linear"></animate>
-  </path>
-
-
-  <g class="fade-in" style="animation-delay: 0s;" transform="translate(150, 420)">
-    <circle cx="0" cy="0" r="6" fill="#00e5ff" filter="url(#glow)"></circle>
-    <rect x="-70" y="25" width="140" height="85" class="glass-box"></rect>
-    <text x="0" y="50" text-anchor="middle" class="year-text">2018</text>
-    <text x="0" y="75" text-anchor="middle" class="node-title">첫 출발</text>
-    <text x="0" y="95" text-anchor="middle" class="node-desc">3개국 / 82개사</text>
-  </g>
-
-  <g class="fade-in" style="animation-delay: 1.3s;" transform="translate(450, 320)">
-    <circle cx="0" cy="0" r="6" fill="#4d4dff" filter="url(#glow)"></circle>
-    <rect x="-70" y="25" width="140" height="85" class="glass-box"></rect>
-    <text x="0" y="50" text-anchor="middle" class="year-text">2020</text>
-    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#8b5cf6">팬데믹 극복</text>
-    <text x="0" y="95" text-anchor="middle" class="node-desc">안전 개최·신뢰 구축</text>
-  </g>
-
-  <g class="fade-in" style="animation-delay: 2.6s;" transform="translate(750, 220)">
-    <circle cx="0" cy="0" r="6" fill="#a855f7" filter="url(#glow)"></circle>
-    <rect x="-80" y="25" width="160" height="85" class="glass-box"></rect>
-    <text x="0" y="50" text-anchor="middle" class="year-text">2022</text>
-    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#d946ef">규모 확대</text>
-    <text x="0" y="95" text-anchor="middle" class="node-desc">11개국 / 430부스</text>
-  </g>
-
-  <g class="fade-in" style="animation-delay: 4.0s;" transform="translate(1050, 120)">
-    <circle cx="0" cy="0" r="8" fill="#ff00a0" filter="url(#glow)"></circle>
-    <rect x="-80" y="25" width="160" height="85" class="glass-box"></rect>
-    <text x="0" y="50" text-anchor="middle" class="year-text" fill="#ff00a0">2025</text>
-    <text x="0" y="75" text-anchor="middle" class="node-title" fill="#ffffff">글로벌 허브</text>
-    <text x="0" y="95" text-anchor="middle" class="node-desc">18개국 / 아시아 최대</text>
-  </g>
-
-
-  <g filter="url(#glow)">
-    <g stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <circle cx="8" cy="-18" r="4" fill="#ffffff"></circle> <path d="M 8,-14 L 10,-2"></path> <path d="M 0,-8 L 8,-12 L 15,-4"></path> <path d="M 10,-2 L 14,8 L 6,14 M 10,-2 L 2,4 L 10,10"></path> <path d="M -15,-5 L -5,-5 M -10,5 L -2,5" stroke="#00e5ff" stroke-width="2" opacity="0.8"></path>
-    </g>
-    <animateMotion dur="4s" fill="freeze" calcMode="linear" rotate="auto" path="M 150 420 C 350 420, 300 320, 450 320 C 600 320, 600 220, 750 220 C 900 220, 900 120, 1050 120"></animateMotion>
-    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.95;1" dur="4.2s" fill="freeze"></animate>
-  </g>
-
-
-  <g transform="translate(80, 560)">
-    <text x="0" y="0" class="main-title" style="font-size: 24px;">DATA EVOLUTION <tspan fill="#64748b" font-size="16px" font-weight="400">| 2018 vs 2025</tspan></text>
-    
-    <line x1="0" y1="180" x2="1040" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1"></line>
-    <line x1="0" y1="100" x2="1040" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="5 5"></line>
-    <line x1="0" y1="20" x2="1040" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="5 5"></line>
-
-    <g transform="translate(160, 0)">
-      <text x="0" y="215" class="chart-title" text-anchor="middle">참가국가</text>
-      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-        <animate attributeName="height" from="0" to="20" begin="4.2s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="160" begin="4.2s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="-20" y="150" class="chart-label" text-anchor="middle" opacity="0">3개국<animate attributeName="opacity" to="1" begin="5.0s" dur="0.5s" fill="freeze"></animate></text>
-      
-      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-        <animate attributeName="height" from="0" to="140" begin="4.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="40" begin="4.8s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">18개국<animate attributeName="opacity" to="1" begin="5.8s" dur="0.5s" fill="freeze"></animate></text>
-      
-      <text x="0" y="100" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+500% ▲
-        <animate attributeName="opacity" to="1" begin="6.2s" dur="0.5s" fill="freeze"></animate>
-      </text>
-    </g>
-
-    <g transform="translate(520, 0)">
-      <text x="0" y="215" class="chart-title" text-anchor="middle">참가기업</text>
-      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-        <animate attributeName="height" from="0" to="30" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="150" begin="4.3s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="-20" y="140" class="chart-label" text-anchor="middle" opacity="0">82개사<animate attributeName="opacity" to="1" begin="5.1s" dur="0.5s" fill="freeze"></animate></text>
-      
-      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-        <animate attributeName="height" from="0" to="140" begin="4.9s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="40" begin="4.9s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">322개사<animate attributeName="opacity" to="1" begin="5.9s" dur="0.5s" fill="freeze"></animate></text>
-
-      <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+293% ▲
-        <animate attributeName="opacity" to="1" begin="6.3s" dur="0.5s" fill="freeze"></animate>
-      </text>
-    </g>
-
-    <g transform="translate(880, 0)">
-      <text x="0" y="215" class="chart-title" text-anchor="middle">참관객</text>
-      <rect x="-35" y="180" width="30" height="0" fill="url(#barGrad2018)" rx="4">
-        <animate attributeName="height" from="0" to="40" begin="4.4s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="140" begin="4.4s" dur="0.8s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="-20" y="130" class="chart-label" text-anchor="middle" opacity="0">1.4만 명<animate attributeName="opacity" to="1" begin="5.2s" dur="0.5s" fill="freeze"></animate></text>
-      
-      <rect x="5" y="180" width="30" height="0" fill="url(#barGrad)" rx="4">
-        <animate attributeName="height" from="0" to="140" begin="5.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-        <animate attributeName="y" from="180" to="40" begin="5.0s" dur="1s" fill="freeze" calcMode="spline" keySplines="0.2 0.8 0.2 1"></animate>
-      </rect>
-      <text x="20" y="30" class="chart-val" text-anchor="middle" opacity="0">43,788명<animate attributeName="opacity" to="1" begin="6.0s" dur="0.5s" fill="freeze"></animate></text>
-
-      <text x="0" y="-10" class="chart-inc" text-anchor="middle" opacity="0" filter="url(#glow)">+207% ▲
-        <animate attributeName="opacity" to="1" begin="6.4s" dur="0.5s" fill="freeze"></animate>
-      </text>
-    </g>
-  </g>
-</svg>
-
-<div class="text-center mb-16 reveal active">
-                <h2 class="text-4xl font-bold text-white mb-4">성장의 궤적</h2>
-                <p class="text-gray-400">숫자로 보는 AI EXPO KOREA의 9년간 놀라운 성장</p>
+      </div>
+      <div class="timeline-item" id="tl-2024">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2024</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="2024 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2024</div>
+            <div class="timeline-desc">COEX 3층 Hall D · 약 40,000명 참관<br>생성형 AI의 폭발적 성장과 함께 역대급 참관객 기록.</div>
+            <div class="timeline-tags">
+              <span class="tag green">~40,000명</span>
+              <span class="tag">생성형 AI</span>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal active">
-                <!-- 2018 Card -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group hover:border-ai-accent transition-colors duration-300">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-flag-checkered text-9xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-300 mb-6">2018년 첫 출발</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-500">참가국가</span>
-                            <span class="text-2xl font-bold text-white">3 <span class="text-sm text-gray-500">개국</span></span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-500">참가기업</span>
-                            <span class="text-2xl font-bold text-white">82 <span class="text-sm text-gray-500">개사</span></span>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-500">참관객</span>
-                            <span class="text-2xl font-bold text-white">14,278 <span class="text-sm text-gray-500">명</span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth Arrow -->
-                <div class="flex flex-col items-center justify-center text-ai-neon space-y-2 py-4 lg:py-0">
-                    <i class="fas fa-angle-double-right text-4xl hidden lg:block animate-pulse"></i>
-                    <i class="fas fa-angle-double-down text-4xl lg:hidden animate-pulse"></i>
-                    <span class="font-bold tracking-widest">EVOLUTION</span>
-                </div>
-
-                <!-- 2026 Card -->
-                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group border-ai-neon/50 shadow-[0_0_20px_rgba(0,243,255,0.1)]">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-rocket text-9xl text-ai-neon"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        2025년
-                        <span class="px-2 py-1 rounded bg-ai-neon text-ai-dark text-xs font-bold">NOW</span>
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-400">참가국가</span>
-                            <div class="text-right">
-                                <span class="text-3xl font-bold text-ai-neon">18</span>
-                                <span class="block text-xs text-green-400 font-mono">+500% ▲</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-400">참가기업</span>
-                            <div class="text-right">
-                                <span class="text-3xl font-bold text-ai-neon">322</span>
-                                <span class="block text-xs text-green-400 font-mono">+293% ▲</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-gray-700 pb-2">
-                            <span class="text-gray-400">참관객</span>
-                            <div class="text-right">
-                                <span class="text-3xl font-bold text-ai-neon">43,788</span>
-                                <span class="block text-xs text-green-400 font-mono">+207% ▲</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Milestone Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 reveal active">
-                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-gray-500 hover:bg-gray-800 transition-colors">
-                    <div class="text-2xl font-black text-gray-500 mb-2">2020</div>
-                    <h4 class="text-lg font-bold text-white mb-1">팬데믹 극복</h4>
-                    <p class="text-sm text-gray-400">코로나19 상황에서도 안전한 전시회 개최로 업계 신뢰 구축</p>
-                </div>
-                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-ai-accent hover:bg-gray-800 transition-colors">
-                    <div class="text-2xl font-black text-ai-accent mb-2">2022</div>
-                    <h4 class="text-lg font-bold text-white mb-1">규모 확대</h4>
-                    <p class="text-sm text-gray-400">11개국 430부스로 확장, 국내 대표 AI 전시회 입지 확립</p>
-                </div>
-                <div class="bg-ai-light p-6 rounded-xl border-l-4 border-ai-neon hover:bg-gray-800 transition-colors">
-                    <div class="text-2xl font-black text-ai-neon mb-2">2025</div>
-                    <h4 class="text-lg font-bold text-white mb-1">글로벌 허브</h4>
-                    <p class="text-sm text-gray-400">18개국 544부스, 아시아 최대 규모 AI 전시회로 도약</p>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Poster History Section (Horizontal Scroll) -->
-    <section id="posters" class="py-24 bg-black overflow-hidden">
-        <div class="container mx-auto px-6 mb-12">
-            <h2 class="text-3xl font-bold text-white mb-2 reveal">포스터 아카이브</h2>
-            <p class="text-gray-500 reveal">AI EXPO KOREA의 9년간 변화를 디자인으로 만나보세요</p>
+      </div>
+      <div class="timeline-item" id="tl-2023">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2023</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="2023 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2023</div>
+            <div class="timeline-desc">11개국 260개사 · 32,526명 참관<br>AI 전문 전시회로서 확고한 위상 정립.</div>
+            <div class="timeline-tags">
+              <span class="tag green">32,526명</span>
+              <span class="tag blue">11개국</span>
+            </div>
+          </div>
         </div>
-        
-        <div class="relative w-full reveal">
-            <div class="poster-scroll flex overflow-x-auto gap-6 pb-8 pl-6 pr-6 md:pl-12 md:pr-12" id="poster-container">
-                <!-- JS will render posters here ideally, but hardcoding for simplicity as per single file structure -->
-                <!-- 2026 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer ml-0" onclick="openModal('https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-neon transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg" class="poster-img" alt="2026">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-ai-neon font-bold text-xl">2026</span>
-                    </div>
-                </div>
-                <!-- 2025 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer ml-0" onclick="openModal('https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-neon transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" class="poster-img" alt="2026">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                         <span class="text-white font-bold text-xl">2025</span>
-                    </div>
-                </div>
-                <!-- 2024 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" class="poster-img" alt="2024">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-white font-bold text-xl">2024</span>
-                    </div>
-                </div>
-                <!-- 2023 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" class="poster-img" alt="2023">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-400 font-bold text-xl">2023</span>
-                    </div>
-                </div>
-                <!-- 2022 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" class="poster-img" alt="2022">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-500 font-bold text-xl">2022</span>
-                    </div>
-                </div>
-                 <!-- 2021 -->
-                 <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" class="poster-img" alt="2021">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-600 font-bold text-xl">2021</span>
-                    </div>
-                </div>
-                <!-- 2020 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" class="poster-img" alt="2020">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-700 font-bold text-xl">2020</span>
-                    </div>
-                </div>
-                <!-- 2019 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" class="poster-img" alt="2019">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-700 font-bold text-xl">2019</span>
-                    </div>
-                </div>
-                <!-- 2018 -->
-                <div class="poster-card min-w-[260px] flex-shrink-0 group cursor-pointer" onclick="openModal('https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg')">
-                    <div class="relative rounded-xl overflow-hidden aspect-[3/4] border border-gray-800 group-hover:border-ai-accent transition-all duration-300 transform group-hover:-translate-y-2">
-                        <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" class="poster-img" alt="2018">
-                        <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                            <i class="fas fa-search-plus text-white text-3xl"></i>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="text-gray-700 font-bold text-xl">2018</span>
-                    </div>
-                </div>
+      </div>
+      <div class="timeline-item" id="tl-2022">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2022 · 규모 확대</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="2022 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2022</div>
+            <div class="timeline-desc">2022.04.13 – 15 · COEX 3층 Hall D<br>11개국 230개사 430부스, 28,535명. 국내 대표 AI 전시회 입지 확립.</div>
+            <div class="timeline-tags">
+              <span class="tag green">28,535명</span>
+              <span class="tag blue">11개국</span>
+              <span class="tag">430부스</span>
             </div>
-            <!-- Indicators -->
-            <div class="flex justify-center gap-2 mt-4">
-                <span class="block w-16 h-1 bg-ai-neon rounded"></span>
-                <!-- <span class="block w-8 h-1 bg-gray-700 rounded"></span> -->
-                <!-- <span class="block w-4 h-1 bg-gray-800 rounded"></span> -->
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section id="timeline" class="py-24 bg-ai-dark relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-20 reveal">
-                <span class="text-ai-accent font-bold tracking-widest uppercase text-sm">History</span>
-                <h2 class="text-4xl font-bold text-white mt-2">작은 시작에서 국내 최대 AI 전시회로</h2>
+      </div>
+      <div class="timeline-item" id="tl-2021">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2021</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="2021 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2021</div>
+            <div class="timeline-desc">2021.03.24 – 26 · COEX 1층, Hall B<br>8개국 138개사 187부스, 23,263명.</div>
+            <div class="timeline-tags">
+              <span class="tag green">23,263명</span>
+              <span class="tag blue">8개국</span>
             </div>
-
-            <div class="relative timeline-line">
-
-                <!-- 2024 Item (Right) -->
-                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">26</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg" alt="AI EXPO KOREA 2026 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2026</h3>
-                                <p class="text-sm leading-snug tracking-wide text-gray-400 text-opacity-100 mb-4">
-                                    <i class="far fa-calendar-alt mr-2 text-ai-neon"></i>2026.05.06 - 08<br>
-                                    <i class="fas fa-map-marker-alt mr-2 text-ai-neon"></i>COEX 1층, Hall A
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 2025 Item (Left) -->
-                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-ai-neon shadow-xl w-12 h-12 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-lg text-black">25</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 glass-card rounded-xl neon-border mt-8 md:mt-0">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://raw.githubusercontent.com/parkhk502/img/refs/heads/main/koraia/mp5_sub2/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-04-10%20132024.png" alt="AI EXPO KOREA 2025 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-700 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2025</h3>
-                                <p class="text-sm leading-snug tracking-wide text-gray-400 text-opacity-100 mb-4">
-                                    <i class="far fa-calendar-alt mr-2 text-ai-neon"></i>2025.05.14 - 16<br>
-                                    <i class="fas fa-map-marker-alt mr-2 text-ai-neon"></i>COEX 1층, Hall A
-                                </p>
-                                <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">18개국 322기업</span>
-                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">544부스</span>
-                                    <span class="px-2 py-1 bg-blue-900/50 text-blue-300 rounded text-xs">43,788명</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2024 Item (Right) -->
-                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">24</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_24.jpg" alt="AI EXPO KOREA 2024 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2024</h3>
-                                <p class="text-sm text-gray-400 mb-2">COEX 3층 Hall D | 약 40,000명 참관</p>
-                                <p class="text-xs text-gray-500">생성형 AI의 폭발적 성장과 함께 역대급 참관객 기록</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2023 Item (Left) -->
-                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">23</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_23.jpg" alt="AI EXPO KOREA 2023 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2023</h3>
-                                <p class="text-sm text-gray-400 mb-2">11개국 260개사 | 32,526명 참관</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- 2022 Item (Right) -->
-                 <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">22</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_22.jpg" alt="AI EXPO KOREA 2022 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2022</h3>
-                                <p class="text-sm text-gray-400 mb-2">2022년 4월 13일(수) ~ 15일(금)</p>
-                                <p class="text-sm text-gray-400 mb-2">서울 COEX 3층 Hall D</p>
-                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">11개국 230개사</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">430부스</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">28,535명</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2021 Item (Left) -->
-                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">21</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_21.jpg" alt="AI EXPO KOREA 2021 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2021</h3>
-                                <p class="text-sm text-gray-400 mb-2">2021년 03월 24일(수) ~ 26일(금)</p>
-                                <p class="text-sm text-gray-400 mb-2">COEX 1층, Hall B</p>
-                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">8개국 138개사</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">187부스</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">23,263명</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2020 Item (Right) -->
-                <div class="mb-16 flex flex-col md:flex-row-reverse items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">20</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0 text-right md:text-left">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="AI EXPO KOREA 2020 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2020</h3>
-                                <p class="text-sm text-gray-400 mb-2">2020년 10월 27일(화) ~ 29일(목)</p>
-                                <p class="text-sm text-gray-400 mb-2">COEX 3층, Hall D</p>
-                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">4개국 107개사</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">175부스</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">21,393명</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2019 Item (Left) -->
-                <div class="mb-16 flex flex-col md:flex-row items-center justify-between w-full reveal">
-                    <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-10 h-10 rounded-full justify-center border-4 border-ai-dark">
-                        <h1 class="mx-auto font-bold text-sm text-white">19</h1>
-                    </div>
-                    <div class="order-1 md:w-5/12 px-6 py-4 bg-ai-light rounded-xl border border-gray-800 mt-8 md:mt-0">
-                        <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="AI EXPO KOREA 2019 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-800 shadow-md">
-                            <div class="text-center md:text-left w-full">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2019</h3>
-                                <p class="text-sm text-gray-400 mb-2">2019년 7월 17일(수) ~ 19일(금)</p>
-                        <p class="text-sm text-gray-400 mb-2">COEX, Hall C</p>
-                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">5개국 127개사</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">200부스</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">21,321명</span>
-                                </div>
-                                <p class="text-xs text-ai-neon mt-2 italic">"당신이 인공지능시대를 이끌 차세대 주인공입니다!"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2018 Item (Center/End) -->
-                <div class="flex justify-center w-full reveal">
-                   <div class="px-6 py-4 glass-card rounded-xl max-w-xl">
-                        <div class="flex flex-col md:flex-row items-center gap-4">
-                            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="AI EXPO KOREA 2018 포스터" class="w-24 h-32 object-cover rounded-lg border border-gray-700 shadow-md">
-                            <div class="text-center md:text-left">
-                                <h3 class="mb-3 font-bold text-white text-xl">AI EXPO KOREA 2018</h3>
-                                <p class="text-sm text-gray-400 mb-2">2018년 7월 9일(월) ~ 11일(수)</p>
-                                <p class="text-sm text-gray-400 mb-2">COEX, Hall D</p>
-                                <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">3개국 82개사</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">183부스</span>
-                                    <span class="px-2 py-1 bg-gray-700/50 text-gray-300 rounded text-xs">14,278명</span>
-                                </div>
-                                <p class="text-xs text-ai-neon mt-2 italic">"인공지능으로 열어가는 더 나은 미래"</p>
-                            </div>
-                        </div>
-                   </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24 bg-black">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-end mb-12 reveal">
-                <div>
-                    <h2 class="text-3xl font-bold text-white">현장 갤러리</h2>
-                    <p class="text-gray-500 mt-2">뜨거웠던 현장의 열기를 확인하세요</p>
-                </div>
+      </div>
+      <div class="timeline-item" id="tl-2020">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2020 · 팬데믹 극복</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_20.jpg" alt="2020 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2020</div>
+            <div class="timeline-desc">2020.10.27 – 29 · COEX 3층, Hall D<br>코로나19 속에서도 안전 개최. 4개국 107개사 175부스, 21,393명.</div>
+            <div class="timeline-tags">
+              <span class="tag green">21,393명</span>
+              <span class="tag">팬데믹 극복</span>
             </div>
-
-            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[150px] reveal">
-                <!-- Gallery items will be injected here by script -->
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Conference Section -->
-    <section id="conference" class="py-24 bg-ai-light/30 relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-bold text-white">지난 2025 AI 컨퍼런스 프로그램</h2>
-                <p class="text-gray-400 mt-2">최고의 전문가들과 함께하는 인사이트</p>
+      </div>
+      <div class="timeline-item" id="tl-2019">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2019</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_19.jpg" alt="2019 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2019</div>
+            <div class="timeline-desc">2019.07.17 – 19 · COEX, Hall C<br>5개국 127개사 200부스, 21,321명.</div>
+            <div class="timeline-tags">
+              <span class="tag green">21,321명</span>
+              <span class="tag blue">5개국</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
-                <!-- Conf 1 -->
-                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png')">
-                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
-                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png" class="w-full h-64 object-cover object-top" style="height: 448px;" alt="Conf 1">
-                    </div>
-                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">AI Summint 2025</h3>
-                </div>
-                <!-- Conf 2 -->
-                <div class="group cursor-pointer" onclick="openModal('https://expo.koraia.org/poster0516.png')">
-                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
-                        <img src="https://expo.koraia.org/poster0516.png" class="w-full h-64 object-cover object-top" style="height: 448px;" alt="Conf 2">
-                    </div>
-                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">Quantum AI Vision</h3>
-                </div>
-                <!-- Conf 3 -->
-                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png')">
-                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
-                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png" style="height: 448px;" class="w-full h-64 object-cover object-top" alt="Conf 3">
-                    </div>
-                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">Generative AI Trends</h3>
-                </div>
-                <!-- Conf 4 -->
-                <div class="group cursor-pointer" onclick="openModal('https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png')">
-                    <div class="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-700 group-hover:border-ai-neon transition-colors">
-                        <img src="https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png" style="height: 448px;" class="w-full h-64 object-cover object-top" alt="Conf 4">
-                    </div>
-                    <h3 class="text-white font-bold group-hover:text-ai-neon transition-colors">AI Ethics & Future</h3>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-24 bg-ai-dark relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl font-bold text-white mb-4">주요 성과와 파트너십</h2>
-                <p class="text-gray-400">9년간 쌓아온 신뢰와 협력의 결과</p>
+      </div>
+      <div class="timeline-item" id="tl-2018">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2018 · 첫 출발</div>
+        <div class="timeline-content">
+          <div class="timeline-poster">
+            <img src="https://koraia.org/default/img/_des/mp3_sub4/ai_expo_18.jpg" alt="2018 Poster">
+          </div>
+          <div class="timeline-text">
+            <div class="timeline-name">AI EXPO KOREA 2018</div>
+            <div class="timeline-desc">2018.07.09 – 11 · COEX, Hall D<br>"인공지능으로 열어가는 더 나은 미래" — 3개국 82개사 183부스, 14,278명.</div>
+            <div class="timeline-tags">
+              <span class="tag">3개국</span>
+              <span class="tag">82개사</span>
+              <span class="tag green">14,278명</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 reveal">
-                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">국내 1위</h3>
-                    <p class="text-gray-400">AI 전문 전시회 규모</p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">정부 지원</h3>
-                    <p class="text-gray-400">5개 이상 부처 후원</p>
-                </div>
-                <div class="glass-card p-8 rounded-2xl text-center hover:border-ai-accent transition-colors">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent text-3xl">
-                        <i class="fas fa-globe-asia"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">국제적 위상</h3>
-                    <p class="text-gray-400">18개국 글로벌 기업 참가</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <i class="fas fa-star text-ai-neon"></i>주요 스폰서
-                    </h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">슈퍼마이크로</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">케이투스 코리아</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">(주)마음AI</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">페르소나AI</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">셀바스AI</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">레노버</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">씨이랩</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">어드밴텍케이알</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">퓨어스토리지</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">비엔아이엔씨</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국전자통신연구원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">이안</div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <i class="fas fa-building text-ai-neon"></i>후원 기관
-                    </h3>
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">과학기술정보통신부</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">보건복지부</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">중소벤처기업부</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국지능정보사회진흥원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국인터넷진흥원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국산업기술평가관리원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">정보통신기획평가원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">성남산업진흥원</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국무역협회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국정보산업연합회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국소프트웨어산업협회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">임베디드소프트웨어시스템산업협회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">한국IT여성기업인협회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">KAIST AI</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">로봇산업협회</div>
-                        <div class="text-gray-400 text-sm py-2 px-3 rounded bg-gray-800/50 text-center">로보월드</div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Future & CTA Section -->
-    <section id="future" class="py-24 bg-gradient-to-br from-ai-dark to-blue-900/20">
-        <div class="container mx-auto px-6">
-            <div class="glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal neon-border">
-                <div class="w-full md:w-1/2 space-y-8">
-                    <h2 class="text-4xl font-black text-white leading-tight">
-                        AI EXPO KOREA <span class="text-ai-neon">2026</span><br>
-                        미래를 향한 초대
-                    </h2>
-                    <div class="space-y-4 text-gray-300">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent"><i class="far fa-calendar text-xl"></i></div>
-                            <div>
-                                <div class="text-xs text-gray-500">Schedule</div>
-                                <div class="font-bold text-lg">2026. 05. 06(수) ~ 08(금)</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-ai-accent/20 flex items-center justify-center text-ai-accent"><i class="fas fa-map-pin text-xl"></i></div>
-                            <div>
-                                <div class="text-xs text-gray-500">Location</div>
-                                <div class="font-bold text-lg">COEX 1층, Hall A</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="bg-ai-light/50 p-6 rounded-xl mt-6">
-                        <h3 class="text-xl font-bold text-white mb-4">2025년 특별 하이라이트</h3>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>글로벌 AI 리더십 포럼</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>차세대 AI 기술 체험관</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>AI 윤리와 미래 컨퍼런스</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>스타트업 피칭 대회</li>
-                            <li class="flex items-center gap-2"><i class="fas fa-check text-ai-neon text-sm"></i>AI 인재 채용 박람회</li>
-                        </ul>
-                    </div> -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="https://www.aiexpo.co.kr/home/" target="_blank" class="flex-1 bg-ai-neon text-ai-dark text-center py-4 rounded-xl font-bold hover:bg-white transition-colors">
-                            전시 참가 신청
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 relative">
-                    <div class="absolute inset-0 bg-ai-neon/20 blur-3xl rounded-full"></div>
-                    <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_koraia.jpg" class="relative rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 w-3/4 mx-auto border border-gray-700" alt="2026 Poster">
-                </div>
+<section id="growth">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:56px">
+      <div class="section-label">Data Evolution</div>
+      <h2 class="section-title">숫자로 보는 성장</h2>
+      <div class="divider"></div>
+      <p class="section-desc">2018년 첫 개최 이후 7년간 이룬 놀라운 성장 궤적을 데이터로 확인하세요.</p>
+    </div>
+    <div class="growth-inner">
+      <div class="chart-area fade-up">
+        <div class="chart-bars" id="chartBars">
+          <div class="bar-group">
+            <div class="bar" id="b2018v" style="background:linear-gradient(to top,rgba(0,102,255,0.4),rgba(0,102,255,0.7));height:0">
+              <div class="bar-tooltip">14,278명</div>
             </div>
+            <div class="bar-label">2018</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2019v" style="background:linear-gradient(to top,rgba(0,102,255,0.45),rgba(0,102,255,0.75));height:0">
+              <div class="bar-tooltip">21,321명</div>
+            </div>
+            <div class="bar-label">2019</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2020v" style="background:linear-gradient(to top,rgba(0,102,255,0.5),rgba(0,102,255,0.8));height:0">
+              <div class="bar-tooltip">21,393명</div>
+            </div>
+            <div class="bar-label">2020</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2021v" style="background:linear-gradient(to top,rgba(0,102,255,0.55),rgba(0,200,255,0.6));height:0">
+              <div class="bar-tooltip">23,263명</div>
+            </div>
+            <div class="bar-label">2021</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2022v" style="background:linear-gradient(to top,rgba(0,102,255,0.6),rgba(0,200,255,0.7));height:0">
+              <div class="bar-tooltip">28,535명</div>
+            </div>
+            <div class="bar-label">2022</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2023v" style="background:linear-gradient(to top,rgba(0,102,255,0.7),rgba(0,200,255,0.8));height:0">
+              <div class="bar-tooltip">32,526명</div>
+            </div>
+            <div class="bar-label">2023</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2024v" style="background:linear-gradient(to top,rgba(0,102,255,0.8),rgba(0,200,255,0.9));height:0">
+              <div class="bar-tooltip">~40,000명</div>
+            </div>
+            <div class="bar-label">2024</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar" id="b2025v" style="background:linear-gradient(to top,var(--blue),var(--cyan));height:0">
+              <div class="bar-tooltip">43,788명</div>
+            </div>
+            <div class="bar-label">2025</div>
+          </div>
         </div>
-    </section>
-
-
-
-    <!-- Footer -->
-    <footer class="bg-ai-dark border-t border-gray-800 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-2xl font-bold text-white mb-4">AI EXPO KOREA 2026</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed max-w-md mb-4">
-                        국내 최대 규모의 인공지능 전문 전시회.<br>
-                        (사)한국인공지능협회, ㈜서울메쎄, 인공지능신문이 주최/주관하며<br>
-                        대한민국의 AI 산업 발전을 선도합니다.
-                    </p>
-                    <div class="space-y-1 text-gray-500 text-sm">
-                        <p><strong class="text-gray-400">주최/주관:</strong></p>
-                        <p>(사)한국인공지능협회</p>
-                        <p>㈜서울메쎄</p>
-                        <p>인공지능신문</p>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Menu</h4>
-                    <ul class="space-y-2 text-gray-500 text-sm">
-                        <li><a href="#home" class="hover:text-ai-neon transition-colors">홈</a></li>
-                        <li><a href="#growth" class="hover:text-ai-neon transition-colors">성장기록</a></li>
-                        <li><a href="#timeline" class="hover:text-ai-neon transition-colors">타임라인</a></li>
-                        <li><a href="#conference" class="hover:text-ai-neon transition-colors">컨퍼런스</a></li>
-                        <li><a href="#achievements" class="hover:text-ai-neon transition-colors">주요성과</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">행사 정보</h4>
-                    <ul class="space-y-2 text-gray-500 text-sm">
-                        <li>2026년 05월 6일(수) ~ 8일(금)</li>
-                        <li>COEX 1층, Hall A</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 text-sm">&copy; 2026 AI EXPO KOREA. All rights reserved.</p>
-                <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>참관객 수 추이</div>
         </div>
-    </footer>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="fixed inset-0 z-[60] hidden bg-black/90 backdrop-blur-sm overflow-y-auto">
-        <div id="imageModalContent" class="min-h-full flex items-center justify-center p-4 py-12">
-            <div class="relative max-w-5xl w-full">
-                <button onclick="closeModal()" class="fixed top-4 right-4 z-10 text-white text-4xl hover:text-ai-neon focus:outline-none bg-black/50 rounded-full w-12 h-12 flex items-center justify-center transition-colors">&times;</button>
-                <img id="modalImg" src="" class="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-gray-700" alt="Modal View">
-            </div>
+      </div>
+      <div class="comparison-cards fade-up" style="transition-delay:0.2s">
+        <div class="cmp-card" id="cmpCountry">
+          <div class="cmp-label">참가 국가</div>
+          <div class="cmp-row">
+            <div class="cmp-val"><div class="cmp-num">3</div><div class="cmp-sub">2018년</div></div>
+            <div class="cmp-arrow">→</div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">18</div><div class="cmp-sub">2025년</div></div>
+            <div class="cmp-badge">+500%</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-track"><div class="progress-fill" id="pf1" data-width="100"></div></div>
+          </div>
         </div>
+        <div class="cmp-card" id="cmpCompany">
+          <div class="cmp-label">참가 기업</div>
+          <div class="cmp-row">
+            <div class="cmp-val"><div class="cmp-num">82</div><div class="cmp-sub">2018년</div></div>
+            <div class="cmp-arrow">→</div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">322</div><div class="cmp-sub">2025년</div></div>
+            <div class="cmp-badge">+293%</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-track"><div class="progress-fill" id="pf2" data-width="83"></div></div>
+          </div>
+        </div>
+        <div class="cmp-card" id="cmpVisitor">
+          <div class="cmp-label">참관객</div>
+          <div class="cmp-row">
+            <div class="cmp-val"><div class="cmp-num">1.4만</div><div class="cmp-sub">2018년</div></div>
+            <div class="cmp-arrow">→</div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">43,788</div><div class="cmp-sub">2025년</div></div>
+            <div class="cmp-badge">+207%</div>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-track"><div class="progress-fill" id="pf3" data-width="72"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="conference">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="section-label">2025 Programs</div>
+      <h2 class="section-title">지난 AI 컨퍼런스</h2>
+      <div class="divider"></div>
+      <p class="section-desc">최고의 전문가들과 함께한 인사이트 가득한 컨퍼런스 프로그램.</p>
+    </div>
+    <div class="conf-grid fade-up" style="transition-delay:0.15s">
+      <div class="conf-card">
+        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v392f742ebab073bc9f10a9374e9cebe07.png" alt="AI Summit 2025" class="conf-img">
+        <div class="conf-num">CONF 01</div>
+        <div class="conf-name">AI Summit 2025</div>
+        <div class="conf-desc">국내외 AI 업계 리더들이 모여 산업 전반의 AI 전략과 미래 비전을 논의하는 핵심 서밋.</div>
+      </div>
+      <div class="conf-card">
+        <img src="https://expo.koraia.org/poster0516.png" alt="Quantum AI Vision" class="conf-img">
+        <div class="conf-num">CONF 02</div>
+        <div class="conf-name">Quantum AI Vision</div>
+        <div class="conf-desc">양자 컴퓨팅과 AI의 융합이 가져올 새로운 가능성과 기술 혁신 방향성 탐구.</div>
+      </div>
+      <div class="conf-card">
+        <img src="https://static.onoffmix.com/afv2/attach/2025/05/07/v3ba3c562a65bae49bc1de9de015012f0a.png" alt="Generative AI Trends" class="conf-img">
+        <div class="conf-num">CONF 03</div>
+        <div class="conf-name">Generative AI Trends</div>
+        <div class="conf-desc">생성형 AI의 최신 트렌드와 실제 비즈니스 적용 사례를 중심으로 한 심층 세션.</div>
+      </div>
+      <div class="conf-card">
+        <img src="https://static.onoffmix.com/afv2/attach/2025/05/09/v3fb0130d18cb7578a7fbb107de9f65149.png" alt="AI Ethics & Future" class="conf-img">
+        <div class="conf-num">CONF 04</div>
+        <div class="conf-name">AI Ethics & Future</div>
+        <div class="conf-desc">AI 윤리, 규제 동향, 지속 가능한 AI 발전을 위한 사회적 합의와 미래 방향 논의.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="section-label">2025 Highlights</div>
+      <h2 class="section-title">2025년 갤러리</h2>
+      <div class="divider"></div>
+      <p class="section-desc">현장의 뜨거운 열기와 혁신의 순간들을 확인하세요.</p>
+    </div>
+    <div class="gallery-grid fade-up" style="transition-delay:0.1s">
+      <div class="gallery-item"><img src="images/expo/1.png" alt="Expo Gallery 1" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/2.png" alt="Expo Gallery 2" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/3.png" alt="Expo Gallery 3" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/4.png" alt="Expo Gallery 4" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/5.png" alt="Expo Gallery 5" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/6.png" alt="Expo Gallery 6" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/7.png" alt="Expo Gallery 7" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/8.png" alt="Expo Gallery 8" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/9.png" alt="Expo Gallery 9" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/10.png" alt="Expo Gallery 10" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/11.png" alt="Expo Gallery 11" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/12.png" alt="Expo Gallery 12" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/13.png" alt="Expo Gallery 13" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/14.png" alt="Expo Gallery 14" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/15.png" alt="Expo Gallery 15" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/16.png" alt="Expo Gallery 16" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/17.png" alt="Expo Gallery 17" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/expo/18.png" alt="Expo Gallery 18" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="section-label">Track Record</div>
+      <h2 class="section-title">주요 성과 & 파트너십</h2>
+      <div class="divider"></div>
+      <p class="section-desc">9년간 쌓아온 신뢰와 협력의 결과.</p>
+    </div>
+    <div class="ach-grid fade-up">
+      <div class="ach-card">
+        <div class="ach-icon">🏆</div>
+        <div class="ach-title">국내 1위</div>
+        <div class="ach-sub">AI 전문 전시회 규모 — 국내 최대 규모의 인공지능 전문 전시회</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🏛️</div>
+        <div class="ach-title">정부 지원</div>
+        <div class="ach-sub">과기정통부·보건복지부·중기부 등 5개 이상 부처 후원</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🌐</div>
+        <div class="ach-title">국제적 위상</div>
+        <div class="ach-sub">18개국 글로벌 기업 참가 · 아시아 최대 규모 AI 전시회</div>
+      </div>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        // Particles Configuration
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": "#3b82f6" },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": false },
-                        "size": { "value": 3, "random": true },
-                        "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
-                });
-            }
-        });
+    <div class="fade-up" style="transition-delay:0.2s">
+      <div class="partners-label">주요 스폰서</div>
+      <div class="partners-scroll" style="margin-bottom:24px">
+        <div class="partners-track" id="sponsorTrack"></div>
+      </div>
+      <div class="partners-label">후원 기관</div>
+      <div class="partners-scroll">
+        <div class="partners-track" id="orgTrack"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-ai-dark/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.remove('bg-ai-dark/90', 'backdrop-blur-md', 'shadow-lg', 'py-2');
-                navbar.classList.add('py-4');
-            }
-        });
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-inner fade-up">
+    <div class="section-label" style="text-align:center;margin-bottom:16px">미래를 향한 초대</div>
+    <h2 class="cta-title">AI EXPO KOREA<br>2026에서 만나요</h2>
+    <p class="cta-sub">멈추지 않는 혁신, 아시아 최대 AI 전시회로의 진화.<br>2026년 COEX에서 함께하세요.</p>
+    <div class="cta-date">
+      <div class="cta-date-dot"></div>
+      2026년 05월 06일(수) ~ 08일(금) · COEX 1층, Hall A
+    </div>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="#" class="btn-primary">전시 참가 신청</a>
+      <a href="#timeline" class="btn-secondary">성장기록 보기</a>
+    </div>
+  </div>
+</section>
 
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('i');
-            if(mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">AI EXPO <span>KOREA</span> 2026</div>
+    </div>
+    <div class="footer-orgs">
+      주최/주관: (사)한국인공지능협회 · ㈜서울메쎄 · 인공지능신문
+    </div>
+    <div class="footer-copy">© 2026 AI EXPO KOREA. All rights reserved.</div>
+  </div>
+</footer>
 
-        function closeMenu() {
-            mobileMenu.classList.add('hidden');
-            menuBtn.querySelector('i').classList.remove('fa-times');
-            menuBtn.querySelector('i').classList.add('fa-bars');
-        }
+<script>
+// ── HERO CANVAS (particle grid) ──
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [], lines = [];
 
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  initParticles();
+}
 
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const elementVisible = 150;
+function initParticles() {
+  particles = [];
+  const count = Math.floor((W * H) / 14000);
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 1.5 + 0.5,
+      a: Math.random() * 0.5 + 0.2
+    });
+  }
+}
 
-            revealElements.forEach((reveal) => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.add('active');
-                }
-            });
-        };
+let mouse = { x: -9999, y: -9999 };
+canvas.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Trigger once on load
+function drawCanvas() {
+  ctx.clearRect(0, 0, W, H);
 
-        // Gallery Generation Script
-        document.addEventListener('DOMContentLoaded', function() {
-            const grid = document.getElementById('gallery-grid');
-            if (grid) {
-                for(let i=1; i<=18; i++) {
-                    const div = document.createElement('div');
-                    const spanClass = (i % 5 === 0) ? 'col-span-2 row-span-2' : (i % 3 === 0 ? 'row-span-2' : '');
-                    div.className = `relative group overflow-hidden rounded-lg cursor-pointer bg-gray-800 ${spanClass}`;
-                    div.setAttribute('onclick', `openModal('images/expo/${i}.png')`);
-                    div.innerHTML = `
-                        <img src="images/expo/${i}.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" alt="Gallery ${i}" onerror="this.src='https://via.placeholder.com/400x300/1a2236/ffffff?text=AI+EXPO+${i}'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                            <i class="fas fa-plus text-ai-neon"></i>
-                        </div>
-                    `;
-                    grid.appendChild(div);
-                }
-            }
-        });
+  // gradient bg
+  const g = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W, H) * 0.7);
+  g.addColorStop(0, 'rgba(0,30,80,0.6)');
+  g.addColorStop(1, 'rgba(10,14,26,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
 
-        // Modal Logic
-        const modal = document.getElementById('imageModal');
-        const modalContent = document.getElementById('imageModalContent');
-        const modalImg = document.getElementById('modalImg');
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
 
-        function openModal(src) {
-            modal.classList.remove('hidden');
-            // Add a tiny delay for animation if we added transitions (optional)
-            modalImg.src = src;
-            document.body.classList.add('modal-open');
-        }
+    // mouse repel
+    const dx = p.x - mouse.x, dy = p.y - mouse.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 100) {
+      p.x += dx / dist * 1.5;
+      p.y += dy / dist * 1.5;
+    }
 
-        function closeModal() {
-            modal.classList.add('hidden');
-            modalImg.src = '';
-            document.body.classList.remove('modal-open');
-        }
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0,200,255,${p.a})`;
+    ctx.fill();
 
-        // Close modal on ESC key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-            }
-        });
+    for (let j = i + 1; j < particles.length; j++) {
+      const q = particles[j];
+      const dx2 = p.x - q.x, dy2 = p.y - q.y;
+      const d = Math.sqrt(dx2*dx2 + dy2*dy2);
+      if (d < 120) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = `rgba(0,102,255,${0.15 * (1 - d/120)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawCanvas);
+}
 
-        if (modal) {
-            modal.addEventListener('click', function(event) {
-                // 수정된 로직: 
-                // 1. modal (검은 배경) 클릭 시
-                // 2. modalImg (이미지) 클릭 시
-                // 3. modalContent (이미지 주변 여백) 클릭 시
-                // 위 세 가지 경우 모두 닫기 함수(closeModal) 실행
-                if (event.target === modal || event.target === modalImg || event.target === modalContent) {
-                    closeModal();
-                }
-            });
-        }
-    </script>
+resize();
+window.addEventListener('resize', resize);
+drawCanvas();
+
+// ── INTERSECTION OBSERVER ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      // trigger chart bars
+      if (e.target.closest('#growth')) animateChart();
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+
+// ── CHART ANIMATION ──
+let chartAnimated = false;
+const visitors = [14278, 21321, 21393, 23263, 28535, 32526, 40000, 43788];
+const barIds = ['b2018v','b2019v','b2020v','b2021v','b2022v','b2023v','b2024v','b2025v'];
+const maxV = Math.max(...visitors);
+
+function animateChart() {
+  if (chartAnimated) return;
+  chartAnimated = true;
+  barIds.forEach((id, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.style.height = ((visitors[i] / maxV) * 180) + 'px';
+    }, i * 80);
+  });
+  // progress bars
+  ['pf1','pf2','pf3'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      setTimeout(() => {
+        el.style.width = el.dataset.width + '%';
+      }, 300);
+    }
+  });
+}
+
+// observe growth section
+const growthObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) animateChart();
+}, { threshold: 0.2 });
+const gs = document.getElementById('growth');
+if (gs) growthObs.observe(gs);
+
+// ── PARTNERS MARQUEE ──
+const sponsors = ['슈퍼마이크로','케이투스 코리아','(주)마음AI','페르소나AI','셀바스AI','레노버','씨이랩','어드밴텍케이알','퓨어스토리지','비엔아이엔씨','한국전자통신연구원','이안'];
+const orgs = ['과학기술정보통신부','보건복지부','중소벤처기업부','한국지능정보사회진흥원','한국인터넷진흥원','한국산업기술평가관리원','정보통신기획평가원','성남산업진흥원','한국무역협회','한국정보산업연합회','한국소프트웨어산업협회','KAIST AI','로봇산업협회'];
+
+function buildMarquee(id, items, cls) {
+  const track = document.getElementById(id);
+  if (!track) return;
+  const doubled = [...items, ...items];
+  doubled.forEach(name => {
+    const chip = document.createElement('div');
+    chip.className = 'partner-chip' + (cls ? ' ' + cls : '');
+    chip.textContent = name;
+    track.appendChild(chip);
+  });
+}
+
+buildMarquee('sponsorTrack', sponsors, 'sponsor-chip');
+buildMarquee('orgTrack', orgs, '');
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll', () => {
+  const nb = document.getElementById('navbar');
+  if (window.scrollY > 60) {
+    nb.style.background = 'rgba(10,14,26,0.97)';
+  } else {
+    nb.style.background = 'rgba(10,14,26,0.85)';
+  }
+});
+</script>
 </body>
-
 </html>
