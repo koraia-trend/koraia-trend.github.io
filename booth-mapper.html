@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>부스배치도 매핑 툴</title>
+<link rel="icon" href="data:,">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif; height: 100vh; overflow: hidden; display: flex; }
+
+#sidebar {
+  width: 320px;
+  background: #1a1a1a;
+  color: white;
+  padding: 16px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+#sidebar h2 { margin: 0 0 12px; font-size: 16px; }
+#sidebar h3 { margin: 16px 0 8px; font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; }
+.btn {
+  background: #2563eb; color: white; border: none; padding: 8px 14px;
+  border-radius: 6px; cursor: pointer; font-size: 13px; margin-right: 4px; margin-bottom: 4px;
+}
+.btn:hover { background: #1d4ed8; }
+.btn.secondary { background: #374151; }
+.btn.secondary:hover { background: #4b5563; }
+.btn.danger { background: #dc2626; color: white; }
+.btn.danger:hover { background: #b91c1c; }
+
+.file-label {
+  display: block; background: #2563eb; color: white; padding: 10px 14px;
+  border-radius: 6px; cursor: pointer; text-align: center; font-size: 13px;
+  margin-bottom: 6px;
+}
+.file-label:hover { background: #1d4ed8; }
+.file-label input { display: none; }
+
+#booth-list { list-style: none; padding: 0; margin: 0; }
+#booth-list li {
+  background: #262626; padding: 8px 10px; border-radius: 4px; margin-bottom: 4px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; cursor: pointer;
+}
+#booth-list li:hover { background: #333; }
+#booth-list li .info { flex: 1; min-width: 0; }
+#booth-list li .info b { display: block; }
+#booth-list li .coords { color: #888; font-size: 11px; }
+#booth-list li button {
+  background: transparent; color: #ef4444; border: none; cursor: pointer;
+  font-size: 14px; padding: 4px 8px;
+}
+
+#main {
+  flex: 1; position: relative; overflow: auto; background: #f5f5f5;
+}
+#wrapper {
+  position: relative;
+  transform-origin: 0 0;
+  display: none;
+}
+#wrapper.ready { display: inline-block; }
+#wrapper img { display: block; user-select: none; -webkit-user-drag: none; }
+#overlay { position: absolute; top: 0; left: 0; cursor: crosshair; }
+#overlay rect.booth { fill: rgba(37, 99, 235, 0.18); stroke: #2563eb; stroke-width: 2; }
+#overlay rect.booth.highlight { fill: rgba(234, 179, 8, 0.35); stroke: #ca8a04; stroke-width: 3; }
+#overlay rect.preview { fill: rgba(239, 68, 68, 0.18); stroke: #ef4444; stroke-width: 2; stroke-dasharray: 6 4; pointer-events: none; }
+#overlay text { fill: #1e3a8a; font-weight: bold; pointer-events: none; }
+#overlay circle.first-point { fill: #ef4444; stroke: white; stroke-width: 2; pointer-events: none; }
+
+#status {
+  position: fixed; bottom: 12px; right: 12px; background: rgba(0,0,0,0.85);
+  color: white; padding: 8px 12px; border-radius: 4px; font-size: 12px; z-index: 100;
+  font-family: ui-monospace, Menlo, monospace; max-width: 60vw;
+}
+
+#zoom-controls {
+  position: fixed; top: 12px; right: 12px; z-index: 100;
+  display: flex; gap: 4px;
+}
+#zoom-controls .btn { padding: 6px 10px; min-width: 36px; }
+
+#modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200;
+  display: none; align-items: center; justify-content: center;
+}
+#modal.show { display: flex; }
+.modal-box {
+  background: white; padding: 22px; border-radius: 8px; min-width: 360px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.modal-box h3 { margin: 0 0 8px; font-size: 16px; }
+.modal-box .coords-info { color: #666; font-size: 12px; margin-bottom: 14px; font-family: ui-monospace, Menlo, monospace; }
+.modal-box label { display: block; font-size: 12px; color: #555; margin-bottom: 4px; }
+.modal-box input {
+  width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 4px;
+  font-size: 14px; margin-bottom: 12px;
+}
+.modal-box input:focus { outline: none; border-color: #2563eb; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+
+#empty-state {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  color: #888; font-size: 14px; text-align: center; padding: 20px; pointer-events: none;
+}
+
+.help { font-size: 11px; color: #888; line-height: 1.7; margin-top: 8px; }
+.help kbd { background: #333; color: #ddd; padding: 1px 6px; border-radius: 3px; font-size: 11px; font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <h2>📍 부스배치도 매핑</h2>
+
+  <h3>1. 이미지</h3>
+  <label class="file-label">
+    📁 이미지 파일 선택
+    <input type="file" id="image-input" accept="image/*">
+  </label>
+  <div class="help">또는 메인 영역에 이미지를 끌어다 놓으세요</div>
+
+  <h3>2. JSON</h3>
+  <button class="btn" id="export-btn">📤 Export</button>
+  <button class="btn secondary" id="import-btn">📥 Import</button>
+  <input type="file" id="import-input" accept="application/json,.json" style="display: none;">
+
+  <h3>스냅 (정렬)</h3>
+  <label style="display:flex; align-items:center; gap:6px; font-size:13px; cursor:pointer;">
+    <input type="checkbox" id="snap-toggle" checked>
+    <span>인접 부스 + 격자선 자동 정렬</span>
+  </label>
+  <div style="margin-top:8px; font-size:12px;">
+    <label>스냅 거리: <span id="snap-threshold-val">12</span>px</label>
+    <input type="range" id="snap-threshold" min="4" max="30" value="12" style="width:100%; margin-top:4px;">
+  </div>
+
+  <h3>도움말</h3>
+  <div class="help">
+    • 좌상단 클릭 → 우하단 클릭으로 사각형 그리기<br>
+    • <kbd>ESC</kbd> 첫 점 취소<br>
+    • <kbd>Shift</kbd> + 드래그 = 화면 이동<br>
+    • <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + 휠 = 확대/축소<br>
+    • 목록 클릭 = 해당 부스 강조
+  </div>
+
+  <h3>부스 목록 (<span id="count">0</span>)</h3>
+  <ul id="booth-list"></ul>
+</div>
+
+<div id="main">
+  <div id="empty-state">
+    <div style="font-size: 32px; margin-bottom: 8px;">🗺️</div>
+    <div>왼쪽 사이드바에서 이미지를 선택하거나<br>여기로 이미지를 끌어다 놓으세요</div>
+  </div>
+  <div id="wrapper">
+    <svg id="overlay" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+</div>
+
+<div id="zoom-controls">
+  <button class="btn secondary" id="zoom-out">−</button>
+  <button class="btn secondary" id="zoom-reset">100%</button>
+  <button class="btn secondary" id="zoom-in">+</button>
+</div>
+
+<div id="status">대기 중...</div>
+
+<div id="modal">
+  <div class="modal-box">
+    <h3 id="modal-title">부스 정보 입력</h3>
+    <div class="coords-info" id="modal-coords"></div>
+    <label>부스 번호 *</label>
+    <input type="text" id="booth-name-input" placeholder="예: A01, B09, K11">
+    <label>기업명 (선택)</label>
+    <input type="text" id="booth-company-input" placeholder="예: MITHRIL, DeepBrain AI">
+    <div class="modal-actions">
+      <button class="btn danger" id="modal-delete" style="margin-right:auto; display:none;">🗑 삭제</button>
+      <button class="btn secondary" id="modal-cancel">취소 (Esc)</button>
+      <button class="btn" id="modal-save">저장 (Enter)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+const state = {
+  booths: [],
+  scale: 1,
+  firstPoint: null,
+  hoverPoint: null,
+  imageWidth: 0,
+  imageHeight: 0,
+  pendingRect: null,
+  highlightIdx: -1,
+  mapImg: null,
+  currentBlobURL: null,
+  imageData: null,        // pixel data for line detection
+  snapEnabled: true,
+  lastSnap: null,         // {x:bool, y:bool, type:'edge'|'line'} for visual feedback
+  editingIdx: null,       // null = 새로 만들기, number = 수정 중
+};
+
+const $ = function(id) { return document.getElementById(id); };
+const els = {
+  imageInput: $('image-input'),
+  importInput: $('import-input'),
+  importBtn: $('import-btn'),
+  exportBtn: $('export-btn'),
+  wrapper: $('wrapper'),
+  overlay: $('overlay'),
+  emptyState: $('empty-state'),
+  status: $('status'),
+  list: $('booth-list'),
+  count: $('count'),
+  zoomIn: $('zoom-in'),
+  zoomOut: $('zoom-out'),
+  zoomReset: $('zoom-reset'),
+  modal: $('modal'),
+  modalCoords: $('modal-coords'),
+  nameInput: $('booth-name-input'),
+  companyInput: $('booth-company-input'),
+  modalCancel: $('modal-cancel'),
+  modalSave: $('modal-save'),
+  modalTitle: $('modal-title'),
+  modalDelete: $('modal-delete'),
+  main: $('main'),
+  snapToggle: $('snap-toggle'),
+  snapThreshold: $('snap-threshold'),
+  snapThresholdVal: $('snap-threshold-val'),
+};
+
+state.snapThreshold = 12;
+
+els.snapToggle.addEventListener('change', function() {
+  state.snapEnabled = els.snapToggle.checked;
+});
+els.snapThreshold.addEventListener('input', function() {
+  state.snapThreshold = +els.snapThreshold.value;
+  els.snapThresholdVal.textContent = state.snapThreshold;
+});
+
+function setStatus(msg) {
+  console.log('[status]', msg);
+  els.status.textContent = msg;
+}
+
+function handleFile(file) {
+  console.log('[handleFile]', file);
+  try {
+    if (!file) { setStatus('파일이 없습니다'); return; }
+    if (!file.type || !file.type.startsWith('image/')) {
+      alert('이미지 파일만 가능합니다 (PNG, JPG, WebP 등)\n선택된 파일 타입: ' + (file.type || '(unknown)'));
+      return;
+    }
+    setStatus('로드 중: ' + file.name + ' (' + (file.size/1024).toFixed(1) + ' KB)');
+
+    // Try blob URL first (memory efficient)
+    if (state.currentBlobURL) {
+      URL.revokeObjectURL(state.currentBlobURL);
+      state.currentBlobURL = null;
+    }
+    const blobURL = URL.createObjectURL(file);
+    console.log('[handleFile] blob URL:', blobURL);
+    state.currentBlobURL = blobURL;
+
+    loadImage(blobURL, function onBlobFail() {
+      // Fallback: FileReader → data URL (works on file:// where blob URLs fail)
+      console.warn('[handleFile] blob failed, falling back to FileReader');
+      setStatus('blob 실패, data URL 시도 중...');
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        console.log('[FileReader] loaded, length:', ev.target.result.length);
+        loadImage(ev.target.result, function onDataURLFail() {
+          setStatus('이미지 로드 실패');
+          alert('이미지를 불러올 수 없습니다.\n파일이 손상되었거나 지원하지 않는 형식일 수 있습니다.');
+        });
+      };
+      reader.onerror = function(err) {
+        console.error('[FileReader] error:', err);
+        alert('파일을 읽을 수 없습니다');
+      };
+      reader.readAsDataURL(file);
+    });
+  } catch (err) {
+    console.error('[handleFile] exception:', err);
+    alert('파일 처리 중 오류: ' + err.message);
+  }
+}
+
+function loadImage(src, onFail) {
+  console.log('[loadImage] starting, src starts with:', src.substring(0, 30));
+
+  if (state.mapImg) {
+    state.mapImg.remove();
+    state.mapImg = null;
+  }
+
+  const img = document.createElement('img');
+
+  img.onload = function() {
+    console.log('[loadImage] onload:', img.naturalWidth, '×', img.naturalHeight);
+    state.imageWidth = img.naturalWidth;
+    state.imageHeight = img.naturalHeight;
+
+    if (!state.imageWidth || !state.imageHeight) {
+      if (onFail) { onFail(); return; }
+      alert('이미지 크기를 읽을 수 없습니다');
+      return;
+    }
+
+    img.style.width = state.imageWidth + 'px';
+    img.style.height = state.imageHeight + 'px';
+
+    els.wrapper.insertBefore(img, els.overlay);
+    state.mapImg = img;
+
+    els.overlay.setAttribute('width', state.imageWidth);
+    els.overlay.setAttribute('height', state.imageHeight);
+    els.overlay.setAttribute('viewBox', '0 0 ' + state.imageWidth + ' ' + state.imageHeight);
+    els.overlay.style.width = state.imageWidth + 'px';
+    els.overlay.style.height = state.imageHeight + 'px';
+
+    els.wrapper.classList.add('ready');
+    els.emptyState.style.display = 'none';
+
+    // Capture pixel data for grid-line detection
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = state.imageWidth;
+      canvas.height = state.imageHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      state.imageData = ctx.getImageData(0, 0, state.imageWidth, state.imageHeight);
+      console.log('[loadImage] pixel data captured for snap');
+    } catch (err) {
+      console.warn('[loadImage] could not read pixels:', err);
+      state.imageData = null;
+    }
+
+    setStatus('이미지 ' + state.imageWidth + ' × ' + state.imageHeight + ' · 좌상단을 클릭하세요');
+    redraw();
+  };
+
+  img.onerror = function(e) {
+    console.error('[loadImage] onerror:', e);
+    if (onFail) { onFail(); return; }
+    setStatus('이미지 로드 실패');
+    alert('이미지를 디코드할 수 없습니다');
+  };
+
+  img.src = src;
+  console.log('[loadImage] img.src set');
+}
+
+els.imageInput.addEventListener('change', function(e) {
+  console.log('[image-input] change');
+  const file = e.target.files && e.target.files[0];
+  handleFile(file);
+  e.target.value = '';
+});
+
+function getImageCoords(e) {
+  if (!state.mapImg) return { x: 0, y: 0 };
+  const rect = state.mapImg.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / state.scale;
+  const y = (e.clientY - rect.top) / state.scale;
+  return {
+    x: Math.max(0, Math.min(state.imageWidth, Math.round(x))),
+    y: Math.max(0, Math.min(state.imageHeight, Math.round(y))),
+  };
+}
+
+// --- Snap logic ---
+// Priority 1: snap to existing booth edges (perfect alignment between adjacent booths)
+// Priority 2: snap to dark grid lines detected in the image (for the first booth in an area)
+function snap(pt) {
+  if (!state.snapEnabled) { state.lastSnap = null; return pt; }
+  const T = state.snapThreshold;
+  let x = pt.x, y = pt.y;
+  let snappedX = false, snappedY = false;
+  let typeX = null, typeY = null;
+
+  // 1. Snap to existing booth edges
+  let bestDx = T + 1, bestDy = T + 1;
+  for (let i = 0; i < state.booths.length; i++) {
+    const b = state.booths[i];
+    const xs = [b.x, b.x + b.width];
+    const ys = [b.y, b.y + b.height];
+    for (let j = 0; j < xs.length; j++) {
+      const d = Math.abs(pt.x - xs[j]);
+      if (d < bestDx) { bestDx = d; x = xs[j]; snappedX = true; typeX = 'edge'; }
+    }
+    for (let j = 0; j < ys.length; j++) {
+      const d = Math.abs(pt.y - ys[j]);
+      if (d < bestDy) { bestDy = d; y = ys[j]; snappedY = true; typeY = 'edge'; }
+    }
+  }
+
+  // 2. Snap to dark grid lines (only if not already snapped to a booth edge)
+  if (state.imageData) {
+    if (!snappedX) {
+      const lineX = findVerticalLine(pt.x, pt.y, T);
+      if (lineX != null) { x = lineX; snappedX = true; typeX = 'line'; }
+    }
+    if (!snappedY) {
+      const lineY = findHorizontalLine(x, pt.y, T);
+      if (lineY != null) { y = lineY; snappedY = true; typeY = 'line'; }
+    }
+  }
+
+  state.lastSnap = (snappedX || snappedY) ? { x: snappedX, y: snappedY, typeX: typeX, typeY: typeY } : null;
+  return { x: Math.round(x), y: Math.round(y) };
+}
+
+// Find vertical dark line near x by sampling a small horizontal range
+function findVerticalLine(x, y, range) {
+  const data = state.imageData.data;
+  const W = state.imageData.width, H = state.imageData.height;
+  const sampleHalf = 25;  // sample 50 pixels vertically around y
+  let bestX = null, bestScore = 0;
+  const minScore = sampleHalf;  // need at least half the samples to be dark
+
+  for (let dx = -range; dx <= range; dx++) {
+    const cx = x + dx;
+    if (cx < 0 || cx >= W) continue;
+    let darkCount = 0, total = 0;
+    for (let dy = -sampleHalf; dy <= sampleHalf; dy++) {
+      const cy = y + dy;
+      if (cy < 0 || cy >= H) continue;
+      total++;
+      const idx = (cy * W + cx) * 4;
+      const lum = (data[idx] + data[idx+1] + data[idx+2]) / 3;
+      if (lum < 110) darkCount++;
+    }
+    if (darkCount > bestScore && darkCount >= minScore) {
+      bestScore = darkCount;
+      bestX = cx;
+    }
+  }
+  return bestX;
+}
+
+function findHorizontalLine(x, y, range) {
+  const data = state.imageData.data;
+  const W = state.imageData.width, H = state.imageData.height;
+  const sampleHalf = 25;
+  let bestY = null, bestScore = 0;
+  const minScore = sampleHalf;
+
+  for (let dy = -range; dy <= range; dy++) {
+    const cy = y + dy;
+    if (cy < 0 || cy >= H) continue;
+    let darkCount = 0;
+    for (let dx = -sampleHalf; dx <= sampleHalf; dx++) {
+      const cx = x + dx;
+      if (cx < 0 || cx >= W) continue;
+      const idx = (cy * W + cx) * 4;
+      const lum = (data[idx] + data[idx+1] + data[idx+2]) / 3;
+      if (lum < 110) darkCount++;
+    }
+    if (darkCount > bestScore && darkCount >= minScore) {
+      bestScore = darkCount;
+      bestY = cy;
+    }
+  }
+  return bestY;
+}
+
+els.overlay.addEventListener('click', function(e) {
+  if (!state.imageWidth) return;
+  if (drag.didMove) { drag.didMove = false; return; }
+  if (e.shiftKey) return;
+
+  const raw = getImageCoords(e);
+  const pt = snap(raw);
+  if (!state.firstPoint) {
+    state.firstPoint = pt;
+    setStatus('첫 점 (' + pt.x + ', ' + pt.y + ')' + snapLabel() + ' — 우하단을 클릭하세요');
+    redraw();
+  } else {
+    const x1 = Math.min(state.firstPoint.x, pt.x);
+    const y1 = Math.min(state.firstPoint.y, pt.y);
+    const x2 = Math.max(state.firstPoint.x, pt.x);
+    const y2 = Math.max(state.firstPoint.y, pt.y);
+    if (x2 - x1 < 3 || y2 - y1 < 3) {
+      setStatus('너무 작아요. 다시 그려주세요.');
+      state.firstPoint = null;
+      state.hoverPoint = null;
+      redraw();
+      return;
+    }
+    state.pendingRect = { x: x1, y: y1, width: x2 - x1, height: y2 - y1 };
+    state.firstPoint = null;
+    state.hoverPoint = null;
+    openModal();
+    redraw();
+  }
+});
+
+els.overlay.addEventListener('mousemove', function(e) {
+  if (!state.imageWidth) return;
+  const raw = getImageCoords(e);
+  const pt = snap(raw);
+  if (state.firstPoint) {
+    state.hoverPoint = pt;
+    redraw();
+  }
+  els.status.textContent = '(' + pt.x + ', ' + pt.y + ')' + snapLabel() +
+    (state.firstPoint ? ' ← from (' + state.firstPoint.x + ', ' + state.firstPoint.y + ')' : '');
+});
+
+function snapLabel() {
+  if (!state.lastSnap) return '';
+  const parts = [];
+  if (state.lastSnap.x) parts.push('X:' + state.lastSnap.typeX);
+  if (state.lastSnap.y) parts.push('Y:' + state.lastSnap.typeY);
+  return ' [snap ' + parts.join(',') + ']';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    if (els.modal.classList.contains('show')) {
+      closeModal(false);
+    } else if (state.firstPoint) {
+      state.firstPoint = null;
+      state.hoverPoint = null;
+      setStatus('취소됨');
+      redraw();
+    }
+  }
+});
+
+const drag = { active: false, startX: 0, startY: 0, scrollLeft: 0, scrollTop: 0, didMove: false };
+els.main.addEventListener('mousedown', function(e) {
+  if (e.shiftKey || e.button === 1) {
+    drag.active = true;
+    drag.startX = e.pageX;
+    drag.startY = e.pageY;
+    drag.scrollLeft = els.main.scrollLeft;
+    drag.scrollTop = els.main.scrollTop;
+    drag.didMove = false;
+    document.body.style.cursor = 'grabbing';
+    e.preventDefault();
+  }
+});
+document.addEventListener('mousemove', function(e) {
+  if (!drag.active) return;
+  const dx = e.pageX - drag.startX;
+  const dy = e.pageY - drag.startY;
+  if (Math.abs(dx) > 3 || Math.abs(dy) > 3) drag.didMove = true;
+  els.main.scrollLeft = drag.scrollLeft - dx;
+  els.main.scrollTop = drag.scrollTop - dy;
+});
+document.addEventListener('mouseup', function() {
+  drag.active = false;
+  document.body.style.cursor = '';
+});
+
+function setScale(s, originX, originY) {
+  const newScale = Math.max(0.1, Math.min(5, s));
+  if (originX != null && originY != null) {
+    const ratio = newScale / state.scale;
+    const sx = els.main.scrollLeft + originX;
+    const sy = els.main.scrollTop + originY;
+    state.scale = newScale;
+    els.wrapper.style.transform = 'scale(' + state.scale + ')';
+    els.main.scrollLeft = sx * ratio - originX;
+    els.main.scrollTop = sy * ratio - originY;
+  } else {
+    state.scale = newScale;
+    els.wrapper.style.transform = 'scale(' + state.scale + ')';
+  }
+  els.zoomReset.textContent = Math.round(state.scale * 100) + '%';
+}
+els.zoomIn.addEventListener('click', function() { setScale(state.scale * 1.2); });
+els.zoomOut.addEventListener('click', function() { setScale(state.scale / 1.2); });
+els.zoomReset.addEventListener('click', function() { setScale(1); });
+
+els.main.addEventListener('wheel', function(e) {
+  if (e.ctrlKey || e.metaKey) {
+    e.preventDefault();
+    const rect = els.main.getBoundingClientRect();
+    const ox = e.clientX - rect.left;
+    const oy = e.clientY - rect.top;
+    const delta = e.deltaY > 0 ? 1/1.1 : 1.1;
+    setScale(state.scale * delta, ox, oy);
+  }
+}, { passive: false });
+
+const NS = 'http://www.w3.org/2000/svg';
+function redraw() {
+  els.overlay.innerHTML = '';
+
+  state.booths.forEach(function(b, idx) {
+    const r = document.createElementNS(NS, 'rect');
+    r.setAttribute('x', b.x);
+    r.setAttribute('y', b.y);
+    r.setAttribute('width', b.width);
+    r.setAttribute('height', b.height);
+    r.setAttribute('class', 'booth' + (idx === state.highlightIdx ? ' highlight' : ''));
+    els.overlay.appendChild(r);
+
+    const fontSize = Math.max(10, Math.min(b.width / Math.max(1, b.name.length) * 1.2, b.height * 0.45, 18));
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', b.x + b.width / 2);
+    t.setAttribute('y', b.y + b.height / 2 + fontSize / 3);
+    t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('font-size', fontSize);
+    t.textContent = b.name;
+    els.overlay.appendChild(t);
+  });
+
+  if (state.firstPoint) {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', state.firstPoint.x);
+    c.setAttribute('cy', state.firstPoint.y);
+    c.setAttribute('r', 5 / state.scale);
+    c.setAttribute('class', 'first-point');
+    els.overlay.appendChild(c);
+
+    if (state.hoverPoint) {
+      const x1 = Math.min(state.firstPoint.x, state.hoverPoint.x);
+      const y1 = Math.min(state.firstPoint.y, state.hoverPoint.y);
+      const x2 = Math.max(state.firstPoint.x, state.hoverPoint.x);
+      const y2 = Math.max(state.firstPoint.y, state.hoverPoint.y);
+      const r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', x1);
+      r.setAttribute('y', y1);
+      r.setAttribute('width', x2 - x1);
+      r.setAttribute('height', y2 - y1);
+      r.setAttribute('class', 'preview');
+      els.overlay.appendChild(r);
+    }
+  }
+
+  renderList();
+}
+
+function renderList() {
+  els.count.textContent = state.booths.length;
+  els.list.innerHTML = '';
+
+  state.booths.forEach(function(b, idx) {
+    const li = document.createElement('li');
+    if (idx === state.highlightIdx) li.style.background = '#1d4ed8';
+
+    // Info section
+    const info = document.createElement('div');
+    info.className = 'info';
+    const nameEl = document.createElement('b');
+    nameEl.textContent = b.name;
+    info.appendChild(nameEl);
+    if (b.company) {
+      const company = document.createElement('div');
+      company.style.cssText = 'font-size:11px;color:#bbb;';
+      company.textContent = b.company;
+      info.appendChild(company);
+    }
+    const coords = document.createElement('div');
+    coords.className = 'coords';
+    coords.textContent = b.x + ',' + b.y + ' · ' + b.width + '×' + b.height;
+    info.appendChild(coords);
+
+    // Edit button
+    const editBtn = document.createElement('button');
+    editBtn.textContent = '✏';
+    editBtn.title = '편집 / 삭제';
+    editBtn.style.cssText = 'background:transparent;color:#60a5fa;border:none;cursor:pointer;font-size:16px;padding:6px 10px;';
+    editBtn.onclick = function(e) {
+      e.stopPropagation();
+      console.log('[edit-btn] idx=', idx);
+      openEditModal(idx);
+    };
+
+    // Row click → toggle highlight
+    li.onclick = function() {
+      state.highlightIdx = (state.highlightIdx === idx) ? -1 : idx;
+      redraw();
+      if (state.highlightIdx === idx) scrollToBooth(b);
+    };
+
+    li.appendChild(info);
+    li.appendChild(editBtn);
+    els.list.appendChild(li);
+  });
+}
+
+function scrollToBooth(b) {
+  const cx = (b.x + b.width / 2) * state.scale;
+  const cy = (b.y + b.height / 2) * state.scale;
+  els.main.scrollTo({
+    left: cx - els.main.clientWidth / 2,
+    top: cy - els.main.clientHeight / 2,
+    behavior: 'smooth'
+  });
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function(c) {
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+  });
+}
+
+function openModal() {
+  // 새 부스 추가 모드
+  state.editingIdx = null;
+  const r = state.pendingRect;
+  els.modalTitle.textContent = '부스 정보 입력';
+  els.modalDelete.style.display = 'none';
+  els.modalCoords.textContent = '좌표: x=' + r.x + ', y=' + r.y + ' · 크기: ' + r.width + ' × ' + r.height;
+  els.nameInput.value = '';
+  els.companyInput.value = '';
+  els.modal.classList.add('show');
+  setTimeout(function() { els.nameInput.focus(); }, 50);
+}
+
+function openEditModal(idx) {
+  const b = state.booths[idx];
+  if (!b) { console.error('[openEditModal] no booth at', idx); return; }
+  state.editingIdx = idx;
+  state.pendingRect = { x: b.x, y: b.y, width: b.width, height: b.height };
+  els.modalTitle.textContent = '부스 정보 수정';
+  els.modalDelete.style.display = 'inline-block';
+  els.modalCoords.textContent = '좌표: x=' + b.x + ', y=' + b.y + ' · 크기: ' + b.width + ' × ' + b.height;
+  els.nameInput.value = b.name || '';
+  els.companyInput.value = b.company || '';
+  els.modal.classList.add('show');
+  state.highlightIdx = idx;
+  redraw();
+  scrollToBooth(b);
+  setTimeout(function() { els.nameInput.focus(); els.nameInput.select(); }, 50);
+}
+
+function closeModal(save) {
+  if (save) {
+    const name = els.nameInput.value.trim();
+    if (!name) { els.nameInput.focus(); return; }
+    const company = els.companyInput.value.trim() || undefined;
+
+    if (state.editingIdx !== null) {
+      // 수정
+      state.booths[state.editingIdx].name = name;
+      state.booths[state.editingIdx].company = company;
+      setStatus("'" + name + "' 수정됨");
+    } else {
+      // 새로 추가
+      state.booths.push({
+        name: name,
+        company: company,
+        x: state.pendingRect.x,
+        y: state.pendingRect.y,
+        width: state.pendingRect.width,
+        height: state.pendingRect.height
+      });
+      setStatus("'" + name + "' 추가됨 (총 " + state.booths.length + '개)');
+    }
+  }
+  state.pendingRect = null;
+  state.editingIdx = null;
+  els.modal.classList.remove('show');
+  redraw();
+}
+
+els.modalCancel.addEventListener('click', function() { closeModal(false); });
+els.modalSave.addEventListener('click', function() { closeModal(true); });
+els.modalDelete.addEventListener('click', function() {
+  if (state.editingIdx === null) return;
+  const b = state.booths[state.editingIdx];
+  if (!b) return;
+  if (!confirm("'" + b.name + "' 삭제할까요?")) return;
+  const idx = state.editingIdx;
+  const name = b.name;
+  state.booths.splice(idx, 1);
+  if (state.highlightIdx === idx) state.highlightIdx = -1;
+  else if (state.highlightIdx > idx) state.highlightIdx--;
+  state.editingIdx = null;
+  state.pendingRect = null;
+  els.modal.classList.remove('show');
+  setStatus("'" + name + "' 삭제됨 (남은 " + state.booths.length + '개)');
+  redraw();
+});
+
+[els.nameInput, els.companyInput].forEach(function(input) {
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); closeModal(true); }
+  });
+});
+
+els.exportBtn.addEventListener('click', function() {
+  if (!state.booths.length) { alert('저장할 부스가 없습니다'); return; }
+  const data = {
+    image: { width: state.imageWidth, height: state.imageHeight },
+    booths: state.booths.map(function(b) {
+      const o = { name: b.name };
+      if (b.company) o.company = b.company;
+      o.x = b.x; o.y = b.y; o.width = b.width; o.height = b.height;
+      return o;
+    })
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'booth-layout.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+  setStatus(state.booths.length + '개 부스 내보냄');
+});
+
+els.importBtn.addEventListener('click', function() { els.importInput.click(); });
+els.importInput.addEventListener('change', function(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (data.booths && Array.isArray(data.booths)) {
+        state.booths = data.booths.map(function(b) {
+          return {
+            name: String(b.name || ''),
+            company: b.company,
+            x: +b.x, y: +b.y,
+            width: +b.width, height: +b.height
+          };
+        });
+        setStatus(data.booths.length + '개 부스 불러옴');
+        redraw();
+      } else {
+        alert('booths 배열이 없는 JSON입니다');
+      }
+    } catch (err) {
+      alert('JSON 파일을 읽을 수 없습니다: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+['dragenter', 'dragover'].forEach(function(evt) {
+  els.main.addEventListener(evt, function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    els.main.style.outline = '3px dashed #2563eb';
+    els.main.style.outlineOffset = '-6px';
+  });
+});
+['dragleave', 'drop'].forEach(function(evt) {
+  els.main.addEventListener(evt, function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    els.main.style.outline = '';
+  });
+});
+els.main.addEventListener('drop', function(e) {
+  const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+  handleFile(file);
+});
+
+setStatus('이미지를 선택해주세요');
+console.log('[init] booth mapper ready');
+</script>
+
+</body>
+</html>
