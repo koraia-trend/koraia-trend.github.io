@@ -3,216 +3,1142 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>국제인공지능대전 AI EXPO KOREA 부스 배치도</title>
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <!-- Meta 태그 추가 -->
-    <meta name="description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
-
-    <!-- Open Graph 태그 -->
-    <meta property="og:title" content="AI EXPO KOREA 2025 부스 지도">
-    <meta property="og:description" content="국제인공지능대전 부스 위치, 참가사 정보를 한 곳에서 편리하게 확인하세요.">
-    <meta property="og:type" content="website">
-    <!-- <meta property="og:url" content="https://"> -->
-    <meta property="og:image" content="/images/ogimage2.png">
-    <meta property="og:site_name" content="AI EXPO KOREA 2025">
-
-    <!-- Font Awesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>부스배치도 | AI EXPO KOREA 2026 국제인공지능대전</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/static/pretendard.css" />
     <style>
-        a { 
-            text-decoration: none;
-            color: black;
+        body {
+            font-family: 'Pretendard', sans-serif;
+            overflow: hidden;
+            background-color: #f1f3f8;
         }
-        /* Add this to your style.css file or inside the <style> section in the head */
-.event-schedule {
-    margin-top: 10px;
-}
 
-.event-day h4 {
-    color: #3498db;
-    margin: 0 0 8px 0;
-    font-size: 15px;
-    font-weight: bold;
-}
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.event-item {
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    padding: 8px 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
 
-.event-item p {
-    margin: 4px 0;
-    font-size: 13px;
-    line-height: 1.3;
-}
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
 
-.event-item i {
-    width: 16px;
-    margin-right: 5px;
-    color: #555;
-}
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
+        }
 
-.event-item:hover {
-    background-color: #e9f7fe;
-    transition: background-color 0.2s;
-}
+        .booth-shape {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-/* Make responsive for small screens */
-@media (max-width: 768px) {
-    .event-day {
-        padding-left: 8px;
-    }
-    .event-item {
-        padding: 6px 8px;
-    }
-}
+        .booth-shape:hover {
+            opacity: 0.8;
+        }
+
+        .booth-selected {
+            stroke: #60a5fa;
+            stroke-width: 6;
+            stroke-alignment: inner;
+        }
+
+        .tooltip-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #27272a;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .map-transition {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bottom-sheet-transition {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body[data-lang="ko"] .lang-en {
+            display: none !important;
+        }
+
+        body[data-lang="en"] .lang-ko {
+            display: none !important;
+        }
     </style>
 </head>
 
-<body>
-    <div class="app-container">
-        <!-- Optional Header -->
-        <header class="app-header">
-            <a href="/" style="text-decoration: none;">
-                <div class="logo">
-                AI EXPO KOREA 2025 국제인공지능대전
-            </div></a>
-            <div class="event-info">
-                5월 14일 (수) ~ 16일 (금)
-            </div>
-        </header>
+<body data-lang="ko" class="flex flex-col md:flex-row h-screen w-screen text-gray-800 relative">
 
-        <!-- Control Bar -->
-        <div class="control-bar">
-            <div class="search-controls">
-                <input type="text" id="searchInput" placeholder="부스 번호 또는 기업명 검색">
-                <button id="searchButton"><i class="fas fa-search"></i> 검색</button>
+    <div id="modal-backdrop" class="hidden fixed inset-0 bg-black/40 z-[60] md:hidden transition-opacity"></div>
+
+    <header class="md:hidden bg-[#040249] h-14 flex items-center justify-between px-4 z-50 shrink-0">
+        <img src="logo.png" alt="AI EXPO KOREA 2026" class="h-8 object-contain">
+
+        <div class="relative flex items-center gap-2">
+            <button id="btn-lang-mobile"
+                class="text-white text-[13px] font-bold border border-white/40 rounded px-2 py-1 mr-1 hover:bg-white/10">EN</button>
+            <button id="btn-mobile-menu" class="text-white p-1">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <div id="mobile-menu-dropdown"
+                class="hidden absolute top-full right-0 mt-3 bg-white rounded-xl shadow-xl py-2 w-56 z-[80] border border-gray-100 overflow-hidden">
+                <button id="btn-mobile-map-guide"
+                    class="w-full text-left px-5 py-3 text-[14px] font-medium text-gray-700 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="lang-ko">지도 이용 방법 안내</span><span class="lang-en">Map Guide</span>
+                </button>
+                <button id="btn-mobile-conf-schedule"
+                    class="w-full text-left px-5 py-3 text-[14px] font-medium text-gray-700 hover:bg-gray-50">
+                    <span class="lang-ko">컨퍼런스 일정 안내</span><span class="lang-en">Conference Schedule</span>
+                </button>
             </div>
-            <div class="map-controls">
-                <button id="zoomInButton" title="확대"><i class="fas fa-plus"></i> 확대</button>
-                <button id="zoomOutButton" title="축소"><i class="fas fa-minus"></i> 축소</button>
-                <button id="resetViewButton" title="기본 보기"><i class="fas fa-expand"></i> 기본</button>
-                <!-- <button id="legendButton" title="범례"><i class="fas fa-info-circle"></i></button> -->
-                <!-- <button id="printButton" title="인쇄"><i class="fas fa-print"></i></button> -->
+        </div>
+    </header>
+
+    <aside id="sidebar"
+        class="fixed md:static bottom-0 left-0 w-full md:w-[320px] lg:w-[360px] h-[75vh] md:h-full bg-[#f8fafc] md:bg-white flex flex-col z-40 rounded-t-[30px] md:rounded-none shadow-[0_-10px_30px_rgba(0,0,0,0.1)] md:shadow-lg bottom-sheet-transition md:transform-none translate-y-[calc(100%-100px)]">
+
+        <div class="hidden md:flex bg-[#040249] p-6 pb-4 flex-col gap-4">
+            <img src="logo.png" alt="AI EXPO KOREA 2026" class="h-10 object-contain self-start">
+            <div class="relative w-full">
+                <input type="text" id="pc-search-input" data-placeholder-ko="기업명 또는 부스 번호"
+                    data-placeholder-en="Company Name or Booth No." placeholder="기업명 또는 부스 번호"
+                    class="w-full py-2.5 pl-4 pr-10 rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm font-medium text-gray-700">
+                <svg class="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
             </div>
         </div>
 
-        <!-- Main Content Area -->
-        <main class="main-content">
-            <!-- Map Area (Left) -->
-            <div class="map-area">
-                <div class="location-selector">
-                    <select id="floorLevelSelector">
-                        <option value="level1">코엑스 A홀 1층 (1F)</option>
-                        <option value="level3">코엑스 A홀 3층 (3F)</option> 
-                        <!-- Add other floor levels here -->
-                    </select>
+        <div id="bottom-sheet-header"
+            class="md:hidden w-full shrink-0 flex flex-col justify-center px-4 h-[100px] cursor-grab active:cursor-grabbing bg-white rounded-t-[30px]">
+            <div class="w-full flex justify-center py-2 mb-1">
+                <div class="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+            </div>
+            <div class="relative shadow-sm bg-white rounded-full border border-gray-200">
+                <input type="text" id="mobile-search-input" data-placeholder-ko="부스 번호 또는 기업명을 검색해 주세요"
+                    data-placeholder-en="Search booth no. or company" placeholder="부스 번호 또는 기업명을 검색해 주세요"
+                    class="w-full py-3.5 pl-5 pr-12 rounded-full text-base focus:outline-none text-gray-700 bg-transparent">
+                <svg class="w-5 h-5 text-blue-900 absolute right-5 top-1/2 -translate-y-1/2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto bg-white md:bg-gray-50/50 p-3 md:p-4" id="list-container">
+            <ul id="booth-list" class="space-y-1.5 md:space-y-2 pb-6"></ul>
+            <div id="empty-state" class="hidden flex-col items-center justify-center h-full text-center px-4 pb-10">
+                <div class="text-[50px] mb-4">😢</div>
+                <div class="text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                    <span class="lang-ko">검색 결과가 존재하지 않습니다.<br>검색어에 오타가 없는지 확인해 주세요.</span>
+                    <span class="lang-en">No search results found.<br>Please check for any typos.</span>
                 </div>
-                <div id="mapViewport" class="map-viewport">
-                    <svg id="boothMap" width="100%" height="100%">
-                        <defs></defs>
-                        <g id="boothGroup"></g>
+            </div>
+        </div>
+    </aside>
+
+    <main
+        class="flex-1 relative w-full h-[calc(100vh-56px)] md:h-full overflow-hidden bg-[#eff3f8] cursor-grab select-none z-10"
+        id="map-viewport">
+
+        <div class="absolute top-4 right-4 z-40 hidden md:flex gap-3" id="help-controls">
+            <button id="btn-lang-pc"
+                class="flex items-center justify-center bg-[#040249] text-white px-4 py-2 rounded-lg shadow-md cursor-pointer hover:bg-blue-900 border border-[#040249] font-bold text-sm">
+                EN
+            </button>
+            <button id="btn-map-guide"
+                class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg shadow-md cursor-pointer hover:bg-gray-50 border border-gray-100">
+                <span
+                    class="bg-[#0b083b] text-[#c94bfa] font-bold px-2 py-0.5 rounded text-[11px] tracking-wide">HELP</span>
+                <span class="text-gray-700 text-sm font-medium"><span class="lang-ko">지도 이용 방법 안내</span><span
+                        class="lang-en">Map Guide</span></span>
+            </button>
+            <button id="btn-conf-schedule"
+                class="flex items-center gap-2 bg-white px-3 py-2 rounded-lg shadow-md cursor-pointer hover:bg-gray-50 border border-gray-100">
+                <span
+                    class="bg-[#0b083b] text-[#c94bfa] font-bold px-2 py-0.5 rounded text-[11px] tracking-wide">HELP</span>
+                <span class="text-gray-700 text-sm font-medium"><span class="lang-ko">컨퍼런스 일정 안내</span><span
+                        class="lang-en">Schedule</span></span>
+            </button>
+        </div>
+
+        <div id="map-container" class="absolute origin-top-left map-transition">
+            <svg id="expo-map" xmlns="http://www.w3.org/2000/svg" width="1910" height="1236" viewBox="0 0 1910 1236"
+                class="no-select">
+                <g id="base-layer">
+                    <rect x="58" y="211" width="271" height="195" fill="#8e89c6" rx="4" />
+                    <text x="193.5" y="308.5" fill="white" font-size="14" text-anchor="middle"
+                        class="font-bold opacity-80 pointer-events-none">Intelligence Room</text>
+                    <rect x="1607" y="211" width="271" height="195" fill="#6994cd" rx="4" />
+                    <text x="1742.5" y="308.5" fill="white" font-size="14" text-anchor="middle"
+                        class="font-bold opacity-80 pointer-events-none">Artificial Room</text>
+                    <rect x="58" y="908" width="117" height="155" fill="#6ba7e0" rx="4" />
+                    <text x="116.5" y="985.5" fill="white" font-size="12" text-anchor="middle"
+                        class="font-bold opacity-80 pointer-events-none">Business Lounge</text>
+
+                    <g transform="translate(495, 1090)">
+                        <path d="M-30 5 L-20 -10 L-10 5 H-16 V20 H-24 V5 Z" fill="#4a86e8" />
+                        <path d="M10 5 L20 20 L30 5 H24 V-10 H16 V5 Z" fill="#e0125a" />
+                        <text x="0" y="45" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"
+                            class="lang-ko">출입구</text>
+                        <text x="0" y="45" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"
+                            class="lang-en">Gate</text>
+                        <text x="0" y="65" font-size="13" fill="#666" font-weight="bold" text-anchor="middle">Entrance /
+                            Exit</text>
+                    </g>
+                    <g transform="translate(1462, 1090)">
+                        <path d="M-30 5 L-20 20 L-10 5 H-16 V-10 H-24 V5 Z" fill="#e0125a" />
+                        <path d="M10 5 L20 -10 L30 5 H24 V20 H16 V5 Z" fill="#4a86e8" />
+                        <text x="0" y="45" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"
+                            class="lang-ko">출입구</text>
+                        <text x="0" y="45" font-size="16" font-weight="bold" fill="#333" text-anchor="middle"
+                            class="lang-en">Gate</text>
+                        <text x="0" y="65" font-size="13" fill="#666" font-weight="bold" text-anchor="middle">Exit /
+                            Entrance</text>
+                    </g>
+
+                    <g transform="translate(801, 1115)">
+                        <svg x="-20" y="-20" width="40" height="40" viewBox="0 0 512 512">
+                            <rect x="247.09" y="18.527" fill="#525252" width="29.967" height="474.002"></rect>
+                            <path fill="#525252"
+                                d="M106.846,97.722c21.867,0,39.598-17.73,39.598-39.606c0-21.867-17.73-39.589-39.598-39.589 c-21.885,0-39.598,17.722-39.598,39.589C67.248,79.992,84.961,97.722,106.846,97.722z">
+                            </path>
+                            <path fill="#525252"
+                                d="M184.04,154.202c-8.026-27.097-26.002-45.054-46.244-45.054c-14.994,0-30.95,0-30.95,0s-15.956,0-30.949,0 c-20.243,0-38.238,17.958-46.264,45.054L0.478,257.652c-2.153,8.715,3.172,17.608,11.877,19.742 c8.724,2.153,17.448-2.946,19.6-11.66l29.062-103.13h8.573L19.02,341.994H66.7v133.068c0,10.169,8.252,18.411,18.411,18.411 c10.178,0,18.429-8.242,18.429-18.411V341.994h10.141v133.068c0,10.169,8.252,18.411,18.43,18.411 c10.159,0,18.411-8.242,18.411-18.411V341.994h44.13l-50.569-179.389h8.573l29.061,103.13c2.152,8.714,10.895,13.813,19.6,11.66 c8.724-2.134,14.03-11.028,11.877-19.742L184.04,154.202z">
+                            </path>
+                            <path fill="#525252"
+                                d="M423.174,97.722c21.886,0,39.598-17.73,39.598-39.606c0-21.867-17.712-39.589-39.598-39.589 c-21.866,0-39.598,17.722-39.598,39.589C383.577,79.992,401.308,97.722,423.174,97.722z">
+                            </path>
+                            <path fill="#525252"
+                                d="M471.93,108.902H367.884c-19.184,0-40.07,20.884-40.07,40.07v133.097c0,9.593,7.78,17.373,17.373,17.373 c9.592,0,17.372-7.78,17.372-17.373V172.642h8.006v297.067c0,12.604,10.215,22.82,22.829,22.82 c12.614,0,22.829-10.216,22.829-22.82V297.307h7.365v172.402c0,12.604,10.215,22.82,22.829,22.82 c12.595,0,22.83-10.216,22.83-22.82V172.642h8.006v109.426c0,9.593,7.78,17.373,17.372,17.373c9.593,0,17.373-7.78,17.373-17.373 V148.971C512,129.786,491.115,108.902,471.93,108.902z">
+                            </path>
+                        </svg>
+                    </g>
+                    <g transform="translate(1162, 1115)">
+                        <svg x="-20" y="-20" width="40" height="40" viewBox="0 0 512 512">
+                            <rect x="247.09" y="18.527" fill="#525252" width="29.967" height="474.002"></rect>
+                            <path fill="#525252"
+                                d="M106.846,97.722c21.867,0,39.598-17.73,39.598-39.606c0-21.867-17.73-39.589-39.598-39.589 c-21.885,0-39.598,17.722-39.598,39.589C67.248,79.992,84.961,97.722,106.846,97.722z">
+                            </path>
+                            <path fill="#525252"
+                                d="M184.04,154.202c-8.026-27.097-26.002-45.054-46.244-45.054c-14.994,0-30.95,0-30.95,0s-15.956,0-30.949,0 c-20.243,0-38.238,17.958-46.264,45.054L0.478,257.652c-2.153,8.715,3.172,17.608,11.877,19.742 c8.724,2.153,17.448-2.946,19.6-11.66l29.062-103.13h8.573L19.02,341.994H66.7v133.068c0,10.169,8.252,18.411,18.411,18.411 c10.178,0,18.429-8.242,18.429-18.411V341.994h10.141v133.068c0,10.169,8.252,18.411,18.43,18.411 c10.159,0,18.411-8.242,18.411-18.411V341.994h44.13l-50.569-179.389h8.573l29.061,103.13c2.152,8.714,10.895,13.813,19.6,11.66 c8.724-2.134,14.03-11.028,11.877-19.742L184.04,154.202z">
+                            </path>
+                            <path fill="#525252"
+                                d="M423.174,97.722c21.886,0,39.598-17.73,39.598-39.606c0-21.867-17.712-39.589-39.598-39.589 c-21.866,0-39.598,17.722-39.598,39.589C383.577,79.992,401.308,97.722,423.174,97.722z">
+                            </path>
+                            <path fill="#525252"
+                                d="M471.93,108.902H367.884c-19.184,0-40.07,20.884-40.07,40.07v133.097c0,9.593,7.78,17.373,17.373,17.373 c9.592,0,17.372-7.78,17.372-17.373V172.642h8.006v297.067c0,12.604,10.215,22.82,22.829,22.82 c12.614,0,22.829-10.216,22.829-22.82V297.307h7.365v172.402c0,12.604,10.215,22.82,22.829,22.82 c12.595,0,22.83-10.216,22.83-22.82V172.642h8.006v109.426c0,9.593,7.78,17.373,17.372,17.373c9.593,0,17.373-7.78,17.373-17.373 V148.971C512,129.786,491.115,108.902,471.93,108.902z">
+                            </path>
+                        </svg>
+                    </g>
+                </g>
+                <g id="booths-layer"></g>
+            </svg>
+        </div>
+
+        <div id="tooltip"
+            class="absolute hidden bg-zinc-800 text-white text-[13px] md:text-sm px-4 py-3 rounded shadow-xl pointer-events-none z-30 drop-shadow-md origin-bottom transform -translate-x-1/2 -translate-y-full transition-opacity duration-200 min-w-[120px]">
+            <div class="flex items-center">
+                <span id="tooltip-booth" class="text-[#8acaff] font-bold mr-1.5"></span>
+                <span id="tooltip-company" class="font-bold whitespace-nowrap"></span>
+            </div>
+            <div id="tooltip-participants"
+                class="text-[11.5px] text-gray-300 mt-1.5 max-w-[220px] whitespace-normal break-keep leading-snug hidden">
+            </div>
+            <div class="tooltip-arrow"></div>
+        </div>
+
+        <div class="absolute right-4 top-4 md:top-1/2 md:-translate-y-1/2 flex flex-col gap-2 z-20">
+            <button id="btn-zoom-in"
+                class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-900 hover:bg-gray-50 text-2xl font-light pb-1">+</button>
+            <button id="btn-zoom-out"
+                class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-900 hover:bg-gray-50 text-2xl font-light pb-1">-</button>
+            <button id="btn-reset"
+                class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-md flex items-center justify-center text-blue-900 hover:bg-gray-50 mt-1">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <div id="popup-map-guide"
+        class="hidden fixed md:absolute top-1/2 left-1/2 md:top-[72px] md:left-auto md:right-4 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 bg-white p-6 rounded-2xl md:rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-gray-100 w-[85vw] md:w-72 text-sm text-left cursor-auto z-[70]">
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 popup-close-btn p-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <h3 class="font-bold text-lg mb-4 text-[#040249] pr-6"><span class="lang-ko">지도 이용 안내</span><span
+                class="lang-en">Map Guide</span></h3>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+            <span class="lang-ko">지도를 탐색하고 원하는 정보를 찾아보세요.</span>
+            <span class="lang-en">Explore the map and find what you need.</span>
+        </p>
+        <ul class="list-disc ml-5 space-y-2 text-gray-700 marker:text-gray-400">
+            <li>
+                <span class="font-semibold text-gray-900"><span class="lang-ko">검색:</span><span
+                        class="lang-en">Search:</span></span>
+                <span class="lang-ko">부스 번호 또는 기업명</span><span class="lang-en">Booth No. or Company Name</span>
+            </li>
+            <li>
+                <span class="font-semibold text-gray-900"><span class="lang-ko">확대/축소:</span><span
+                        class="lang-en">Zoom:</span></span>
+                <span class="lang-ko">마우스 휠 또는 +/- 버튼</span><span class="lang-en">Mouse wheel or +/- buttons</span>
+            </li>
+            <li>
+                <span class="font-semibold text-gray-900"><span class="lang-ko">이동:</span><span
+                        class="lang-en">Move:</span></span>
+                <span class="lang-ko">지도 드래그</span><span class="lang-en">Drag the map</span>
+            </li>
+            <li>
+                <span class="font-semibold text-gray-900"><span class="lang-ko">정보:</span><span
+                        class="lang-en">Info:</span></span>
+                <span class="lang-ko">부스 위에 마우스 오버</span><span class="lang-en">Hover over a booth</span>
+            </li>
+        </ul>
+    </div>
+
+    <div id="popup-conf-schedule"
+        class="hidden fixed md:absolute top-1/2 left-1/2 md:top-[72px] md:left-auto md:right-4 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 bg-white p-6 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-gray-100 w-[90vw] md:w-[380px] text-left cursor-auto max-h-[75vh] overflow-y-auto z-[70]">
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 popup-close-btn p-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="flex items-center gap-2.5 mb-6 pb-4 border-b border-gray-100 pr-6">
+            <h3 class="font-bold text-[19px] text-[#040249]"><span class="lang-ko">컨퍼런스 일정 안내</span><span
+                    class="lang-en">Conference Schedule</span></h3>
+        </div>
+
+        <div class="space-y-6">
+            <div>
+                <div class="flex items-center gap-2 text-[#468ee5] font-bold text-[16px] mb-2.5">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"></path>
                     </svg>
-                    <div id="tooltip" class="tooltip"></div>
+                    <span class="lang-ko">5월 6일 (수)</span><span class="lang-en">Wed, May 6</span>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오전 10:30 ~ 오후 12:00</span><span class="lang-en">10:30 AM ~ 12:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">개막식</span><span class="lang-en">Opening Ceremony</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오후 3:00 ~ 오후 3:30</span><span class="lang-en">3:00 PM ~ 3:30 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">과천시장후보(김종천) MOU</span><span class="lang-en">Gwacheon Mayoral Candidate
+                            MOU</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Sidebar (Right) -->
-            <aside class="sidebar">
-                <section class="sidebar-section search-results-section">
-                    <h3><i class="fas fa-search-location"></i> 검색 결과</h3>
-                    <div id="searchMessageContainer" class="search-message-container">
-                        <span id="searchInfo">검색어를 입력하거나 지도를 탐색하세요.</span>
-                        <ul id="searchResultsList"></ul>
+            <div>
+                <div class="flex items-center gap-2 text-[#468ee5] font-bold text-[16px] mb-2.5">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="lang-ko">5월 7일 (목)</span><span class="lang-en">Thu, May 7</span>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오전 11:00 ~ 오후 12:30</span><span class="lang-en">11:00 AM ~ 12:30 PM</span>
                     </div>
-                </section>
-
-                <section class="sidebar-section">
-                    <h3><i class="fas fa-map-signs"></i> 지도 이용 안내</h3>
-                    <p>지도를 탐색하고 원하는 정보를 찾아보세요.</p>
-                    <ul>
-                        <li><strong>검색:</strong> 부스 번호 또는 기업명</li>
-                        <li><strong>확대/축소:</strong> 마우스 휠 또는 +/- 버튼</li>
-                        <li><strong>이동:</strong> 지도 드래그</li>
-                        <li><strong>정보:</strong> 부스 위에 마우스 오버</li>
-                    </ul>
-                </section>
-
-                <section class="sidebar-section">
-                    <h3><i class="fas fa-star"></i> 바로가기</h3>
-                    <p><a href="https://expo.koraia.org/conference/conference" target="_blank">⭐ 컨퍼런스 목록</a></p>
-                    <p><a href="https://expo.koraia.org/300" target="_blank">📢 AI와 양자기술의 경계를 넘다 컨퍼런스</a></p>
-                    <p><a href="https://koraia.org" target="_blank">⭐ 한국인공지능협회</a></p>
-                    <p><a href="https://www.aiexpo.co.kr/home/" target="_blank">⭐ 국제인공지능대전</a></p>
-                    
-                </section>
-
-                <section class="sidebar-section">
-                    <h3><i class="fas fa-calendar-alt"></i> 컨퍼런스 일정</h3>
-                    <div class="event-schedule">
-                        <div class="event-day">
-                            <h4><i class="fas fa-calendar-day"></i> 5월 14일 (수)</h4>
-                            <div class="event-item">
-                                <a href="https://expo.koraia.org/conference/conference.html" target="_blank">
-                                    <p><i class="far fa-clock"></i> 오전 10:30 ~ 오후 4:30</p>
-                                    <p><i class="fas fa-microphone-alt"></i> All In AI 메인컨퍼런스</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="event-day">
-                            <h4><i class="fas fa-calendar-day"></i> 5월 15일 (목)</h4>
-                            <div class="event-item">
-                                <a href="https://expo.koraia.org/conference/conference.html" target="_blank">
-                                    <p><i class="far fa-clock"></i> 오전 10:30 ~ 오후 4:30</p>
-                                    <p><i class="fas fa-microphone-alt"></i> All In AI 메인컨퍼런스</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> 인텔리전스 룸</p>
-                                </a>
-                            </div>
-                            <div class="event-item">
-                                <a href="https://expo.koraia.org/conference/conference.html" target="_blank">
-                                    <p><i class="far fa-clock"></i> 오전 10:00 ~ 오후 16:30</p>
-                                    <p><i class="fas fa-microphone-alt"></i> AI Synergy Global Link</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> IR 룸</p>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="event-day">
-                            <h4><i class="fas fa-calendar-day"></i> 5월 16일 (금)</h4>
-                            <div class="event-item">
-                                <a href="https://expo.koraia.org/conference/conference.html" target="_blank">
-                                    <p><i class="far fa-clock"></i> 오전 10:00 ~ 오후 1:00</p>
-                                    <p><i class="fas fa-microphone-alt"></i> AI와 양자기술의 경계를 넘다</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> 코엑스 3층 300호</p>
-                                </a>
-                            </div>
-                            <div class="event-item">
-                                <a href="https://expo.koraia.org/conference/conference.html" target="_blank">
-                                    <p><i class="far fa-clock"></i> 오전 10:30 ~ 오후 3:50</p>
-                                    <p><i class="fas fa-microphone-alt"></i> 제 4회 육군 인공지능 아이디어 공모전</p>
-                                    <p><i class="fas fa-map-marker-alt"></i> IR 룸</p>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">한국인공지능협회 비전선포식</span><span class="lang-en">Korea AI Association Vision
+                            Declaration</span>
                     </div>
-                </section>
-                    
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오후 1:30 ~ 오후 4:30</span><span class="lang-en">1:30 PM ~ 4:30 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">육군본부 AI 아이디어 공모전</span><span class="lang-en">Army HQ AI Idea
+                            Contest</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오후 2:30 ~ 오후 4:00</span><span class="lang-en">2:30 PM ~ 4:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">한국 CAIO포럼 발족식 및 기념세미나</span><span class="lang-en">Korea CAIO Forum Launch
+                            & Seminar</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">ROOM 300</span><span class="lang-en">Room 300</span>
+                    </div>
+                </div>
+            </div>
 
-            </aside>
-        </main>
+            <div>
+                <div class="flex items-center gap-2 text-[#468ee5] font-bold text-[16px] mb-2.5">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="lang-ko">5월 8일 (금)</span><span class="lang-en">Fri, May 8</span>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오전 10:30 ~ 오전 11:30</span><span class="lang-en">10:30 AM ~ 11:30 AM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">제2회 AI Excellence Awards</span><span class="lang-en">2nd AI Excellence
+                            Awards</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오후 2:05 ~ 오후 4:10</span><span class="lang-en">2:05 PM ~ 4:10 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">AI Scale Up Day: 기업 IR피칭</span><span class="lang-en">AI Scale Up Day:
+                            Corporate IR Pitching</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">인텔리전스룸</span><span class="lang-en">Intelligence Room</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오전 10:00 ~ 오후 4:00</span><span class="lang-en">10:00 AM ~ 4:00 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">한국정보공학기술사회 & AI 심포지엄</span><span class="lang-en">KPEA & AI
+                            Symposium</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">ROOM 318</span><span class="lang-en">Room 318</span>
+                    </div>
+                </div>
+                <div class="bg-[#f8f9fa] rounded-xl p-4 space-y-3 mb-3">
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="lang-ko">오후 12:25 ~ 오후 4:30</span><span class="lang-en">12:25 PM ~ 4:30 PM</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                        <span class="lang-ko">AI Synergy Global Link (해외진출세미나)</span><span class="lang-en">AI Synergy
+                            Global Link</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[13px] text-gray-600">
+                        <svg class="w-4 h-4 text-gray-500 shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="lang-ko">ROOM 317</span><span class="lang-en">Room 317</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        let expoData = null;
+        const mapViewport = document.getElementById('map-viewport');
+        const mapContainer = document.getElementById('map-container');
+        const boothsLayer = document.getElementById('booths-layer');
+        const pcSearchInput = document.getElementById('pc-search-input');
+        const mobileSearchInput = document.getElementById('mobile-search-input');
+        const boothListEl = document.getElementById('booth-list');
+        const emptyState = document.getElementById('empty-state');
+        const tooltip = document.getElementById('tooltip');
+        const tooltipBooth = document.getElementById('tooltip-booth');
+        const tooltipCompany = document.getElementById('tooltip-company');
+        const tooltipParticipants = document.getElementById('tooltip-participants');
+
+        const btnMapGuide = document.getElementById('btn-map-guide');
+        const popupMapGuide = document.getElementById('popup-map-guide');
+        const btnConfSchedule = document.getElementById('btn-conf-schedule');
+        const popupConfSchedule = document.getElementById('popup-conf-schedule');
+        const closeBtns = document.querySelectorAll('.popup-close-btn');
+
+        const btnMobileMenu = document.getElementById('btn-mobile-menu');
+        const mobileMenuDropdown = document.getElementById('mobile-menu-dropdown');
+        const btnMobileMapGuide = document.getElementById('btn-mobile-map-guide');
+        const btnMobileConfSchedule = document.getElementById('btn-mobile-conf-schedule');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const sidebar = document.getElementById('sidebar');
+        const bottomSheetHeader = document.getElementById('bottom-sheet-header');
+
+        const btnLangPc = document.getElementById('btn-lang-pc');
+        const btnLangMobile = document.getElementById('btn-lang-mobile');
+
+        let state = {
+            lang: 'ko', // 'ko' or 'en'
+            scale: 1, x: 0, y: 0, isDragging: false, dragStartX: 0, dragStartY: 0,
+            selectedBoothName: null, startX: 0, startY: 0, hasDragged: false
+        };
+
+        let hoveredBooth = null;
+
+        function toggleLanguage() {
+            state.lang = state.lang === 'ko' ? 'en' : 'ko';
+            document.body.setAttribute('data-lang', state.lang);
+
+            btnLangPc.textContent = state.lang === 'ko' ? 'EN' : 'KO';
+            btnLangMobile.textContent = state.lang === 'ko' ? 'EN' : 'KO';
+
+            pcSearchInput.placeholder = pcSearchInput.getAttribute(`data-placeholder-${state.lang}`);
+            mobileSearchInput.placeholder = mobileSearchInput.getAttribute(`data-placeholder-${state.lang}`);
+
+            renderList(pcSearchInput.value || mobileSearchInput.value);
+            if (hoveredBooth) showTooltip(hoveredBooth);
+        }
+
+        btnLangPc.addEventListener('click', toggleLanguage);
+        btnLangMobile.addEventListener('click', toggleLanguage);
+
+        function getLocalized(obj, key) {
+            if (!obj) return '';
+            if (state.lang === 'en' && obj[key + 'En']) return obj[key + 'En'];
+            return obj[key] || '';
+        }
+
+        function getLocalizedParticipants(booth) {
+            if (state.lang === 'en' && booth.participantsEn && booth.participantsEn.length > 0) return booth.participantsEn;
+            return booth.participants || [];
+        }
+
+        const getBoothColor = (name) => {
+            if (!name) return '#a3a6ab';
+            if (name.startsWith('M11') || name.startsWith('G11')) return '#89aec6';
+            if (name.startsWith('L01') || name.startsWith('E01')) return '#ffcc00';
+            if (name.startsWith('K01') || name.startsWith('K06')) return '#d97725';
+            if (name.startsWith('P17') || name.startsWith('N11') || name.startsWith('R81')) return '#84198c';
+            if (name.startsWith('C11') || name.startsWith('L19')) return '#0f7b15';
+            if (name.startsWith('F01') || name.startsWith('L11')) return '#125433';
+            return '#a3a6ab';
+        };
+
+        function renderBooths() {
+            boothsLayer.innerHTML = '';
+            if (!expoData || !expoData.booths) return;
+
+            const filterBooths = expoData.booths.filter(b => b.name !== "Artificial Room" && b.name !== "Intelligence Room");
+
+            filterBooths.forEach(booth => {
+                const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                group.setAttribute('class', 'booth-shape');
+                group.dataset.name = booth.name;
+
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute('x', booth.x);
+                rect.setAttribute('y', booth.y);
+                rect.setAttribute('width', booth.width);
+                rect.setAttribute('height', booth.height);
+                rect.setAttribute('fill', getBoothColor(booth.name));
+                rect.setAttribute('rx', '3');
+                rect.setAttribute('id', `rect-${booth.name}`);
+
+                const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                text.setAttribute('x', booth.x + booth.width / 2);
+                text.setAttribute('y', booth.y + booth.height / 2 + 2);
+                text.setAttribute('fill', '#ffffff');
+                text.setAttribute('font-size', '11');
+                text.setAttribute('font-weight', 'bold');
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('dominant-baseline', 'middle');
+                text.setAttribute('pointer-events', 'none');
+                text.textContent = booth.name;
+
+                group.appendChild(rect);
+                group.appendChild(text);
+
+                group.addEventListener('mouseenter', () => showTooltip(booth));
+                group.addEventListener('mouseleave', hideTooltip);
+
+                group.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (state.hasDragged) return;
+                    focusBooth(booth);
+                });
+
+                boothsLayer.appendChild(group);
+            });
+        }
+
+        function renderList(query = '') {
+            const lowerQuery = query.toLowerCase().trim();
+            const filtered = expoData.booths.filter(b => {
+                if (b.name === "Artificial Room" || b.name === "Intelligence Room") return false;
+
+                const matchName = b.name.toLowerCase().includes(lowerQuery);
+                const matchCompanyKo = b.company && b.company.toLowerCase().includes(lowerQuery);
+                const matchCompanyEn = b.companyEn && b.companyEn.toLowerCase().includes(lowerQuery);
+                const matchPartsKo = b.participants && b.participants.some(p => p.toLowerCase().includes(lowerQuery));
+                const matchPartsEn = b.participantsEn && b.participantsEn.some(p => p.toLowerCase().includes(lowerQuery));
+
+                return matchName || matchCompanyKo || matchCompanyEn || matchPartsKo || matchPartsEn;
+            });
+
+            boothListEl.innerHTML = '';
+
+            if (filtered.length === 0) {
+                boothListEl.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+            } else {
+                boothListEl.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+                emptyState.classList.remove('flex');
+
+                filtered.forEach(booth => {
+                    const li = document.createElement('li');
+                    li.className = `flex items-center p-3 md:px-4 md:py-3.5 bg-white border border-gray-100 md:border-gray-200 shadow-sm rounded-lg cursor-pointer transition-colors hover:bg-blue-50/50 ${state.selectedBoothName === booth.name ? 'border-blue-400 ring-1 ring-blue-400 bg-blue-50/20' : ''}`;
+
+                    const dispCompany = getLocalized(booth, 'company');
+                    const dispParts = getLocalizedParticipants(booth);
+
+                    let participantsHtml = '';
+                    if (dispParts && dispParts.length > 0) {
+                        participantsHtml = `<div class="text-[12px] text-gray-400 truncate mt-0.5" title="${dispParts.join(', ')}">${dispParts.join(' · ')}</div>`;
+                    }
+
+                    li.innerHTML = `
+                        <div class="w-12 h-6 flex items-center justify-center bg-blue-400 text-white text-xs font-bold rounded-full mr-4 shrink-0">
+                            ${booth.name}
+                        </div>
+                        <div class="flex-1 overflow-hidden">
+                            <div class="font-bold text-gray-700 text-[15px] truncate flex-1">
+                                ${dispCompany}
+                            </div>
+                            ${participantsHtml}
+                        </div>
+                    `;
+                    li.addEventListener('click', () => {
+                        focusBooth(booth);
+                        if (window.innerWidth < 768) collapseSheet();
+                    });
+                    boothListEl.appendChild(li);
+                });
+            }
+        }
+
+        function showTooltip(booth) {
+            hoveredBooth = booth;
+            tooltipBooth.textContent = `[${booth.name}]`;
+            tooltipCompany.textContent = getLocalized(booth, 'company');
+
+            const dispParts = getLocalizedParticipants(booth);
+            if (dispParts && dispParts.length > 0) {
+                tooltipParticipants.innerHTML = dispParts.join(' <span class="text-gray-500 mx-0.5">·</span> ');
+                tooltipParticipants.classList.remove('hidden');
+            } else {
+                tooltipParticipants.classList.add('hidden');
+            }
+
+            tooltip.classList.remove('hidden');
+            tooltip.classList.remove('opacity-0');
+            updateTooltipPosition();
+        }
+
+        function hideTooltip() {
+            hoveredBooth = null;
+            tooltip.classList.add('hidden');
+        }
+
+        function updateTooltipPosition() {
+            if (!hoveredBooth || tooltip.classList.contains('hidden') || !expoData) return;
+            const boothCX = hoveredBooth.x + (hoveredBooth.width / 2);
+            const tooltipX = (boothCX * state.scale) + state.x;
+            const tooltipY = (hoveredBooth.y * state.scale) + state.y - 12;
+
+            tooltip.style.left = `${tooltipX}px`;
+            tooltip.style.top = `${tooltipY}px`;
+        }
+
+        function updateMapTransform(animate = false) {
+            if (animate) mapContainer.classList.add('map-transition');
+            else mapContainer.classList.remove('map-transition');
+
+            mapContainer.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+            updateTooltipPosition();
+        }
+
+        function zoom(amount, centerX = mapViewport.clientWidth / 2, centerY = mapViewport.clientHeight / 2) {
+            const oldScale = state.scale;
+            state.scale = Math.max(0.3, Math.min(state.scale * amount, 4));
+            state.x = centerX - (centerX - state.x) * (state.scale / oldScale);
+            state.y = centerY - (centerY - state.y) * (state.scale / oldScale);
+            updateMapTransform(true);
+            setTimeout(() => mapContainer.classList.remove('map-transition'), 400);
+        }
+
+        function resetMap() {
+            if (!expoData) return;
+            let vpW = mapViewport.clientWidth;
+            let vpH = mapViewport.clientHeight;
+
+            if (window.innerWidth < 768) {
+                vpH = vpH - 100;
+            }
+
+            state.scale = Math.min(vpW / expoData.image.width, vpH / expoData.image.height) * 0.95;
+            state.x = (vpW - expoData.image.width * state.scale) / 2;
+            state.y = (vpH - expoData.image.height * state.scale) / 2;
+
+            clearSelection();
+            updateMapTransform(true);
+        }
+
+        function focusBooth(booth) {
+            state.selectedBoothName = booth.name;
+            renderList(pcSearchInput.value || mobileSearchInput.value);
+
+            document.querySelectorAll('.booth-selected').forEach(el => el.classList.remove('booth-selected'));
+
+            const targetRect = document.getElementById(`rect-${booth.name}`);
+            if (targetRect) {
+                targetRect.classList.add('booth-selected');
+                const group = targetRect.parentNode;
+                group.parentNode.appendChild(group);
+            }
+
+            let vpW = mapViewport.clientWidth;
+            let vpH = mapViewport.clientHeight;
+
+            if (window.innerWidth < 768) {
+                vpH = vpH - 100;
+            }
+
+            state.scale = 2.5;
+            const boothCX = booth.x + (booth.width / 2);
+            const boothCY = booth.y + (booth.height / 2);
+            state.x = (vpW / 2) - (boothCX * state.scale);
+            state.y = (vpH / 2) - (boothCY * state.scale);
+
+            updateMapTransform(true);
+
+            setTimeout(() => {
+                updateTooltipPosition();
+                mapContainer.classList.remove('map-transition');
+            }, 400);
+        }
+
+        function clearSelection() {
+            state.selectedBoothName = null;
+            document.querySelectorAll('.booth-selected').forEach(el => el.classList.remove('booth-selected'));
+            renderList(pcSearchInput.value || mobileSearchInput.value);
+        }
+
+        function expandSheet() {
+            if (window.innerWidth >= 768) return;
+            sidebar.classList.remove('translate-y-[calc(100%-100px)]');
+            sidebar.classList.add('translate-y-0');
+        }
+        function collapseSheet() {
+            if (window.innerWidth >= 768) return;
+            sidebar.classList.add('translate-y-[calc(100%-100px)]');
+            sidebar.classList.remove('translate-y-0');
+            mobileSearchInput.blur();
+        }
+
+        let sheetStartY = 0;
+        bottomSheetHeader.addEventListener('touchstart', e => { sheetStartY = e.touches[0].clientY; });
+        bottomSheetHeader.addEventListener('touchend', e => {
+            let sheetEndY = e.changedTouches[0].clientY;
+            if (sheetEndY - sheetStartY > 30) collapseSheet();
+            else if (sheetStartY - sheetEndY > 30) expandSheet();
+            else if (e.target !== mobileSearchInput) {
+                if (sidebar.classList.contains('translate-y-0')) collapseSheet();
+                else expandSheet();
+            }
+        });
+        bottomSheetHeader.addEventListener('mousedown', e => { sheetStartY = e.clientY; });
+        bottomSheetHeader.addEventListener('mouseup', e => {
+            let sheetEndY = e.clientY;
+            if (sheetEndY - sheetStartY > 30) collapseSheet();
+            else if (sheetStartY - sheetEndY > 30) expandSheet();
+            else if (e.target !== mobileSearchInput) {
+                if (sidebar.classList.contains('translate-y-0')) collapseSheet();
+                else expandSheet();
+            }
+        });
+
+        mobileSearchInput.addEventListener('focus', expandSheet);
+
+        function closeAllPopups() {
+            popupMapGuide.classList.add('hidden');
+            popupConfSchedule.classList.add('hidden');
+            mobileMenuDropdown.classList.add('hidden');
+            modalBackdrop.classList.add('hidden');
+        }
+
+        btnMobileMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenuDropdown.classList.toggle('hidden');
+        });
+
+        btnMobileMapGuide.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllPopups();
+            popupMapGuide.classList.remove('hidden');
+            modalBackdrop.classList.remove('hidden');
+        });
+
+        btnMobileConfSchedule.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllPopups();
+            popupConfSchedule.classList.remove('hidden');
+            modalBackdrop.classList.remove('hidden');
+        });
+
+        btnMapGuide.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllPopups();
+            popupMapGuide.classList.remove('hidden');
+        });
+
+        btnConfSchedule.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllPopups();
+            popupConfSchedule.classList.remove('hidden');
+        });
+
+        closeBtns.forEach(btn => btn.addEventListener('click', closeAllPopups));
+        document.addEventListener('click', closeAllPopups);
+        modalBackdrop.addEventListener('click', closeAllPopups);
+
+        [popupMapGuide, popupConfSchedule, mobileMenuDropdown].forEach(el => {
+            if (!el) return;
+            el.addEventListener('click', (e) => e.stopPropagation());
+            el.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+            el.addEventListener('touchstart', (e) => e.stopPropagation(), { passive: false });
+            el.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: false });
+        });
+
+        mapViewport.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.absolute.right-4') || e.target.closest('#help-controls') || e.target.closest('.fixed.bg-white')) return;
+            state.isDragging = true;
+            state.hasDragged = false;
+            state.startX = e.clientX;
+            state.startY = e.clientY;
+            state.dragStartX = e.clientX - state.x;
+            state.dragStartY = e.clientY - state.y;
+            mapViewport.style.cursor = 'grabbing';
+            tooltip.classList.add('opacity-0');
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!state.isDragging) return;
+            if (Math.abs(e.clientX - state.startX) > 3 || Math.abs(e.clientY - state.startY) > 3) state.hasDragged = true;
+
+            state.x = e.clientX - state.dragStartX;
+            state.y = e.clientY - state.dragStartY;
+            updateMapTransform(false);
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (state.isDragging) {
+                state.isDragging = false;
+                mapViewport.style.cursor = 'grab';
+                if (hoveredBooth) {
+                    tooltip.classList.remove('opacity-0');
+                    updateTooltipPosition();
+                }
+                setTimeout(() => { state.hasDragged = false; }, 50);
+            }
+        });
+
+        let lastTouchDist = null;
+        mapViewport.addEventListener('touchstart', (e) => {
+            if (e.target.closest('.absolute.right-4') || e.target.closest('#help-controls') || e.target.closest('.fixed.bg-white')) return;
+            if (e.touches.length === 1) {
+                state.isDragging = true;
+                state.dragStartX = e.touches[0].clientX - state.x;
+                state.dragStartY = e.touches[0].clientY - state.y;
+                tooltip.classList.add('opacity-0');
+            } else if (e.touches.length === 2) {
+                lastTouchDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+            }
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.target.closest('.fixed.bg-white') || e.target.closest('#mobile-menu-dropdown')) return;
+
+            if (state.isDragging && e.touches.length === 1) {
+                state.x = e.touches[0].clientX - state.dragStartX;
+                state.y = e.touches[0].clientY - state.dragStartY;
+                updateMapTransform(false);
+            } else if (e.touches.length === 2 && lastTouchDist) {
+                e.preventDefault();
+                const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+                const delta = dist / lastTouchDist;
+                const centerX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+                const centerY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+                zoom(delta, centerX, centerY);
+                lastTouchDist = dist;
+            }
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => {
+            state.isDragging = false;
+            lastTouchDist = null;
+            if (hoveredBooth) {
+                tooltip.classList.remove('opacity-0');
+                updateTooltipPosition();
+            }
+        });
+
+        mapViewport.addEventListener('wheel', (e) => {
+            if (e.target.closest('.fixed.bg-white') || e.target.closest('#sidebar')) return;
+            e.preventDefault();
+            const zoomAmount = e.deltaY > 0 ? 0.85 : 1.15;
+            zoom(zoomAmount, e.clientX, e.clientY);
+        }, { passive: false });
+
+        mapContainer.addEventListener('click', (e) => {
+            if (state.hasDragged) return;
+            if (e.target.tagName === 'svg' || e.target.closest('#base-layer')) clearSelection();
+        });
+
+        document.getElementById('btn-zoom-in').addEventListener('click', () => zoom(1.3));
+        document.getElementById('btn-zoom-out').addEventListener('click', () => zoom(0.7));
+        document.getElementById('btn-reset').addEventListener('click', resetMap);
+
+        const handleSearch = (e) => {
+            const val = e.target.value;
+            if (e.target.id === 'pc-search-input') mobileSearchInput.value = val;
+            if (e.target.id === 'mobile-search-input') pcSearchInput.value = val;
+            renderList(val);
+        };
+        pcSearchInput.addEventListener('input', handleSearch);
+        mobileSearchInput.addEventListener('input', handleSearch);
+
+        window.addEventListener('resize', () => {
+            if (!state.selectedBoothName) resetMap();
+            else updateTooltipPosition();
+        });
+
+        async function fetchBoothDataAndInit() {
+            try {
+                const response = await fetch('booth-layout.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                expoData = await response.json();
+                renderBooths();
+                renderList();
+                setTimeout(() => resetMap(), 100);
+            } catch (error) {
+                alert('데이터를 불러오지 못했습니다.');
+            }
+        }
+
+        fetchBoothDataAndInit();
+    </script>
 </body>
 
 </html>
