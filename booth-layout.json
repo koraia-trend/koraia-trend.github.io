@@ -5,6 +5,546 @@
   },
   "booths": [
     {
+      "name": "B08",
+      "company": "강원대학교병원 AI 암치유센터",
+      "companyEn": "KangwonUniversityHospital AI Cancer WellnessCenter",
+      "x": 1762,
+      "y": 947,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "P21",
+      "company": "경북소프트웨어마이스터고등학교",
+      "companyEn": "Gyeongbuk Software Meister High School",
+      "x": 137,
+      "y": 521,
+      "width": 38,
+      "height": 116
+    },
+    {
+      "name": "A12",
+      "company": "제조AX 혁신 경북 휴머노이드 로봇 특화단지",
+      "companyEn": "Humanoid-Specialized Complex in Gyeongbuk",
+      "x": 1839,
+      "y": 598,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "G37",
+      "company": "곳인텔리전스",
+      "companyEn": "Good intelligence",
+      "x": 1161,
+      "y": 328,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "K28",
+      "company": "관악아날로그(주)",
+      "companyEn": "Gwanak Analog Co., Ltd.",
+      "x": 678,
+      "y": 508,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "Q14",
+      "company": "광주소프트웨어마이스터고등학교",
+      "companyEn": "Gwangju Software Meister High School",
+      "x": 58,
+      "y": 443,
+      "width": 40,
+      "height": 117
+    },
+    {
+      "name": "F29",
+      "company": "교보디티에스(주)",
+      "companyEn": "KyoboDTS",
+      "x": 1278,
+      "y": 456,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "J29",
+      "company": "그래파이",
+      "companyEn": "GraphAI",
+      "x": 801,
+      "y": 457,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "M37",
+      "company": "그룹바이에이치알",
+      "companyEn": "GroupByHR Inc.",
+      "x": 426,
+      "y": 327,
+      "width": 40,
+      "height": 39
+    },
+    {
+      "name": "i28",
+      "company": "주식회사 나라원시스템",
+      "companyEn": "NARAONE SYSTEM Inc.",
+      "x": 917,
+      "y": 508,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "M28",
+      "company": "네오와인 AI 복제방지칩",
+      "companyEn": "AI Product Protection IC",
+      "x": 426,
+      "y": 508,
+      "width": 40,
+      "height": 39
+    },
+    {
+      "name": "B21",
+      "company": "(주)넥스브이",
+      "companyEn": "NexV",
+      "x": 1723,
+      "y": 456,
+      "width": 39,
+      "height": 155
+    },
+    {
+      "name": "J32",
+      "company": "(주)누리에에이아이",
+      "companyEn": "NURIE AI Inc.",
+      "x": 833,
+      "y": 366,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "C15",
+      "company": "뉴로클",
+      "companyEn": "NEUROCLE",
+      "x": 1606,
+      "y": 663,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "B14",
+      "company": "(주)뉴엔AI",
+      "companyEn": "NEWEN AI",
+      "x": 1723,
+      "y": 663,
+      "width": 39,
+      "height": 77
+    },
+    {
+      "name": "Q11",
+      "company": "대구소프트웨어마이스터고등학교",
+      "companyEn": "DAEGU SOFTWARE MEISTER HIGH SCHOOL",
+      "x": 58,
+      "y": 560,
+      "width": 40,
+      "height": 116
+    },
+    {
+      "name": "P24",
+      "company": "대덕소프트웨어마이스터고등학교",
+      "companyEn": "Daedeok Software Meister High School",
+      "x": 137,
+      "y": 482,
+      "width": 76,
+      "height": 39
+    },
+    {
+      "name": "H22",
+      "company": "두루이디에스 주식회사",
+      "companyEn": "DOOROO EDS",
+      "x": 1007,
+      "y": 560,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "G24",
+      "company": "디노티시아",
+      "companyEn": "Dnotitia",
+      "x": 1124,
+      "y": 456,
+      "width": 38,
+      "height": 52
+    },
+    {
+      "name": "L36",
+      "company": "(주)디엠티랩스",
+      "companyEn": "DMTLABS",
+      "x": 524,
+      "y": 327,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "L32",
+      "company": "(주)디웍스",
+      "companyEn": "DWEAX",
+      "x": 563,
+      "y": 366,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "C01",
+      "company": "디에스앤지",
+      "companyEn": "DS&G",
+      "x": 1607,
+      "y": 908,
+      "width": 78,
+      "height": 155
+    },
+    {
+      "name": "i22",
+      "company": "디포그",
+      "companyEn": "DEFOG",
+      "x": 878,
+      "y": 547,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "B09",
+      "company": "딥브레인에이아이",
+      "companyEn": "Deepbrain AI",
+      "x": 1762,
+      "y": 908,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "K38",
+      "company": "(주)딥서치",
+      "companyEn": "DeepSearch, Inc.",
+      "x": 716,
+      "y": 328,
+      "width": 40,
+      "height": 38
+    },
+    {
+      "name": "J26",
+      "company": "동국시스템즈-HPE",
+      "companyEn": "DONGKUK SYSTEMS-HPE",
+      "x": 801,
+      "y": 547,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "H01",
+      "company": "리더스 시스템즈",
+      "companyEn": "LEADERS SYSTEMS",
+      "x": 1007,
+      "y": 908,
+      "width": 78,
+      "height": 155
+    },
+    {
+      "name": "J13",
+      "company": "리드스피커코리아",
+      "companyEn": "ReadSpeaker Korea",
+      "x": 762,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "R61",
+      "company": "리얼리스토어",
+      "companyEn": "Really Store",
+      "x": 1020,
+      "y": 211,
+      "width": 78,
+      "height": 78
+    },
+    {
+      "name": "i18",
+      "company": "(주)링거포스트",
+      "companyEn": "FINGERPOST",
+      "x": 917,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "E31",
+      "company": "(주)마음AI",
+      "companyEn": "MAUM.AI Inc",
+      "x": 1278,
+      "y": 328,
+      "width": 155,
+      "height": 77
+    },
+    {
+      "name": "i21",
+      "company": "마이텍 컴퓨팅",
+      "companyEn": "MiTAC Computing",
+      "x": 878,
+      "y": 598,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "K13",
+      "company": "망고부스트",
+      "companyEn": "MangoBoost",
+      "x": 640,
+      "y": 702,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "J01",
+      "company": "(주)매니코어소프트ㆍ(주)모티프테크놀로지스ㆍ(주)OE솔루션",
+      "companyEn": "ManyCoreSoft Co., Ltd. / Motif Technologies Inc. / OE Solutions Co., Ltd.",
+      "x": 762,
+      "y": 908,
+      "width": 78,
+      "height": 155
+    },
+    {
+      "name": "H18",
+      "company": "맨텍솔루션",
+      "companyEn": "Mantech Solution",
+      "x": 1046,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "H28",
+      "company": "메가존소프트",
+      "companyEn": "MegazoneSoft",
+      "x": 1046,
+      "y": 457,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "E21",
+      "company": "명인일렉트로닉스 / 명인이노",
+      "companyEn": "MYUNGIN ELECTRONICS / MYUNGIN INNO",
+      "x": 1356,
+      "y": 560,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "G16",
+      "company": "몬드리안에이아이",
+      "companyEn": "MondrianAI",
+      "x": 1161,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "D31",
+      "company": "무하유",
+      "companyEn": "MuhayU",
+      "x": 1490,
+      "y": 366,
+      "width": 78,
+      "height": 39
+    },
+    {
+      "name": "L28",
+      "company": "(주)미루웨어",
+      "companyEn": "Miruware Co., Ltd.",
+      "x": 562,
+      "y": 456,
+      "width": 39,
+      "height": 104
+    },
+    {
+      "name": "B11",
+      "company": "(주)미소정보기술",
+      "companyEn": "MISO InfoTech",
+      "x": 1723,
+      "y": 779,
+      "width": 39,
+      "height": 77
+    },
+    {
+      "name": "i01",
+      "company": "미스릴",
+      "companyEn": "MITHRIL",
+      "x": 878,
+      "y": 908,
+      "width": 78,
+      "height": 155
+    },
+    {
+      "name": "K32",
+      "company": "바이트사이즈",
+      "companyEn": "BYTESIZE",
+      "x": 679,
+      "y": 366,
+      "width": 77,
+      "height": 39
+    },
+    {
+      "name": "R91",
+      "company": "반야에이아이",
+      "companyEn": "BanyaAI",
+      "x": 1530,
+      "y": 211,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "N23",
+      "company": "(주)바로에이아이",
+      "companyEn": "BARO AI Inc.",
+      "x": 259,
+      "y": 456,
+      "width": 39,
+      "height": 78
+    },
+    {
+      "name": "M04",
+      "company": "베슬에이아이",
+      "companyEn": "VESSL AI",
+      "x": 349,
+      "y": 908,
+      "width": 117,
+      "height": 39
+    },
+    {
+      "name": "G36",
+      "company": "(주)벨루가",
+      "companyEn": "Veluga Inc.",
+      "x": 1124,
+      "y": 328,
+      "width": 37,
+      "height": 38
+    },
+    {
+      "name": "H33",
+      "company": "보다플레이(주)",
+      "companyEn": "Bodaplay",
+      "x": 1046,
+      "y": 366,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "Q21",
+      "company": "부산소프트웨어마이스터고등학교",
+      "companyEn": "BUSAN SOFTWARE MEISTER HIGH SCHOOL",
+      "x": 98,
+      "y": 406,
+      "width": 115,
+      "height": 37
+    },
+    {
+      "name": "D32",
+      "company": "(주)브이원텍",
+      "companyEn": "V-ONE Tech",
+      "x": 1490,
+      "y": 289,
+      "width": 40,
+      "height": 77
+    },
+    {
+      "name": "L21",
+      "company": "(주)비솔",
+      "companyEn": "VISOL Inc.",
+      "x": 524,
+      "y": 611,
+      "width": 77,
+      "height": 52
+    },
+    {
+      "name": "M32",
+      "company": "(주)비씨엠테크",
+      "companyEn": "BCMTech",
+      "x": 426,
+      "y": 366,
+      "width": 40,
+      "height": 39
+    },
+    {
+      "name": "K01",
+      "company": "비아이매트릭스",
+      "companyEn": "BI MATRIX",
+      "x": 640,
+      "y": 908,
+      "width": 76,
+      "height": 155
+    },
+    {
+      "name": "J38",
+      "company": "비큐AI",
+      "companyEn": "BECUAI",
+      "x": 871,
+      "y": 327,
+      "width": 53,
+      "height": 39
+    },
+    {
+      "name": "B03",
+      "company": "(주)빛과전자",
+      "companyEn": "Lightron Inc.",
+      "x": 1723,
+      "y": 947,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "F21",
+      "company": "(주)사미텍",
+      "companyEn": "Samitech",
+      "x": 1240,
+      "y": 560,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "R71",
+      "company": "사이냅소프트",
+      "companyEn": "SYNAPSOFT",
+      "x": 1174,
+      "y": 211,
+      "width": 78,
+      "height": 78
+    },
+    {
+      "name": "E13",
+      "company": "삼일회계법인",
+      "companyEn": "Samil PwC",
+      "x": 1356,
+      "y": 702,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "A13",
+      "company": "삼인이엔에스",
+      "companyEn": "Spavy",
+      "x": 1839,
+      "y": 560,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "L27",
+      "company": "(주)세인티",
+      "companyEn": "SAINTI Inc.",
+      "x": 562,
+      "y": 560,
+      "width": 39,
+      "height": 51
+    },
+    {
       "name": "R11",
       "company": "수원탑동 이노베이션벨리",
       "companyEn": "SUWON TAPDONG INNOVATION VALLEY",
@@ -14,21 +554,381 @@
       "height": 78
     },
     {
-      "name": "R13",
-      "company": "제네시스랩",
-      "companyEn": "Genesislab",
-      "x": 368,
+      "name": "N21",
+      "company": "슈어소프트테크(주)",
+      "companyEn": "SURESOFT TECHNOLOGIES Inc.",
+      "x": 259,
+      "y": 534,
+      "width": 39,
+      "height": 77
+    },
+    {
+      "name": "J18",
+      "company": "(주)스퀴즈비츠",
+      "companyEn": "SqueezeBits Inc.",
+      "x": 801,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "R41",
+      "company": "스토브리코리아",
+      "companyEn": "STAUBLI",
+      "x": 730,
       "y": 211,
+      "width": 116,
+      "height": 78
+    },
+    {
+      "name": "Q02",
+      "company": "스파르타AX",
+      "companyEn": "Sparta AX",
+      "x": 142,
+      "y": 908,
+      "width": 40,
+      "height": 52
+    },
+    {
+      "name": "G31",
+      "company": "슬릭스",
+      "companyEn": "SILXEN",
+      "x": 1124,
+      "y": 366,
+      "width": 76,
+      "height": 39
+    },
+    {
+      "name": "G22",
+      "company": "시마테크놀러지스코리아",
+      "companyEn": "SiMa.ai",
+      "x": 1124,
+      "y": 508,
+      "width": 38,
+      "height": 78
+    },
+    {
+      "name": "i26",
+      "company": "(주)시스트란",
+      "companyEn": "SYSTRAN KOREA",
+      "x": 917,
+      "y": 598,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "F11",
+      "company": "(주)심플랫폼",
+      "companyEn": "Simplatform",
+      "x": 1240,
+      "y": 753,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "A15",
+      "company": "(주)씨디에스 WeeAI",
+      "companyEn": "CDS Co., Ltd. WeeAI | CDS | weeai.kr",
+      "x": 1839,
+      "y": 482,
       "width": 39,
       "height": 39
     },
     {
-      "name": "R12",
-      "company": "(주)코코링크",
-      "companyEn": "CoCoLink, Inc.",
-      "x": 368,
-      "y": 250,
+      "name": "L04",
+      "company": "(주)씨에스리",
+      "companyEn": "CSLEE Co., Ltd",
+      "x": 524,
+      "y": 908,
+      "width": 77,
+      "height": 39
+    },
+    {
+      "name": "F16",
+      "company": "씨이랩",
+      "companyEn": "Xillab",
+      "x": 1278,
+      "y": 753,
       "width": 39,
+      "height": 103
+    },
+    {
+      "name": "J31",
+      "company": "아이디비(주)",
+      "companyEn": "IDB Inc.",
+      "x": 795,
+      "y": 366,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "i16",
+      "company": "아이벤스",
+      "companyEn": "AIVEX",
+      "x": 917,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "K31",
+      "company": "(주)아이티브레이아이",
+      "companyEn": "ITIV AI Inc.",
+      "x": 640,
+      "y": 366,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "D21",
+      "company": "아이티센클로잇",
+      "companyEn": "ITCENCLOIT",
+      "x": 1491,
+      "y": 495,
+      "width": 78,
+      "height": 116
+    },
+    {
+      "name": "G29",
+      "company": "아이티엔제이",
+      "companyEn": "ITNJ",
+      "x": 1162,
+      "y": 456,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "K16",
+      "company": "아이크래프트(주)",
+      "companyEn": "iCRAFT",
+      "x": 678,
+      "y": 753,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "P11",
+      "company": "(주)아이펌",
+      "companyEn": "aipim Co., Ltd.",
+      "x": 137,
+      "y": 805,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "H11",
+      "company": "알서포트(주)",
+      "companyEn": "RSUPPORT",
+      "x": 1007,
+      "y": 702,
+      "width": 39,
+      "height": 154
+    },
+    {
+      "name": "F01",
+      "company": "야놀자",
+      "companyEn": "Yanolja",
+      "x": 1240,
+      "y": 947,
+      "width": 77,
+      "height": 116
+    },
+    {
+      "name": "L37",
+      "company": "어니컴 주식회사",
+      "companyEn": "ONYCOM",
+      "x": 562,
+      "y": 327,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "E23",
+      "company": "어드밴텍",
+      "companyEn": "Advantech",
+      "x": 1356,
+      "y": 456,
+      "width": 38,
+      "height": 104
+    },
+    {
+      "name": "M23",
+      "company": "(주)에너지아이",
+      "companyEn": "ENERZA Inc.",
+      "x": 388,
+      "y": 508,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "J24",
+      "company": "(주)에스투더블유",
+      "companyEn": "S2W",
+      "x": 762,
+      "y": 457,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "L31",
+      "company": "(주)에이데이터",
+      "companyEn": "A-data Co., Ltd.",
+      "x": 524,
+      "y": 366,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "R31",
+      "company": "에이수스 코리아",
+      "companyEn": "ASUS Korea",
+      "x": 607,
+      "y": 211,
+      "width": 78,
+      "height": 78
+    },
+    {
+      "name": "P17",
+      "company": "(주)에이쓰리시큐리티",
+      "companyEn": "A3Security",
+      "x": 175,
+      "y": 753,
+      "width": 38,
+      "height": 52
+    },
+    {
+      "name": "K11",
+      "company": "에이아이씨(주)",
+      "companyEn": "AIC Inc.",
+      "x": 640,
+      "y": 753,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "L23",
+      "company": "(주)에이아이웍스",
+      "companyEn": "AIWORKX Inc.",
+      "x": 524,
+      "y": 456,
+      "width": 38,
+      "height": 104
+    },
+    {
+      "name": "H36",
+      "company": "에이치쓰리솔루션",
+      "companyEn": "H3SOLUTION",
+      "x": 968,
+      "y": 328,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "G27",
+      "company": "에이티엠아이앤씨",
+      "companyEn": "ATM, Inc",
+      "x": 1162,
+      "y": 508,
+      "width": 39,
+      "height": 78
+    },
+    {
+      "name": "C11",
+      "company": "에이프리카",
+      "companyEn": "Aifrica",
+      "x": 1606,
+      "y": 753,
+      "width": 79,
+      "height": 103
+    },
+    {
+      "name": "A17",
+      "company": "앱테스트에이아이",
+      "companyEn": "Apptest.ai",
+      "x": 1839,
+      "y": 406,
+      "width": 39,
+      "height": 37
+    },
+    {
+      "name": "H21",
+      "company": "엑서스",
+      "companyEn": "AIXUS",
+      "x": 1007,
+      "y": 598,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "A02",
+      "company": "(주)엑스퍼넷",
+      "companyEn": "EXPERNET Co., Ltd.",
+      "x": 1839,
+      "y": 1011,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "i11",
+      "company": "(주)엘리스그룹",
+      "companyEn": "Elice Inc.",
+      "x": 878,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "J23",
+      "company": "(주)영재컴퓨터 X 알파쿨(독일)",
+      "companyEn": "YoungJaeComputer ALPHACOOL",
+      "x": 762,
+      "y": 508,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "E28",
+      "company": "올가나이즈코리아",
+      "companyEn": "Allganize Korea",
+      "x": 1394,
+      "y": 456,
+      "width": 39,
+      "height": 104
+    },
+    {
+      "name": "F18",
+      "company": "(주)올빅뎃",
+      "companyEn": "ALLBIGDAT Inc.",
+      "x": 1278,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "E18",
+      "company": "엠클라우독",
+      "companyEn": "mcloudoc Co., Ltd.",
+      "x": 1394,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "G11",
+      "company": "엠키스코어",
+      "companyEn": "MKISCORE",
+      "x": 1124,
+      "y": 753,
+      "width": 37,
+      "height": 103
+    },
+    {
+      "name": "J36",
+      "company": "오픈메이드컨설팅",
+      "companyEn": "Openmade Consulting",
+      "x": 795,
+      "y": 327,
+      "width": 38,
       "height": 39
     },
     {
@@ -41,22 +941,22 @@
       "height": 78
     },
     {
-      "name": "R31",
-      "company": "에이수스 코리아",
-      "companyEn": "ASUS Korea",
-      "x": 607,
-      "y": 211,
-      "width": 78,
-      "height": 78
+      "name": "M36",
+      "company": "옵트에이아이",
+      "companyEn": "OptAI",
+      "x": 388,
+      "y": 327,
+      "width": 38,
+      "height": 39
     },
     {
-      "name": "R41",
-      "company": "스토브리코리아",
-      "companyEn": "STAUBLI",
-      "x": 730,
-      "y": 211,
-      "width": 116,
-      "height": 78
+      "name": "Q01",
+      "company": "(주)와이즈넛",
+      "companyEn": "WISENUT, Inc.",
+      "x": 142,
+      "y": 960,
+      "width": 40,
+      "height": 51
     },
     {
       "name": "R51",
@@ -68,22 +968,418 @@
       "height": 78
     },
     {
-      "name": "R61",
-      "company": "리얼리스토어",
-      "companyEn": "Really Store",
-      "x": 1020,
+      "name": "K18",
+      "company": "(주)원모어시큐리티",
+      "companyEn": "OneMoreSecurity Inc.",
+      "x": 678,
+      "y": 702,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "R92",
+      "company": "월드",
+      "companyEn": "World",
+      "x": 1568,
       "y": 211,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "H24",
+      "company": "위앤유텍",
+      "companyEn": "WE n YOU TECH",
+      "x": 1007,
+      "y": 457,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "B26",
+      "company": "위즈코어 주식회사",
+      "companyEn": "WIZCORE",
+      "x": 1762,
+      "y": 535,
+      "width": 39,
+      "height": 76
+    },
+    {
+      "name": "H27",
+      "company": "윌콘에이아이 주식회사",
+      "companyEn": "WilconAI Co., Ltd.",
+      "x": 1046,
+      "y": 560,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "K21",
+      "company": "유니닥스 주식회사",
+      "companyEn": "Unidocs Inc.",
+      "x": 640,
+      "y": 547,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "A14",
+      "company": "유니바",
+      "companyEn": "UNIVA",
+      "x": 1839,
+      "y": 521,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "A06",
+      "company": "(주)유니버스에이아이",
+      "companyEn": "UNIVERSE AI Inc.",
+      "x": 1839,
+      "y": 792,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "B18",
+      "company": "(주)유라클",
+      "companyEn": "URACLE",
+      "x": 1762,
+      "y": 740,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "F23",
+      "company": "유클릭스",
+      "companyEn": "UCLIX",
+      "x": 1240,
+      "y": 456,
+      "width": 38,
+      "height": 104
+    },
+    {
+      "name": "G21",
+      "company": "(주)이너웨이브",
+      "companyEn": "Innerwave Co., Ltd.",
+      "x": 1124,
+      "y": 586,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "D24",
+      "company": "(주)인공지능팩토리",
+      "companyEn": "AIFACTORY",
+      "x": 1491,
+      "y": 456,
       "width": 78,
+      "height": 39
+    },
+    {
+      "name": "J11",
+      "company": "인스웨이브",
+      "companyEn": "INSWAVE",
+      "x": 762,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "N27",
+      "company": "(주)인이지",
+      "companyEn": "INEEJI Co., Ltd.",
+      "x": 298,
+      "y": 456,
+      "width": 38,
+      "height": 104
+    },
+    {
+      "name": "B01",
+      "company": "(주)인텔리빅스",
+      "companyEn": "IntelliVIX",
+      "x": 1723,
+      "y": 986,
+      "width": 78,
+      "height": 77
+    },
+    {
+      "name": "K37",
+      "company": "(주)인포보스",
+      "companyEn": "INFOBOSS Inc.",
+      "x": 679,
+      "y": 328,
+      "width": 37,
+      "height": 38
+    },
+    {
+      "name": "G38",
+      "company": "(주)인포플라",
+      "companyEn": "Infopla Inc.",
+      "x": 1200,
+      "y": 328,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "C19",
+      "company": "(주)엔유엘",
+      "companyEn": "NyouL Co., Ltd.",
+      "x": 1645,
+      "y": 714,
+      "width": 40,
+      "height": 39
+    },
+    {
+      "name": "C14",
+      "company": "인트플로우",
+      "companyEn": "Intflow Inc.",
+      "x": 1606,
+      "y": 714,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "i29",
+      "company": "이든티앤에스",
+      "companyEn": "EDEN TNS",
+      "x": 917,
+      "y": 456,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "B04",
+      "company": "(주)이빗",
+      "companyEn": "EBIT Co., Ltd.",
+      "x": 1723,
+      "y": 908,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "D01",
+      "company": "(주)이스트소프트",
+      "companyEn": "ESTsoft",
+      "x": 1491,
+      "y": 908,
+      "width": 77,
+      "height": 155
+    },
+    {
+      "name": "i27",
+      "company": "(주)이엘온소프트",
+      "companyEn": "ELONSOFT",
+      "x": 917,
+      "y": 547,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "D11",
+      "company": "일레븐랩스",
+      "companyEn": "ElevenLabs",
+      "x": 1491,
+      "y": 740,
+      "width": 77,
+      "height": 116
+    },
+    {
+      "name": "H16",
+      "company": "임팩티브AI",
+      "companyEn": "IMPACTIVE AI",
+      "x": 1046,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "R13",
+      "company": "제네시스랩",
+      "companyEn": "Genesislab",
+      "x": 368,
+      "y": 211,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "G01",
+      "company": "제논ㆍKB금융지주",
+      "companyEn": "GENON / KB Financial Group",
+      "x": 1124,
+      "y": 908,
+      "width": 76,
+      "height": 155
+    },
+    {
+      "name": "C20",
+      "company": "(주)제이앤케이씨",
+      "companyEn": "JNKC Co., Ltd.",
+      "x": 1645,
+      "y": 663,
+      "width": 40,
+      "height": 51
+    },
+    {
+      "name": "F28",
+      "company": "(주)젠다이브",
+      "companyEn": "gendive Inc.",
+      "x": 1278,
+      "y": 508,
+      "width": 39,
       "height": 78
     },
     {
-      "name": "R71",
-      "company": "사이냅소프트",
-      "companyEn": "SYNAPSOFT",
-      "x": 1174,
-      "y": 211,
+      "name": "E26",
+      "company": "(주)지미션",
+      "companyEn": "GMISSION Co., Ltd.",
+      "x": 1394,
+      "y": 560,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "L22",
+      "company": "(주)지아이비코리아",
+      "companyEn": "GIB Korea Co., Ltd.",
+      "x": 524,
+      "y": 560,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "Q07",
+      "company": "주한미국상공회의소",
+      "companyEn": "American Chamber of Commerce in Korea",
+      "x": 58,
+      "y": 792,
+      "width": 40,
+      "height": 39
+    },
+    {
+      "name": "i24",
+      "company": "(주)코난테크놀로지",
+      "companyEn": "Konan Technology Inc.",
+      "x": 878,
+      "y": 456,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "R12",
+      "company": "(주)코코링크",
+      "companyEn": "CoCoLink, Inc.",
+      "x": 368,
+      "y": 250,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "K26",
+      "company": "(주)크라우드웍스",
+      "companyEn": "Crowdworks AI Inc.",
+      "x": 678,
+      "y": 547,
+      "width": 38,
+      "height": 103
+    },
+    {
+      "name": "H38",
+      "company": "크리니티 주식회사",
+      "companyEn": "CRINITY",
+      "x": 1046,
+      "y": 328,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "A10",
+      "company": "티쓰리큐(주)",
+      "companyEn": "T3Q Co., Ltd.",
+      "x": 1839,
+      "y": 637,
+      "width": 39,
+      "height": 77
+    },
+    {
+      "name": "M01",
+      "company": "㈜펀진",
+      "companyEn": "Funzin Co., Ltd.",
+      "x": 349,
+      "y": 947,
+      "width": 117,
+      "height": 116
+    },
+    {
+      "name": "A03",
+      "company": "(주)페다",
+      "companyEn": "Feda",
+      "x": 1839,
+      "y": 973,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "C21",
+      "company": "(주)페르소나에이아이",
+      "companyEn": "PERSONA AI",
+      "x": 1607,
+      "y": 456,
       "width": 78,
-      "height": 78
+      "height": 155
+    },
+    {
+      "name": "J16",
+      "company": "(주)페블러스",
+      "companyEn": "PEBBLOUS Inc.",
+      "x": 801,
+      "y": 753,
+      "width": 39,
+      "height": 103
+    },
+    {
+      "name": "K36",
+      "company": "퍼즐데이터",
+      "companyEn": "PuzzleData",
+      "x": 640,
+      "y": 328,
+      "width": 38,
+      "height": 38
+    },
+    {
+      "name": "N26",
+      "company": "플라우드",
+      "companyEn": "PLAUD",
+      "x": 298,
+      "y": 560,
+      "width": 38,
+      "height": 51
+    },
+    {
+      "name": "J37",
+      "company": "플랜바이테크놀로지스",
+      "companyEn": "Planby Technologies",
+      "x": 833,
+      "y": 327,
+      "width": 38,
+      "height": 39
+    },
+    {
+      "name": "J33",
+      "company": "(주)플랜아이",
+      "companyEn": "PLANI",
+      "x": 871,
+      "y": 366,
+      "width": 53,
+      "height": 39
+    },
+    {
+      "name": "G33",
+      "company": "프렌들리에이아이",
+      "companyEn": "FriendliAI",
+      "x": 1200,
+      "y": 366,
+      "width": 39,
+      "height": 39
     },
     {
       "name": "R81",
@@ -101,52 +1397,34 @@
       "x": 1278,
       "y": 211,
       "width": 155,
-      "height": 78,
-      "participantsEn": [
-        "KOREA PHYSICAL AI ASSOCIATION",
-        "W.AI",
-        "ROBOCARE",
-        "Crowdworks AI Inc.",
-        "KTC",
-        "Infra Information Technology Co., Ltd.",
-        "Hanyang University"
-      ]
+      "height": 78
     },
     {
-      "name": "R91",
-      "company": "반야에이아이",
-      "companyEn": "BanyaAI",
-      "x": 1530,
-      "y": 211,
+      "name": "L13",
+      "company": "(주)하이퍼놀로지",
+      "companyEn": "Hypernology Inc.",
+      "x": 524,
+      "y": 702,
       "width": 38,
-      "height": 39
+      "height": 51
     },
     {
-      "name": "R92",
-      "company": "월드",
-      "companyEn": "World",
-      "x": 1568,
-      "y": 211,
-      "width": 38,
-      "height": 39
+      "name": "D14",
+      "company": "하이퍼엑셀",
+      "companyEn": "HYPERACCEL",
+      "x": 1491,
+      "y": 663,
+      "width": 77,
+      "height": 77
     },
     {
-      "name": "M36",
-      "company": "옵트에이아이",
-      "companyEn": "OptAI",
-      "x": 388,
-      "y": 327,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "M37",
-      "company": "그룹바이에이치알",
-      "companyEn": "GroupByHR Inc.",
-      "x": 426,
-      "y": 327,
-      "width": 40,
-      "height": 39
+      "name": "L01",
+      "company": "한국딥러닝 주식회사",
+      "companyEn": "Korea Deep Learning Inc.",
+      "x": 524,
+      "y": 947,
+      "width": 77,
+      "height": 116
     },
     {
       "name": "M31",
@@ -158,175 +1436,31 @@
       "height": 39
     },
     {
-      "name": "M32",
-      "company": "(주)비씨엠테크",
-      "companyEn": "BCMTech",
-      "x": 426,
-      "y": 366,
+      "name": "Q09",
+      "company": "한국인공지능협회",
+      "companyEn": "KORAIA",
+      "x": 58,
+      "y": 714,
       "width": 40,
       "height": 39
     },
     {
-      "name": "L36",
-      "company": "(주)디엠티랩스",
-      "companyEn": "DMTLABS",
-      "x": 524,
-      "y": 327,
+      "name": "P26",
+      "company": "한국정보공학(주)",
+      "companyEn": "Korea Information Engineering Services",
+      "x": 175,
+      "y": 560,
       "width": 38,
-      "height": 39
+      "height": 77
     },
     {
-      "name": "L31",
-      "company": "(주)에이데이터",
-      "companyEn": "A-data Co., Ltd.",
-      "x": 524,
-      "y": 366,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "L37",
-      "company": "어니컴 주식회사",
-      "companyEn": "ONYCOM",
-      "x": 562,
-      "y": 327,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "L32",
-      "company": "(주)디웍스",
-      "companyEn": "DWEAX",
-      "x": 563,
-      "y": 366,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "K36",
-      "company": "퍼즐데이터",
-      "companyEn": "PuzzleData",
-      "x": 640,
-      "y": 328,
-      "width": 38,
-      "height": 38
-    },
-    {
-      "name": "K37",
-      "company": "(주)인포보스",
-      "companyEn": "INFOBOSS Inc.",
-      "x": 679,
-      "y": 328,
-      "width": 37,
-      "height": 38
-    },
-    {
-      "name": "K38",
-      "company": "(주)딥서치",
-      "companyEn": "DeepSearch, Inc.",
-      "x": 716,
-      "y": 328,
+      "name": "Q06",
+      "company": "한국정보보호산업협회",
+      "companyEn": "KISIA",
+      "x": 58,
+      "y": 831,
       "width": 40,
-      "height": 38
-    },
-    {
-      "name": "K31",
-      "company": "(주)아이티브레이아이",
-      "companyEn": "ITIV AI Inc.",
-      "x": 640,
-      "y": 366,
-      "width": 38,
       "height": 39
-    },
-    {
-      "name": "K32",
-      "company": "바이트사이즈",
-      "companyEn": "BYTESIZE",
-      "x": 679,
-      "y": 366,
-      "width": 77,
-      "height": 39
-    },
-    {
-      "name": "J36",
-      "company": "오픈메이드컨설팅",
-      "companyEn": "Openmade Consulting",
-      "x": 795,
-      "y": 327,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "J37",
-      "company": "플랜바이테크놀로지스",
-      "companyEn": "Planby Technologies",
-      "x": 833,
-      "y": 327,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "J38",
-      "company": "비큐AI",
-      "companyEn": "BECUAI",
-      "x": 871,
-      "y": 327,
-      "width": 53,
-      "height": 39
-    },
-    {
-      "name": "J31",
-      "company": "아이디비(주)",
-      "companyEn": "IDB Inc.",
-      "x": 795,
-      "y": 366,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "J32",
-      "company": "(주)누리에에이아이",
-      "companyEn": "NURIE AI Inc.",
-      "x": 833,
-      "y": 366,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "J33",
-      "company": "(주)플랜아이",
-      "companyEn": "PLANI",
-      "x": 871,
-      "y": 366,
-      "width": 53,
-      "height": 39
-    },
-    {
-      "name": "H36",
-      "company": "에이치쓰리솔루션",
-      "companyEn": "H3SOLUTION",
-      "x": 968,
-      "y": 328,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "H37",
-      "company": "AI 소통 협업툴, 써팀",
-      "companyEn": "SirTEAM",
-      "x": 1007,
-      "y": 328,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "H38",
-      "company": "크리니티 주식회사",
-      "companyEn": "CRINITY",
-      "x": 1046,
-      "y": 328,
-      "width": 39,
-      "height": 38
     },
     {
       "name": "H31",
@@ -338,573 +1472,6 @@
       "height": 39
     },
     {
-      "name": "H33",
-      "company": "보다플레이(주)",
-      "companyEn": "Bodaplay",
-      "x": 1046,
-      "y": 366,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "G36",
-      "company": "(주)벨루가",
-      "companyEn": "Veluga Inc.",
-      "x": 1124,
-      "y": 328,
-      "width": 37,
-      "height": 38
-    },
-    {
-      "name": "G37",
-      "company": "곳인텔리전스",
-      "companyEn": "Good intelligence",
-      "x": 1161,
-      "y": 328,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "G38",
-      "company": "(주)인포플라",
-      "companyEn": "Infopla Inc.",
-      "x": 1200,
-      "y": 328,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "G31",
-      "company": "슬릭스",
-      "companyEn": "SILXEN",
-      "x": 1124,
-      "y": 366,
-      "width": 76,
-      "height": 39
-    },
-    {
-      "name": "G33",
-      "company": "프렌들리에이아이",
-      "companyEn": "FriendliAI",
-      "x": 1200,
-      "y": 366,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "E31",
-      "company": "(주)마음AI",
-      "companyEn": "MAUM.AI Inc",
-      "x": 1278,
-      "y": 328,
-      "width": 155,
-      "height": 77
-    },
-    {
-      "name": "D32",
-      "company": "(주)브이원텍",
-      "companyEn": "V-ONE Tech",
-      "x": 1490,
-      "y": 289,
-      "width": 40,
-      "height": 77
-    },
-    {
-      "name": "D37",
-      "company": "(주)파이헬스케어",
-      "companyEn": "Piehealthcare",
-      "x": 1530,
-      "y": 289,
-      "width": 38,
-      "height": 77
-    },
-    {
-      "name": "D31",
-      "company": "무하유",
-      "companyEn": "MuhayU",
-      "x": 1490,
-      "y": 366,
-      "width": 78,
-      "height": 39
-    },
-    {
-      "name": "N23",
-      "company": "(주)바로에이아이",
-      "companyEn": "BARO AI Inc.",
-      "x": 259,
-      "y": 456,
-      "width": 39,
-      "height": 78
-    },
-    {
-      "name": "N21",
-      "company": "슈어소프트테크(주)",
-      "companyEn": "SURESOFT TECHNOLOGIES Inc.",
-      "x": 259,
-      "y": 534,
-      "width": 39,
-      "height": 77
-    },
-    {
-      "name": "N27",
-      "company": "(주)인이지",
-      "companyEn": "INEEJI Co., Ltd.",
-      "x": 298,
-      "y": 456,
-      "width": 38,
-      "height": 104
-    },
-    {
-      "name": "N26",
-      "company": "플라우드",
-      "companyEn": "PLAUD",
-      "x": 298,
-      "y": 560,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "M24",
-      "company": "에버퓨어",
-      "companyEn": "Everpure",
-      "x": 388,
-      "y": 456,
-      "width": 78,
-      "height": 52
-    },
-    {
-      "name": "M23",
-      "company": "(주)에너지아이",
-      "companyEn": "ENERZA Inc.",
-      "x": 388,
-      "y": 508,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "M28",
-      "company": "네오와인 AI 복제방지칩",
-      "companyEn": "AI Product Protection IC",
-      "x": 426,
-      "y": 508,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "M21",
-      "company": "Aqrose Technology",
-      "companyEn": "Aqrose Technology",
-      "x": 388,
-      "y": 547,
-      "width": 78,
-      "height": 77
-    },
-    {
-      "name": "L23",
-      "company": "(주)에이아이웍스",
-      "companyEn": "AIWORKX Inc.",
-      "x": 524,
-      "y": 456,
-      "width": 38,
-      "height": 104
-    },
-    {
-      "name": "L28",
-      "company": "(주)미루웨어",
-      "companyEn": "Miruware Co., Ltd.",
-      "x": 562,
-      "y": 456,
-      "width": 39,
-      "height": 104
-    },
-    {
-      "name": "L22",
-      "company": "(주)지아이비코리아",
-      "companyEn": "GIB Korea Co., Ltd.",
-      "x": 524,
-      "y": 560,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "L27",
-      "company": "(주)세인티",
-      "companyEn": "SAINTI Inc.",
-      "x": 562,
-      "y": 560,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "L21",
-      "company": "(주)비솔",
-      "companyEn": "VISOL Inc.",
-      "x": 524,
-      "y": 611,
-      "width": 77,
-      "height": 52
-    },
-    {
-      "name": "K24",
-      "company": "텐스토텐트 X 이슬림코리아",
-      "companyEn": "Tenstorrent x eSlim Korea",
-      "x": 640,
-      "y": 456,
-      "width": 38,
-      "height": 52
-    },
-    {
-      "name": "K29",
-      "company": "블루닷(주)",
-      "companyEn": "BLUEDOT",
-      "x": 678,
-      "y": 456,
-      "width": 38,
-      "height": 52
-    },
-    {
-      "name": "K23",
-      "company": "솔트웨어(주)",
-      "companyEn": "Saltware",
-      "x": 640,
-      "y": 508,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "K28",
-      "company": "관악아날로그(주)",
-      "companyEn": "Gwanak Analog Co., Ltd.",
-      "x": 678,
-      "y": 508,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "K21",
-      "company": "유니닥스 주식회사",
-      "companyEn": "Unidocs Inc.",
-      "x": 640,
-      "y": 547,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "K26",
-      "company": "(주)크라우드웍스",
-      "companyEn": "Crowdworks AI Inc.",
-      "x": 678,
-      "y": 547,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "J24",
-      "company": "(주)에스투더블유",
-      "companyEn": "S2W",
-      "x": 762,
-      "y": 457,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "J29",
-      "company": "그래파이",
-      "companyEn": "GraphAI",
-      "x": 801,
-      "y": 457,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "J23",
-      "company": "(주)영재컴퓨터 X 알파쿨(독일)",
-      "companyEn": "YoungJaeComputer ALPHACOOL",
-      "x": 762,
-      "y": 508,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "J28",
-      "company": "로터스 코리아 테크놀로지",
-      "companyEn": "Lotus Korea Technology",
-      "x": 801,
-      "y": 508,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "J22",
-      "company": "프로스트",
-      "companyEn": "PROST",
-      "x": 762,
-      "y": 547,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "J21",
-      "company": "백석문화대학교",
-      "companyEn": "Baekseok Culture University",
-      "x": 762,
-      "y": 598,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "J26",
-      "company": "동국시스템즈-HPE",
-      "companyEn": "DONGKUK SYSTEMS-HPE",
-      "x": 801,
-      "y": 547,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "i24",
-      "company": "(주)코난테크놀로지",
-      "companyEn": "Konan Technology Inc.",
-      "x": 878,
-      "y": 456,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "i29",
-      "company": "이든티앤에스",
-      "companyEn": "EDEN TNS",
-      "x": 917,
-      "y": 456,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "i23",
-      "company": "(주)케이티엔에프",
-      "companyEn": "KTNF Co., Ltd.",
-      "x": 878,
-      "y": 508,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "i28",
-      "company": "주식회사 나라원시스템",
-      "companyEn": "NARAONE SYSTEM Inc.",
-      "x": 917,
-      "y": 508,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "i22",
-      "company": "디포그",
-      "companyEn": "DEFOG",
-      "x": 878,
-      "y": 547,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "i21",
-      "company": "마이텍 컴퓨팅",
-      "companyEn": "MiTAC Computing",
-      "x": 878,
-      "y": 598,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "i27",
-      "company": "(주)이엘온소프트",
-      "companyEn": "ELONSOFT",
-      "x": 917,
-      "y": 547,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "i26",
-      "company": "(주)시스트란",
-      "companyEn": "SYSTRAN KOREA",
-      "x": 917,
-      "y": 598,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "H24",
-      "company": "위앤유텍",
-      "companyEn": "WE n YOU TECH",
-      "x": 1007,
-      "y": 457,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "H28",
-      "company": "메가존소프트",
-      "companyEn": "MegazoneSoft",
-      "x": 1046,
-      "y": 457,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "G24",
-      "company": "디노티시아",
-      "companyEn": "Dnotitia",
-      "x": 1124,
-      "y": 456,
-      "width": 38,
-      "height": 52
-    },
-    {
-      "name": "G29",
-      "company": "아이티엔제이",
-      "companyEn": "ITNJ",
-      "x": 1162,
-      "y": 456,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "F23",
-      "company": "유클릭스",
-      "companyEn": "UCLIX",
-      "x": 1240,
-      "y": 456,
-      "width": 38,
-      "height": 104
-    },
-    {
-      "name": "F29",
-      "company": "교보디티에스(주)",
-      "companyEn": "KyoboDTS",
-      "x": 1278,
-      "y": 456,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "E23",
-      "company": "어드밴텍",
-      "companyEn": "Advantech",
-      "x": 1356,
-      "y": 456,
-      "width": 38,
-      "height": 104
-    },
-    {
-      "name": "E28",
-      "company": "올가나이즈코리아",
-      "companyEn": "Allganize Korea",
-      "x": 1394,
-      "y": 456,
-      "width": 39,
-      "height": 104
-    },
-    {
-      "name": "D24",
-      "company": "(주)인공지능팩토리",
-      "companyEn": "AIFACTORY",
-      "x": 1491,
-      "y": 456,
-      "width": 78,
-      "height": 39
-    },
-    {
-      "name": "C21",
-      "company": "(주)페르소나에이아이",
-      "companyEn": "PERSONA AI",
-      "x": 1607,
-      "y": 456,
-      "width": 78,
-      "height": 155
-    },
-    {
-      "name": "B21",
-      "company": "(주)넥스브이",
-      "companyEn": "NexV",
-      "x": 1723,
-      "y": 456,
-      "width": 39,
-      "height": 155
-    },
-    {
-      "name": "B28",
-      "company": "태양3C",
-      "companyEn": "3C TAE YANG Co., Ltd.",
-      "x": 1762,
-      "y": 456,
-      "width": 39,
-      "height": 79
-    },
-    {
-      "name": "A17",
-      "company": "앱테스트에이아이",
-      "companyEn": "Apptest.ai",
-      "x": 1839,
-      "y": 406,
-      "width": 39,
-      "height": 37
-    },
-    {
-      "name": "A16",
-      "company": "테이블에이아이",
-      "companyEn": "TABLE-AI",
-      "x": 1839,
-      "y": 443,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "A15",
-      "company": "(주)씨디에스 WeeAI",
-      "companyEn": "CDS Co., Ltd. WeeAI | CDS | weeai.kr",
-      "x": 1839,
-      "y": 482,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "A14",
-      "company": "유니바",
-      "companyEn": "UNIVA",
-      "x": 1839,
-      "y": 521,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "A13",
-      "company": "삼인이엔에스",
-      "companyEn": "Spavy",
-      "x": 1839,
-      "y": 560,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "A12",
-      "company": "제조AX 혁신 경북 휴머노이드 로봇 특화단지",
-      "companyEn": "Humanoid-Specialized Complex in Gyeongbuk",
-      "x": 1839,
-      "y": 598,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "A10",
-      "company": "티쓰리큐(주)",
-      "companyEn": "T3Q Co., Ltd.",
-      "x": 1839,
-      "y": 637,
-      "width": 39,
-      "height": 77
-    },
-    {
       "name": "A08",
       "company": "(주)휴인스",
       "companyEn": "HUINS",
@@ -912,42 +1479,6 @@
       "y": 714,
       "width": 39,
       "height": 78
-    },
-    {
-      "name": "A06",
-      "company": "(주)유니버스에이아이",
-      "companyEn": "UNIVERSE AI Inc.",
-      "x": 1839,
-      "y": 792,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "A04",
-      "company": "(주)버즈니",
-      "companyEn": "BUZZNI",
-      "x": 1839,
-      "y": 895,
-      "width": 39,
-      "height": 78
-    },
-    {
-      "name": "A03",
-      "company": "(주)페다",
-      "companyEn": "Feda",
-      "x": 1839,
-      "y": 973,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "A02",
-      "company": "(주)엑스퍼넷",
-      "companyEn": "EXPERNET Co., Ltd.",
-      "x": 1839,
-      "y": 1011,
-      "width": 39,
-      "height": 39
     },
     {
       "name": "A01",
@@ -959,107 +1490,89 @@
       "height": 39
     },
     {
-      "name": "H23",
-      "company": "라이카지오시스템즈코리아",
-      "companyEn": "Leica Geosystems Korea",
-      "x": 1007,
-      "y": 508,
-      "width": 39,
-      "height": 52
+      "name": "Q08",
+      "company": "AI WAVE SHOW",
+      "companyEn": "AI WAVE SHOW",
+      "x": 58,
+      "y": 753,
+      "width": 40,
+      "height": 39
     },
     {
-      "name": "H22",
-      "company": "두루이디에스 주식회사",
-      "companyEn": "DOOROO EDS",
+      "name": "H37",
+      "company": "AI 소통 협업툴, 써팀",
+      "companyEn": "SirTEAM",
       "x": 1007,
-      "y": 560,
+      "y": 328,
       "width": 39,
       "height": 38
     },
     {
-      "name": "H27",
-      "company": "윌콘에이아이 주식회사",
-      "companyEn": "WilconAI Co., Ltd.",
-      "x": 1046,
-      "y": 560,
+      "name": "B19",
+      "company": "AI협업툴 플로우",
+      "companyEn": "flow.team",
+      "x": 1762,
+      "y": 663,
+      "width": 39,
+      "height": 77
+    },
+    {
+      "name": "G13",
+      "company": "Altos Computing",
+      "companyEn": "Altos Computing",
+      "x": 1124,
+      "y": 702,
+      "width": 37,
+      "height": 51
+    },
+    {
+      "name": "Q05",
+      "company": "Appen",
+      "companyEn": "Appen",
+      "x": 58,
+      "y": 870,
+      "width": 40,
+      "height": 37
+    },
+    {
+      "name": "M21",
+      "company": "Aqrose Technology",
+      "companyEn": "Aqrose Technology",
+      "x": 388,
+      "y": 547,
+      "width": 78,
+      "height": 77
+    },
+    {
+      "name": "N19",
+      "company": "Beehe Electric",
+      "companyEn": "Beehe Electric",
+      "x": 297,
+      "y": 702,
       "width": 39,
       "height": 38
     },
     {
-      "name": "H21",
-      "company": "엑서스",
-      "companyEn": "AIXUS",
-      "x": 1007,
-      "y": 598,
-      "width": 39,
+      "name": "K29",
+      "company": "BLUEDOT",
+      "companyEn": "BLUEDOT",
+      "x": 678,
+      "y": 456,
+      "width": 38,
       "height": 52
     },
     {
-      "name": "H26",
-      "company": "퀀텀씨앤에스",
-      "companyEn": "QUANTUM C&S",
-      "x": 1046,
-      "y": 598,
-      "width": 39,
-      "height": 52
-    },
-    {
-      "name": "G22",
-      "company": "시마테크놀러지스코리아",
-      "companyEn": "SiMa.ai",
-      "x": 1124,
-      "y": 508,
-      "width": 38,
-      "height": 78
-    },
-    {
-      "name": "G27",
-      "company": "에이티엠아이앤씨",
-      "companyEn": "ATM, Inc",
-      "x": 1162,
-      "y": 508,
-      "width": 39,
-      "height": 78
-    },
-    {
-      "name": "G21",
-      "company": "(주)이너웨이브",
-      "companyEn": "Innerwave Co., Ltd.",
-      "x": 1124,
-      "y": 586,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "G26",
-      "company": "씽크프리",
-      "companyEn": "Thinkfree",
-      "x": 1162,
-      "y": 586,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "F21",
-      "company": "(주)사미텍",
-      "companyEn": "Samitech",
-      "x": 1240,
-      "y": 560,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "F28",
-      "company": "(주)젠다이브",
-      "companyEn": "gendive Inc.",
-      "x": 1278,
-      "y": 508,
+      "name": "A04",
+      "company": "BUZZNI",
+      "companyEn": "BUZZNI",
+      "x": 1839,
+      "y": 895,
       "width": 39,
       "height": 78
     },
     {
       "name": "F26",
-      "company": "카페24",
+      "company": "cafe24",
       "companyEn": "cafe24",
       "x": 1278,
       "y": 586,
@@ -1067,40 +1580,58 @@
       "height": 77
     },
     {
-      "name": "E21",
-      "company": "명인일렉트로닉스 / 명인이노",
-      "companyEn": "MYUNGIN ELECTRONICS / MYUNGIN INNO",
-      "x": 1356,
-      "y": 560,
+      "name": "L18",
+      "company": "Clunix",
+      "companyEn": "Clunix",
+      "x": 562,
+      "y": 702,
+      "width": 39,
+      "height": 51
+    },
+    {
+      "name": "K26",
+      "company": "Crowdworks AI Inc.",
+      "companyEn": "Crowdworks AI Inc.",
+      "x": 678,
+      "y": 547,
       "width": 38,
       "height": 103
     },
     {
-      "name": "E26",
-      "company": "(주)지미션",
-      "companyEn": "GMISSION Co., Ltd.",
-      "x": 1394,
-      "y": 560,
-      "width": 39,
-      "height": 103
+      "name": "N15",
+      "company": "DataForce by TransPerfect",
+      "companyEn": "DataForce by TransPerfect",
+      "x": 259,
+      "y": 663,
+      "width": 38,
+      "height": 39
     },
     {
-      "name": "D21",
-      "company": "아이티센클로잇",
-      "companyEn": "ITCENCLOIT",
-      "x": 1491,
-      "y": 495,
+      "name": "N18",
+      "company": "DIGITIMES, Inc.",
+      "companyEn": "DIGITIMES, Inc.",
+      "x": 297,
+      "y": 740,
+      "width": 39,
+      "height": 38
+    },
+    {
+      "name": "M24",
+      "company": "Everpure",
+      "companyEn": "Everpure",
+      "x": 388,
+      "y": 456,
       "width": 78,
-      "height": 116
+      "height": 52
     },
     {
-      "name": "B26",
-      "company": "위즈코어 주식회사",
-      "companyEn": "WIZCORE",
-      "x": 1762,
-      "y": 535,
-      "width": 39,
-      "height": 76
+      "name": "Q10",
+      "company": "K-ICT WEEK in BUSAN 2026",
+      "companyEn": "K-ICT WEEK in BUSAN 2026",
+      "x": 58,
+      "y": 676,
+      "width": 40,
+      "height": 38
     },
     {
       "name": "P14",
@@ -1110,6 +1641,51 @@
       "y": 676,
       "width": 38,
       "height": 38
+    },
+    {
+      "name": "H23",
+      "company": "Leica Geosystems Korea",
+      "companyEn": "Leica Geosystems Korea",
+      "x": 1007,
+      "y": 508,
+      "width": 39,
+      "height": 52
+    },
+    {
+      "name": "J28",
+      "company": "Lotus Korea Technology",
+      "companyEn": "Lotus Korea Technology",
+      "x": 801,
+      "y": 508,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "N20",
+      "company": "LR-LINK",
+      "companyEn": "Linkreal Co., Ltd.",
+      "x": 297,
+      "y": 663,
+      "width": 39,
+      "height": 39
+    },
+    {
+      "name": "E11",
+      "company": "MinIO",
+      "companyEn": "MinIO",
+      "x": 1356,
+      "y": 753,
+      "width": 77,
+      "height": 103
+    },
+    {
+      "name": "P16",
+      "company": "NEXCOM International Co., Ltd.",
+      "companyEn": "NEXCOM International Co., Ltd.",
+      "x": 175,
+      "y": 805,
+      "width": 38,
+      "height": 51
     },
     {
       "name": "P19",
@@ -1139,58 +1715,13 @@
       "height": 39
     },
     {
-      "name": "P12",
-      "company": "(주)텔레칩스",
-      "companyEn": "Telechips",
-      "x": 137,
-      "y": 753,
-      "width": 38,
-      "height": 52
-    },
-    {
-      "name": "P17",
-      "company": "(주)에이쓰리시큐리티",
-      "companyEn": "A3Security",
-      "x": 175,
-      "y": 753,
-      "width": 38,
-      "height": 52
-    },
-    {
-      "name": "P11",
-      "company": "(주)아이펌",
-      "companyEn": "aipim Co., Ltd.",
-      "x": 137,
-      "y": 805,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "P16",
-      "company": "NEXCOM International Co., Ltd.",
-      "companyEn": "NEXCOM International Co., Ltd.",
-      "x": 175,
-      "y": 805,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "N15",
-      "company": "데이터포스 by 트랜스퍼펙트",
-      "companyEn": "DataForce by TransPerfect",
-      "x": 259,
-      "y": 663,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "N20",
-      "company": "LR-LINK",
-      "companyEn": "Linkreal Co., Ltd.",
-      "x": 297,
-      "y": 663,
+      "name": "J13",
+      "company": "ReadSpeaker Korea",
+      "companyEn": "ReadSpeaker Korea",
+      "x": 762,
+      "y": 702,
       "width": 39,
-      "height": 39
+      "height": 51
     },
     {
       "name": "N14",
@@ -1200,735 +1731,6 @@
       "y": 702,
       "width": 38,
       "height": 38
-    },
-    {
-      "name": "N19",
-      "company": "Beehe Electric",
-      "companyEn": "Beehe Electric",
-      "x": 297,
-      "y": 702,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "N13",
-      "company": "KONST",
-      "companyEn": "KONST",
-      "x": 259,
-      "y": 740,
-      "width": 38,
-      "height": 38
-    },
-    {
-      "name": "N18",
-      "company": "DIGITIMES, Inc.",
-      "companyEn": "DIGITIMES, Inc.",
-      "x": 297,
-      "y": 740,
-      "width": 39,
-      "height": 38
-    },
-    {
-      "name": "P28",
-      "company": "(주)로이드케이",
-      "companyEn": "LLOYDK Co., Ltd.",
-      "x": 175,
-      "y": 521,
-      "width": 38,
-      "height": 39
-    },
-    {
-      "name": "P26",
-      "company": "한국정보공학(주)",
-      "companyEn": "Korea Information Engineering Services",
-      "x": 175,
-      "y": 560,
-      "width": 38,
-      "height": 77
-    },
-    {
-      "name": "Q10",
-      "company": "K-ICT WEEK in BUSAN 2026",
-      "companyEn": "K-ICT WEEK in BUSAN 2026",
-      "x": 58,
-      "y": 676,
-      "width": 40,
-      "height": 38
-    },
-    {
-      "name": "Q09",
-      "company": "한국인공지능협회",
-      "companyEn": "KORAIA",
-      "x": 58,
-      "y": 714,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "Q08",
-      "company": "AI WAVE SHOW",
-      "companyEn": "AI WAVE SHOW",
-      "x": 58,
-      "y": 753,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "Q07",
-      "company": "주한미국상공회의소",
-      "companyEn": "American Chamber of Commerce in Korea",
-      "x": 58,
-      "y": 792,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "Q06",
-      "company": "한국정보보호산업협회",
-      "companyEn": "KISIA",
-      "x": 58,
-      "y": 831,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "Q05",
-      "company": "Appen",
-      "companyEn": "Appen",
-      "x": 58,
-      "y": 870,
-      "width": 40,
-      "height": 37
-    },
-    {
-      "name": "Q02",
-      "company": "스파르타AX",
-      "companyEn": "Sparta AX",
-      "x": 142,
-      "y": 908,
-      "width": 40,
-      "height": 52
-    },
-    {
-      "name": "Q01",
-      "company": "(주)와이즈넛",
-      "companyEn": "WISENUT, Inc.",
-      "x": 142,
-      "y": 960,
-      "width": 40,
-      "height": 51
-    },
-    {
-      "name": "M14",
-      "company": "케이투스 코리아",
-      "companyEn": "KAYTUS KOREA",
-      "x": 388,
-      "y": 663,
-      "width": 78,
-      "height": 77
-    },
-    {
-      "name": "M11",
-      "company": "솔트룩스이노베이션 X 딥엘",
-      "companyEn": "Saltlux Innovation X DeepL",
-      "x": 388,
-      "y": 778,
-      "width": 78,
-      "height": 78
-    },
-    {
-      "name": "M04",
-      "company": "베슬에이아이",
-      "companyEn": "VESSL AI",
-      "x": 349,
-      "y": 908,
-      "width": 117,
-      "height": 39
-    },
-    {
-      "name": "M01",
-      "company": "㈜펀진",
-      "companyEn": "Funzin Co., Ltd.",
-      "x": 349,
-      "y": 947,
-      "width": 117,
-      "height": 116
-    },
-    {
-      "name": "L13",
-      "company": "(주)하이퍼놀로지",
-      "companyEn": "Hypernology Inc.",
-      "x": 524,
-      "y": 702,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "L18",
-      "company": "콜루닉스",
-      "companyEn": "Clunix",
-      "x": 562,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "L11",
-      "company": "(주)링크제시스",
-      "companyEn": "LINKGENESIS Co., Ltd.",
-      "x": 524,
-      "y": 753,
-      "width": 77,
-      "height": 103
-    },
-    {
-      "name": "L04",
-      "company": "(주)씨에스리",
-      "companyEn": "CSLEE Co., Ltd",
-      "x": 524,
-      "y": 908,
-      "width": 77,
-      "height": 39
-    },
-    {
-      "name": "L01",
-      "company": "한국딥러닝 주식회사",
-      "companyEn": "Korea Deep Learning Inc.",
-      "x": 524,
-      "y": 947,
-      "width": 77,
-      "height": 116
-    },
-    {
-      "name": "K01",
-      "company": "비아이매트릭스",
-      "companyEn": "BI MATRIX",
-      "x": 640,
-      "y": 908,
-      "width": 76,
-      "height": 155
-    },
-    {
-      "name": "J01",
-      "company": "(주)매니코어소프트ㆍ(주)모티프테크놀로지스ㆍ(주)OE솔루션",
-      "companyEn": "ManyCoreSoft Co., Ltd. / Motif Technologies Inc. / OE Solutions Co., Ltd.",
-      "x": 762,
-      "y": 908,
-      "width": 78,
-      "height": 155
-    },
-    {
-      "name": "i01",
-      "company": "미스릴",
-      "companyEn": "MITHRIL",
-      "x": 878,
-      "y": 908,
-      "width": 78,
-      "height": 155
-    },
-    {
-      "name": "H01",
-      "company": "리더스 시스템즈",
-      "companyEn": "LEADERS SYSTEMS",
-      "x": 1007,
-      "y": 908,
-      "width": 78,
-      "height": 155
-    },
-    {
-      "name": "G01",
-      "company": "제논ㆍKB금융지주",
-      "companyEn": "GENON / KB Financial Group",
-      "x": 1124,
-      "y": 908,
-      "width": 76,
-      "height": 155
-    },
-    {
-      "name": "F04",
-      "company": "래블업 주식회사",
-      "companyEn": "Lablup Inc.",
-      "x": 1240,
-      "y": 908,
-      "width": 77,
-      "height": 39
-    },
-    {
-      "name": "F01",
-      "company": "야놀자",
-      "companyEn": "Yanolja",
-      "x": 1240,
-      "y": 947,
-      "width": 77,
-      "height": 116
-    },
-    {
-      "name": "E01",
-      "company": "슈퍼마이크로",
-      "companyEn": "SUPER MICRO COMPUTER, Inc.",
-      "x": 1356,
-      "y": 908,
-      "width": 77,
-      "height": 155
-    },
-    {
-      "name": "D01",
-      "company": "(주)이스트소프트",
-      "companyEn": "ESTsoft",
-      "x": 1491,
-      "y": 908,
-      "width": 77,
-      "height": 155
-    },
-    {
-      "name": "C01",
-      "company": "디에스앤지",
-      "companyEn": "DS&G",
-      "x": 1607,
-      "y": 908,
-      "width": 78,
-      "height": 155
-    },
-    {
-      "name": "B04",
-      "company": "(주)이빗",
-      "companyEn": "EBIT Co., Ltd.",
-      "x": 1723,
-      "y": 908,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B09",
-      "company": "딥브레인에이아이",
-      "companyEn": "Deepbrain AI",
-      "x": 1762,
-      "y": 908,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B03",
-      "company": "(주)빛과전자",
-      "companyEn": "Lightron Inc.",
-      "x": 1723,
-      "y": 947,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B08",
-      "company": "강원대학교병원 AI 암치유센터",
-      "companyEn": "KangwonUniversityHospital AI Cancer WellnessCenter",
-      "x": 1762,
-      "y": 947,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B01",
-      "company": "(주)인텔리빅스",
-      "companyEn": "IntelliVIX",
-      "x": 1723,
-      "y": 986,
-      "width": 78,
-      "height": 77
-    },
-    {
-      "name": "K13",
-      "company": "망고부스트",
-      "companyEn": "MangoBoost",
-      "x": 640,
-      "y": 702,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "K18",
-      "company": "(주)원모어시큐리티",
-      "companyEn": "OneMoreSecurity Inc.",
-      "x": 678,
-      "y": 702,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "K11",
-      "company": "에이아이씨(주)",
-      "companyEn": "AIC Inc.",
-      "x": 640,
-      "y": 753,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "K16",
-      "company": "아이크래프트(주)",
-      "companyEn": "iCRAFT",
-      "x": 678,
-      "y": 753,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "J13",
-      "company": "리드스피커코리아",
-      "companyEn": "ReadSpeaker Korea",
-      "x": 762,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "J18",
-      "company": "(주)스퀴즈비츠",
-      "companyEn": "SqueezeBits Inc.",
-      "x": 801,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "J11",
-      "company": "인스웨이브",
-      "companyEn": "INSWAVE",
-      "x": 762,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "J16",
-      "company": "(주)페블러스",
-      "companyEn": "PEBBLOUS Inc.",
-      "x": 801,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "i13",
-      "company": "(주)STA테스팅컨설팅",
-      "companyEn": "STA Testing Consulting, Inc.",
-      "x": 878,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "i18",
-      "company": "(주)링거포스트",
-      "companyEn": "FINGERPOST",
-      "x": 917,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "i11",
-      "company": "(주)엘리스그룹",
-      "companyEn": "Elice Inc.",
-      "x": 878,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "i16",
-      "company": "아이벤스",
-      "companyEn": "AIVEX",
-      "x": 917,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "H11",
-      "company": "알서포트(주)",
-      "companyEn": "RSUPPORT",
-      "x": 1007,
-      "y": 702,
-      "width": 39,
-      "height": 154
-    },
-    {
-      "name": "H18",
-      "company": "맨텍솔루션",
-      "companyEn": "Mantech Solution",
-      "x": 1046,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "H16",
-      "company": "임팩티브AI",
-      "companyEn": "IMPACTIVE AI",
-      "x": 1046,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "G13",
-      "company": "Altos Computing",
-      "companyEn": "Altos Computing",
-      "x": 1124,
-      "y": 702,
-      "width": 37,
-      "height": 51
-    },
-    {
-      "name": "G18",
-      "company": "YH데이타베이스",
-      "companyEn": "YHDatabase Co., Ltd.",
-      "x": 1161,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "G11",
-      "company": "엠키스코어",
-      "companyEn": "MKISCORE",
-      "x": 1124,
-      "y": 753,
-      "width": 37,
-      "height": 103
-    },
-    {
-      "name": "F13",
-      "company": "(주)케이엘큐브",
-      "companyEn": "KLCube Co., Ltd.",
-      "x": 1240,
-      "y": 702,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "F18",
-      "company": "(주)올빅뎃",
-      "companyEn": "ALLBIGDAT Inc.",
-      "x": 1278,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "G16",
-      "company": "몬드리안에이아이",
-      "companyEn": "MondrianAI",
-      "x": 1161,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "F11",
-      "company": "(주)심플랫폼",
-      "companyEn": "Simplatform",
-      "x": 1240,
-      "y": 753,
-      "width": 38,
-      "height": 103
-    },
-    {
-      "name": "F16",
-      "company": "씨이랩",
-      "companyEn": "Xillab",
-      "x": 1278,
-      "y": 753,
-      "width": 39,
-      "height": 103
-    },
-    {
-      "name": "E13",
-      "company": "삼일회계법인",
-      "companyEn": "Samil PwC",
-      "x": 1356,
-      "y": 702,
-      "width": 38,
-      "height": 51
-    },
-    {
-      "name": "E18",
-      "company": "엠클라우독",
-      "companyEn": "mcloudoc Co., Ltd.",
-      "x": 1394,
-      "y": 702,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "E11",
-      "company": "MinIO",
-      "companyEn": "MinIO",
-      "x": 1356,
-      "y": 753,
-      "width": 77,
-      "height": 103
-    },
-    {
-      "name": "D14",
-      "company": "하이퍼엑셀",
-      "companyEn": "HYPERACCEL",
-      "x": 1491,
-      "y": 663,
-      "width": 77,
-      "height": 77
-    },
-    {
-      "name": "D11",
-      "company": "일레븐랩스",
-      "companyEn": "ElevenLabs",
-      "x": 1491,
-      "y": 740,
-      "width": 77,
-      "height": 116
-    },
-    {
-      "name": "C15",
-      "company": "뉴로클",
-      "companyEn": "NEUROCLE",
-      "x": 1606,
-      "y": 663,
-      "width": 39,
-      "height": 51
-    },
-    {
-      "name": "C20",
-      "company": "(주)제이앤케이씨",
-      "companyEn": "JNKC Co., Ltd.",
-      "x": 1645,
-      "y": 663,
-      "width": 40,
-      "height": 51
-    },
-    {
-      "name": "C14",
-      "company": "인트플로우",
-      "companyEn": "Intflow Inc.",
-      "x": 1606,
-      "y": 714,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "C19",
-      "company": "(주)엔유엘",
-      "companyEn": "NyouL Co., Ltd.",
-      "x": 1645,
-      "y": 714,
-      "width": 40,
-      "height": 39
-    },
-    {
-      "name": "C11",
-      "company": "에이프리카",
-      "companyEn": "Aifrica",
-      "x": 1606,
-      "y": 753,
-      "width": 79,
-      "height": 103
-    },
-    {
-      "name": "B14",
-      "company": "(주)뉴엔AI",
-      "companyEn": "NEWEN AI",
-      "x": 1723,
-      "y": 663,
-      "width": 39,
-      "height": 77
-    },
-    {
-      "name": "B19",
-      "company": "AI협업툴 플로우",
-      "companyEn": "flow.team",
-      "x": 1762,
-      "y": 663,
-      "width": 39,
-      "height": 77
-    },
-    {
-      "name": "B13",
-      "company": "(주)포스텍",
-      "companyEn": "FOSTEC Inc.",
-      "x": 1723,
-      "y": 740,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B18",
-      "company": "(주)유라클",
-      "companyEn": "URACLE",
-      "x": 1762,
-      "y": 740,
-      "width": 39,
-      "height": 39
-    },
-    {
-      "name": "B11",
-      "company": "(주)미소정보기술",
-      "companyEn": "MISO InfoTech",
-      "x": 1723,
-      "y": 779,
-      "width": 39,
-      "height": 77
-    },
-    {
-      "name": "B16",
-      "company": "인피닉",
-      "companyEn": "INFINIQ",
-      "x": 1762,
-      "y": 779,
-      "width": 39,
-      "height": 77
-    },
-    {
-      "name": "Q21",
-      "company": "부산소프트웨어마이스터고등학교",
-      "companyEn": "BUSAN SOFTWARE MEISTER HIGH SCHOOL",
-      "x": 98,
-      "y": 406,
-      "width": 115,
-      "height": 37
-    },
-    {
-      "name": "P24",
-      "company": "대덕소프트웨어마이스터고등학교",
-      "companyEn": "Daedeok Software Meister High School",
-      "x": 137,
-      "y": 482,
-      "width": 76,
-      "height": 39
-    },
-    {
-      "name": "P21",
-      "company": "경북소프트웨어마이스터고등학교",
-      "companyEn": "Gyeongbuk Software Meister High School",
-      "x": 137,
-      "y": 521,
-      "width": 38,
-      "height": 116
-    },
-    {
-      "name": "Q14",
-      "company": "광주소프트웨어마이스터고등학교",
-      "companyEn": "Gwangju Software Meister High School",
-      "x": 58,
-      "y": 443,
-      "width": 40,
-      "height": 117
-    },
-    {
-      "name": "Q11",
-      "company": "대구소프트웨어마이스터고등학교",
-      "companyEn": "DAEGU SOFTWARE MEISTER HIGH SCHOOL",
-      "x": 58,
-      "y": 560,
-      "width": 40,
-      "height": 116
     },
     {
       "name": "N01",
@@ -1949,22 +1751,13 @@
       "height": 77
     },
     {
-      "name": "Artificial Room",
-      "company": "",
-      "companyEn": "",
-      "x": 1607,
-      "y": 211,
-      "width": 271,
-      "height": 195
-    },
-    {
-      "name": "Intelligence Room",
-      "company": "",
-      "companyEn": "",
-      "x": 58,
-      "y": 211,
-      "width": 271,
-      "height": 195
+      "name": "G18",
+      "company": "YHDatabase Co., Ltd.",
+      "companyEn": "YHDatabase Co., Ltd.",
+      "x": 1161,
+      "y": 702,
+      "width": 39,
+      "height": 51
     }
   ]
 }
