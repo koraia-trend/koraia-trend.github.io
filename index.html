@@ -484,7 +484,7 @@
     .chart-bars {
       display: flex;
       align-items: flex-end;
-      gap: 12px;
+      gap: 10px;
       height: 200px;
       padding: 0 0 12px;
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -633,9 +633,9 @@
     }
     .conf-img {
       width: 100%;
-      height: 240px; /* 높이를 키워 썸네일 상태에서도 덜 잘리게 조정 */
+      height: 240px;
       object-fit: cover;
-      object-position: top; /* 포스터 제목부분이 보이도록 상단 정렬 */
+      object-position: top;
       border-radius: 8px;
       margin-bottom: 20px;
       border: 1px solid rgba(255,255,255,0.05);
@@ -891,7 +891,7 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transform: scale(0.95);
       transition: transform 0.3s ease;
-      object-fit: contain; /* 원본 비율 유지 */
+      object-fit: contain;
     }
     .modal-overlay.show .modal-content {
       transform: scale(1);
@@ -953,7 +953,7 @@
     <li><a href="#gallery">갤러리</a></li>
     <li><a href="#achievements">주요성과</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">참가 신청</a>
+  <a href="#cta" class="nav-cta">결과 보기</a>
 </nav>
 
 <section id="hero">
@@ -961,19 +961,19 @@
   <div class="hero-content">
     <div class="hero-wrapper">
       <div class="hero-text-area">
-        <div class="hero-badge">2026 · Asia's Largest AI Exhibition</div>
+        <div class="hero-badge">2026 · Successfully Concluded</div>
         <div class="hero-year">2026</div>
         <div class="hero-title">AI EXPO KOREA</div>
         <p class="hero-sub">
-          <strong>9년간의 혁신 여정</strong>, 멈추지 않는 성장.<br>
-          국내 최대 AI 전시회로 성장한 국제인공지능대전.
+          <strong>9년간의 혁신 여정, 새로운 정점에 도달했습니다.</strong><br>
+          18개국 330개사 562부스, <strong>48,678명</strong>의 참관객과 함께한 제9회 국제인공지능대전.
         </p>
         <div class="hero-meta">
           <div class="hero-meta-item">
-            <div class="hero-meta-icon">📅</div>
+            <div class="hero-meta-icon">✅</div>
             <div class="hero-meta-text">
               <strong>2026.05.06 – 08</strong>
-              <span>개최 일정</span>
+              <span>성공적 개최 완료</span>
             </div>
           </div>
           <div class="hero-meta-item">
@@ -986,13 +986,13 @@
           <div class="hero-meta-item">
             <div class="hero-meta-icon">🌐</div>
             <div class="hero-meta-text">
-              <strong>18개국 이상</strong>
-              <span>글로벌 참가</span>
+              <strong>18개국 참가</strong>
+              <span>역대 최대 규모</span>
             </div>
           </div>
         </div>
         <div class="hero-actions">
-          <a href="https://www.aiexpo.co.kr/home/"  target="_blank" class="btn-primary">전시 참가 신청</a>
+          <a href="#stats" class="btn-primary">2026 결과 보기</a>
           <a href="#timeline" class="btn-secondary">성장 여정 보기</a>
           <a href="/map" target="_blank" class="btn-secondary">26년 부스지도 보기</a>
         </div>
@@ -1022,14 +1022,14 @@
         <div class="stat-growth">+500% ▲</div>
       </div>
       <div class="stat-item fade-up" style="transition-delay:0.2s">
-        <div class="stat-number">322<span>개사</span></div>
-        <div class="stat-label">참가 기업</div>
-        <div class="stat-growth">+293% ▲</div>
+        <div class="stat-number">330<span>개사</span></div>
+        <div class="stat-label">참가 기업 · 562부스</div>
+        <div class="stat-growth">+302% ▲</div>
       </div>
       <div class="stat-item fade-up" style="transition-delay:0.3s">
-        <div class="stat-number">43<span>K+</span></div>
-        <div class="stat-label">참관객 수</div>
-        <div class="stat-growth">+207% ▲</div>
+        <div class="stat-number">48<span>K+</span></div>
+        <div class="stat-label">참관객 수 (48,678명)</div>
+        <div class="stat-growth">+241% ▲</div>
       </div>
     </div>
   </div>
@@ -1048,17 +1048,18 @@
     <div class="timeline-track">
       <div class="timeline-item highlight" id="tl-2026">
         <div class="timeline-dot"></div>
-        <div class="timeline-year">2026 · UPCOMING</div>
+        <div class="timeline-year">2026 · 역대 최대 규모 달성</div>
         <div class="timeline-content">
           <div class="timeline-poster">
             <img src="https://raw.githubusercontent.com/koraia-trend/koraia-trend.github.io/refs/heads/main/images/26_poster_expo.jpg" alt="2026 Poster" class="modal-trigger">
           </div>
           <div class="timeline-text">
             <div class="timeline-name">AI EXPO KOREA 2026</div>
-            <div class="timeline-desc">2026년 05월 06일(수) ~ 08일(금) · COEX 1층, Hall A<br>미래를 향한 초대. 더 큰 혁신이 시작됩니다.</div>
+            <div class="timeline-desc">2026.05.06 – 08 · COEX 1층, Hall A<br>18개국 330개사 562부스, 48,678명 참관. 9년 역사상 최대 규모 · 아시아 대표 AI 전시회로 자리매김.</div>
             <div class="timeline-tags">
-              <span class="tag cyan">Coming Soon</span>
-              <span class="tag blue">COEX Hall A</span>
+              <span class="tag cyan">48,678명</span>
+              <span class="tag blue">18개국</span>
+              <span class="tag">330개사 · 562부스</span>
             </div>
           </div>
         </div>
@@ -1212,7 +1213,7 @@
       <div class="section-label">Data Evolution</div>
       <h2 class="section-title">숫자로 보는 성장</h2>
       <div class="divider"></div>
-      <p class="section-desc">2018년 첫 개최 이후 7년간 이룬 놀라운 성장 궤적을 데이터로 확인하세요.</p>
+      <p class="section-desc">2018년 첫 개최 이후 9년간 이룬 놀라운 성장 궤적을 데이터로 확인하세요.</p>
     </div>
     <div class="growth-inner">
       <div class="chart-area fade-up">
@@ -1254,20 +1255,27 @@
             <div class="bar-label">2023</div>
           </div>
           <div class="bar-group">
-            <div class="bar" id="b2024v" style="background:linear-gradient(to top,rgba(0,102,255,0.8),rgba(0,200,255,0.9));height:0">
+            <div class="bar" id="b2024v" style="background:linear-gradient(to top,rgba(0,102,255,0.75),rgba(0,200,255,0.85));height:0">
               <div class="bar-tooltip">~40,000명</div>
             </div>
             <div class="bar-label">2024</div>
           </div>
           <div class="bar-group">
-            <div class="bar" id="b2025v" style="background:linear-gradient(to top,var(--blue),var(--cyan));height:0">
+            <div class="bar" id="b2025v" style="background:linear-gradient(to top,rgba(0,102,255,0.85),rgba(0,200,255,0.95));height:0">
               <div class="bar-tooltip">43,788명</div>
             </div>
             <div class="bar-label">2025</div>
           </div>
+          <div class="bar-group">
+            <div class="bar" id="b2026v" style="background:linear-gradient(to top,var(--blue),var(--cyan));height:0;box-shadow:0 0 16px rgba(0,200,255,0.4)">
+              <div class="bar-tooltip">48,678명 · 최고기록</div>
+            </div>
+            <div class="bar-label" style="color:var(--cyan);font-weight:700">2026</div>
+          </div>
         </div>
         <div class="chart-legend">
           <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div>참관객 수 추이</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cyan)"></div>2026 신기록</div>
         </div>
       </div>
       <div class="comparison-cards fade-up" style="transition-delay:0.2s">
@@ -1276,7 +1284,7 @@
           <div class="cmp-row">
             <div class="cmp-val"><div class="cmp-num">3</div><div class="cmp-sub">2018년</div></div>
             <div class="cmp-arrow">→</div>
-            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">18</div><div class="cmp-sub">2025년</div></div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">18</div><div class="cmp-sub">2026년</div></div>
             <div class="cmp-badge">+500%</div>
           </div>
           <div class="progress-bar-wrap">
@@ -1288,11 +1296,11 @@
           <div class="cmp-row">
             <div class="cmp-val"><div class="cmp-num">82</div><div class="cmp-sub">2018년</div></div>
             <div class="cmp-arrow">→</div>
-            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">322</div><div class="cmp-sub">2025년</div></div>
-            <div class="cmp-badge">+293%</div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">330</div><div class="cmp-sub">2026년</div></div>
+            <div class="cmp-badge">+302%</div>
           </div>
           <div class="progress-bar-wrap">
-            <div class="progress-track"><div class="progress-fill" id="pf2" data-width="83"></div></div>
+            <div class="progress-track"><div class="progress-fill" id="pf2" data-width="85"></div></div>
           </div>
         </div>
         <div class="cmp-card" id="cmpVisitor">
@@ -1300,11 +1308,11 @@
           <div class="cmp-row">
             <div class="cmp-val"><div class="cmp-num">1.4만</div><div class="cmp-sub">2018년</div></div>
             <div class="cmp-arrow">→</div>
-            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">43,788</div><div class="cmp-sub">2025년</div></div>
-            <div class="cmp-badge">+207%</div>
+            <div class="cmp-val"><div class="cmp-num" style="color:var(--cyan)">48,678</div><div class="cmp-sub">2026년</div></div>
+            <div class="cmp-badge">+241%</div>
           </div>
           <div class="progress-bar-wrap">
-            <div class="progress-track"><div class="progress-fill" id="pf3" data-width="72"></div></div>
+            <div class="progress-track"><div class="progress-fill" id="pf3" data-width="78"></div></div>
           </div>
         </div>
       </div>
@@ -1422,15 +1430,15 @@
 <section id="cta">
   <div class="cta-bg"></div>
   <div class="cta-inner fade-up">
-    <div class="section-label" style="text-align:center;margin-bottom:16px">미래를 향한 초대</div>
-    <h2 class="cta-title">AI EXPO KOREA<br>2026에서 만나요</h2>
-    <p class="cta-sub">멈추지 않는 혁신, 아시아 최대 AI 전시회로의 진화.<br>2026년 COEX에서 함께하세요.</p>
+    <div class="section-label" style="text-align:center;margin-bottom:16px">감사의 인사</div>
+    <h2 class="cta-title">AI EXPO KOREA 2026<br>성공적으로 막을 내렸습니다</h2>
+    <p class="cta-sub">3일간 함께해주신 <strong style="color:var(--white)">48,678명</strong>의 참관객, 18개국 330개사 출품사,<br>그리고 모든 파트너와 후원 기관 여러분께 깊은 감사의 인사를 전합니다.</p>
     <div class="cta-date">
       <div class="cta-date-dot"></div>
-      2026년 05월 06일(수) ~ 08일(금) · COEX 1층, Hall A
+      2026년 05월 06일(수) ~ 08일(금) · COEX 1층, Hall A · 종료
     </div>
     <div class="hero-actions" style="justify-content:center">
-      <a href="https://www.aiexpo.co.kr/home/"  target="_blank" class="btn-primary">전시 참가 신청</a>
+      <a href="#stats" class="btn-primary">2026 결과 다시 보기</a>
       <a href="#timeline" class="btn-secondary">성장기록 보기</a>
     </div>
   </div>
@@ -1549,8 +1557,8 @@ document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
 
 // ── CHART ANIMATION ──
 let chartAnimated = false;
-const visitors = [14278, 21321, 21393, 23263, 28535, 32526, 40000, 43788];
-const barIds = ['b2018v','b2019v','b2020v','b2021v','b2022v','b2023v','b2024v','b2025v'];
+const visitors = [14278, 21321, 21393, 23263, 28535, 32526, 40000, 43788, 48678];
+const barIds = ['b2018v','b2019v','b2020v','b2021v','b2022v','b2023v','b2024v','b2025v','b2026v'];
 const maxV = Math.max(...visitors);
 
 function animateChart() {
@@ -1613,13 +1621,13 @@ window.addEventListener('scroll', () => {
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImage');
 const closeBtn = document.querySelector('.modal-close');
-const clickables = document.querySelectorAll('.modal-trigger'); // .modal-trigger 클래스가 있는 모든 이미지
+const clickables = document.querySelectorAll('.modal-trigger');
 
 clickables.forEach(img => {
   img.addEventListener('click', function() {
     modal.classList.add('show');
     modalImg.src = this.src;
-    document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+    document.body.style.overflow = 'hidden';
   });
 });
 
@@ -1627,7 +1635,7 @@ function closeModal() {
   modal.classList.remove('show');
   setTimeout(() => {
     modalImg.src = '';
-    document.body.style.overflow = ''; // 스크롤 복구
+    document.body.style.overflow = '';
   }, 300);
 }
 
