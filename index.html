@@ -1415,11 +1415,11 @@
     </div>
 
     <div class="fade-up" style="transition-delay:0.2s">
-      <div class="partners-label">지난 25년 주요 스폰서</div>
+      <div class="partners-label">26년 주요 스폰서</div>
       <div class="partners-scroll" style="margin-bottom:24px">
         <div class="partners-track" id="sponsorTrack"></div>
       </div>
-      <div class="partners-label">지난 25년 후원 기관</div>
+      <div class="partners-label">26년 후원 기관</div>
       <div class="partners-scroll">
         <div class="partners-track" id="orgTrack"></div>
       </div>
@@ -1589,8 +1589,8 @@ const gs = document.getElementById('growth');
 if (gs) growthObs.observe(gs);
 
 // ── PARTNERS MARQUEE ──
-const sponsors = ['슈퍼마이크로','케이투스 코리아','(주)마음AI','페르소나AI','셀바스AI','레노버','씨이랩','어드밴텍케이알','퓨어스토리지','비엔아이엔씨','한국전자통신연구원','이안'];
-const orgs = ['과학기술정보통신부','보건복지부','중소벤처기업부','한국지능정보사회진흥원','한국인터넷진흥원','한국산업기술평가관리원','정보통신기획평가원','성남산업진흥원','한국무역협회','한국정보산업연합회','한국소프트웨어산업협회','KAIST AI','로봇산업협회'];
+const sponsors = ['Supermicro Computer Inc. Taiwan', '이스트소프트', '(주)미스릴', '일레븐랩스', 'MinIO', '야놀자', '한국딥러닝', '아이티센클로잇', '디에스앤지', '(주)마음AI', '사단법인 한국피지컬에이아이협회', '솔트룩스이노베이션', '솔트룩스이노베이션', '씨이랩', '어드밴텍케이알(주)', '하이퍼엑셀', '에이아이씨 ㈜', 'Aqrose Technology', '아이크래프트', '엠키스코어'];
+const orgs = ['과학기술정보통신부', '보건복지부', '중소벤처기업부', '한국지능정보사회진흥원', '한국인터넷진흥원', '한국산업기술평가관리원', '정보통신기획평가원', '성남산업진흥원', '한국무역협회', '한국정보산업연합회', '한국소프트웨어산업협회', '임베디드소프트웨어시스템산업협회', '한국IT여성기업인협회', 'KAIST AI'];
 
 function buildMarquee(id, items, cls) {
   const track = document.getElementById(id);
